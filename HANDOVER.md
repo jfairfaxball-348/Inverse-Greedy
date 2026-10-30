@@ -25,9 +25,8 @@ normalisation and field operations factored. Run #35 at commit
 181cda3 successfully built imported Lean C6 six-factor inequality,
 opposite pair product bound and 1/5 contradiction; also compiled the
 P6 elementary algebraic contradiction. **Neither proof formalises
-the stochastic greedy law/event probabilities**. A further Lean
-conditional algebraic 1/25-TV-gap lemma was added after that green
-SHA; check its own CI result before calling it Lean-verified.
+the stochastic greedy law/event probabilities**. The further Lean conditional algebraic 1/25-TV-gap lemma was verified
+on commit b4e6fdd in GitHub CI run #40 (both jobs green).
 
 ## Verification and priority
 P6 exact tests checked all 720 permutations for the event equivalence,
