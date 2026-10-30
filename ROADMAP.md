@@ -9,7 +9,7 @@
 [x] C6 sharp AM-GM product obstruction.
 [x] Standard-library Fraction exact engine, independent permutation oracle, tests.
 [x] Repo charter, claims, bibliography, agent rules, next-session prompt, CI definition.
-[ ] Confirm hosted Lean CI pass and record build provenance.
+[x] Initial Lean/Mathlib and Python CI passed: GitHub Actions #2, commit a915a8ecd26e3806edd50a1ace6260762a628b7c. Full C6 Lean proof is still open.
 [ ] Full novelty/priority audit, later stage.
 
 ## S002 — first classification campaign
