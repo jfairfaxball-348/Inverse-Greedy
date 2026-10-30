@@ -21,10 +21,22 @@
 - [ ] Classify 79 remaining graph instances with exact certificates.
 - [ ] Independent literature/priority certification.
 
-## S003 — installed
-See sessions/S003.md. Make C6Product.lean compile, connect
-exponential race semantics to output laws, investigate P6 via exact
-certificates (not optimizer failure), and reduce atlas unknowns.
+## S003 — executed 2026-10-30
+- [x] Proved P6 non-EGU by disjoint triple-race events.
+- [x] Derived uniform total-variation gap ≥ 1/25 for P6.
+- [x] Exact P6 oracle: all 720 orders, 729 positive integer rate vectors.
+- [x] Certified atlas 62 positive / 3 negative / 78 unresolved.
+- [x] Repaired C6 six-factor inequality and imported into Lean library;
+      CI run #35 at commit 181cda3 verified pure algebraic theorem.
+- [x] Compiled the P6 uniform algebraic contradiction at same SHA.
+- [ ] Full Lean stochastic event→rational law for C6 and P6.
+- [ ] Lean P5 strict minor and full event-to-law connection.
+- [ ] Remaining 78 atlas cases and independent novelty audit.
+
+## S004 — installed
+See sessions/S004.md. Prioritise full finite weighted-race semantics
+in Lean and one additional exact graph/certificate. Do not turn
+unresolved atlas cases into negatives.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
