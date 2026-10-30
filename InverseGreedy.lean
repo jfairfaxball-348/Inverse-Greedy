@@ -1,1 +1,2 @@
 import InverseGreedy.ExponentialRace
+import InverseGreedy.CubicAMGM
