@@ -1,3 +1,2 @@
 import InverseGreedy.ExponentialRace
 import InverseGreedy.CubicAMGM
-import InverseGreedy.C6Product

@@ -1,14 +1,14 @@
 import InverseGreedy.CubicAMGM
 
 /-!
-# C6: sharp algebraic obstruction for the three opposite-pair probabilities
+# C6: DRAFT proof attempt — NOT YET BUILT OR VERIFIED
 
 The positive-rate rational formula for each pair probability is proved
 informally using the exponential race, and its two-first-choice
 algebraic identity is formalised in ExponentialRace.lean.
 
-This file proves the sharp product inequality and contradiction with
-the value 1/5. It does not yet define the stochastic greedy process in Lean.
+This file attempts to formalise the sharp product inequality and contradiction with
+the value 1/5. The proof timed out in CI and is intentionally not imported\nby InverseGreedy.lean. It does not yet define the stochastic greedy process.
 -/
 
 namespace InverseGreedy

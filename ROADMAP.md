@@ -1,32 +1,31 @@
-# Research roadmap
+# Research roadmap — Inverse Greedy
 
 ## S001 — completed 2026-10-30
-- [x] Exact weighted first-choice recurrence, union factorisation.
-- [x] Multipartite/star and P4 constructions, C6 written obstruction.
-- [x] Fraction engine, independent permutation oracle, Lean algebraic
-      identity and GitHub Actions verification.
+- [x] Weighted first-choice recurrence, disjoint-union factorisation.
+- [x] Multipartite/star, P4 constructions; C6 written obstruction.
+- [x] Fraction engine, independent weighted-permutation oracle.
+- [x] Lean C6 algebraic identity and passing initial GitHub Actions.
 
-## S002 — new results 2026-10-30
+## S002 — 2026-10-30
 - [x] Join equivalence EGU(G∨H) iff EGU(G) and EGU(H).
 - [x] Explicit rational uniformisation of every finite cograph.
-- [x] Strict P5 probability-minor obstruction; P5 is a smallest-order
-      non-EGU graph, not a numerical conjecture.
+- [x] Strict P5 probability minor: P5 smallest-order non-EGU graph.
 - [x] Enumerate all 143 connected unlabeled graphs n≤6;
       62 positive, 2 negative, **79 unresolved**.
-- [x] Exact Fraction tests on 243 P5 rate vectors and all connected
-      cographs through n6.
-- [x] Cubic AM-GM SOS lemma checked by Lean CI #9 (59b05ba).
-- [ ] C6 product lemma and 1/5 contradiction: pending CI of latest patch.
-- [ ] Formal stochastic semantics and full event-to-rational law in Lean.
-- [ ] Complete 79 remaining semialgebraic graph certificates.
-- [ ] Independent novelty/priority certification.
+- [x] Exact Python tests on 243 P5 rate vectors and connected cographs n≤6.
+- [x] Cubic AM-GM SOS lemma verified in Lean CI #9 (59b05ba).
+- [ ] C6 six-factor and product inequality Lean formalisation:
+      draft attempted, but elaboration timed out. Kept unimported
+      to preserve a passing project build; S003 repair task.
+- [ ] Full stochastic law/event-to-rational proof in Lean.
+- [ ] Classify 79 remaining graph instances with exact certificates.
+- [ ] Independent literature/priority certification.
 
 ## S003 — installed
-See sessions/S003.md: repair/verify C6 Lean, formalise probability law,
-target P6 with exact proofs, and reduce the 79 unresolved atlas entries.
-Seek further graph operations and real-closed-field feasibility methods.
+See sessions/S003.md. Make C6Product.lean compile, connect
+exponential race semantics to output laws, investigate P6 via exact
+certificates (not optimizer failure), and reduce atlas unknowns.
 
-**Final boss:** characterise all finite graphs for which strictly
-positive exponential vertex priorities make the greedy maximal
-independent-set distribution uniform, and ultimately characterise
-all attainable terminal laws.
+**Final boss:** classify finite graphs with strictly positive
+exponential vertex priorities yielding uniform greedy terminal
+maximal independent sets, and characterise the attainable output laws.
