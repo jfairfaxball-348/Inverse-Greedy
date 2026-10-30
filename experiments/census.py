@@ -11,12 +11,14 @@ from cograph import uniformise_cograph
 from exact import graph, law_by_recursion, maximal_independent_sets, is_uniform
 from five_vertex_witnesses import FIVE_VERTEX_RATIONAL, ALGEBRAIC_INDEX, ALGEBRAIC_EDGES
 from six_vertex_witnesses import SIX_VERTEX_RATIONAL
+from false_twin import contraction_parent
 
 
-def enumerate_atlas(max_n=6, max_rate=4):
+def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True):
     import networkx as nx
     # S004: the six-vertex cone over P5 is a rigorous negative by
     # join necessity and the already proved strict P5 obstruction.
+    five_atlas = [g for g in nx.graph_atlas_g() if len(g) == 5 and nx.is_connected(g)]
     cone_p5 = nx.path_graph(5)
     cone_p5.add_node(5)
     cone_p5.add_edges_from((5, i) for i in range(5))
@@ -79,6 +81,25 @@ def enumerate_atlas(max_n=6, max_rate=4):
             if entry['status'] == 'unresolved' and n == 6 and nx.is_isomorphic(g, cone_p5):
                 entry.update(status='proved-negative',
                              certificate='K1 join P5; join necessity + P5 strict minor; proof/CONE_P5_OBSTRUCTION.md')
+            # S007: a false-twin pair contracts to a connected five-vertex
+            # graph. Terminal laws agree after adding twin rates. The complete
+            # S005 n=5 theorem is therefore a genuine proof for both signs.
+            if include_false_twins and entry["status"] == "unresolved" and n == 6:
+                contraction = contraction_parent(g, five_atlas)
+                if contraction is not None:
+                    pair, parent_index, reduced = contraction
+                    entry["twin_pair"] = list(pair)
+                    entry["contracted_n5_index"] = parent_index
+                    if parent_index == 2:
+                        assert nx.is_isomorphic(reduced, nx.path_graph(5))
+                        entry.update(
+                            status="proved-negative",
+                            certificate="S007 false-twin contraction to P5; proof/FALSE_TWIN_INVARIANCE.md")
+                    else:
+                        entry.update(
+                            status="proved-positive",
+                            certificate=("S007 false-twin lift of complete S005 n=5 witness;"
+                                         " proof/FALSE_TWIN_INVARIANCE.md"))
             yield entry
 
 

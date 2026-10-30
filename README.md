@@ -31,6 +31,13 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   01,12,14,15,23) is EGU with strictly positive integer rates
   (3,6,4,5,3,3); all three MIS have probability 1/3 exactly.
   An explicit positive rational one-parameter family also works.
+- **IG-P7 (S007):** false-twin invariance. Contracting two
+  nonadjacent vertices with identical open neighbourhoods and adding
+  their exponential rates preserves the entire terminal greedy law;
+  conversely split the contracted rate. This settles 19 additional
+  six-vertex graphs as EGU (16 exact rational and 3 exact Q(√3)
+  lifted witnesses) and 3 more as non-EGU by contraction to P5.
+  See proof/FALSE_TWIN_INVARIANCE.md and tests/test_s007.py.
 - **IG-N1:** C6 cannot be EGU: product of the three opposite-pair
   probabilities ≤1/729, while uniformity would require 1/125.
 - **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a
@@ -62,11 +69,12 @@ Optional NetworkX atlas enumeration:
     python experiments/census.py --max-n 6 --max-rate 4 --json
 
 The **143 connected unlabeled graphs through six vertices**
-currently have **70 proven positive**, **4 proven negative
-(P5, P6, C6 and K1∨P5)**, and **69 unresolved** instances. This is an
+currently have **89 proven positive**, **7 proven negative
+(P5, P6, C6, K1∨P5, and three false-twin P5 expansions)**, and
+**47 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
-prove impossibility. See results/S006_ATLAS.md.
+prove impossibility. See results/S007_ATLAS.md.
 
 Optional numerical only:
 
@@ -95,17 +103,23 @@ S005 formally proves positivity of individual finite order masses
 **total head-choice tree mass = 1** for positive rates, verified in green CI #92 at commit 95314a7 (see CLAIMS.md); this is not yet
 the theorem equating the tree leaves with the original `orderMass`
 of permutations or their pushforward law.
+S007 adds OrderLeafBridge.lean, identifying each duplicate-free
+priority leaf's product of first-choice probabilities with
+`orderMass` (Lean-verified at SHA 543cfe9, green CI run 41131451454); the full
+permutation summation and greedy pushforward are still open.
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
 
 ## Navigation
+proof/FALSE_TWIN_INVARIANCE.md — S007 structural closure and obstructions;
+results/S007_ATLAS.md — new 89/7/47 partial census;
 proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
 proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S007.md — installed next session;
+sessions/S008.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
