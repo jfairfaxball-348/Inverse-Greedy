@@ -1,42 +1,47 @@
-# S003 handover — 2026-10-30
+# S004 handover — 2026-10-30
 
-## Main advance: IG-N3, path P6 is not EGU
-A complete elementary event proof gives impossibility for all strictly
-positive exponential rates on P6. Let u be probability that vertex 1
-wins the race within {0,1,2}, and v for vertex 4 within {3,4,5}.
-These races are independent. Greedy output {1,4} has probability uv;
-output {0,2,5} or {0,3,5} has combined probability ≤(1-u)(1-v).
-Uniform five-MIS output would require uv=1/5 and
-(1-u)(1-v)≥2/5, impossible by (u-v)^2≥0. Stronger:
-TV distance from uniform is always at least **1/25** using the two
-events and their complement product bounds. Neither statement rests
-on a numerical rate search. Full proof: proof/P6_OBSTRUCTION.md.
+## New certified negative: IG-N4
+The connected six-vertex graph K1∨P5 (cone over P5) is not EGU.
+It is connected n=6 atlas index 68. The proof is a direct
+corollary of IG-P4 (join necessity) and IG-N2 (P5 strict minor).
+For any five path rates with sum A and universal vertex rate c,
+the cone output law has p({z})=c/(A+c) and p(I)=A/(A+c)*p_P5(I).
+The common factor on P5 output events is strictly positive and
+preserves the strict P5 probability minor. This is a mathematical
+proof for all positive rates, not numerical nonexistence evidence.
+See proof/CONE_P5_OBSTRUCTION.md.
 
-## Atlas
-Python CI run #32 at c6460366: all 14 tests passed and connected
-NetworkX n≤6 enumerated 143 graphs, **62 positive / 3 negative /
-78 unresolved**. n6 negative indices: P6=5, C6=18. n5 P5=2.
-Atlas results file: results/S003_ATLAS.md. Rate search bound 4
-does not imply the other 78 are negative.
+## Partial atlas
+Connected n≤6: **143 graphs = 62 certified positive / 4 certified
+negative / 77 unresolved**. One more case closed than S003.
+No change to the 62 positive classifications. n5 still 13/1/7;
+n6 now 39/3/70. New classification appears in
+experiments/census.py and results/S004_ATLAS.md.
 
-## Lean
-S003 repaired C6Product.lean by keeping the six-factor polynomial
-normalisation and field operations factored. Run #35 at commit
-181cda3 successfully built imported Lean C6 six-factor inequality,
-opposite pair product bound and 1/5 contradiction; also compiled the
-P6 elementary algebraic contradiction. **Neither proof formalises
-the stochastic greedy law/event probabilities**. The further Lean conditional algebraic 1/25-TV-gap lemma was verified
-on commit b4e6fdd in GitHub CI run #40 (both jobs green).
+## Formal finite law work
+New InverseGreedy/FiniteRace.lean defines normalisation
+`activeRate`, `firstChoice`, sequential `orderMass`,
+`greedyOutput`, `afterChoice`, and fuel-bounded
+`finiteRaceLaw`. It states and proves rate positivity,
+first-choice total mass one, and first-choice unfolding of the
+bounded output law. **Verify this module's CI status at the merged
+SHA before stating it is Lean-verified.**
 
-## Verification and priority
-P6 exact tests checked all 720 permutations for the event equivalence,
-729 vectors in {1,2,3}^6 against exact Fraction recursion, plus
-an independent weighted-permutation oracle. Bound TV≥1/25 also
-tested on 729 vectors. External novelty audit remains provisional:
-classic random sequential adsorption and iid random-priority papers
-address related processes but have not been proven to settle the
-positive-rate inverse-uniformity question.
+Important boundary: these objects are finite algebraic
+combinatorial models. No Lean theorem yet identifies them with
+independent continuous Exp clocks, or proves the P6/C6 named-event
+law identities from `greedyOutput`. The paper-level proofs
+remain valid; do not conflate formal gaps with mathematical gaps.
+
+## Regressions
+tests/test_s004.py verifies K1∨P5 at atlas index 68,
+all 729 rates from {1,2,3}^6 for the exact join factorisation
+and strict inherited P5 minor, and two weighted-permutation oracle
+comparisons. Full project Python tests and atlas run in GitHub CI.
 
 ## Next
-sessions/S004.md: formal finite weighted-race/output model end-to-end,
-then further exact graph classifications; preserve the C6 CI gain.
+sessions/S005.md. Close the weighted-order → greedy-output
+recursion theorem in Lean, then P6 combinatorial events,
+independence and quantitative TV; tackle remaining n=5 cases
+with genuine exact certificates. Do not reclassify graphs using
+optimiser failure; no new novelty/priority assertion.
