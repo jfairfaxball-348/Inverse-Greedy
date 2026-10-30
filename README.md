@@ -70,7 +70,7 @@ InverseGreedy/CubicAMGM.lean formalises the cubic SOS inequality.
 InverseGreedy/C6Product.lean **compiles the sharp six-factor bound**
 (CI run #35, commit 181cda3), and P6Bottleneck.lean compiles the
 P6 algebraic contradiction at the same SHA. Its quantitative TV
-lemma is a later addition subject to its own CI verification.
+lemma was also verified at SHA b4e6fdd (CI run #40).
 **The stochastic greedy law and event-to-rational formulas have NOT
 been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
