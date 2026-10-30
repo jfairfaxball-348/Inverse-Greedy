@@ -36,17 +36,23 @@ def p6OuterAgreement (o : List (Fin 6)) : Bool :=
     decide (greedyOutput p6Neighbours o = ({0, 3, 5} : Finset (Fin 6))))) ||
     (!p6LeftFirst o && !p6RightFirst o)
 
-set_option maxRecDepth 8192
-set_option maxHeartbeats 2000000
+/-!
+The global 720-permutation reduction is deliberately deferred:
+ordinary `decide` gets stuck on `List.permutationsAux` under the
+pinned toolchain. Do not treat this as a machine-checked equivalence.
+The exhaustive independent Python check remains in tests/test_s003.py.
+-/
 
-/-- All 720 orders satisfy the exact {1,4} output equivalence. -/
-theorem p6_middle_pair_event_for_all_orders :
-    ((List.finRange 6).permutations.all p6MiddleAgreement) = true := by
+/-- A simple exact worked example for the two central-first events. -/
+theorem p6_middle_pair_example :
+    greedyOutput p6Neighbours [1, 4, 0, 2, 3, 5] =
+      ({1, 4} : Finset (Fin 6)) := by
   decide
 
-/-- All 720 orders satisfy the outer-pair event inclusions. -/
-theorem p6_outer_outputs_force_complement_events :
-    ((List.finRange 6).permutations.all p6OuterAgreement) = true := by
+/-- The two central-first flags in the same worked example. -/
+theorem p6_middle_flags_example :
+    p6LeftFirst [1, 4, 0, 2, 3, 5] = true ∧
+    p6RightFirst [1, 4, 0, 2, 3, 5] = true := by
   decide
 
 end InverseGreedy
