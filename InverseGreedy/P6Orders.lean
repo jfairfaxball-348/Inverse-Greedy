@@ -27,25 +27,30 @@ def p6LeftFirst (o : List (Fin 6)) : Prop :=
 def p6RightFirst (o : List (Fin 6)) : Prop :=
   o.idxOf 4 < o.idxOf 3 ∧ o.idxOf 4 < o.idxOf 5
 
-/-- For every one of the 720 permutations, output {1,4} exactly
-when the two disjoint triples have their central vertex first. -/
-set_option maxRecDepth 8192 in
-set_option maxHeartbeats 2000000 in
+/-- Predicate asserting that the output {1,4} exactly matches
+the two independent triple-first events for one priority order. -/
+def p6MiddleAgreement (o : List (Fin 6)) : Bool :=
+  decide (greedyOutput p6Neighbours o = ({1, 4} : Finset (Fin 6)) ↔
+    p6LeftFirst o ∧ p6RightFirst o)
+
+/-- Predicate asserting that both outer-output events exclude
+each of the two triple-first events. -/
+def p6OuterAgreement (o : List (Fin 6)) : Bool :=
+  decide (((greedyOutput p6Neighbours o = ({0, 2, 5} : Finset (Fin 6))) ∨
+    (greedyOutput p6Neighbours o = ({0, 3, 5} : Finset (Fin 6)))) →
+    (¬ p6LeftFirst o ∧ ¬ p6RightFirst o)
+
+set_option maxRecDepth 8192
+set_option maxHeartbeats 2000000
+
+/-- Kernel evaluation of all 720 ordered greedy-output event matches. -/
 theorem p6_middle_pair_event_for_all_orders :
-    ∀ o ∈ (List.finRange 6).permutations,
-      (greedyOutput p6Neighbours o = ({1, 4} : Finset (Fin 6)) ↔
-         p6LeftFirst o ∧ p6RightFirst o) := by
+    ((List.finRange 6).permutations.all p6MiddleAgreement) = true := by
   decide
 
-/-- Both outputs {0,2,5} and {0,3,5} preclude each of the
-two central-first triple events. -/
-set_option maxRecDepth 8192 in
-set_option maxHeartbeats 2000000 in
+/-- Kernel evaluation of all 720 outer-output event inclusions. -/
 theorem p6_outer_outputs_force_complement_events :
-    ∀ o ∈ (List.finRange 6).permutations,
-      ((greedyOutput p6Neighbours o = ({0, 2, 5} : Finset (Fin 6)) ∨
-        greedyOutput p6Neighbours o = ({0, 3, 5} : Finset (Fin 6))) →
-        ¬ p6LeftFirst o ∧ ¬ p6RightFirst o := by
+    ((List.finRange 6).permutations.all p6OuterAgreement) = true := by
   decide
 
 end InverseGreedy
