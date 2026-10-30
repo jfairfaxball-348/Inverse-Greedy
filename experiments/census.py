@@ -14,7 +14,7 @@ from six_vertex_witnesses import SIX_VERTEX_RATIONAL
 from false_twin import contraction_parent
 
 
-def enumerate_atlas(max_n=6, max_rate=4):
+def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True):
     import networkx as nx
     # S004: the six-vertex cone over P5 is a rigorous negative by
     # join necessity and the already proved strict P5 obstruction.
@@ -84,7 +84,7 @@ def enumerate_atlas(max_n=6, max_rate=4):
             # S007: a false-twin pair contracts to a connected five-vertex
             # graph. Terminal laws agree after adding twin rates. The complete
             # S005 n=5 theorem is therefore a genuine proof for both signs.
-            if entry["status"] == "unresolved" and n == 6:
+            if include_false_twins and entry["status"] == "unresolved" and n == 6:
                 contraction = contraction_parent(g, five_atlas)
                 if contraction is not None:
                     pair, parent_index, reduced = contraction
