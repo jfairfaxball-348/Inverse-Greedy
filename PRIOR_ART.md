@@ -52,3 +52,19 @@ inverse distributions/semialgebraic rate feasibility.
 strict-minor or exponential-priority EGU join-equivalence statements;
 this does **not** establish originality. Review papers and citations
 directly before submitting manuscripts.
+
+
+## S003 scope check (2026-10-30)
+Read the statements/extended descriptions of:
+- Pippenger (1989), doi:10.1137/0402034: classical random
+  sequential adsorption process and occupancy limits.
+- Krivelevich, Mészáros, Michaeli & Shikhelman (2024),
+  doi:10.1002/rsa.21200: greedy MIS via local limits, in its
+  introduction explicitly uses uniformly random vertex orderings.
+- The equal-rate predecessor, arXiv:2610.02276.
+
+These are close process-model precedents. The inspected parts did
+**not** supply a positive-rate P6 bottleneck, nor a theorem
+proving novelty for one. No worldwide novelty/priority certificate
+is claimed. A direct bibliography and forward-citation audit before
+a manuscript submission remains necessary.
