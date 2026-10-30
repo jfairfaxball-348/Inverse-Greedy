@@ -63,3 +63,31 @@ remain informal, checked independently by exhaustive permutation and
 exact rational tests. It does NOT show that an arbitrary graph
 containing an induced P6 is non-EGU. A P6 connected component is an
 obstruction by IG-P2.
+
+
+## Quantitative strengthening: uniform separation by at least 1/25
+
+Let Q be the terminal law and U the uniform law on the five MIS.
+Write δ = ||Q-U||_TV, the usual supremum of |Q(E)-U(E)| over
+events E. Applied to E={14} and F={025,035}, the definition gives
+
+    u*v >= 1/5 - δ,
+    (1-u)*(1-v) >= Q(F) >= 2/5 - δ.
+
+If δ < 1/25, then u*v > 4/25, and
+(1-u)*(1-v) > 9/25. Both u,v and their complements
+are nonnegative. From (x+y)^2 >= 4xy, these inequalities imply
+
+    u+v > 4/5,
+    (1-u)+(1-v) > 6/5.
+
+Adding gives 2 > 2, impossible. Consequently, for *every*
+strictly positive exponential rate vector,
+
+    ||Q - U||_TV >= 1/25.
+
+This constant is a rigorous universal lower bound, **not claimed
+optimal**. It follows from the two event certificates alone and is
+independent of all numerical searches. The algebraic bottleneck and
+its quantitative form should be distinguished from a full Lean
+formalisation of the stochastic output distribution.
