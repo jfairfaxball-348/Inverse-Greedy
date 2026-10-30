@@ -16,7 +16,7 @@ on a numerical rate search. Full proof: proof/P6_OBSTRUCTION.md.
 Python CI run #32 at c6460366: all 14 tests passed and connected
 NetworkX n≤6 enumerated 143 graphs, **62 positive / 3 negative /
 78 unresolved**. n6 negative indices: P6=5, C6=18. n5 P5=2.
-Results/results file results/S003_ATLAS.md. Rate search bound 4
+Atlas results file: results/S003_ATLAS.md. Rate search bound 4
 does not imply the other 78 are negative.
 
 ## Lean
