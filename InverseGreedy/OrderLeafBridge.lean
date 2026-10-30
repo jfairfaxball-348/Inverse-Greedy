@@ -68,8 +68,10 @@ theorem orderLeafMass_eq_orderMass (rates : α → ℝ) :
                 rw [ih ht]
                 rw [show firstChoice rates (v :: tail).toFinset v =
                     rates v / (rates v + (tail.map rates).sum) by
-                  simp [firstChoice,
-                    activeRate_toFinset_of_nodup rates (v :: tail) hn]]
+                  change rates v / activeRate rates (v :: tail).toFinset =
+                    rates v / (rates v + (tail.map rates).sum)
+                  rw [activeRate_toFinset_of_nodup rates (v :: tail) hn]
+                  simp]
         _ = orderMass rates (v :: tail) :=
           (orderMass_cons rates v tail).symm
 
