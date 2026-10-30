@@ -42,6 +42,8 @@ def enumerate_atlas(max_n=6, max_rate=4):
                 entry.update(status='proved-positive', certificate='P4 algebraic witness; proof/FOUNDATIONS.md')
             if entry['status'] == 'unresolved' and n == 5 and nx.is_isomorphic(g, nx.path_graph(5)):
                 entry.update(status='proved-negative', certificate='P5 strict determinant; proof/P5_OBSTRUCTION.md')
+            if entry['status'] == 'unresolved' and n == 6 and nx.is_isomorphic(g, nx.path_graph(6)):
+                entry.update(status='proved-negative', certificate='P6 double-triple race bottleneck; proof/P6_OBSTRUCTION.md')
             if entry['status'] == 'unresolved' and n == 6 and nx.is_isomorphic(g, nx.cycle_graph(6)):
                 entry.update(status='proved-negative', certificate='C6 AM-GM; proof/C6_OBSTRUCTION.md')
             yield entry
