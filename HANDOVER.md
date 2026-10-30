@@ -1,49 +1,44 @@
-# S006 handover — 2026-10-30
+# S007 handover — 2026-10-30
 
 ## Repository
-S005 PR #4 was merged into main at `e9577bfe6065ea061c28295d9d3182847c75e4f7`
-after final-head green CI #87. **S006 PR #5 was merged** into main at
-`00093aeee18884a43df8dd755d92f1bcb3264157` after green push
-CI #103 and green pull-request CI #104, both on the precise
-PR head `7fc4802e0c9c36609cdd56009ef28b1f68bcefd1`.
+Base main SHA before session: `9903b669e939d9afa527be81b748a2f3308a13d4`,
+with green Actions run 41127034157. S006 PR #5 was already merged.
+S007 changes are on branch `research/s007-false-twin-classification`.
+**Verify the final PR head and exact-head CI before declaring this merge
+complete.** Read current GitHub run/PR status (rather than relying on
+historical run numbers).
 
-## Exact mathematical progress
-**IG-P6:** Connected graph-atlas n=6 index 1 has edges
-`01,12,14,15,23`, and positive integer uniformising rates
-`(3,6,4,5,3,3)`. Its three MIS each have probability **1/3**
-under both the independent 720-permutation oracle and the exact
-first-choice recurrence. A one-parameter strictly positive rational
-family also follows from the closed formulas. See
-`proof/SIX_VERTEX_INDEX1.md`, `experiments/six_vertex_witnesses.py`
-and `tests/test_s006.py`.
+## Mathematical result
+**IG-P7 — false-twin invariance:** for distinct nonadjacent vertices
+with the same open neighbourhood, delete one and add its rate to the
+other. The terminal MIS distributions match under the natural
+bijection; the converse splits the parent rate between twins. Full
+informal proof: `proof/FALSE_TWIN_INVARIANCE.md`.
 
-Connected n≤6 atlas: **143 total / 70 positive / 4 negative /
-69 unresolved**. All unresolved instances have six vertices.
-The six-vertex classification is NOT finished; finite search failure
-cannot be classified as non-EGU.
+19 formerly unresolved n=6 graphs lift exact S005 positive witnesses
+(16 rational and 3 in Q(√3)); 3 formerly unresolved n=6 graphs
+(connected indices **4,13,16**) contract to P5 and are non-EGU.
+Each new graph's edges, parent and twin pair are recorded in
+`results/S007_ATLAS.md`. Exact tests check the 19 positives via
+full 720-order weighted permutation enumeration and independent
+first-choice recursion, including quadratic field cases.
 
-## Lean proof and scope
-`InverseGreedy/OrderTreeNormalization.lean` proves, via induction on
-fuel and deleting the first chosen vertex, that the total mass of
-the complete recursive weighted head-choice tree is exactly one
-when all rates are positive and fuel ≥ number of active vertices.
-There is no factorial-size `decide`; it reuses the previously
-formalised first-choice probability normalisation.
+The connected n<=6 atlas is **89 positive / 7 negative /
+47 unresolved**, of 143. Among n=6 alone: 59/6/47.
 
-**Scope limitation:** The proof normalises a recursively defined
-tree mass, not literally the sum of the existing `orderMass` over
-`List.permutations`. Identifying every leaf with its corresponding
-`orderMass`, grouping leaves by `greedyOutput` to obtain
-`finiteRaceLaw`, and identifying the finite tree with independent
-continuous Exp clocks remain open. Never imply otherwise.
-
-**The imported Lean theorem passed** CI #92 at commit `95314a7`,
-and the full S006 release branch passed CI #103 and #104 at
-`7fc4802` before merge. Both Python exact and Lean jobs passed.
+## Lean progress and scope
+S006 proved normalisation of the **recursive** head-choice tree.
+S007 adds `InverseGreedy/OrderLeafBridge.lean`, proving for every
+duplicate-free ordered list that the conditional-first-choice
+product of its successive head/tail sets equals its `orderMass`.
+This is a single-leaf identity, NOT a proof of the bijection from
+tree leaves to `List.permutations`, full-permutation sum = 1,
+pushforward to `finiteRaceLaw`, or a continuous exponential-clock
+equivalence. CI status is tracked on exact head and CLAIMS.md.
 
 ## Next
-`sessions/S007.md` targets a genuine leaf-by-leaf Lean permutation
-identity and the greedy pushforward law, with additional exact
-six-vertex certificates and remaining Exponential-clock obligations.
-Keep the equal-rate predecessor read-only. No independent novelty
-or priority claim is made.
+`sessions/S008.md` targets the missing finite permutation-sum and
+greedy pushforward in Lean and the 47 remaining connected six-vertex
+cases. Preserve earlier proofs and tests. Do not turn failed searches
+into negative theorems, claim the induced P5 obstruction for arbitrary
+supergraphs, or imply novelty/priority certification.
