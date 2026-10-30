@@ -17,7 +17,7 @@ def activeRate (rates : α → ℝ) (active : Finset α) : ℝ :=
   ∑ v ∈ active, rates v
 
 /-- First-choice law for a strictly positive finite rate vector. -/
-def firstChoice (rates : α → ℝ) (active : Finset α) (v : α) : ℝ :=
+noncomputable def firstChoice (rates : α → ℝ) (active : Finset α) (v : α) : ℝ :=
   rates v / activeRate rates active
 
 /-- The active rate is positive when the active set is nonempty. -/
@@ -35,14 +35,14 @@ theorem firstChoice_sum_one (rates : α → ℝ) (active : Finset α)
     (∑ v ∈ active, firstChoice rates active v) = 1 := by
   have ht := activeRate_pos rates active hactive hrates
   change (∑ v ∈ active, rates v / activeRate rates active) = 1
-  rw [Finset.sum_div]
+  rw [← Finset.sum_div]
   change activeRate rates active / activeRate rates active = 1
   exact div_self (ne_of_gt ht)
 
 /-- Exact probability weight of an ordered list of distinct vertices,
 obtained by taking successive choices proportional to remaining rates.
 For an empty list its weight is one. -/
-def orderMass (rates : α → ℝ) : List α → ℝ
+noncomputable def orderMass (rates : α → ℝ) : List α → ℝ
   | [] => 1
   | v :: tail =>
       (rates v / (rates v + (tail.map rates).sum)) * orderMass rates tail
