@@ -59,15 +59,10 @@ theorem c6_six_denominators_ge
       _ = p^3 := by
         change u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 = (u0*u1*u2*v0*v1*v2)^3
         simp only [mul_pow]
-  have hqp : q ≤ p := by
-    by_contra h
-    have hlt : p < q := lt_of_not_ge h
-    have hpos : 0 < (q-p)*(q^2+q*p+p^2) := by
-      apply mul_pos (by linarith)
-      have hqp0 : 0 ≤ q := by dsimp [q]; positivity
-      have hpp0 : 0 ≤ p := by dsimp [p,u0,u1,u2,v0,v1,v2]; positivity
-      positivity
-    nlinarith [hcubed, hpos]
+  have hq : 0 ≤ q := by dsimp [q]; positivity
+  have hp : 0 ≤ p := by dsimp [p,u0,u1,u2,v0,v1,v2]; positivity
+  have hqp : q ≤ p :=
+    (pow_le_pow_iff_left₀ hq hp (by decide : (3:ℕ) ≠ 0)).mp hcubed
   exact hqp
 
 theorem c6_opposite_pair_product_le
