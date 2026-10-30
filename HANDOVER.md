@@ -1,46 +1,47 @@
-# S005 handover — 2026-10-30
+# S006 handover — 2026-10-30
 
-## Breakthrough: connected n=5 is fully classified
+## Repository
+S005 PR #4 was merged into main at `e9577bfe6065ea061c28295d9d3182847c75e4f7`
+after final-head green CI run #87. S006 PR #5 adds the work described below.
+Check its final-head GitHub Actions runs and branch SHA before merging.
 
-**IG-P5:** exactly 20 of the 21 connected unlabeled graphs on five
-vertices are EGU; P5 is the unique non-EGU instance. Using the
-previous disjoint-union theorem, P5 is also the **only non-EGU graph
-of any kind on at most five vertices**. The seven
-previously open n=5 atlas indices 1,4,5,6,9,11,15 all have exact,
-strictly positive uniformising rates. Six witnesses are integer
-vectors, and index 15 has rates in Q(√3); the latter's four
-probabilities are proved by explicit quadratic identities.
+## Exact mathematical progress
+**IG-P6:** Connected graph-atlas n=6 index 1 has edges
+`01,12,14,15,23`, and positive integer uniformising rates
+`(3,6,4,5,3,3)`. Its three MIS each have probability **1/3**
+under both the independent 720-permutation oracle and the exact
+first-choice recurrence. A one-parameter strictly positive rational
+family also follows from the closed formulas. See
+`proof/SIX_VERTEX_INDEX1.md`, `experiments/six_vertex_witnesses.py`
+and `tests/test_s006.py`.
 
-Proof: proof/FIVE_VERTEX_ATLAS.md. Reproducible rates and exact
-recurrence + independent order-mass oracles:
-experiments/five_vertex_witnesses.py, tests/test_s005.py.
+Connected n≤6 atlas: **143 total / 70 positive / 4 negative /
+69 unresolved**. All unresolved instances have six vertices.
+The six-vertex classification is NOT finished; finite search failure
+cannot be classified as non-EGU.
 
-Updated n≤6 atlas: **143 = 69 proven positive, 4 proven negative,
-70 unresolved**. Every unresolved case is connected on six vertices.
-Historical S004 snapshot is unchanged. This is NOT a general
-characterisation of all EGU graphs.
+## Lean proof and scope
+`InverseGreedy/OrderTreeNormalization.lean` proves, via induction on
+fuel and deleting the first chosen vertex, that the total mass of
+the complete recursive weighted head-choice tree is exactly one
+when all rates are positive and fuel ≥ number of active vertices.
+There is no factorial-size `decide`; it reuses the previously
+formalised first-choice probability normalisation.
 
-## Lean progress and remaining gap
+**Scope limitation:** The proof normalises a recursively defined
+tree mass, not literally the sum of the existing `orderMass` over
+`List.permutations`. Identifying every leaf with its corresponding
+`orderMass`, grouping leaves by `greedyOutput` to obtain
+`finiteRaceLaw`, and identifying the finite tree with independent
+continuous Exp clocks remain open. Never imply otherwise.
 
-S005 added InverseGreedy/OrderMassBridge.lean, proving strict
-positivity of an individual finite priority-order mass and a
-first-choice atom, provided all rates are positive. The S004 algebraic
-finite race law remains. These local lemmas are not a normalisation
-over the permutation space, not the grouping-by-greedy-output theorem,
-and not a probability-law equivalence with independent Exp clocks.
-The required bridges remain the top S006 priority. The new module was verified in green CI #82 on commit 62916d4,
-covering the fully imported Lean library.
-
-## Verification
-
-The GitHub Actions Python exact job on S005 head 62916d4 passed,
-including the complete five-vertex witness tests and connected
-n≤6 partial atlas. CI #82 on code commit 62916d4 passed both jobs. Final PR CI
-must also be checked on the release head before merging.
+**The imported Lean theorem passed** CI run #92 at commit `95314a7`.
+Final S006 release-head CI remains required before merge, even
+though the code theorem passed at that earlier SHA.
 
 ## Next
-
-sessions/S006.md: structural permutation decomposition, greedy
-terminal-law identity and continuous Exp clock theorem; extend
-exact certification among 70 remaining n=6 candidates.
-No novelty/priority certification. Equal-rate predecessor read-only.
+`sessions/S007.md` targets a genuine leaf-by-leaf Lean permutation
+identity and the greedy pushforward law, with additional exact
+six-vertex certificates and remaining Exponential-clock obligations.
+Keep the equal-rate predecessor read-only. No independent novelty
+or priority claim is made.

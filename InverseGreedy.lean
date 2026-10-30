@@ -5,3 +5,4 @@ import InverseGreedy.C6Product
 import InverseGreedy.FiniteRace
 import InverseGreedy.P6Orders
 import InverseGreedy.OrderMassBridge
+import InverseGreedy.OrderTreeNormalization

@@ -10,6 +10,7 @@ from itertools import product
 from cograph import uniformise_cograph
 from exact import graph, law_by_recursion, maximal_independent_sets, is_uniform
 from five_vertex_witnesses import FIVE_VERTEX_RATIONAL, ALGEBRAIC_INDEX, ALGEBRAIC_EDGES
+from six_vertex_witnesses import SIX_VERTEX_RATIONAL
 
 
 def enumerate_atlas(max_n=6, max_rate=4):
@@ -58,6 +59,15 @@ def enumerate_atlas(max_n=6, max_rate=4):
                 entry.update(status='proved-positive',
                              certificate='S005 exact Q(sqrt(3)) witness; proof/FIVE_VERTEX_ATLAS.md',
                              rates=['1+sqrt(3)', '2+2sqrt(3)/3', '1+sqrt(3)', '2', '2'])
+            # S006: new independently verified, exactly uniform n=6 witness.
+            if entry['status'] == 'unresolved' and n == 6 and index in SIX_VERTEX_RATIONAL:
+                expected_edges, rates = SIX_VERTEX_RATIONAL[index]
+                assert {frozenset(e) for e in g.edges()} == {frozenset(e) for e in expected_edges}
+                assert all(x > 0 for x in rates)
+                assert is_uniform(law_by_recursion(adj, rates))
+                entry.update(status='proved-positive',
+                             certificate='S006 exact positive rational witness; proof/SIX_VERTEX_INDEX1.md',
+                             rates=list(rates))
             if entry['status'] == 'unresolved' and n == 4 and nx.is_isomorphic(g, nx.path_graph(4)):
                 entry.update(status='proved-positive', certificate='P4 algebraic witness; proof/FOUNDATIONS.md')
             if entry['status'] == 'unresolved' and n == 5 and nx.is_isomorphic(g, nx.path_graph(5)):
