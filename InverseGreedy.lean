@@ -4,3 +4,4 @@ import InverseGreedy.P6Bottleneck
 import InverseGreedy.C6Product
 import InverseGreedy.FiniteRace
 import InverseGreedy.P6Orders
+import InverseGreedy.OrderMassBridge
