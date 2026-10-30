@@ -1,2 +1,3 @@
 import InverseGreedy.ExponentialRace
 import InverseGreedy.CubicAMGM
+import InverseGreedy.P6Bottleneck
