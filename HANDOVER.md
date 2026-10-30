@@ -26,15 +26,15 @@ first-choice atom, provided all rates are positive. The S004 algebraic
 finite race law remains. These local lemmas are not a normalisation
 over the permutation space, not the grouping-by-greedy-output theorem,
 and not a probability-law equivalence with independent Exp clocks.
-The required bridges remain the top S006 priority. Only mark the new
-module Lean-verified after exact CI result is checked.
+The required bridges remain the top S006 priority. The new module was verified in green CI #82 on commit 62916d4,
+covering the fully imported Lean library.
 
 ## Verification
 
 The GitHub Actions Python exact job on S005 head 62916d4 passed,
 including the complete five-vertex witness tests and connected
-n≤6 partial atlas. The Lean job and final PR check must be inspected
-separately on the final head SHA before declaring success.
+n≤6 partial atlas. CI #82 on code commit 62916d4 passed both jobs. Final PR CI
+must also be checked on the release head before merging.
 
 ## Next
 
