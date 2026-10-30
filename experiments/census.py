@@ -9,6 +9,7 @@ from itertools import product
 
 from cograph import uniformise_cograph
 from exact import graph, law_by_recursion, maximal_independent_sets, is_uniform
+from five_vertex_witnesses import FIVE_VERTEX_RATIONAL, ALGEBRAIC_INDEX, ALGEBRAIC_EDGES
 
 
 def enumerate_atlas(max_n=6, max_rate=4):
@@ -43,6 +44,20 @@ def enumerate_atlas(max_n=6, max_rate=4):
                         entry.update(status='proved-positive', certificate='exact rational rates',
                                      rates=list(witness))
                         break
+            # S005: seven independently certified positive n=5 instances.
+            # This branch checks the structure, not a failed bounded rate search.
+            if entry['status'] == 'unresolved' and n == 5 and index in FIVE_VERTEX_RATIONAL:
+                expected_edges, rates = FIVE_VERTEX_RATIONAL[index]
+                assert {frozenset(e) for e in g.edges()} == {frozenset(e) for e in expected_edges}
+                assert is_uniform(law_by_recursion(adj, rates))
+                entry.update(status='proved-positive',
+                             certificate='S005 exact positive rational witness; proof/FIVE_VERTEX_ATLAS.md',
+                             rates=list(rates))
+            if entry['status'] == 'unresolved' and n == 5 and index == ALGEBRAIC_INDEX:
+                assert {frozenset(e) for e in g.edges()} == {frozenset(e) for e in ALGEBRAIC_EDGES}
+                entry.update(status='proved-positive',
+                             certificate='S005 exact Q(sqrt(3)) witness; proof/FIVE_VERTEX_ATLAS.md',
+                             rates=['1+sqrt(3)', '2+2sqrt(3)/3', '1+sqrt(3)', '2', '2'])
             if entry['status'] == 'unresolved' and n == 4 and nx.is_isomorphic(g, nx.path_graph(4)):
                 entry.update(status='proved-positive', certificate='P4 algebraic witness; proof/FOUNDATIONS.md')
             if entry['status'] == 'unresolved' and n == 5 and nx.is_isomorphic(g, nx.path_graph(5)):

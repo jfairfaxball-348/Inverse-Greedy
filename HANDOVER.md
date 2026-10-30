@@ -1,58 +1,46 @@
-# S004 handover — 2026-10-30
+# S005 handover — 2026-10-30
 
-## Sharpened P6 TV theorem
-IG-N3b is a stronger analytic separation: for all positive rates
-on P6, TV(Q,U) ≥ 2√(2/5)−6/5 ≈ 0.064911064 > 1/16 > 1/25.
-The core improvement is that E={14} and F={025,035} are
-disjoint, so their positive probability deficits ADD when
-lower-bounding TV. Cauchy-Schwarz reduces the lower bound to
-a one-dimensional piecewise quadratic with exact minimum
-2√(2/5)−6/5. Full written proof and sharpness qualification
-are in proof/P6_TV_SHARPENING.md. This sharpened inequality is
-not yet a Lean theorem; the previous 1/25 algebraic lemma is.
+## Breakthrough: connected n=5 is fully classified
 
-## New certified negative: IG-N4
-The connected six-vertex graph K1∨P5 (cone over P5) is not EGU.
-It is connected n=6 atlas index 68. The proof is a direct
-corollary of IG-P4 (join necessity) and IG-N2 (P5 strict minor).
-For any five path rates with sum A and universal vertex rate c,
-the cone output law has p({z})=c/(A+c) and p(I)=A/(A+c)*p_P5(I).
-The common factor on P5 output events is strictly positive and
-preserves the strict P5 probability minor. This is a mathematical
-proof for all positive rates, not numerical nonexistence evidence.
-See proof/CONE_P5_OBSTRUCTION.md.
+**IG-P5:** exactly 20 of the 21 connected unlabeled graphs on five
+vertices are EGU; P5 is the unique non-EGU instance. Using the
+previous disjoint-union theorem, P5 is also the **only non-EGU graph
+of any kind on at most five vertices**. The seven
+previously open n=5 atlas indices 1,4,5,6,9,11,15 all have exact,
+strictly positive uniformising rates. Six witnesses are integer
+vectors, and index 15 has rates in Q(√3); the latter's four
+probabilities are proved by explicit quadratic identities.
 
-## Partial atlas
-Connected n≤6: **143 graphs = 62 certified positive / 4 certified
-negative / 77 unresolved**. One more case closed than S003.
-No change to the 62 positive classifications. n5 still 13/1/7;
-n6 now 39/3/70. New classification appears in
-experiments/census.py and results/S004_ATLAS.md.
+Proof: proof/FIVE_VERTEX_ATLAS.md. Reproducible rates and exact
+recurrence + independent order-mass oracles:
+experiments/five_vertex_witnesses.py, tests/test_s005.py.
 
-## Formal finite law work
-New InverseGreedy/FiniteRace.lean defines normalisation
-`activeRate`, `firstChoice`, sequential `orderMass`,
-`greedyOutput`, `afterChoice`, and fuel-bounded
-`finiteRaceLaw`. It states and proves rate positivity,
-first-choice total mass one, and first-choice unfolding of the
-bounded output law. **Verify this module's CI status at the merged
-SHA before stating it is Lean-verified.**
+Updated n≤6 atlas: **143 = 69 proven positive, 4 proven negative,
+70 unresolved**. Every unresolved case is connected on six vertices.
+Historical S004 snapshot is unchanged. This is NOT a general
+characterisation of all EGU graphs.
 
-Important boundary: these objects are finite algebraic
-combinatorial models. No Lean theorem yet identifies them with
-independent continuous Exp clocks, or proves the P6/C6 named-event
-law identities from `greedyOutput`. The paper-level proofs
-remain valid; do not conflate formal gaps with mathematical gaps.
+## Lean progress and remaining gap
 
-## Regressions
-tests/test_s004.py verifies K1∨P5 at atlas index 68,
-all 729 rates from {1,2,3}^6 for the exact join factorisation
-and strict inherited P5 minor, and two weighted-permutation oracle
-comparisons. Full project Python tests and atlas run in GitHub CI.
+S005 added InverseGreedy/OrderMassBridge.lean, proving strict
+positivity of an individual finite priority-order mass and a
+first-choice atom, provided all rates are positive. The S004 algebraic
+finite race law remains. These local lemmas are not a normalisation
+over the permutation space, not the grouping-by-greedy-output theorem,
+and not a probability-law equivalence with independent Exp clocks.
+The required bridges remain the top S006 priority. The new module was verified in green CI #82 on commit 62916d4,
+covering the fully imported Lean library.
+
+## Verification
+
+The GitHub Actions Python exact job on S005 head 62916d4 passed,
+including the complete five-vertex witness tests and connected
+n≤6 partial atlas. CI #82 on code commit 62916d4 passed both jobs. Final PR CI
+must also be checked on the release head before merging.
 
 ## Next
-sessions/S005.md. Close the weighted-order → greedy-output
-recursion theorem in Lean, then P6 combinatorial events,
-independence and quantitative TV; tackle remaining n=5 cases
-with genuine exact certificates. Do not reclassify graphs using
-optimiser failure; no new novelty/priority assertion.
+
+sessions/S006.md: structural permutation decomposition, greedy
+terminal-law identity and continuous Exp clock theorem; extend
+exact certification among 70 remaining n=6 candidates.
+No novelty/priority certification. Equal-rate predecessor read-only.

@@ -53,10 +53,24 @@
       from output law; formal C6 pair event-law algebra.
 - [ ] Lean P5 strict minor; outstanding atlas and priority audit.
 
-## S005 — installed
-See sessions/S005.md. Concentrate on the *missing bridges*
-between the three representations: continuous exponential clocks,
-finite weighted permutations, and greedy output events.
+## S005 — executed 2026-10-30
+- [x] Exact positive witnesses close all seven remaining connected
+      five-vertex cases (six rational vectors and one Q(√3)).
+- [x] Complete n=5 classification: 20 EGU and only P5 non-EGU.
+- [x] Exact Fraction and Q(√3) recursion/permutation oracles verified
+      in Python CI #82 at commit 62916d4.
+- [x] Lean positivity of individual orderMass/firstChoice terms
+      compiled in CI #82 at commit 62916d4.
+- [ ] Sum-of-permutations normalisation in Lean.
+- [ ] Grouping ordered outcomes into finiteRaceLaw in Lean.
+- [ ] Full exponential-clock identification and P6/C6 event laws.
+- [ ] Remaining 70 connected six-vertex atlas certificates.
+- [ ] Independent novelty/priority certification.
+
+## S006 — installed
+See sessions/S006.md. Prioritise structural, machine-checked
+bridges between weighted permutations, greedy output law and
+independent exponential clocks, alongside the remaining 70 n=6 cases.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
