@@ -27,6 +27,10 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   graphs on at most five vertices, only P5 is non-EGU (by union
   closure). Seven new exact witnesses (six integer and one Q(√3))
   close all seven open instances.
+- **IG-P6 (S006):** six-vertex connected atlas index 1 (edges
+  01,12,14,15,23) is EGU with strictly positive integer rates
+  (3,6,4,5,3,3); all three MIS have probability 1/3 exactly.
+  An explicit positive rational one-parameter family also works.
 - **IG-N1:** C6 cannot be EGU: product of the three opposite-pair
   probabilities ≤1/729, while uniformity would require 1/125.
 - **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a
@@ -58,11 +62,11 @@ Optional NetworkX atlas enumeration:
     python experiments/census.py --max-n 6 --max-rate 4 --json
 
 The **143 connected unlabeled graphs through six vertices**
-currently have **69 proven positive**, **4 proven negative
-(P5, P6, C6 and K1∨P5)**, and **70 unresolved** instances. This is an
+currently have **70 proven positive**, **4 proven negative
+(P5, P6, C6 and K1∨P5)**, and **69 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
-prove impossibility. See results/S005_ATLAS.md.
+prove impossibility. See results/S006_ATLAS.md.
 
 Optional numerical only:
 
@@ -87,18 +91,22 @@ the all-720-orders Lean proof is
 still open, though the exhaustive Python check passed in S003. Check CLAIMS.md and the exact CI SHA
 for whether the imported module compiled.
 S005 formally proves positivity of individual finite order masses
-(CI #82 at commit 62916d4). This is
-not the sum-over-permutations or continuous-clock bridge.
+(CI #82 at commit 62916d4). S006 adds a structural Lean proof of
+**total head-choice tree mass = 1** for positive rates, conditional
+on successful build at the precise SHA (see CLAIMS.md); this is not yet
+the theorem equating the tree leaves with the original `orderMass`
+of permutations or their pushforward law.
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
 
 ## Navigation
-proof/FIVE_VERTEX_ATLAS.md and results/S005_ATLAS.md — full n=5 theorem;
+proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
+proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S006.md — installed next session;
+sessions/S007.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)

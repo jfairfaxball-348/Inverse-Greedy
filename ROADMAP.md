@@ -67,10 +67,23 @@
 - [ ] Remaining 70 connected six-vertex atlas certificates.
 - [ ] Independent novelty/priority certification.
 
-## S006 — installed
-See sessions/S006.md. Prioritise structural, machine-checked
-bridges between weighted permutations, greedy output law and
-independent exponential clocks, alongside the remaining 70 n=6 cases.
+## S006 — executed 2026-10-30
+- [x] Merged S005 PR #4 after green final-head CI #87.
+- [x] Found exact positive six-vertex atlas index 1 witness (3,6,4,5,3,3)
+      and a positive one-parameter rational family; validated by first-choice
+      recursion and all 720 priority permutations.
+- [x] Updated n≤6 partial atlas to 70 positive / 4 negative / 69 unresolved.
+- [x] Added structural Lean induction proving finite head-choice tree mass 1
+      at fuel ≥ cardinality (compile status governed by latest Actions SHA).
+- [ ] The leaf-by-leaf `orderMass` identity, grouping by `greedyOutput`,
+      continuous independent exponential-clock identification and complete
+      Lean P6 event laws are separate remaining obligations.
+- [ ] Remaining 69 six-vertex certificates and novelty review.
+
+## S007 — installed
+See sessions/S007.md. Prove leaf path equality and pushforward to the
+finite greedy law in Lean; develop additional exact six-vertex
+certificates without converting search failures into obstructions.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
