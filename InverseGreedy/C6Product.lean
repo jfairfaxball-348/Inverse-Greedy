@@ -1,17 +1,19 @@
 import InverseGreedy.CubicAMGM
 
 /-!
-# C6: DRAFT proof attempt — NOT YET BUILT OR VERIFIED
+# C6 sharp six-factor inequality (pure algebra; not the stochastic law)
 
-The positive-rate rational formula for each pair probability is proved
-informally using the exponential race, and its two-first-choice
-algebraic identity is formalised in ExponentialRace.lean.
-
-This file attempts to formalise the sharp product inequality and contradiction with
-the value 1/5. The proof timed out in CI and is intentionally not imported\nby InverseGreedy.lean. It does not yet define the stochastic greedy process.
+A staged proof avoids expanding the degree-18 cube and the six
+sum-denominators during nonlinear arithmetic. Source probability formula:
+proof/C6_OBSTRUCTION.md. The event-to-law connection is separate.
 -/
 
 namespace InverseGreedy
+
+private theorem triple_div_product (x y z u v w : ℝ) :
+    (x/u)*(y/v)*(z/w) = (x*y*z)/(u*v*w) := by
+  simp only [div_eq_mul_inv]
+  ring
 
 theorem c6_six_denominators_ge
     (a0 a1 a2 d0 d1 d2 : ℝ)
@@ -53,14 +55,15 @@ theorem c6_six_denominators_ge
   have hcubed : q^3 ≤ p^3 := by
     calc
       q^3 = l0*l1*l2*l3*l4*l5 := by
-        dsimp [q, l0, l1, l2, l3, l4, l5]
+        dsimp only [q,l0,l1,l2,l3,l4,l5]
         ring
       _ ≤ u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 := h012345
       _ = p^3 := by
-        change u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 = (u0*u1*u2*v0*v1*v2)^3
+        change u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 =
+          (u0*u1*u2*v0*v1*v2)^3
         simp only [mul_pow]
-  have hq : 0 ≤ q := by dsimp [q]; positivity
-  have hp : 0 ≤ p := by dsimp [p,u0,u1,u2,v0,v1,v2]; positivity
+  have hq : 0 ≤ q := by dsimp only [q]; positivity
+  have hp : 0 ≤ p := by dsimp only [p]; positivity
   have hqp : q ≤ p :=
     (pow_le_pow_iff_left₀ hq hp (by decide : (3:ℕ) ≠ 0)).mp hcubed
   exact hqp
@@ -72,24 +75,37 @@ theorem c6_opposite_pair_product_le
     (a0*d0/((a1+a2+d0)*(d1+d2+a0))) *
       (a1*d1/((a0+a2+d1)*(d0+d2+a1))) *
       (a2*d2/((a0+a1+d2)*(d0+d1+a2))) ≤ (1:ℝ)/729 := by
-  let den := (a1+a2+d0)*(a0+a2+d1)*(a0+a1+d2)*
-        (d1+d2+a0)*(d0+d2+a1)*(d0+d1+a2)
-  have hden : 0 < den := by
-    dsimp [den]
-    positivity
-  have hbound : 729*(a0*a1*a2*d0*d1*d2) ≤ den :=
-    c6_six_denominators_ge a0 a1 a2 d0 d1 d2 ha0 ha1 ha2 hd0 hd1 hd2
+  let u0 := a1+a2+d0
+  let u1 := a0+a2+d1
+  let u2 := a0+a1+d2
+  let v0 := d1+d2+a0
+  let v1 := d0+d2+a1
+  let v2 := d0+d1+a2
+  let num := a0*a1*a2*d0*d1*d2
+  let den := u0*u1*u2*v0*v1*v2
+  have hden : 0 < den := by dsimp only [den]; positivity
+  have hbound : 729*num ≤ den := by
+    have h := c6_six_denominators_ge a0 a1 a2 d0 d1 d2 ha0 ha1 ha2 hd0 hd1 hd2
+    change 729*num ≤ den at h
+    exact h
   have hfract :
-      (a0*d0/((a1+a2+d0)*(d1+d2+a0))) *
-        (a1*d1/((a0+a2+d1)*(d0+d2+a1))) *
-        (a2*d2/((a0+a1+d2)*(d0+d1+a2))) =
-        (a0*a1*a2*d0*d1*d2)/den := by
-    dsimp [den]
-    field_simp
-    <;> ring
+      (a0*d0/(u0*v0)) * (a1*d1/(u1*v1)) * (a2*d2/(u2*v2)) =
+        num/den := by
+    calc
+      _ = ((a0*d0)*(a1*d1)*(a2*d2))/((u0*v0)*(u1*v1)*(u2*v2)) :=
+        triple_div_product _ _ _ _ _ _
+      _ = num/den := by
+        dsimp only [num,den]
+        congr 1 <;> ac_rfl
+  change (a0*d0/(u0*v0)) * (a1*d1/(u1*v1)) *
+      (a2*d2/(u2*v2)) ≤ (1:ℝ)/729
   rw [hfract]
   apply (div_le_iff₀ hden).2
-  nlinarith [hbound]
+  have hdiv : num ≤ den / (729:ℝ) :=
+    (le_div_iff₀ (by norm_num : (0:ℝ) < 729)).2 (by simpa only [mul_comm] using hbound)
+  calc
+    num ≤ den / (729:ℝ) := hdiv
+    _ = ((1:ℝ)/729) * den := by ring
 
 theorem c6_opposite_pairs_not_all_one_fifth
     (a0 a1 a2 d0 d1 d2 : ℝ)

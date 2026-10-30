@@ -27,4 +27,9 @@ All rates are positive, so divide to obtain product_i p_i <= 3^(-6)=1/729. Equal
 
 If the complete terminal law were uniform, C6 has five MIS, forcing each opposite-pair probability p_i=1/5. Their product 1/125 is strictly greater than 1/729. Contradiction. QED.
 
-**Status:** complete informal proof, exact checked examples, **not** Lean formalised; originality not fully audited. Disjoint-component closure excludes any graph with a C6 component, not every induced C6.
+**Status (S003):** complete informal proof and exact checked examples. The
+six-factor **algebraic** inequality and final 1/5 contradiction were
+Lean-verified in CI run #35 at commit 181cda3; see
+InverseGreedy/C6Product.lean. The stochastic event-to-rational
+identification remains informal, not yet Lean formalised. Originality
+has not been fully audited. Disjoint-component closure excludes any graph with a C6 component, not every induced C6.
