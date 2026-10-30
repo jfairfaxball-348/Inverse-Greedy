@@ -35,8 +35,9 @@ tree mass, not literally the sum of the existing `orderMass` over
 `finiteRaceLaw`, and identifying the finite tree with independent
 continuous Exp clocks remain open. Never imply otherwise.
 
-**Lean CI verification is pending until the final PR SHA passes.**
-Do not label IG-L9 Lean-verified before that.
+**The imported Lean theorem passed** CI run #92 at commit `95314a7`.
+Final S006 release-head CI remains required before merge, even
+though the code theorem passed at that earlier SHA.
 
 ## Next
 `sessions/S007.md` targets a genuine leaf-by-leaf Lean permutation

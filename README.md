@@ -92,8 +92,7 @@ still open, though the exhaustive Python check passed in S003. Check CLAIMS.md a
 for whether the imported module compiled.
 S005 formally proves positivity of individual finite order masses
 (CI #82 at commit 62916d4). S006 adds a structural Lean proof of
-**total head-choice tree mass = 1** for positive rates, conditional
-on successful build at the precise SHA (see CLAIMS.md); this is not yet
+**total head-choice tree mass = 1** for positive rates, verified in green CI #92 at commit 95314a7 (see CLAIMS.md); this is not yet
 the theorem equating the tree leaves with the original `orderMass`
 of permutations or their pushforward law.
 **An equivalence to independent exponential clocks and the P6/C6
