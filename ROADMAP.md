@@ -80,10 +80,26 @@
       Lean P6 event laws are separate remaining obligations.
 - [ ] Remaining 69 six-vertex certificates and novelty review.
 
-## S007 — installed
-See sessions/S007.md. Prove leaf path equality and pushforward to the
-finite greedy law in Lean; develop additional exact six-vertex
-certificates without converting search failures into obstructions.
+## S007 — executed 2026-10-30
+- [x] Proved false-twin contraction theorem (informal): precise law
+      equivalence, MIS bijection and strict rate splitting in both directions.
+- [x] 19 additional connected six-vertex positive cases: 16 rational
+      and 3 Q(√3) lifted rate witnesses from S005, independently checked.
+- [x] 3 new connected six-vertex non-EGU cases: atlas indices 4,13,16,
+      which contract exactly to the established P5 obstruction.
+- [x] Atlas now 89 EGU / 7 non-EGU / 47 unresolved (143 connected n<=6).
+- [x] Introduced and imported Lean duplicate-free leaf-level
+      first-choice product = orderMass theorem (CI status to verify).
+- [ ] Explicit full permutation enumeration, normalisation as sum
+      over permutations, and pushforward to finiteRaceLaw in Lean.
+- [ ] Continuous exponential-clock Lean connection.
+- [ ] The remaining 47 six-vertex graph classifications.
+- [ ] Independent novelty or publication-priority audit.
+
+## S008 — installed
+See sessions/S008.md. Complete the finite-order/permutation-to-law Lean
+bridge and attack 47 unresolved six-vertex instances using exact
+structural or algebraic certificates.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
