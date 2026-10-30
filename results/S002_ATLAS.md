@@ -1,46 +1,34 @@
-# S002: Certified partial graph atlas (through six vertices)
+# S002 exact partial atlas: connected unlabeled graphs through six vertices
 
-**Scope:** Exhaustive enumeration of connected *unlabeled* graphs
-in NetworkX graph_atlas_g() at each order n=1,...,6. Each graph
-receives a checked certificate where available, otherwise a
-deliberate 'unresolved' label, never an impossibility inference.
+Reproduce (optional NetworkX):
+`python experiments/census.py --max-n 6 --max-rate 4`.
+Add `--json` to obtain each instance's edges, atlas index, outcome
+count and constructive witness/proof source. All reported positive
+rational witnesses were checked by exact Fraction recurrence.
 
-Command: `python experiments/census.py --max-n 6 --max-rate 4`
-(optional dependency: networkx). JSON including each graph edge list,
-atlas index, actual rational-rate vector and proof source is available
-with `--json`. Uses exact Fraction recursion; no floating point.
-
-| n | Connected graphs | Proved positive | Proved negative | Unresolved |
-|---:|---:|---:|---:|---:|
+| n | Connected | Proved EGU | Proved not EGU | Unresolved |
+|--:|--:|--:|--:|--:|
 | 1 | 1 | 1 | 0 | 0 |
 | 2 | 1 | 1 | 0 | 0 |
 | 3 | 2 | 2 | 0 | 0 |
 | 4 | 6 | 6 | 0 | 0 |
 | 5 | 21 | 13 | 1 | 7 |
 | 6 | 112 | 39 | 1 | 72 |
-| **Total** | **143** | **61** | **2** | **79** |
+| **Total** | **143** | **62** | **2** | **79** |
 
-Positive certificates are:
-- all cographs, by the constructive disjoint-union/join theorem;
-- additional exact rational witnesses searched on vectors
-  (r_0,...,r_(n-2),1), with r_i integer in [1,4];
-- P4 by the separately proved positive algebraic witness.
+Positive proof sources: all cographs by union/join construction;
+additional exact rational rates of the form
+(r0,...,r[n-2],1), with each other r_i ∈ {1,2,3,4};
+P4 via a written algebraic irrational witness.
 
-Negative certificates are only **P5 (atlas index 2 at n=5)**
-and **C6 (atlas index 18 at n=6)**. These indices refer to
-the *connected subset* of graph_atlas_g(), not global atlas IDs.
+Negative graph instances only: P5 (index **2** at n5,
+proof/P5_OBSTRUCTION.md), C6 (index **18** at n6,
+proof/C6_OBSTRUCTION.md). Indices are within the *connected subset*
+of NetworkX graph_atlas_g() for each n, not full global atlas indices.
 
-This is an exhaustive **enumeration**, NOT an exhaustive
-semialgebraic **classification**. The 79 unresolved instances
-may be positive or negative. Numerical least-squares failures,
-including the P6 lead, remain noncertifying.
-
-Independent internal checks: cograph witnesses have precisely
-the expected number of maximal independent sets and equal exact
-Fraction probabilities; P5 strict identity was tested at all
-243 rates from [1,3]^5. Additional independent permutation-oracle
-checks appear in tests/test_exact.py.
-
-The certificate search is bounded and intentionally incomplete.
-Exact algebraic witness detection beyond P4, or a fully general
-real-closed-field decision procedure, is future work.
+**This is an exhaustive graph enumeration, NOT a complete
+uniformisability classification.** All 79 unresolved graphs might
+be positive or negative. A failed bounded integer search or
+numerical least-squares fit is NOT a nonexistence proof.
+P6 remains a lead only. S003 will target exact algebraic and
+infeasibility certificates for further cases.
