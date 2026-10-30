@@ -31,6 +31,8 @@ class P6BottleneckTests(unittest.TestCase):
             self.assertEqual(law[18],u*v)
             self.assertLessEqual(law[37]+law[41],(1-u)*(1-v))
             self.assertEqual(sum(law.values()),1)
+            tv = sum((abs(x - Fraction(1,5)) for x in law.values()), Fraction(0))/2
+            self.assertGreaterEqual(tv, Fraction(1,25))
             # Independent priority-permutation oracle on selected cases.
         for values in ((1,)*6,(2,3,5,7,11,13)):
             self.assertEqual(law_by_recursion(g,values),
