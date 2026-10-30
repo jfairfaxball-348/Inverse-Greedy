@@ -31,6 +31,8 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   produce an exact two-event bottleneck. Its output law has total
   variation distance **at least 1/25** from uniform, for all positive rates.
 
+- **IG-N4 (S004):** the six-vertex cone over P5 (K1∨P5) is not EGU by the join theorem; it is atlas index 68.
+
 These are self-contained informal mathematical proofs. Lean verification
 and independent novelty certification must be distinguished; see
 CLAIMS.md. Proofs in proof/FOUNDATIONS.md,
@@ -51,11 +53,11 @@ Optional NetworkX atlas enumeration:
     python experiments/census.py --max-n 6 --max-rate 4 --json
 
 The **143 connected unlabeled graphs through six vertices**
-currently have **62 proven positive**, **3 proven negative
-(P5, P6 and C6)**, and **78 unresolved** instances. This is an
+currently have **62 proven positive**, **4 proven negative
+(P5, P6, C6 and K1∨P5)**, and **77 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
-prove impossibility. See results/S003_ATLAS.md.
+prove impossibility. See results/S004_ATLAS.md.
 
 Optional numerical only:
 
@@ -71,15 +73,23 @@ InverseGreedy/C6Product.lean **compiles the sharp six-factor bound**
 (CI run #35, commit 181cda3), and P6Bottleneck.lean compiles the
 P6 algebraic contradiction at the same SHA. Its quantitative TV
 lemma was also verified at SHA b4e6fdd (CI run #40).
-**The stochastic greedy law and event-to-rational formulas have NOT
-been formalised end-to-end in Lean.** Never report more than the
+S004 adds a finite weighted-selection/ordering model, greedy output map,
+first-choice normalisation and bounded output-law recurrence in
+InverseGreedy/FiniteRace.lean (CI run #67 at de1b562b passed).
+InverseGreedy/P6Orders.lean introduces explicit finite-order event
+predicates and worked examples (verified in CI #75 at 030fc3aa);
+the all-720-orders Lean proof is
+still open, though the exhaustive Python check passed in S003. Check CLAIMS.md and the exact CI SHA
+for whether the imported module compiled.
+**An equivalence to independent exponential clocks and the P6/C6
+symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
 
 ## Navigation
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S004.md — installed next session;
+sessions/S005.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
