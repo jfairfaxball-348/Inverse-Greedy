@@ -24,7 +24,7 @@ class S004Certificates(unittest.TestCase):
         graphs = [g for g in nx.graph_atlas_g()
                   if len(g) == 6 and nx.is_connected(g)]
         self.assertTrue(nx.is_isomorphic(graphs[68], cone))
-        rows = [r for r in enumerate_atlas(6, 4)
+        rows = [r for r in enumerate_atlas(6, 2)
                 if r['n'] == 6 and r['index'] == 68]
         self.assertEqual(len(rows), 1)
         self.assertEqual(rows[0]['status'], 'proved-negative')
