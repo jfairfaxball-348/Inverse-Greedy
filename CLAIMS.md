@@ -9,7 +9,7 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | IG-P2 | Disjoint union EGU iff each component EGU | proved-informal | proof/FOUNDATIONS.md |
 | IG-P3 | P4 EGU with positive algebraic rates | proved-informal | proof/FOUNDATIONS.md |
 | **IG-P4** | Join G∨H EGU iff both EGU; every finite cograph EGU with positive rational rates | **proved-informal; tested-exact for n≤6** | proof/JOIN_COGRAPHS.md; experiments/cograph.py |
-| **IG-P5** | All connected graphs n≤5 classified: n=5 20 EGU / P5 unique non-EGU; seven new rate witnesses | **proved-informal; tested-exact** | proof/FIVE_VERTEX_ATLAS.md; tests/test_s005.py; exact Q(√3) algebra |
+| **IG-P5** | All graphs on at most five vertices classified: only P5 non-EGU; connected n=5 has 20 EGU / 1 negative; seven new rate witnesses | **proved-informal; tested-exact** | proof/FIVE_VERTEX_ATLAS.md; tests/test_s005.py; exact Q(√3) algebra |
 | IG-N1 | C6 opposite-pair product ≤1/729; not EGU | proved-informal, tested-exact | proof/C6_OBSTRUCTION.md |
 | **IG-N2** | **P5 strict output minor p024*p13 > p03*p14; not EGU; smallest-order obstruction** | **proved-informal; exact tests on 243 rate vectors** | proof/P5_OBSTRUCTION.md |
 | **IG-N3b** | P6 TV separation ≥ 2√(2/5)−6/5 ≈ 0.064911, strictly stronger than 1/25 | **proved-informal, not Lean-verified** | proof/P6_TV_SHARPENING.md; disjoint-event deficit argument |

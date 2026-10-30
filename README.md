@@ -23,8 +23,10 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   Consequently **every finite cograph** (P4-free graph) has a
   constructive positive **rational-rate** witness.
 - **IG-P5 (S005):** complete connected n=5 classification: 20 EGU,
-  the sole non-EGU graph is P5. Seven new exact witnesses (six
-  integer and one Q(√3)) close all seven open instances.
+  the sole non-EGU graph is P5. Consequently, among *all* simple
+  graphs on at most five vertices, only P5 is non-EGU (by union
+  closure). Seven new exact witnesses (six integer and one Q(√3))
+  close all seven open instances.
 - **IG-N1:** C6 cannot be EGU: product of the three opposite-pair
   probabilities ≤1/729, while uniformity would require 1/125.
 - **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a

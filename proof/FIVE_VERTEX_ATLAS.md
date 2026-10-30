@@ -85,6 +85,17 @@ The seven witnesses above are for precisely the seven distinct
 remaining atlas indices. Thus 13+7=20 positive and 1 negative,
 with no unresolved five-vertex case.
 
+## Corollary: all graphs on at most five vertices
+
+Every finite simple graph with at most five vertices is EGU,
+**except the five-vertex path P5 itself**. For a disconnected graph
+on at most five vertices, each connected component has at most
+four vertices and is EGU by the existing complete order-four
+classification. Closure under disjoint union (IG-P2) therefore
+constructs uniformising rates for the full disconnected graph.
+For connected graphs use the preceding theorem. The exception
+P5 is ruled out by the strict-minor obstruction IG-N2.
+
 This does not extend a negative statement from an *induced* P5
 to arbitrary six-vertex supergraphs. It does not classify any
 of the 70 remaining connected six-vertex cases.

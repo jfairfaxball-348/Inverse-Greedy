@@ -3,7 +3,9 @@
 ## Breakthrough: connected n=5 is fully classified
 
 **IG-P5:** exactly 20 of the 21 connected unlabeled graphs on five
-vertices are EGU; P5 is the unique non-EGU instance. The seven
+vertices are EGU; P5 is the unique non-EGU instance. Using the
+previous disjoint-union theorem, P5 is also the **only non-EGU graph
+of any kind on at most five vertices**. The seven
 previously open n=5 atlas indices 1,4,5,6,9,11,15 all have exact,
 strictly positive uniformising rates. Six witnesses are integer
 vectors, and index 15 has rates in Q(√3); the latter's four
