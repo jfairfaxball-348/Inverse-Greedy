@@ -27,12 +27,15 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
 - **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a
   strict minor p024*p13 > p03*p14. Since all graphs on ≤4 vertices
   are EGU, P5 is a **smallest-order obstruction**.
+- **IG-N3 (S003):** P6 cannot be EGU: independent triple-race events
+  produce an exact two-event bottleneck. Its output law has total
+  variation distance **at least 1/25** from uniform, for all positive rates.
 
 These are self-contained informal mathematical proofs. Lean verification
 and independent novelty certification must be distinguished; see
 CLAIMS.md. Proofs in proof/FOUNDATIONS.md,
 proof/JOIN_COGRAPHS.md, proof/P5_OBSTRUCTION.md,
-proof/C6_OBSTRUCTION.md.
+proof/C6_OBSTRUCTION.md, proof/P6_OBSTRUCTION.md.
 
 ## Run experiments
 
@@ -48,11 +51,11 @@ Optional NetworkX atlas enumeration:
     python experiments/census.py --max-n 6 --max-rate 4 --json
 
 The **143 connected unlabeled graphs through six vertices**
-currently have **62 proven positive**, **2 proven negative
-(P5 and C6)**, and **79 unresolved** instances. This is an
+currently have **62 proven positive**, **3 proven negative
+(P5, P6 and C6)**, and **78 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
-prove impossibility. See results/S002_ATLAS.md.
+prove impossibility. See results/S003_ATLAS.md.
 
 Optional numerical only:
 
@@ -64,16 +67,19 @@ Lean 4/Mathlib are pinned. Compile using `lake exe cache get` and
 `lake build` or inspect the latest GitHub Actions run.
 InverseGreedy/ExponentialRace.lean formalises one pair formula identity;
 InverseGreedy/CubicAMGM.lean formalises the cubic SOS inequality.
-InverseGreedy/C6Product.lean targets the six-factor algebraic bound.
-**The actual stochastic greedy law and event-to-rational formula are
-not yet formalised end-to-end in Lean.** Never report more than the
+InverseGreedy/C6Product.lean **compiles the sharp six-factor bound**
+(CI run #35, commit 181cda3), and P6Bottleneck.lean compiles the
+P6 algebraic contradiction at the same SHA. Its quantitative TV
+lemma is a later addition subject to its own CI verification.
+**The stochastic greedy law and event-to-rational formulas have NOT
+been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
 
 ## Navigation
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S003.md — installed next session;
+sessions/S004.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
