@@ -13,6 +13,11 @@ from exact import graph, law_by_recursion, maximal_independent_sets, is_uniform
 
 def enumerate_atlas(max_n=6, max_rate=4):
     import networkx as nx
+    # S004: the six-vertex cone over P5 is a rigorous negative by
+    # join necessity and the already proved strict P5 obstruction.
+    cone_p5 = nx.path_graph(5)
+    cone_p5.add_node(5)
+    cone_p5.add_edges_from((5, i) for i in range(5))
     for n in range(1, max_n + 1):
         graphs = [g for g in nx.graph_atlas_g()
                   if len(g) == n and nx.is_connected(g)]
@@ -46,6 +51,9 @@ def enumerate_atlas(max_n=6, max_rate=4):
                 entry.update(status='proved-negative', certificate='P6 double-triple race bottleneck; proof/P6_OBSTRUCTION.md')
             if entry['status'] == 'unresolved' and n == 6 and nx.is_isomorphic(g, nx.cycle_graph(6)):
                 entry.update(status='proved-negative', certificate='C6 AM-GM; proof/C6_OBSTRUCTION.md')
+            if entry['status'] == 'unresolved' and n == 6 and nx.is_isomorphic(g, cone_p5):
+                entry.update(status='proved-negative',
+                             certificate='K1 join P5; join necessity + P5 strict minor; proof/CONE_P5_OBSTRUCTION.md')
             yield entry
 
 
