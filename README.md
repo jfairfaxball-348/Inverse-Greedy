@@ -105,7 +105,7 @@ the theorem equating the tree leaves with the original `orderMass`
 of permutations or their pushforward law.
 S007 adds OrderLeafBridge.lean, identifying each duplicate-free
 priority leaf's product of first-choice probabilities with
-`orderMass` (pending exact-head CI confirmation); the full
+`orderMass` (Lean-verified at SHA 543cfe9, green CI run 41131451454); the full
 permutation summation and greedy pushforward are still open.
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the

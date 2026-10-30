@@ -34,7 +34,7 @@ product of its successive head/tail sets equals its `orderMass`.
 This is a single-leaf identity, NOT a proof of the bijection from
 tree leaves to `List.permutations`, full-permutation sum = 1,
 pushforward to `finiteRaceLaw`, or a continuous exponential-clock
-equivalence. CI status is tracked on exact head and CLAIMS.md.
+equivalence. Imported Lean leaf bridge and full Python suite were both green in Actions run 41131451454 at exact SHA 543cfe9. This is not an end-to-end continuous-clock theorem. Final release-head CI and PR merge status must still be checked.
 
 ## Next
 `sessions/S008.md` targets the missing finite permutation-sum and

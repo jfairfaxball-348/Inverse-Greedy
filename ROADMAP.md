@@ -89,7 +89,7 @@
       which contract exactly to the established P5 obstruction.
 - [x] Atlas now 89 EGU / 7 non-EGU / 47 unresolved (143 connected n<=6).
 - [x] Introduced and imported Lean duplicate-free leaf-level
-      first-choice product = orderMass theorem (CI status to verify).
+      first-choice product = orderMass theorem (green CI run 41131451454 at 543cfe9).
 - [ ] Explicit full permutation enumeration, normalisation as sum
       over permutations, and pushforward to finiteRaceLaw in Lean.
 - [ ] Continuous exponential-clock Lean connection.
