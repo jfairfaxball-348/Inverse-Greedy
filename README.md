@@ -77,7 +77,8 @@ S004 adds a finite weighted-selection/ordering model, greedy output map,
 first-choice normalisation and bounded output-law recurrence in
 InverseGreedy/FiniteRace.lean (CI run #67 at de1b562b passed).
 InverseGreedy/P6Orders.lean introduces explicit finite-order event
-predicates and worked examples; the all-720-orders Lean proof is
+predicates and worked examples (verified in CI #75 at 030fc3aa);
+the all-720-orders Lean proof is
 still open, though the exhaustive Python check passed in S003. Check CLAIMS.md and the exact CI SHA
 for whether the imported module compiled.
 **An equivalence to independent exponential clocks and the P6/C6

@@ -19,7 +19,7 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | IG-L4 | P6 bottleneck algebraic contradiction | **Lean-verified** at commit 181cda3, CI run #35 | InverseGreedy/P6Bottleneck.lean |
 | IG-L5 | P6 algebraic quantitative 1/25 gap (conditional on two race-event bounds) | **Lean-verified** at commit b4e6fdd, CI run #40 | InverseGreedy/P6Bottleneck.lean |
 | IG-L6 | Finite weighted choice and order-mass definitions; first-choice normalisation; bounded greedy output recurrence | **Lean-verified** at de1b562b, run #67; does not assert exponential-clock equivalence | InverseGreedy/FiniteRace.lean |
-| IG-L7 | P6 neighbour model, combinatorial event flags and worked-order examples | **S004 imported Lean, CI at final PR head to confirm**; all-720 event theorem remains open | InverseGreedy/P6Orders.lean; tests/test_s003.py |
+| IG-L7 | P6 neighbour model, combinatorial event flags and worked-order examples | **Lean-verified** CI run #75 at 030fc3aa (worked examples only); all-720 event theorem remains open | InverseGreedy/P6Orders.lean; tests/test_s003.py |
 | IG-A3 | Exact partial connected graph atlas n≤6: 143 total, 62 positive, 3 negative, 78 unresolved | partial finite certificates, not complete classification; Python CI run #32 | results/S003_ATLAS.md |
 | **IG-A4** | Revised connected n≤6 atlas: 143 total, 62 positive, 4 negative, 77 unresolved | finite partial certificates, not complete classification | results/S004_ATLAS.md |
 | IG-O1 | Characterise all EGU graphs | open | ROADMAP.md |
