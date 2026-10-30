@@ -9,7 +9,7 @@ Status definitions: **proved-informal** = self-contained written proof, not form
 | IG-P2 | Disjoint-union factorisation and EGU iff components EGU | proved-informal, tested-exact on example | proof/FOUNDATIONS.md |
 | IG-P3 | P4 uniformisable with positive algebraic rates | proved-informal | proof/FOUNDATIONS.md |
 | IG-N1 | C6 p1*p2*p3 <= 1/729 and is not EGU | proved-informal; tested-exact examples; Lean-target | proof/C6_OBSTRUCTION.md |
-| IG-L1 | Lean algebraic C6 pair identity | source drafted; CI verification pending | InverseGreedy/ExponentialRace.lean |
+| IG-L1 | Lean algebraic C6 pair identity | Lean-verified algebraic identity (not full C6 theorem); GitHub Actions run #2 on a915a8e | InverseGreedy/ExponentialRace.lean |
 | IG-O1 | Structural classification of EGU graphs | open | ROADMAP.md |
 | IG-O2 | Certified small graph feasibility atlas | open | ROADMAP.md |
 | IG-O3 | Full Lean formalisation of C6 obstruction | open | ROADMAP.md |
