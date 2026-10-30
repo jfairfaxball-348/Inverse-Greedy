@@ -68,3 +68,13 @@ These are close process-model precedents. The inspected parts did
 proving novelty for one. No worldwide novelty/priority certificate
 is claimed. A direct bibliography and forward-citation audit before
 a manuscript submission remains necessary.
+
+## S004 scope of the new corollaries
+
+The cone-over-P5 obstruction IG-N4 is a direct application of the
+programme's S002 join criterion and P5 obstruction; it is not claimed
+as an independent classification principle. The sharpened P6
+TV inequality IG-N3b follows from combining the same two disjoint
+greedy-event inequalities; its independent literature novelty has
+not been established. These are theorem statements within the
+current programme, not priority certificates.

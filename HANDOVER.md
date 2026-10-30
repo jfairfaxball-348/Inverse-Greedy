@@ -1,5 +1,16 @@
 # S004 handover — 2026-10-30
 
+## Sharpened P6 TV theorem
+IG-N3b is a stronger analytic separation: for all positive rates
+on P6, TV(Q,U) ≥ 2√(2/5)−6/5 ≈ 0.064911064 > 1/16 > 1/25.
+The core improvement is that E={14} and F={025,035} are
+disjoint, so their positive probability deficits ADD when
+lower-bounding TV. Cauchy-Schwarz reduces the lower bound to
+a one-dimensional piecewise quadratic with exact minimum
+2√(2/5)−6/5. Full written proof and sharpness qualification
+are in proof/P6_TV_SHARPENING.md. This sharpened inequality is
+not yet a Lean theorem; the previous 1/25 algebraic lemma is.
+
 ## New certified negative: IG-N4
 The connected six-vertex graph K1∨P5 (cone over P5) is not EGU.
 It is connected n=6 atlas index 68. The proof is a direct

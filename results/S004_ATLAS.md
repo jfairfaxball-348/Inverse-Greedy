@@ -18,7 +18,8 @@ classification is intentionally incomplete.
 Certified negative cases (indices within connected graphs at each order):
 
 - n=5 index 2: P5, strict output-probability minor (IG-N2)
-- n=6 index 5: P6, disjoint triple races, TV ≥ 1/25 (IG-N3)
+- n=6 index 5: P6, disjoint triple races, TV ≥ 2√(2/5)−6/5
+  (strengthened in S004; older certified 1/25 bound remains valid) (IG-N3)
 - n=6 index 18: C6, three opposite-pair product inequality (IG-N1)
 - **n=6 index 68: cone K1∨P5**, join necessity plus IG-N2 (IG-N4)
 

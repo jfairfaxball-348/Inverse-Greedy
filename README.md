@@ -75,7 +75,10 @@ P6 algebraic contradiction at the same SHA. Its quantitative TV
 lemma was also verified at SHA b4e6fdd (CI run #40).
 S004 adds a finite weighted-selection/ordering model, greedy output map,
 first-choice normalisation and bounded output-law recurrence in
-InverseGreedy/FiniteRace.lean. Check CLAIMS.md and the exact CI SHA
+InverseGreedy/FiniteRace.lean (CI run #67 at de1b562b passed).
+InverseGreedy/P6Orders.lean introduces explicit finite-order event
+predicates and worked examples; the all-720-orders Lean proof is
+still open, though the exhaustive Python check passed in S003. Check CLAIMS.md and the exact CI SHA
 for whether the imported module compiled.
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the

@@ -34,6 +34,8 @@
 - [ ] Remaining 78 atlas cases and independent novelty audit.
 
 ## S004 — executed 2026-10-30
+- [x] Strengthened P6 universal TV gap from 1/25 to
+      2√(2/5)−6/5≈0.064911 using two disjoint-event deficits.
 - [x] Classified six-vertex cone over P5, atlas index 68, as non-EGU
       by join necessity and the P5 strict output probability minor.
 - [x] Added exact join identity tests on 729 rate vectors plus
@@ -41,7 +43,10 @@
 - [x] Updated connected atlas to 62 positive / 4 negative / 77 open.
 - [x] Introduced a finite weighted-order/greedy-output model and
       first-choice normalisation law in Lean; imported into library,
-      with build status to be checked at release SHA.
+      with verified core build in CI run #67 (de1b562b).
+- [x] Added explicit P6 finite-order event predicates and Lean
+      worked-order examples (final PR CI to verify); complete 720-order
+      proof is NOT yet Lean checked; Python exhaustive oracle is.
 - [ ] Formal equivalence of order-mass law and bounded output-law
       recursion, plus independent exponential clocks.
 - [ ] Formal P6 event equivalence, product independence and TV gap
