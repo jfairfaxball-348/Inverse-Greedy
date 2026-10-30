@@ -15,7 +15,7 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | IG-L2 | Cubic AM-GM sum-of-squares lemma | Lean-verified S002 on PR run #9, SHA 59b05ba | InverseGreedy/CubicAMGM.lean |
 | IG-L3 | C6 six-denominator inequality and 1/5 contradiction (pure algebra, not race semantics) | **Lean-verified** at commit 181cda3, GitHub CI run #35 | InverseGreedy/C6Product.lean |
 | IG-L4 | P6 bottleneck algebraic contradiction | **Lean-verified** at commit 181cda3, CI run #35 | InverseGreedy/P6Bottleneck.lean |
-| IG-L5 | P6 algebraic quantitative 1/25 gap (conditional on two race-event bounds) | **CI pending** after new commit | InverseGreedy/P6Bottleneck.lean |
+| IG-L5 | P6 algebraic quantitative 1/25 gap (conditional on two race-event bounds) | **Lean-verified** at commit b4e6fdd, CI run #40 | InverseGreedy/P6Bottleneck.lean |
 | IG-A3 | Exact partial connected graph atlas n≤6: 143 total, 62 positive, 3 negative, 78 unresolved | partial finite certificates, not complete classification; Python CI run #32 | results/S003_ATLAS.md |
 | IG-O1 | Characterise all EGU graphs | open | ROADMAP.md |
 | IG-O2 | Certify 78 unresolved atlas cases | open | ROADMAP.md |
