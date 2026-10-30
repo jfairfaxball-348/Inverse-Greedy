@@ -1,12 +1,19 @@
 # S007 handover — 2026-10-30
 
-## Repository
-Base main SHA before session: `9903b669e939d9afa527be81b748a2f3308a13d4`,
-with green Actions run 41127034157. S006 PR #5 was already merged.
-S007 changes are on branch `research/s007-false-twin-classification`.
-**Verify the final PR head and exact-head CI before declaring this merge
-complete.** Read current GitHub run/PR status (rather than relying on
-historical run numbers).
+## Repository and release
+
+**S007 PR #6 merged successfully** into main on 2026-10-30.
+The final PR head was `4a1ad51d8bb0c249f0a0908d7e522eddc9dfe721`,
+and BOTH Python exact and imported Lean checks were green on that
+exact SHA:
+- GitHub Actions push run **41131744594**: success.
+- GitHub Actions pull-request run **41131753042**: success.
+
+The squash merge commit is
+`4749516f6ac6ac4290e08cc86ca34b91b282708c`.
+The earlier imported leaf theorem also passed at `543cfe9`
+in run 41131451454. The installed next execution session is
+`sessions/S008.md`; there is no pending S007 PR to merge.
 
 ## Mathematical result
 **IG-P7 — false-twin invariance:** for distinct nonadjacent vertices
