@@ -2,47 +2,80 @@
 
 **Exact Uniformity and Controllability of Random Greedy Independent Sets**
 
-Author: John Fairfax-Ball. Started 2026-10-30 (S001).
+Author: John Fairfax-Ball. Programme started 2026-10-30.
 
-## Question
+## Research question
+For a finite simple graph G assign independent Exp(λ_v) arrival clocks
+to vertices, with **strictly positive rates**. Greedily accept each
+vertex when none of its already accepted neighbours exists. The output
+is a maximal independent set (MIS). Which graphs permit rates making
+the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
-Given a finite simple graph G, assign independent Exp(lambda_v) arrival times with strictly positive rates. Scan vertices in arrival order and accept v iff it has no already accepted neighbour. The output is a maximal independent set I. Which graphs G admit rates making P_{G,lambda}(I) uniform over *all* maximal independent sets?
+## Current mathematical results
+- **IG-R1:** exact first-choice weighted recurrence of the terminal law.
+- **IG-P1:** complete multipartite graphs are EGU; a star's centre gets
+  the sum of the leaf rates.
+- **IG-P2:** disjoint union is EGU iff every component is EGU.
+- **IG-P3:** P4 is EGU with symmetric positive algebraic rate ratio
+  (1+√3)/2.
+- **IG-P4 (S002):** join G∨H is EGU iff both factors are EGU.
+  Rescaling factor totals by their MIS counts gives uniformity.
+  Consequently **every finite cograph** (P4-free graph) has a
+  constructive positive **rational-rate** witness.
+- **IG-N1:** C6 cannot be EGU: product of the three opposite-pair
+  probabilities ≤1/729, while uniformity would require 1/125.
+- **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a
+  strict minor p024*p13 > p03*p14. Since all graphs on ≤4 vertices
+  are EGU, P5 is a **smallest-order obstruction**.
 
-## First results
+These are self-contained informal mathematical proofs. Lean verification
+and independent novelty certification must be distinguished; see
+CLAIMS.md. Proofs in proof/FOUNDATIONS.md,
+proof/JOIN_COGRAPHS.md, proof/P5_OBSTRUCTION.md,
+proof/C6_OBSTRUCTION.md.
 
-- IG-R1 (proved): P_G(I) = sum_{v in I} lambda_v/Lambda(V) * P_{G-N[v]}(I-v), restricting rates to the residual graph and P_empty(empty)=1.
-- IG-P1 (proved): Every complete multipartite graph is uniformisable: choose equal **total** arrival rate in each part. A star K(1,m) is uniformised by giving each leaf rate 1 and its centre rate m.
-- IG-P2 (proved): A disjoint union is uniformisable if and only if each component is. Probabilities factor over components.
-- IG-P3 (proved): P4 is uniformised by rates (x,y,y,x) where x/y=(1+sqrt(3))/2.
-- IG-N1 (proved informally): C6 is **not** uniformisable for any strictly positive rates. The product of its three opposite-pair probabilities is at most 1/729; uniformity would force product 1/125. See proof/C6_OBSTRUCTION.md.
+## Run experiments
 
-Proved = self-contained written mathematical argument, **not** novel-priority certification or Lean verification. The C6 theorem is not yet Lean formalised. Equal-rate and variable-rate models must never be confused.
-
-## Run
-
-Python standard library only for exact Fraction arithmetic:
+Standard-library-only exact rational arithmetic:
 
     python -m unittest discover -s tests -v
     python experiments/exact.py
 
-Optional numerical exploration (networkx/numpy/scipy required):
+Optional NetworkX atlas enumeration:
 
+    python -m pip install 'networkx>=3.4,<4'
+    python experiments/census.py --max-n 6 --max-rate 4
+    python experiments/census.py --max-n 6 --max-rate 4 --json
+
+The **143 connected unlabeled graphs through six vertices**
+currently have **62 proven positive**, **2 proven negative
+(P5 and C6)**, and **79 unresolved** instances. This is an
+exhaustive enumeration but NOT an exhaustive classification:
+a failed finite rate search or numerical optimisation does not
+prove impossibility. See results/S002_ATLAS.md.
+
+Optional numerical only:
+
+    python -m pip install scipy numpy networkx
     python experiments/scan_small.py --max-n 6 --starts 4
 
-Optimizer failures are NOT proofs of nonexistence. Lean 4 and Mathlib are pinned to v4.35.0-rc3; compile with lake update, lake exe cache get, lake build. GitHub Actions status must be checked before claiming Lean success.
+## Lean
+Lean 4/Mathlib are pinned. Compile using `lake exe cache get` and
+`lake build` or inspect the latest GitHub Actions run.
+InverseGreedy/ExponentialRace.lean formalises one pair formula identity;
+InverseGreedy/CubicAMGM.lean formalises the cubic SOS inequality.
+InverseGreedy/C6Product.lean targets the six-factor algebraic bound.
+**The actual stochastic greedy law and event-to-rational formula are
+not yet formalised end-to-end in Lean.** Never report more than the
+specific build SHA proves.
 
 ## Navigation
+CLAIMS.md — rigorous status ledger;
+AGENTS.md — execution and honesty rules;
+HANDOVER.md and ROADMAP.md — progress/next work;
+sessions/S003.md — installed next session;
+PRIOR_ART.md — preliminary literature, not priority certificate.
 
-PROJECT_CHARTER.md — definitions and scope.
-proof/FOUNDATIONS.md — derivations and positive constructions.
-proof/C6_OBSTRUCTION.md — sharp AM-GM certificate.
-CLAIMS.md — statuses and provenance.
-PRIOR_ART.md — initial related literature, not a novelty audit.
-ROADMAP.md, HANDOVER.md, sessions/S002.md — milestones and next task.
-AGENTS.md — execution rules.
-
-## Relationship to predecessor
-
-The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees) project (arXiv:2610.02276) proves that **equal-rate** greedy sampling is uniform on a nonempty tree only for K1 and K2. Non-equal exponential rates here change the question. The prior repository is read-only.
-
-No licence has yet been chosen for this new repository.
+The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
+(arXiv:2610.02276) is the **equal-rate** predecessor, read-only.
+No Inverse Greedy arXiv publication or Palomar registration is claimed.

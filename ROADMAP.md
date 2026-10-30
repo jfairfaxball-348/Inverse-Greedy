@@ -1,28 +1,31 @@
-# Roadmap
+# Research roadmap — Inverse Greedy
 
-## S001 — 2026-10-30
+## S001 — completed 2026-10-30
+- [x] Weighted first-choice recurrence, disjoint-union factorisation.
+- [x] Multipartite/star, P4 constructions; C6 written obstruction.
+- [x] Fraction engine, independent weighted-permutation oracle.
+- [x] Lean C6 algebraic identity and passing initial GitHub Actions.
 
-[x] Inspect earlier equal-rate tree programme and new empty repository.
-[x] Define positive independent exponential-clock model.
-[x] Exact first-choice recurrence and component factorisation.
-[x] Complete multipartite and P4 positive constructions.
-[x] C6 sharp AM-GM product obstruction.
-[x] Standard-library Fraction exact engine, independent permutation oracle, tests.
-[x] Repo charter, claims, bibliography, agent rules, next-session prompt, CI definition.
-[x] Initial Lean/Mathlib and Python CI passed: GitHub Actions #2, commit a915a8ecd26e3806edd50a1ace6260762a628b7c. Full C6 Lean proof is still open.
-[ ] Full novelty/priority audit, later stage.
+## S002 — 2026-10-30
+- [x] Join equivalence EGU(G∨H) iff EGU(G) and EGU(H).
+- [x] Explicit rational uniformisation of every finite cograph.
+- [x] Strict P5 probability minor: P5 smallest-order non-EGU graph.
+- [x] Enumerate all 143 connected unlabeled graphs n≤6;
+      62 positive, 2 negative, **79 unresolved**.
+- [x] Exact Python tests on 243 P5 rate vectors and connected cographs n≤6.
+- [x] Cubic AM-GM SOS lemma verified in Lean CI #9 (59b05ba).
+- [ ] C6 six-factor and product inequality Lean formalisation:
+      draft attempted, but elaboration timed out. Kept unimported
+      to preserve a passing project build; S003 repair task.
+- [ ] Full stochastic law/event-to-rational proof in Lean.
+- [ ] Classify 79 remaining graph instances with exact certificates.
+- [ ] Independent literature/priority certification.
 
-## S002 — first classification campaign
+## S003 — installed
+See sessions/S003.md. Make C6Product.lean compile, connect
+exponential race semantics to output laws, investigate P6 via exact
+certificates (not optimizer failure), and reduce atlas unknowns.
 
-- Run/fix Lean and Python CI.
-- Complete connected unlabeled graphs through six vertices, with exact positive and negative certificates rather than optimizer failures.
-- Examine P6 as a candidate obstruction, **not** an established result.
-- Generalise C6 event-product inequalities.
-- Formalise C6 pair probability and then sharp product AM-GM in Lean.
-- Deepen novelty audit; update proven-vs-open ledger.
-
-## S003+ — provisional
-
-Characterise paths, cycles and graph operations, then infinite controllable and noncontrollable classes. Seek a substantial structural classification or exact decidability theorem. Formalise theorem package and independently audit literature before a manuscript.
-
-**Final boss:** classify all finite graphs G for which independent positive exponential vertex clocks can make the greedy terminal maximal independent-set distribution uniform; potentially characterise all attainable output distributions.
+**Final boss:** classify finite graphs with strictly positive
+exponential vertex priorities yielding uniform greedy terminal
+maximal independent sets, and characterise the attainable output laws.
