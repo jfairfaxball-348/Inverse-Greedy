@@ -91,3 +91,16 @@ optimal**. It follows from the two event certificates alone and is
 independent of all numerical searches. The algebraic bottleneck and
 its quantitative form should be distinguished from a full Lean
 formalisation of the stochastic output distribution.
+
+## S004 strengthening
+
+The two named output events E={14} and F={025,035} are disjoint.
+Combining their *positive deficits* (rather than bounding each
+separately) gives the sharper exact all-rate bound
+
+    ||Q-U||_TV ≥ 2 sqrt(2/5) - 6/5 ≈ 0.064911064 > 1/16.
+
+Complete proof, endpoint minimisation, and a sharpness qualification
+for the two-event method: `proof/P6_TV_SHARPENING.md`.
+The older 1/25 theorem and its Lean algebraic certificate remain
+correct; the sharper bound is not yet Lean-formalised.
