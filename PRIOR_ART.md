@@ -1,11 +1,54 @@
-# Initial literature and novelty boundary — S001
+# S002 preliminary literature and priority audit
 
-This is **not** a full theorem-specific novelty certification.
+**Not a complete theorem-specific novelty certification.** Exact
+proofs and Lean checks do not prove that a result is new.
 
-1. J. Fairfax-Ball, Greedy Uniformity on Trees: Exact Obstruction and Near-Uniform Spiders, arXiv:2610.02276 (2026), https://arxiv.org/abs/2610.02276 — equal-rate random-permutation tree model, unlike vertex-tuned exponential rates here.
-2. M. Krivelevich, T. Meszaros, P. Michaeli, C. Shikhelman, Greedy maximal independent sets via local limits, Random Structures & Algorithms 64 (2024), 986-1015, https://doi.org/10.1002/rsa.21200 — standard greedy MIS/law and density background.
-3. I. Kryven, R. Versendaal, M. de Vries, Unified framework for asymptotically uniform iterative construction of generalised random graphs with local constraints, arXiv:2608.07239 (2026), https://arxiv.org/abs/2608.07239 — exact uniformity sufficient conditions and IMIS background; review the actual scope carefully.
-4. N. Pippenger, Random Sequential Adsorption on Graphs, SIAM J. Discrete Math. 2 (1989), 393-401, https://doi.org/10.1137/0402034 — standard RSA background.
-5. M. Gadouleau, D. C. Kutner, Generalising the maximum independent set algorithm via Boolean networks, Information and Computation 303 (2025), 105266, https://doi.org/10.1016/j.ic.2025.105266 — greedy-order reachability background.
+Search themes: random-priority greedy MIS output law; exponential
+race weighted priorities; uniform maximal independent-set sampling;
+random sequential adsorption; cograph joins and independent sets;
+inverse distributions/semialgebraic rate feasibility.
 
-S002 audit search terms: independently exponentially weighted vertex clocks, random-priority greedy MIS inverse distribution, terminal MIS law, controllability, C6 probability inequalities, semialgebraic existence. A proof alone does not establish originality or priority.
+1. J. Fairfax-Ball, *Greedy Uniformity on Trees: Exact Obstruction and
+   Near-Uniform Spiders*, arXiv:2610.02276 (2026),
+   https://arxiv.org/abs/2610.02276 — **equal** arrival rates
+   on trees, unlike tunable rates here.
+2. M. Krivelevich, T. Mészáros, P. Michaeli and C. Shikhelman,
+   *Greedy maximal independent sets via local limits*,
+   Random Structures & Algorithms (2024),
+   https://doi.org/10.1002/rsa.21200 — random greedy MIS and
+   asymptotic independence ratios, predominantly uniform priorities.
+3. N. Pippenger, *Random Sequential Adsorption on Graphs*,
+   SIAM J. Discrete Math. 2 (1989), 393–401,
+   https://doi.org/10.1137/0402034 — graph RSA background.
+4. P. Bennett and T. Bohman, *A note on the random greedy independent
+   set algorithm*, Random Structures & Algorithms 49 (2016),
+   https://doi.org/10.1002/rsa.20667 — random-greedy
+   hypergraph independence; not evidently this inverse exact law.
+5. D. Gamarnik, D. Goldberg and T. Weber, *PTAS for maximum
+   weight independent set problem with random weights in
+   bounded degree graphs*, SODA (2010),
+   https://doi.org/10.1137/1.9781611973075.23 —
+   exponentially random **objective weights** for a
+   **maximum-weight** set: a different problem from random
+   exponential **arrival priorities** in a **greedy maximal** set.
+6. F. Bassino et al., *Linear-sized independent sets in random
+   cographs and increasing subsequences in separable permutations*
+   (2022), https://escholarship.org/uc/item/23340676 —
+   cograph independent-set statistics; relevant cograph background,
+   but not a demonstrated priority certificate for IG-P4.
+7. I. Kryven, R. Versendaal and M. de Vries,
+   *Unified framework for asymptotically uniform iterative
+   construction of generalised random graphs with local constraints*,
+   arXiv:2608.07239 (2026),
+   https://arxiv.org/abs/2608.07239 —
+   distinct asymptotic uniformity setting; direct scope audit needed.
+8. M. Gadouleau and D. C. Kutner, *Generalising the maximum
+   independent set algorithm via Boolean networks*,
+   Information and Computation 303 (2025), 105266,
+   https://doi.org/10.1016/j.ic.2025.105266 —
+   reachability background, not known inverse-rate identity.
+
+**Preliminary conclusion:** searches did not locate explicit P5
+strict-minor or exponential-priority EGU join-equivalence statements;
+this does **not** establish originality. Review papers and citations
+directly before submitting manuscripts.
