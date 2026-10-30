@@ -2,8 +2,10 @@
 
 ## Repository
 S005 PR #4 was merged into main at `e9577bfe6065ea061c28295d9d3182847c75e4f7`
-after final-head green CI run #87. S006 PR #5 adds the work described below.
-Check its final-head GitHub Actions runs and branch SHA before merging.
+after final-head green CI #87. **S006 PR #5 was merged** into main at
+`00093aeee18884a43df8dd755d92f1bcb3264157` after green push
+CI #103 and green pull-request CI #104, both on the precise
+PR head `7fc4802e0c9c36609cdd56009ef28b1f68bcefd1`.
 
 ## Exact mathematical progress
 **IG-P6:** Connected graph-atlas n=6 index 1 has edges
@@ -35,9 +37,9 @@ tree mass, not literally the sum of the existing `orderMass` over
 `finiteRaceLaw`, and identifying the finite tree with independent
 continuous Exp clocks remain open. Never imply otherwise.
 
-**The imported Lean theorem passed** CI run #92 at commit `95314a7`.
-Final S006 release-head CI remains required before merge, even
-though the code theorem passed at that earlier SHA.
+**The imported Lean theorem passed** CI #92 at commit `95314a7`,
+and the full S006 release branch passed CI #103 and #104 at
+`7fc4802` before merge. Both Python exact and Lean jobs passed.
 
 ## Next
 `sessions/S007.md` targets a genuine leaf-by-leaf Lean permutation
