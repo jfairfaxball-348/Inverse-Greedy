@@ -39,15 +39,15 @@ theorem c6_six_denominators_ge
   have h4 : l4 ≤ v1^3 := triple_sum_cube_ge_27_mul _ _ _ (le_of_lt hd0) (le_of_lt hd2) (le_of_lt ha1)
   have h5 : l5 ≤ v2^3 := triple_sum_cube_ge_27_mul _ _ _ (le_of_lt hd0) (le_of_lt hd1) (le_of_lt ha2)
   have h01 : l0*l1 ≤ u0^3*u1^3 :=
-    mul_le_mul h0 h1 (by dsimp [l0]; positivity) (by dsimp [u1]; positivity)
+    mul_le_mul h0 h1 (by positivity) (by positivity)
   have h012 : l0*l1*l2 ≤ u0^3*u1^3*u2^3 :=
-    mul_le_mul h01 h2 (by dsimp [l0,l1]; positivity) (by dsimp [u2]; positivity)
+    mul_le_mul h01 h2 (by positivity) (by positivity)
   have h0123 : l0*l1*l2*l3 ≤ u0^3*u1^3*u2^3*v0^3 :=
-    mul_le_mul h012 h3 (by dsimp [l0,l1,l2]; positivity) (by dsimp [v0]; positivity)
+    mul_le_mul h012 h3 (by positivity) (by positivity)
   have h01234 : l0*l1*l2*l3*l4 ≤ u0^3*u1^3*u2^3*v0^3*v1^3 :=
-    mul_le_mul h0123 h4 (by dsimp [l0,l1,l2,l3]; positivity) (by dsimp [v1]; positivity)
+    mul_le_mul h0123 h4 (by positivity) (by positivity)
   have h012345 : l0*l1*l2*l3*l4*l5 ≤ u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 :=
-    mul_le_mul h01234 h5 (by dsimp [l0,l1,l2,l3,l4]; positivity) (by dsimp [v2]; positivity)
+    mul_le_mul h01234 h5 (by positivity) (by positivity)
   let q := 729*(a0*a1*a2*d0*d1*d2)
   let p := u0*u1*u2*v0*v1*v2
   have hcubed : q^3 ≤ p^3 := by
@@ -56,7 +56,9 @@ theorem c6_six_denominators_ge
         dsimp [q, l0, l1, l2, l3, l4, l5]
         ring
       _ ≤ u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 := h012345
-      _ = p^3 := by dsimp [p]; ring
+      _ = p^3 := by
+        change u0^3*u1^3*u2^3*v0^3*v1^3*v2^3 = (u0*u1*u2*v0*v1*v2)^3
+        simp only [mul_pow]
   have hqp : q ≤ p := by
     by_contra h
     have hlt : p < q := lt_of_not_ge h
@@ -64,9 +66,9 @@ theorem c6_six_denominators_ge
       apply mul_pos (by linarith)
       have hqp0 : 0 ≤ q := by dsimp [q]; positivity
       have hpp0 : 0 ≤ p := by dsimp [p,u0,u1,u2,v0,v1,v2]; positivity
-      nlinarith [sq_nonneg (q-p)]
+      positivity
     nlinarith [hcubed, hpos]
-  simpa only [q,p,u0,u1,u2,v0,v1,v2] using hqp
+  exact hqp
 
 theorem c6_opposite_pair_product_le
     (a0 a1 a2 d0 d1 d2 : ℝ)
