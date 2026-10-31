@@ -25,7 +25,8 @@ first-choice weights. The underlying enumeration is Mathlib's actual
 List.permutations and contains each order exactly once. -/
 theorem full_priority_weighted_head_event
     (rates : α → ℝ) (active : Finset α)
-    (he : active ≠ ∅) (event : List α → Prop) :
+    (he : active ≠ ∅) (event : List α → Prop)
+    [DecidablePred event] :
     ((active.toList.permutations).map (fun order =>
       if event order then orderMass rates order else (0 : ℝ))).sum =
     (active.toList.map (fun v =>
