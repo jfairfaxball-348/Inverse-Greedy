@@ -72,6 +72,25 @@ theorem retained_first_rate_cancellation
       discardedRate / (retainedRate + discardedRate) *
         (winnerRate / retainedRate) = winnerRate / retainedRate := by
   field_simp
-  ring
+  <;> ring
+
+
+/-- Projecting every complete order to the empty retained set yields
+the empty order with total mass one. This uses the genuine full-order
+normalization theorem, not an assumed deletion-consistency result. -/
+theorem projectedOrderMass_empty_retained (rates : α → ℝ)
+    (hrates : ∀ v, 0 < rates v) (active : Finset α) :
+    projectedOrderMass rates active ∅ [] = 1 := by
+  classical
+  simpa [projectedOrderMass] using
+    (full_priority_orderMass_sum_one rates hrates active)
+
+/-- No nonempty target is supported after every vertex is discarded. -/
+theorem projectedOrderMass_empty_retained_nonempty
+    (rates : α → ℝ) (active : Finset α)
+    (v : α) (suffix : List α) :
+    projectedOrderMass rates active ∅ (v :: suffix) = 0 := by
+  classical
+  simp [projectedOrderMass]
 
 end InverseGreedy
