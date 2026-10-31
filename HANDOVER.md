@@ -35,8 +35,10 @@ and only the **event** filters away the blocked vertices.
 It does **not** assume the missing law-level restriction result.
 Initial CI failed because event decidability was not explicit in
 the theorem signature; this was corrected by an explicit
-`DecidablePred` parameter. Verify final exact-head Lean CI
-before marking IG-L21 Lean-verified.
+`DecidablePred` parameter. Both imported Lean and full Python passed at exact SHA
+`a5b9cb158ced98eba33c48637a61e1b2d758a8de`, Actions run
+**41220399183**. Thus IG-L21 is Lean-verified, but the weighted
+subset-deletion law is not.
 
 **Independent exact regression:** `tests/test_s013.py` checks the
 weighted test-function identity on every nonempty subset of six
