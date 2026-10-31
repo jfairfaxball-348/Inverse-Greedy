@@ -216,6 +216,8 @@ induced residual vertex subset and the equality
 Continuous independent Exp-clock equivalence is separate and open.
 See proof/WEIGHTED_HEAD_EVENTS.md and tests/test_s013.py.
 
+**S014 projected-order bridge:** ProjectedOrderLaw.lean defines the *actual* weighted mass of a List.filter-projected priority-order event and proves its retained/discarded first-head equation, extending S013's general head law. It also adds an algebraic retained-winner rate cancellation and the empty-retained-set boundary. The structural head recurrence compiled with complete Python+Lean CI at PR SHA 4008362 (Actions run 41223548014); final-head status of additional lemmas is in CLAIMS.md. The event-level **first-retained-winner probability itself is not yet proved in Lean**, nor is full weighted deletion consistency or the complete greedy pushforward. Paper argument and exact tests: proof/WEIGHTED_PROJECTION_HEAD.md; tests/test_s014.py. S015 is installed.
+
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
@@ -234,6 +236,7 @@ results/S009_ATLAS.md — new 90/8/45 partial census;
 proof/CLIQUE_CORONA.md — all-size constructive clique-corona EGU theorem;
 proof/GREEDY_RESIDUAL_IDENTITY.md — S012 deterministic Lean proof;
 proof/WEIGHTED_HEAD_EVENTS.md — S013 full priority event head law;
+proof/WEIGHTED_PROJECTION_HEAD.md — S014 retained/discarded projection head recursion;
 proof/C6_TV_GAP.md — S012 non-AEGU C6 TV lower bound;
 proof/P5_APPROXIMATE_UNIFORMITY.md — S012 smallest unattained AEGU;
 proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
@@ -241,7 +244,7 @@ proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S012.md — installed next session;
+sessions/S015.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
