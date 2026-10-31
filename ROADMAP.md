@@ -145,7 +145,8 @@
       recursion and full 7! weighted permutation oracle on smallest join.
 - [x] Added Lean afterChoice cardinality decrease, fuel stability above
       active.card, and blocked-vertex deletion (green imported
-      Lean and Python checks at SHA fbf578c2; final PR-head recheck).
+      Lean and Python checks at exact final PR SHA 8064bde,
+      Actions run 41193924574; merged as 8c61154).
 - [x] Installed sessions/S011.md for the next execution workshop.
 - [ ] Identify List.permutations leaves uniquely and sum full orderMass
       over all permutations in Lean.
