@@ -1,3 +1,42 @@
+# S014 handover — 2026-10-31
+
+## S014 work (PR #13)
+
+Branch: `s014-weighted-projection`.
+PR: https://github.com/jfairfaxball-348/Inverse-Greedy/pull/13
+
+**New S014 structural result:** InverseGreedy/ProjectedOrderLaw.lean
+defines weighted full permutation mass for the event that filtering
+an entire order to a retained set yields a target list. It proves
+an exact first-head equation distinguishing whether the first vertex
+is retained (and therefore must match target head) or discarded.
+This is a genuine law-level event recurrence, but is NOT the
+full weighted projection law to the retained Plackett-Luce process.
+
+Independent Lean helpers: retained-first scalar rate-cancellation
+identity and empty retained-set boundary; see final-head CI.
+`tests/test_s014.py` checks all retained subsets on six unequal
+rational rates for first retained winner, and representative full
+projected laws via independent head recursion. Mathematical
+derivation, formal boundary and next step:
+proof/WEIGHTED_PROJECTION_HEAD.md.
+
+**Verified intermediary SHA** `4008362fcb57b7c074d9304d35ce7ff7ea798c80`,
+Actions run **41223548014**: complete Python and imported Lean
+were both successful. This exact head predates the added
+algebraic/empty-retained lemmas and release documents; those
+require an additional full dual-green check on the final PR head
+before merge or claim update.
+
+**Still open in Lean:** first-retained event probability itself;
+weighted deletion-consistency of *all* projected permutations;
+`priorityOutputMass = finiteRaceLaw`; independent Exp clocks.
+All are mathematical paper theorems/obligations as distinguished
+in CLAIMS. No independent novelty claim. Atlas stays 90/8/45.
+The next session is sessions/S015.md.
+
+---
+
 # S013 handover — 2026-10-31
 
 ## Final S013 release
