@@ -87,11 +87,12 @@ Optional NetworkX atlas enumeration:
 
 The **143 connected unlabeled graphs through six vertices**
 currently have **90 proven positive**, **8 proven negative
-(P5, P6, C6, K1∨P5, and three false-twin P5 expansions)**, and
+(P5, P6, C6, K1∨P5, three false-twin P5 expansions and
+star-corona(P3))**, and
 **45 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
-prove impossibility. See results/S008_ATLAS.md.
+prove impossibility. See results/S009_ATLAS.md.
 
 Optional numerical only:
 
@@ -126,7 +127,8 @@ priority leaf's product of first-choice probabilities with
 permutation summation and greedy pushforward are still open.
 S009 adds CoronaP3Minor.lean, with the strictly positive algebraic
 four-corner minor for the star-corona obstruction. This was imported
-and verified on GitHub CI at the exact PR commit listed in CLAIMS.md;
+and verified at exact PR SHA ed0d02d4 (successful push and PR runs
+41188364427 / 41188368166);
 the independent-clock event factorisation remains a paper proof.
 S008 adds FullPermutationSupport.lean: the actual Mathlib
 List.permutations enumerates exactly the nodup lists whose underlying

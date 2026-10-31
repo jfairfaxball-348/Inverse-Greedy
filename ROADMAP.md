@@ -113,14 +113,6 @@
 - [ ] Classify 46 remaining connected n=6 cases with certificates;
       independent publication-priority review.
 
-## S009 — installed
-See sessions/S009.md: close the missing permutation-sum and greedy
-pushforward bridge in Lean; pursue 46 open six-vertex cases.
-
-**Final boss:** classify finite graphs with strictly positive
-exponential vertex priorities yielding uniform greedy terminal
-maximal independent sets, and characterise the attainable output laws.
-
 ## S009 — executed 2026-10-31
 - [x] Proved a **new infinite non-EGU family**, the pendant coronas
       of stars K_(1,m), m>=2, with arbitrary asymmetric positive rates.
@@ -131,8 +123,8 @@ maximal independent sets, and characterise the attainable output laws.
       45 unresolved.
 - [x] Exact 729-vector Fraction test, independent full 720-order oracle,
       all-size star-corona formula checks for m=2,3,4.
-- [x] Imported algebraic strict minor into Lean; exact-head CI verification
-      is recorded after green results (see CLAIMS.md).
+- [x] Imported algebraic strict minor and shifted-star inequality into Lean;
+      verified at final PR SHA ed0d02d4 with green push+PR CI.
 - [x] Preserved S006/S007 historical censuses via include_s009=False.
 - [ ] Full List.permutations normalisation and greedy pushforward to
       finiteRaceLaw in Lean; independent exponential clock semantics.
@@ -147,3 +139,8 @@ maximal independent sets, and characterise the attainable output laws.
 ## S010 — installed
 See sessions/S010.md. Prioritise finite-law Lean structural bridge;
 seek stronger general corona obstructions or exact algebraic witnesses.
+
+**Final boss:** classify finite graphs with strictly positive
+exponential vertex priorities yielding uniform greedy terminal
+maximal independent sets, and characterise the attainable output laws
+(including uniform laws in the closure but not the attainable set).

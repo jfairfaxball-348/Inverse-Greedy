@@ -2,14 +2,21 @@
 
 ## Release and verification
 
-S009 working PR: https://github.com/jfairfaxball-348/Inverse-Greedy/pull/8.
-The mathematical proof and exact test suite were committed on branch
-`research/s009-corona-p3`; only a **green exact-head CI** authorises
-labelling the imported Lean theorem verified. The first push at
-`4d17c52` passed the Lean job but failed Python historical snapshots,
-not the new theorem tests. The S006/S007 regression snapshots were
-repaired via `include_s009=False`. Record final exact-head green
-CI and merge SHA separately after checks.
+**S009 PR #8 merged successfully** on 2026-10-31:
+https://github.com/jfairfaxball-348/Inverse-Greedy/pull/8
+
+The exact final PR head was `ed0d02d4c6d7819ac51adf86b4da9957ae342a65`.
+Both the **Python exact** and imported **Lean** jobs passed at this
+same SHA in BOTH GitHub Actions runs:
+
+- Push run **41188364427**: success.
+- Pull-request run **41188368166**: success.
+
+Squash merge commit: `956961822b2a758f39de9c555283895845f478b2`.
+This post-merge documentation release records verified results; earlier
+intermediate CI failures (stale historical snapshots and a trivial Lean
+add-zero simplification) were corrected before final green tests.
+S006/S007 historical snapshot tests use `include_s009=False`.
 
 ## New mathematical obstruction — IG-N5
 
