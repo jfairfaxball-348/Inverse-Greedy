@@ -21,12 +21,11 @@ projected laws via independent head recursion. Mathematical
 derivation, formal boundary and next step:
 proof/WEIGHTED_PROJECTION_HEAD.md.
 
-**Verified intermediary SHA** `4008362fcb57b7c074d9304d35ce7ff7ea798c80`,
-Actions run **41223548014**: complete Python and imported Lean
-were both successful. This exact head predates the added
-algebraic/empty-retained lemmas and release documents; those
-require an additional full dual-green check on the final PR head
-before merge or claim update.
+**Verified full-code/docs SHA** `2cd7ab3982af13b0779feb63698a0cf782830568`,
+Actions PR run **41223800603**: full exact Python/census and imported Lean
+were both successful, including the cancellation and boundary lemmas.
+Further claim/roadmap metadata-only changes after this SHA require
+another final-head dual-green check before merging.
 
 **Still open in Lean:** first-retained event probability itself;
 weighted deletion-consistency of *all* projected permutations;
