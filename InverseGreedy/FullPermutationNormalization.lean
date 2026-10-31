@@ -133,9 +133,9 @@ theorem full_priority_orderMass_sum_one (rates : α → ℝ)
             rw [hmass v (Finset.mem_toList.mp hv), mul_one]
           rw [hmap_eq]
           have hpos : active.Nonempty := Finset.nonempty_iff_ne_empty.mpr he
-          convert firstChoice_sum_one rates active hpos
-              (by intro v hv; exact hrates v) using 1
-          simp [Finset.sum]
+          simpa only [Finset.sum_map_toList] using
+            (firstChoice_sum_one rates active hpos
+              (by intro v hv; exact hrates v))
   intro active
   have hmass := hleaf active.card active (le_refl _)
   have hpoint : ∀ order ∈ active.toList.permutations,
