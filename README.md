@@ -151,8 +151,8 @@ specific build SHA proves.
 **S010 finite-law Lean step:** FiniteLawFuel.lean establishes
 strict cardinality decrease afterChoice, fuel independence of
 finiteRaceLaw above active.card, and deletion of a blocked vertex from
-a complete priority scan. Green Python+Lean CI at SHA fbf578c2 for
-these imported lemmas; the complete `List.permutations` sum and
+a complete priority scan. Green Python+Lean CI at final PR SHA 8064bde, Actions run
+41193924574 (PR #9 merged as 8c61154), for these imported lemmas; the complete `List.permutations` sum and
 pushforward are **still open**. The closure theorem IG-P9/IG-P10
 is an informal proof with exact Python checks, not Lean-formalised.
 
