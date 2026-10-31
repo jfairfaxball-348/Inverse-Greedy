@@ -136,9 +136,27 @@
       TV(t) < m/((2^m+1)^2*t).
 - [x] Fraction tests of exact TV expression and bound for m=2,3,4.
 
-## S010 — installed
-See sessions/S010.md. Prioritise finite-law Lean structural bridge;
-seek stronger general corona obstructions or exact algebraic witnesses.
+## S010 — executed 2026-10-31
+- [x] Proved exact AEGU (zero infimum TV) closure under disjoint union
+      and join, with necessary-and-sufficient factor conditions.
+- [x] Constructed explicit new unattained AEGU families C_m ⊔ K2 and
+      C_m ∨ K1 (m>=2), deriving precise positive-rate TV identities.
+- [x] Independently checked these identities with exact Fraction
+      recursion and full 7! weighted permutation oracle on smallest join.
+- [x] Added Lean afterChoice cardinality decrease, fuel stability above
+      active.card, and blocked-vertex deletion (green imported
+      Lean and Python checks at SHA fbf578c2; final PR-head recheck).
+- [x] Installed sessions/S011.md for the next execution workshop.
+- [ ] Identify List.permutations leaves uniquely and sum full orderMass
+      over all permutations in Lean.
+- [ ] Prove weighted greedyOutput pushforward equals finiteRaceLaw in Lean;
+      independent continuous Exp-clock bridge remains unproved.
+- [ ] 45 six-vertex atlas cases remain unresolved; no novelty certificate.
+
+## S011 — installed
+See sessions/S011.md. Finish actual List.permutations decomposition,
+normalization and output pushforward; explore additional AEGU boundary
+families, keeping unattained approximation distinct from exact EGU.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
