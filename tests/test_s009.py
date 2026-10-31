@@ -13,6 +13,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments"))
 from exact import graph, law_by_recursion, law_by_permutations, maximal_independent_sets
+from census import enumerate_atlas
+from star_corona import star_corona_edges, star_corona_exact_law
 
 # Private leaf of central 0,1,2 is respectively 3,4,5.
 EDGES = ((0, 1), (1, 2), (0, 3), (1, 4), (2, 5))
@@ -67,6 +69,27 @@ class CoronaP3ObstructionTests(unittest.TestCase):
                 self.assertEqual(law[mask], p)
             self.assertEqual(law[A_ONLY] * law[C_ONLY] -
                              law[EMPTY] * law[AC], minor)
+
+    def test_updated_partial_atlas(self):
+        rows = list(enumerate_atlas(6, 4))
+        counts = {s: sum(row['status'] == s for row in rows)
+                  for s in ('proved-positive', 'proved-negative', 'unresolved')}
+        self.assertEqual(counts, {'proved-positive': 90,
+                                  'proved-negative': 8, 'unresolved': 45})
+        row = next(row for row in rows if (row['n'], row['index']) == (6, 3))
+        self.assertEqual(row['status'], 'proved-negative')
+        self.assertIn('S009', row['certificate'])
+
+    def test_all_size_star_corona_formula_against_recursion(self):
+        for m in (2, 3, 4):
+            adj = graph(2 * m + 2, star_corona_edges(m))
+            for rates in ((1,) * (2 * m + 2),
+                          tuple(range(1, 2 * m + 3))):
+                with self.subTest(spokes=m, rates=rates):
+                    expected = star_corona_exact_law(rates)
+                    observed = law_by_recursion(adj, rates)
+                    self.assertEqual(observed, expected)
+                    self.assertEqual(len(observed), 2**m + 1)
 
     def test_independent_permutation_oracle(self):
         for rates in ((1,)*6, (3, 7, 2, 5, 4, 9),

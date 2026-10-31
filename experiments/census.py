@@ -14,7 +14,7 @@ from six_vertex_witnesses import SIX_VERTEX_RATIONAL
 from false_twin import contraction_parent
 
 
-def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True, include_s008=True):
+def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True, include_s008=True, include_s009=True):
     import networkx as nx
     # S004: the six-vertex cone over P5 is a rigorous negative by
     # join necessity and the already proved strict P5 obstruction.
@@ -90,7 +90,7 @@ def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True, include_s008=
             # S009: strict universal 2-by-2 probability minor for corona(P3).
             # A numerical near-zero residual approaching boundary rates
             # is not a solution; see the exact all-positive proof.
-            if entry['status'] == 'unresolved' and n == 6 and index == 3:
+            if include_s009 and entry['status'] == 'unresolved' and n == 6 and index == 3:
                 corona_p3 = nx.Graph()
                 corona_p3.add_nodes_from(range(6))
                 corona_p3.add_edges_from(((0, 1), (1, 2), (0, 3), (1, 4), (2, 5)))
