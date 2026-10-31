@@ -74,6 +74,7 @@ private theorem leaf_sum_head (rates : α → ℝ)
           firstChoice rates active v *
           (((active.erase v).toList.permutations).map
             (orderLeafMass rates)).sum)).sum := by
+          congr 1
           apply List.map_congr_left
           intro v hv
           have hva : v ∈ active := Finset.mem_toList.mp hv
@@ -121,11 +122,16 @@ theorem full_priority_orderMass_sum_one (rates : α → ℝ)
             have hs := Finset.card_erase_add_one hv
             apply ih (active.erase v)
             omega
-          simp_rw [show ∀ v ∈ active.toList,
-              (((active.erase v).toList.permutations).map
-                (orderLeafMass rates)).sum = 1 from
-              fun v hv => hmass v (Finset.mem_toList.mp hv)]
-          simp only [mul_one]
+          have hmap_eq :
+              ((active.toList).map (fun v =>
+                firstChoice rates active v *
+                (((active.erase v).toList.permutations).map
+                  (orderLeafMass rates)).sum)) =
+              (active.toList.map (firstChoice rates active)) := by
+            apply List.map_congr_left
+            intro v hv
+            rw [hmass v (Finset.mem_toList.mp hv), mul_one]
+          rw [hmap_eq]
           have hpos : active.Nonempty := Finset.nonempty_iff_ne_empty.mpr he
           convert firstChoice_sum_one rates active hpos
               (by intro v hv; exact hrates v) using 1
