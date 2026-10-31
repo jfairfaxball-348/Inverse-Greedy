@@ -79,6 +79,6 @@ theorem coronaStar_shifted_cross_pos (b B t u v : ℝ)
       coronaP3Survival b B t * coronaP3Survival b B (t + u + v) := by
   have hB' : 0 < B + t := add_pos_of_pos_of_nonneg hB ht
   have h := coronaP3_survival_cross_pos b (B + t) u v hb hB' hu hv
-  simpa only [coronaP3Survival, add_assoc] using h
+  simpa only [coronaP3Survival, add_assoc, add_zero] using h
  
 end InverseGreedy
