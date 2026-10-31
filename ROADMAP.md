@@ -229,9 +229,16 @@
 - [ ] Independent Exp-clock ordering bridge in Lean.
 - [ ] No new EGU atlas classifications: 90/8/45 remains.
 
-## S014 — installed
-See sessions/S014.md for first-retained-vertex weighted law,
-complete filter pushforward, then the discrete greedy event law.
+## S014 — executed 2026-10-31 (final-head CI pending)
+- [x] Defined exact \`List.filter\` projected-order event mass from actual complete weighted permutations.
+- [x] Lean formal structural first-head equation separating retained vs discarded first global vertex; initial CI green at 4008362 (run 41223548014).
+- [x] Added scalar rate-cancellation algebra and empty-retained-set boundary lemmas; exact final-head CI tracked in CLAIMS/HANDOVER.
+- [x] New independent unequal-positive-Fraction six-vertex regression for the complete projected law, first retained winner and first-head recurrence.
+- [x] Installed S015 for the *actual* Lean event induction and full weighted projection theorem.
+- [ ] First retained winner conditional probability as a Lean law theorem, not just a scalar identity.
+- [ ] All-target weighted deletion consistency and greedy finiteRaceLaw pushforward in Lean.
+- [ ] Independent exponential-clock ordering equivalence; 45 connected six-vertex atlas cases remain.
+
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
