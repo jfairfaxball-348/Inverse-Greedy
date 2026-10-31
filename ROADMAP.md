@@ -168,7 +168,8 @@
 - [x] Lean normalisation of the actual complete `List.permutations`
       `orderMass` sum is 1 for all strictly positive real rates, using
       structural head decomposition and induction. Imported Lean+Python
-      succeeded at exact PR SHA a613bb87 (PR run 41196560831).
+      succeeded at exact final PR #10 SHA 1850e943 (PR run
+      41196801662), squash merged as 0e5949b4.
 - [ ] Lean weighted deletion restriction and law-level pushforward still
       require formal proof, even though their complete mathematical proofs
       and exact finite tests are available.

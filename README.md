@@ -159,8 +159,9 @@ exact Python and imported Lean CI passed at SHA 00fb0afe (run
 41195940431). FullPermutationNormalization.lean proves that the weighted `orderMass`
 values of **all actual full permutations sum to exactly 1**, for every
 positive real rate vector. Both imported Lean and Python CI passed at
-exact PR SHA a613bb87a5fa64b54303c66234a63791135e9ca0 (push
-41196557142, PR 41196560831). The S011 independent Fraction tests
+exact final PR #10 SHA 1850e94398964fba7e021b29b6a6fa460f8c73c1
+(PR run 41196801662), merged as 0e5949b4. The theorem first passed
+at SHA a613bb87. The S011 independent Fraction tests
 and paper proof establish the finite deletion-consistency and greedy
 pushforward statements mathematically; the full formal law-level
 pushforward remains open.

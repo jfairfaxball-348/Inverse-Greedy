@@ -1,5 +1,17 @@
 # S011 handover — 2026-10-31
 
+## Final S011 release
+
+**PR #10 merged successfully** as squash commit
+`0e5949b4a79aa215ae5aeb5ff13b524deb9ae69f` to main.
+The exact final PR head `1850e94398964fba7e021b29b6a6fa460f8c73c1`
+passed **both imported Lean and full Python jobs** in push run
+**41196798482** and PR run **41196801662**.
+This confirms IG-L14 and IG-L15 on the released code and the exact
+deletion-consistency regressions. No formal Lean greedy-law
+pushforward or Exp-clock bridge is claimed. S012 is installed.
+
+
 ## Incoming verified release
 
 S010 PR #9 was merged as `8c6115433a00498bd5ca45c7c7392fc5adac59dc`.
