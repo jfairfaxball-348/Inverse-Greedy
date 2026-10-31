@@ -8,3 +8,5 @@ import InverseGreedy.OrderMassBridge
 import InverseGreedy.OrderTreeNormalization
 import InverseGreedy.OrderLeafBridge
 import InverseGreedy.FullPermutationSupport
+
+import InverseGreedy.CoronaP3Minor
