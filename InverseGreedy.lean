@@ -10,3 +10,4 @@ import InverseGreedy.OrderLeafBridge
 import InverseGreedy.FullPermutationSupport
 
 import InverseGreedy.CoronaP3Minor
+import InverseGreedy.FiniteLawFuel
