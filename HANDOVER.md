@@ -1,51 +1,55 @@
-# S007 handover — 2026-10-30
+# S008 handover — 2026-10-31
 
-## Repository and release
+## Release status
 
-**S007 PR #6 merged successfully** into main on 2026-10-30.
-The final PR head was `4a1ad51d8bb0c249f0a0908d7e522eddc9dfe721`,
-and BOTH Python exact and imported Lean checks were green on that
-exact SHA:
-- GitHub Actions push run **41131744594**: success.
-- GitHub Actions pull-request run **41131753042**: success.
+S008 develops on PR #7:
+https://github.com/jfairfaxball-348/Inverse-Greedy/pull/7
+The release is not complete until both Python exact and imported Lean
+jobs are green at the final PR head and the merge is confirmed.
 
-The squash merge commit is
-`4749516f6ac6ac4290e08cc86ca34b91b282708c`.
-The earlier imported leaf theorem also passed at `543cfe9`
-in run 41131451454. The installed next execution session is
-`sessions/S008.md`; there is no pending S007 PR to merge.
+## New mathematics — IG-P8
 
-## Mathematical result
-**IG-P7 — false-twin invariance:** for distinct nonadjacent vertices
-with the same open neighbourhood, delete one and add its rate to the
-other. The terminal MIS distributions match under the natural
-bijection; the converse splits the parent rate between twins. Full
-informal proof: `proof/FALSE_TWIN_INVARIANCE.md`.
+For every m >= 1, K_m with one private leaf per clique vertex is EGU.
+Give each leaf rate 1 and each central clique vertex positive rate
+beta=(m+1)^(1/m)-1. Exactly m+1 maximal independent sets exist.
+All leaves are selected precisely when every leaf arrives before its
+partner centre. This has probability (1+beta)^(-m)=1/(m+1), from
+independent exponential races on disjoint leaf-centre pairs. The m
+other MIS are equally likely by permutation symmetry of all pairs,
+so each has probability 1/(m+1). Complete proof:
+proof/CLIQUE_CORONA.md.
 
-19 formerly unresolved n=6 graphs lift exact S005 positive witnesses
-(16 rational and 3 in Q(√3)); 3 formerly unresolved n=6 graphs
-(connected indices **4,13,16**) contract to P5 and are non-EGU.
-Each new graph's edges, parent and twin pair are recorded in
-`results/S007_ATLAS.md`. Exact tests check the 19 positives via
-full 720-order weighted permutation enumeration and independent
-first-choice recursion, including quadratic field cases.
+Connected n=6 atlas index 8, edges 04,15,23,34,35,45, is this graph
+for m=3. Strictly positive rates are (1,1,1,cuberoot(4)-1,
+cuberoot(4)-1,cuberoot(4)-1); all four MIS have probability 1/4.
+Python independently checks exact Q(cuberoot(4)) recursion and all
+720 weighted permutations, not floating point. m=2 also recovers P4.
 
-The connected n<=6 atlas is **89 positive / 7 negative /
-47 unresolved**, of 143. Among n=6 alone: 59/6/47.
+## Current partial atlas
 
-## Lean progress and scope
-S006 proved normalisation of the **recursive** head-choice tree.
-S007 adds `InverseGreedy/OrderLeafBridge.lean`, proving for every
-duplicate-free ordered list that the conditional-first-choice
-product of its successive head/tail sets equals its `orderMass`.
-This is a single-leaf identity, NOT a proof of the bijection from
-tree leaves to `List.permutations`, full-permutation sum = 1,
-pushforward to `finiteRaceLaw`, or a continuous exponential-clock
-equivalence. Imported Lean leaf bridge and full Python suite were both green in Actions run 41131451454 at exact SHA 543cfe9. This is not an end-to-end continuous-clock theorem. Final release-head CI and PR merge status must still be checked.
+143 connected graphs through n=6: 90 exact positives, 7 proved
+negatives, 46 unresolved, all unresolved n=6. S006 and S007 regression
+snapshots remain available via include_s008=False (and the historical
+include_false_twins=False when applicable). Unknown does not imply no
+strictly positive solution.
+
+## Lean boundary
+
+New FullPermutationSupport.lean connects actual Mathlib
+List.permutations membership with duplicate-free complete vertex
+lists, and applies S007 leaf-level mass identity to those lists.
+This is only a support theorem; normalisation of the full summed
+permutation law, grouping by greedyOutput to finiteRaceLaw, and
+independent exponential clocks remain open. Report verification only
+for the particular exact CI SHA that passed.
 
 ## Next
-`sessions/S008.md` targets the missing finite permutation-sum and
-greedy pushforward in Lean and the 47 remaining connected six-vertex
-cases. Preserve earlier proofs and tests. Do not turn failed searches
-into negative theorems, claim the induced P5 obstruction for arbitrary
-supergraphs, or imply novelty/priority certification.
+
+sessions/S009.md. Focus first on full finite permutation normalisation
+and pushforward by a deletion-consistency / rejected-vertex coupling.
+Numerical scans of 47 S007-open graphs were exploratory only; some
+near-zero optimizer residuals occur at rates approaching zero or
+infinity and provide no positive exact certificate or impossibility.
+In particular atlas index 3 (corona P3) remains open.
+
+Do not assert novelty, an arXiv submission, or a complete classification.
