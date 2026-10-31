@@ -30,7 +30,7 @@ class S007FalseTwinTests(unittest.TestCase):
         cls.five = [g for g in atlas if len(g) == 5 and nx.is_connected(g)]
 
     def test_exact_atlas_status(self):
-        rows = list(enumerate_atlas(6, 4, include_s008=False))
+        rows = list(enumerate_atlas(6, 4, include_s008=False, include_s009=False))
         counts = {s: sum(row["status"] == s for row in rows)
                   for s in ("proved-positive", "proved-negative", "unresolved")}
         self.assertEqual(counts, {"proved-positive": 89,

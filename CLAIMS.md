@@ -1,4 +1,4 @@
-# Claim ledger — S008 (2026-10-31)
+# Claim ledger — S009 (2026-10-31)
 
 Status meanings: **proved-informal** is a complete written proof, not machine-checked or independently novel; **tested-exact** is finite arithmetic checking; **Lean-verified** requires actual successful CI at the stated SHA; **open** means unestablished.
 
@@ -13,6 +13,8 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | **IG-P6** | Connected six-vertex atlas index 1 is EGU: exact integer rates (3,6,4,5,3,3), with a positive one-parameter rational family | **proved-informal; tested-exact** | proof/SIX_VERTEX_INDEX1.md; tests/test_s006.py |
 | **IG-P7** | False-twin extension/contraction preserves exact finite exponential greedy output law and EGU equivalence | **proved-informal; tested-exact** (19 new positive witnesses checked by two exact methods; 3 new negative P5 contractions) | proof/FALSE_TWIN_INVARIANCE.md; tests/test_s007.py |
 | **IG-P8** | Every clique-corona K_m with one pendant leaf per clique vertex is EGU at leaf rate 1 and clique rate (m+1)^(1/m)-1; n=6 index 8 has an exact cubic positive witness | **proved-informal; tested-exact** by two independent Q(cuberoot(4)) oracles | proof/CLIQUE_CORONA.md; tests/test_s008.py |
+| **IG-N5** | **Every star corona K_(1,m) circ K1 with m>=2 is non-EGU, including n=6 atlas index 3 (corona P3).** The 2x2 probability minor is strictly positive for all positive real rates. | **proved-informal; tested-exact** (729 vectors + complete permutation checks; m=2,3,4 examples) | proof/STAR_CORONA_OBSTRUCTION.md; proof/CORONA_P3_OBSTRUCTION.md; tests/test_s009.py |
+| **IG-N6** | Star coronas K_(1,m) circ K1, m>=2, have **infimum TV distance 0 to uniform but never attain it**; explicit strictly positive t-family and exact TV formula/upper bound | **proved-informal; tested-exact** | proof/STAR_CORONA_OBSTRUCTION.md; tests/test_s009.py |
 | IG-N1 | C6 opposite-pair product ≤1/729; not EGU | proved-informal, tested-exact | proof/C6_OBSTRUCTION.md |
 | **IG-N2** | **P5 strict output minor p024*p13 > p03*p14; not EGU; smallest-order obstruction** | **proved-informal; exact tests on 243 rate vectors** | proof/P5_OBSTRUCTION.md |
 | **IG-N3b** | P6 TV separation ≥ 2√(2/5)−6/5 ≈ 0.064911, strictly stronger than 1/25 | **proved-informal, not Lean-verified** | proof/P6_TV_SHARPENING.md; disjoint-event deficit argument |
@@ -28,6 +30,8 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | **IG-L9** | Structural cardinality-induction normalisation of the finite weighted-order head-choice tree; does **not** yet identify tree leaves with `orderMass`, nor prove the Exp-clock law | **Lean-verified** at 7fc4802, green final-head CI #103 and #104 (original theorem already green at #92) | InverseGreedy/OrderTreeNormalization.lean |
 | **IG-L10** | Duplicate-free leaf product of successive finset first-choice masses equals `orderMass` | **Lean-verified** at SHA 543cfe9, green Actions run 41131451454; does not enumerate full permutations or prove greedy pushforward | InverseGreedy/OrderLeafBridge.lean |
 | **IG-L11** | Membership in actual List.permutations iff nodup and matching vertex finset, with S007 orderLeafMass = orderMass for each supported permutation | **Lean-verified at final PR SHA ff29b0bb; Python + Lean successful in push CI 41183416574 and PR CI 41183420188**; neither sum normalization nor greedy pushforward | InverseGreedy/FullPermutationSupport.lean |
+| **IG-L12** | Strict positive rational factorisation and Bernoulli-weighted 2x2 star-corona minor, for abstract positive parameters; no stochastic law identification | **CI verification pending for final S009 head** (initial imported Lean version passed S009 push CI; exact final SHA to verify) | InverseGreedy/CoronaP3Minor.lean |
+| **IG-A9** | Partial connected n<=6 atlas 90 EGU / 8 non-EGU / 45 unresolved; index 3 proved negative by all-positive star-corona obstruction | **proved-informal; tested-exact**; no complete n=6 classification | results/S009_ATLAS.md; tests/test_s009.py |
 | IG-A3 | Exact partial connected graph atlas n≤6: 143 total, 62 positive, 3 negative, 78 unresolved | partial finite certificates, not complete classification; Python CI run #32 | results/S003_ATLAS.md |
 | **IG-A4** | Revised connected n≤6 atlas: 143 total, 62 positive, 4 negative, 77 unresolved | finite partial certificates, not complete classification | results/S004_ATLAS.md |
 | **IG-A5** | Updated connected n≤6 partial atlas: 143 total, 69 positive, 4 negative, 70 unresolved (all n=6) | proved-informal/finite exact certificates | results/S005_ATLAS.md; tests/test_s005.py |
@@ -35,8 +39,8 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | **IG-A7** | Connected n<=6 partial atlas: 89 positive, 7 negative, 47 unresolved; 19 rational/quadratic lifts and 3 P5 false-twin obstructions | **proved-informal; tested-exact**; no complete n=6 classification | results/S007_ATLAS.md; tests/test_s007.py |
 | **IG-A8** | Updated connected n<=6 partial atlas: 90 positives, 7 negatives, 46 open; index 8 is the exact cubic corona K3 | **proved-informal; tested-exact** | results/S008_ATLAS.md; tests/test_s008.py |
 | IG-O1 | Characterise all EGU graphs | open | ROADMAP.md |
-| IG-O2 | Certify 46 unresolved atlas cases | open | ROADMAP.md |
+| IG-O2 | Certify 45 unresolved atlas cases | open | ROADMAP.md |
 | IG-O3 | Full Lean exponential race to event-law proof | open | ROADMAP.md |
 | IG-O4 | Independently certified novelty | open | PRIOR_ART.md |
 
-Obstructions P5/P6/C6 apply to graphs with such connected **components**, not arbitrary induced copies in connected supergraphs. No Inverse Greedy arXiv publication, Palomar registration or independent priority claim for S008.
+Obstructions P5/P6/C6 apply to graphs with such connected **components**, not arbitrary induced copies in connected supergraphs. No Inverse Greedy arXiv publication, Palomar registration or independent priority claim for S009.
