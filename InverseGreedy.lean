@@ -7,3 +7,4 @@ import InverseGreedy.P6Orders
 import InverseGreedy.OrderMassBridge
 import InverseGreedy.OrderTreeNormalization
 import InverseGreedy.OrderLeafBridge
+import InverseGreedy.FullPermutationSupport
