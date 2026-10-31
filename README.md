@@ -13,6 +13,14 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
 ## Current mathematical results
 - **IG-R1:** exact first-choice weighted recurrence of the terminal law.
+- **IG-R2/IG-R3 (S011):** the finite positive weighted priority-order
+  law is **deletion-consistent**: erasing any subset, including after
+  conditioning on the first vertex, yields the size-biased order law
+  on the retained set. Consequently its greedy-output pushforward
+  satisfies exactly the recursive first-choice law, for finite simple
+  graphs. Both theorems have complete informal proofs and independent
+  exact arithmetic tests, but the *law-level Lean pushforward* is
+  not yet formally compiled. See proof/PRIORITY_DELETION_CONSISTENCY.md.
 - **IG-P1:** complete multipartite graphs are EGU; a star's centre gets
   the sum of the leaf rates.
 - **IG-P2:** disjoint union is EGU iff every component is EGU.
@@ -144,6 +152,19 @@ List.permutations enumerates exactly the nodup lists whose underlying
 finset is active, and all members obey the S007 leaf-mass equality.
 It is **not yet** the normalization of the full permutation sum or the
 pushforward identity to finiteRaceLaw. CI status is tracked in CLAIMS.md.
+**S011:** FullPermutationDecomposition.lean proves in Lean that the
+actual Mathlib full permutation list decomposes into distinct heads
+and all corresponding tail permutations, *with multiplicity one*;
+exact Python and imported Lean CI passed at SHA 00fb0afe (run
+41195940431). FullPermutationNormalization.lean proves that the weighted `orderMass`
+values of **all actual full permutations sum to exactly 1**, for every
+positive real rate vector. Both imported Lean and Python CI passed at
+exact PR SHA a613bb87a5fa64b54303c66234a63791135e9ca0 (push
+41196557142, PR 41196560831). The S011 independent Fraction tests
+and paper proof establish the finite deletion-consistency and greedy
+pushforward statements mathematically; the full formal law-level
+pushforward remains open.
+
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
@@ -165,7 +186,7 @@ proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S011.md — installed next session;
+sessions/S012.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)

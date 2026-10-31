@@ -1,10 +1,12 @@
-# Claim ledger — S010 (2026-10-31)
+# Claim ledger — S011 (2026-10-31)
 
 Status meanings: **proved-informal** is a complete written proof, not machine-checked or independently novel; **tested-exact** is finite arithmetic checking; **Lean-verified** requires actual successful CI at the stated SHA; **open** means unestablished.
 
 | ID | Claim | Status | Evidence |
 |---|---|---|---|
 | IG-R1 | Weighted first-choice probability law | proved-informal, tested-exact | proof/FOUNDATIONS.md; experiments/exact.py |
+| **IG-R2** | Positive weighted priority orders are deletion-consistent: restriction to any retained subset (including conditional on a specified first overall winner) has the corresponding Plackett–Luce law | **proved-informal; tested-exact** across all subsets of unequal rational 4- and 5-vertex rate vectors; not yet Lean-verified as a law identity | proof/PRIORITY_DELETION_CONSISTENCY.md; experiments/priority_deletion.py; tests/test_s011.py |
+| **IG-R3** | Greedy-output pushforward of the full finite weighted-permutation law equals the first-choice terminal recursion for any finite simple symmetric irreflexive graph | **proved-informal; tested-exact** with independent weighted-permutation/recursion oracles; law-level Lean equality open | proof/PRIORITY_DELETION_CONSISTENCY.md; tests/test_s011.py |
 | IG-P1 | Complete multipartite graphs EGU | proved-informal | proof/FOUNDATIONS.md |
 | IG-P2 | Disjoint union EGU iff each component EGU | proved-informal | proof/FOUNDATIONS.md |
 | IG-P3 | P4 EGU with positive algebraic rates | proved-informal | proof/FOUNDATIONS.md |
@@ -33,6 +35,8 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | **IG-L10** | Duplicate-free leaf product of successive finset first-choice masses equals `orderMass` | **Lean-verified** at SHA 543cfe9, green Actions run 41131451454; does not enumerate full permutations or prove greedy pushforward | InverseGreedy/OrderLeafBridge.lean |
 | **IG-L11** | Membership in actual List.permutations iff nodup and matching vertex finset, with S007 orderLeafMass = orderMass for each supported permutation | **Lean-verified at final PR SHA ff29b0bb; Python + Lean successful in push CI 41183416574 and PR CI 41183420188**; neither sum normalization nor greedy pushforward | InverseGreedy/FullPermutationSupport.lean |
 | **IG-L12** | Strict positive rational factorisation and Bernoulli-weighted 2x2 star-corona minor, for abstract positive parameters; no stochastic law identification | **Lean-verified at exact PR SHA ed0d02d4; Python and Lean passed push CI 41188364427 and PR CI 41188368166**; stochastic output-law bridge remains open | InverseGreedy/CoronaP3Minor.lean |
+| **IG-L14** | Actual `List.permutations` has a unique-head decomposition into distinct heads and all permutations of the remaining active set; this is equality as lists up to permutation, not just support equivalence | **Lean-verified** at SHA 00fb0afe5b1253c23d4fd825cc9fc338ea9fddf7, green Python+Lean CI run 41195940431 | InverseGreedy/FullPermutationDecomposition.lean |
+| **IG-L15** | Actual complete priority-permutation `orderMass` sum is exactly one at all strictly positive rates | **Lean-verified at SHA a613bb87a5fa64b54303c66234a63791135e9ca0**, both Python and imported Lean successful in push run 41196557142 and PR run 41196560831 | InverseGreedy/FullPermutationNormalization.lean |
 | **IG-L13** | After selecting an active vertex, afterChoice strictly decreases active cardinality; finiteRaceLaw is independent of fuel above active.card, for every rate vector and target; any vertex blocked by the accepted prefix can be removed from that full greedy scan. **Not** the complete permutation-law pushforward. | **Lean-verified at exact final PR SHA 8064bde** (Python and imported Lean successful in PR Actions run 41193924574; squash merged in 8c61154) | InverseGreedy/FiniteLawFuel.lean; PR #9 |
 | **IG-A9** | Partial connected n<=6 atlas 90 EGU / 8 non-EGU / 45 unresolved; index 3 proved negative by all-positive star-corona obstruction | **proved-informal; tested-exact**; no complete n=6 classification | results/S009_ATLAS.md; tests/test_s009.py |
 | IG-A3 | Exact partial connected graph atlas n≤6: 143 total, 62 positive, 3 negative, 78 unresolved | partial finite certificates, not complete classification; Python CI run #32 | results/S003_ATLAS.md |
@@ -45,8 +49,8 @@ Status meanings: **proved-informal** is a complete written proof, not machine-ch
 | IG-O2 | Certify 45 unresolved atlas cases | open | ROADMAP.md |
 | IG-O3 | Full Lean exponential race to event-law proof | open | ROADMAP.md |
 | IG-O4 | Independently certified novelty | open | PRIOR_ART.md |
-| IG-O5 | Formal full List.permutations mass normalisation and weighted greedy pushforward, then independent exponential clock semantics | open | sessions/S011.md |
+| IG-O5 | Formal weighted greedy pushforward, then independent exponential-clock semantics | **partially addressed**: unique-head and full orderMass sum Lean-checked; discrete law pushforward proved on paper; formal law and clock semantics open | sessions/S012.md |
 
 Obstructions P5/P6/C6 apply to graphs with such connected **components**, not arbitrary induced copies in connected supergraphs. No Inverse Greedy arXiv publication, Palomar registration or independent priority claim for S009.
 
-S010 AEGU statements concern **infimum** total variation, not finite-rate exact EGU. The six-vertex partial atlas remains **90/8/45**; no new n<=6 classification or independent novelty claim.
+S011 establishes exact discrete priority-restriction and pushforward results as complete mathematical proofs, with independent Fraction regression tests, but not as Lean law-level theorems. The continuous Exp-clock equivalence remains open. Lean full permutation-mass normalisation IG-L15 is verified at S011 PR head a613bb87, PR run 41196560831; weighted-order deletion consistency and greedy-law pushforward remain paper proofs with exact tests only, not Lean theorems. S010 AEGU statements concern **infimum** total variation, not finite-rate exact EGU. The six-vertex partial atlas remains **90/8/45**; no new n<=6 classification or independent novelty claim.
