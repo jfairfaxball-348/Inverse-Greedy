@@ -18,3 +18,4 @@ import InverseGreedy.PriorityOutputLaw
 import InverseGreedy.C6TVGap
 import InverseGreedy.P5ApproximateBoundary
 import InverseGreedy.PriorityHeadConditioning
+import InverseGreedy.PriorityHeadEvents
