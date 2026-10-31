@@ -190,6 +190,14 @@
       with unattained zero infimum (IG-N1b).
 - [x] Proved the algebraic 4/45 single-event deficit in Lean (IG-L18),
       without claiming stochastic/TV identification in Lean.
+- [x] Proved P5, the order-five smallest non-EGU obstruction, is
+      nevertheless **unattained AEGU** with strictly positive
+      (1,1,t,1,1) rates as t approaches 0; exact
+      TV=t(3t+10)/[4(t+2)(t+4)] < 5t/16. This is a
+      new boundary mechanism separate from star coronas.
+- [x] Exact Fraction first-choice recursion and full 5! priority-order
+      oracle verify the P5 law; pure rational Lean identity and bound
+      in P5ApproximateBoundary.lean (CI status in CLAIMS.md).
 - [x] Added exact state-machine deletion tests, exact C6 TV checks
       on 729 unequal-rate tuples and two independent weighted order
       oracles; CI verification recorded in CLAIMS.md.
