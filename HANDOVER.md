@@ -2,10 +2,15 @@
 
 ## Release status
 
-S008 develops on PR #7:
+**S008 PR #7 merged successfully** on 2026-10-31:
 https://github.com/jfairfaxball-348/Inverse-Greedy/pull/7
-The release is not complete until both Python exact and imported Lean
-jobs are green at the final PR head and the merge is confirmed.
+The final PR head was `ff29b0bb1dcd0f5e93d837108375874aa86384a3`.
+BOTH Python exact and imported Lean jobs passed at this exact SHA:
+- Push CI run **41183416574**: success.
+- Pull-request CI run **41183420188**: success.
+The squash merge commit was
+`eda6d0bbb6cbfc5a5618ae3e38a863624fa86936`.
+This post-merge documentation-only update records the verified release.
 
 ## New mathematics — IG-P8
 
