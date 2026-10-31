@@ -1,5 +1,18 @@
 # S012 handover — 2026-10-31
 
+## Final S012 merged release
+
+**PR #11 merged successfully** to main as squash commit
+`9d9287177e4c9fd96099d9d429c698c4537142f8`.
+The exact final PR head
+`2c334bf06a84f4ad0cadb458382885ad3942aa88`
+passed both full Python (including all exact regressions and certified
+six-vertex census) and imported Lean in GitHub Actions **PR run
+41215599528** before merge. The standalone P5 boundary algebra was
+also green in push/PR runs 41215392931 / 41215397286.
+No stochastic full-pushforward or continuous-clock Lean theorem
+is implied by these checks. **S013 is installed**.
+
 ## Incoming verified release
 
 S011 PR #10 was merged as squash commit
