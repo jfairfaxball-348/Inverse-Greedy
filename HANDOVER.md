@@ -1,62 +1,60 @@
-# S010 handover — 2026-10-31
+# S011 handover — 2026-10-31
 
-## Incoming state and release
+## Incoming verified release
 
-S009 was fully merged as PR #8 (squash 9569618) with green Python
-and imported Lean at head ed0d02d4, runs 41188364427 / 41188368166.
-The S010 work was prepared on branch `s010-finite-law-fuel-and-skip`
-as PR #9: https://github.com/jfairfaxball-348/Inverse-Greedy/pull/9
+S010 PR #9 was merged as `8c6115433a00498bd5ca45c7c7392fc5adac59dc`.
+Its exact final PR head `8064bde884981bc8170826db046fea9d582315f2`
+passed both Python and imported Lean jobs (Actions run 41193924574).
+The subsequent exact main head `7d87a1e6e863c7be93a440599c7b6fa7889b1c06`
+also passed GitHub Actions run 41194086791.
 
-**S010 PR #9 was merged successfully.** The exact final PR head
-`8064bde884981bc8170826db046fea9d582315f2` passed **both**
-the exact Python and imported Lean jobs in GitHub Actions PR run
-**41193924574**. The original new Lean lemmas also passed at
-`fbf578c2a1b877a0c7c1a6217dc00ce785af135c` in PR run
-**41193711626** after correcting a reserved-word naming error.
-Squash merge commit on main:
-`8c6115433a00498bd5ca45c7c7392fc5adac59dc`.
-This post-merge handover records the verified exact release head.
+## S011 research results
 
-## New mathematical results — IG-P9 and IG-P10
+The actual `List.permutations(active.toList)` (not just support
+membership) has been proved in Lean to be a distinct-head disjoint
+enumeration of complete tail permutations. The proof checks duplicate
+freeness on both sides and obtains a List.Perm equality; no factorial
+`decide` is used. InverseGreedy/FullPermutationDecomposition.lean
+compiled in an imported GitHub Actions Lean+Python run 41195940431,
+SHA `00fb0afe5b1253c23d4fd825cc9fc338ea9fddf7`.
 
-Write AEGU for graphs whose positive-rate attainable greedy MIS laws
-have uniform MIS law in their total-variation closure. AEGU is **not**
-equivalent to actual EGU.
+In addition, the S011 paper proof establishes **IG-R2**, deletion
+consistency of the full positive weighted-order law after erasing any
+vertex subset, including conditional on the first chosen vertex.
+This yields **IG-R3**, equality of the weighted-priority greedy-output
+pushforward with the finite first-choice recurrence, for finite
+simple undirected loopless graphs. Proof in
+proof/PRIORITY_DELETION_CONSISTENCY.md.
 
-- Disjoint union G ⊔ H is AEGU iff G and H are AEGU.
-- For nonempty G and H, the graph join G ∨ H is AEGU iff G and H
-  are AEGU, using group-total rate scaling to match MIS counts.
-- Consequently, for star-corona C_m (m>=2) from S009, both C_m ⊔ K2
-  and C_m ∨ K1 are AEGU but remain provably non-EGU.
-- With k=2^m and TV_C(t) from S009, choosing positive rates on the
-  universal joined vertex z equal to total_C/(k+1) gives
-  TV_join(t)=(k+1)/(k+2)*TV_C(t). With an equal-rate K2 component,
-  TV_union(t)=TV_C(t). Both approach zero, neither is ever zero.
+Independent `fractions.Fraction` tests cover all subset restrictions
+on several unequal rate vectors, first-choice conditional restrictions,
+enumeration multiplicity and total weighted mass on <=6 vertices,
+and the original independent full-permutation vs recursive
+greedy-output oracles for multiple graph classes.
+See experiments/priority_deletion.py and tests/test_s011.py.
+Both Python and Lean jobs passed together for the unique-head module.
 
-Complete informal proofs: proof/APPROXIMATE_EGU_CLOSURE.md.
-Independent exact checks: tests/test_s010.py (first-choice
-recursion and all 7! orders for seven-vertex join).
-The partial connected n<=6 atlas remains 90 EGU / 8 non-EGU /
-45 unresolved.
+InverseGreedy/FullPermutationNormalization.lean is an additional S011
+attempt to establish sum(orderMass)=1 over the **actual** complete
+permutation list by head decomposition and fuel induction. Mark IG-L15
+Lean-verified only upon successful build at the exact release SHA.
+The downstream full Lean deletion consistency and complete greedy
+pushforward remain open unless compiled later in the session.
 
-## New Lean results — IG-L13
+## Next workshop
 
-InverseGreedy/FiniteLawFuel.lean, imported in InverseGreedy.lean:
-- afterChoice_subset_erase and afterChoice_card_lt;
-- finiteRaceLaw_fuel_step_stable and finiteRaceLaw_fuel_eq_card;
-- greedyAccept_blocked and greedyOutput_skip_blocked.
+sessions/S012.md is installed: first prove weighted order restriction
+and the greedy law-level pushforward in Lean; then begin an
+independent clock-equivalence bridge. No continuous exponential-clock
+theorem is claimed from the paper identities or partial Lean lemmas.
 
-These are structural finite combinatorial statements. They do **not**
-establish the whole-weighted-permutation law, the pushforward to
-finiteRaceLaw, or independent exponential-clock semantics. Keep all
-these latter requirements explicitly open.
+S011 has **not** supplied new all-positive six-vertex EGU or non-EGU
+certificates. Keep the connected n<=6 partial atlas **90/8/45**.
+No novel-claim certificate, Palomar registration or arXiv release.
 
-## Next
+## Release verification
 
-sessions/S011.md is installed: structurally decompose actual
-List.permutations exactly once, normalize summed orderMass, then
-combine the skip and fuel lemmas with weighted pushforward and
-eventually continuous clocks. Investigate genuinely new AEGU
-boundary mechanisms with strict proof or exact witnesses.
-
-No Inverse Greedy arXiv/Palomar release or independent novelty claim.
+The S011 branch is `s011-priority-permutation-decomposition`.
+Use the latest exact branch/PR SHA and its Python and Lean GitHub
+Actions jobs before merging; update CLAIMS.md, README.md and this
+handover to distinguish verified from pending proof claims.
