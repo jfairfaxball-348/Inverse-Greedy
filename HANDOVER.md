@@ -51,6 +51,24 @@ event-to-TV identification) is compiled in
 run **41214809471**. Complete informal proof:
 `proof/C6_TV_GAP.md`. The bound is not claimed sharp.
 
+**IG-N2b / IG-L19 — P5 is the smallest unattained AEGU graph.**
+For strictly positive rates `(1,1,t,1,1)` on P5,
+the four exact maximal-set output masses are
+`P(03)=P(14)=1/[2(t+2)]`, `P(13)=1/(t+4)`,
+and `P(024)=1-1/(t+2)-1/(t+4)`.
+Their exact TV distance from uniformity is
+`t(3t+10)/[4(t+2)(t+4)]`, positive at every finite
+positive t but strictly below `5t/16`. Thus it tends
+to zero as t→0+ while the strict S002 P5 minor
+forbids exact EGU. All graphs of size ≤4 are EGU,
+so P5 is the smallest unattained AEGU obstruction.
+Proof: `proof/P5_APPROXIMATE_UNIFORMITY.md`.
+Independent Fraction recursion/full permutation checks:
+`tests/test_s012_p5_approx.py`, green at SHA 447b6750.
+`InverseGreedy/P5ApproximateBoundary.lean` addresses
+the rational algebra and bound only; exact Lean status is
+tracked in CLAIMS.md. It is not the weighted event-law bridge.
+
 ## Verification
 
 - `tests/test_s012.py` exhaustively compares deterministic
@@ -72,6 +90,10 @@ retained subsets, and equality `priorityOutputMass = finiteRaceLaw`,
 remain OPEN in Lean.** They are mathematical paper proofs from
 S011 with exact arithmetic regression support. Independent
 continuous Exp-clock equivalence also remains open.
+
+S012 also identifies P5 (already in the proved negative set)
+as an unattained AEGU graph, giving a new order-five boundary
+mechanism distinct from the S009 star coronas.
 
 S012 supplies no new connected six-vertex classification:
 **90 EGU / 8 non-EGU / 45 unresolved**. C6 remains one of the
