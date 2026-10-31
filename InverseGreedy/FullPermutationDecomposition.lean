@@ -17,7 +17,7 @@ variable {α : Type*} [DecidableEq α]
 
 /-- The recursive head-and-tail enumeration, retaining the empty
 permutation as a single leaf. -/
-def headSplitOrders (active : Finset α) : List (List α) :=
+noncomputable def headSplitOrders (active : Finset α) : List (List α) :=
   if active = ∅ then [[]]
   else active.toList.flatMap (fun v =>
     ((active.erase v).toList.permutations.map (List.cons v)))
@@ -97,7 +97,7 @@ theorem headSplitOrders_nodup (active : Finset α) :
       subst order
       intro hright
       rcases List.mem_map.mp hright with ⟨tail', ht', heq⟩
-      exact hne ((List.cons.inj heq).1)
+      exact hne ((List.cons.inj heq).1.symm)
 
 /-- Actual `List.permutations` decomposes by unique head and
 permutations of the erased active set, with exact multiplicity. -/
