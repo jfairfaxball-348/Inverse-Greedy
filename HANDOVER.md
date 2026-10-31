@@ -34,12 +34,15 @@ greedy-output oracles for multiple graph classes.
 See experiments/priority_deletion.py and tests/test_s011.py.
 Both Python and Lean jobs passed together for the unique-head module.
 
-InverseGreedy/FullPermutationNormalization.lean is an additional S011
-attempt to establish sum(orderMass)=1 over the **actual** complete
-permutation list by head decomposition and fuel induction. Mark IG-L15
-Lean-verified only upon successful build at the exact release SHA.
-The downstream full Lean deletion consistency and complete greedy
-pushforward remain open unless compiled later in the session.
+InverseGreedy/FullPermutationNormalization.lean now **proves in Lean**
+that the `orderMass` values summed over the actual full permutation
+list equal one for every positive real rate assignment. The proof uses
+the unique-head decomposition, leaf mass identity and finite induction.
+The exact branch SHA `a613bb87a5fa64b54303c66234a63791135e9ca0`
+passed **both** Python and imported Lean jobs in push run 41196557142
+and PR run 41196560831. This closes IG-L15; it does NOT prove the
+law-level weighted deletion consistency or greedy pushforward in Lean,
+nor the continuous exponential-clock law.
 
 ## Next workshop
 

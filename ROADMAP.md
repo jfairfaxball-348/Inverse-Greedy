@@ -165,9 +165,10 @@
 - [x] Independent exact `Fraction` regressions across every subset of
       unequal rational 4/5-vertex rate vectors, complete n<=6 permutation
       uniqueness/mass and diverse greedy-law graphs.
-- [ ] Lean normalisation of actual `orderMass` list: added proof attempt
-      in FullPermutationNormalization.lean; verify compilation and update
-      claim status before declaring checked.
+- [x] Lean normalisation of the actual complete `List.permutations`
+      `orderMass` sum is 1 for all strictly positive real rates, using
+      structural head decomposition and induction. Imported Lean+Python
+      succeeded at exact PR SHA a613bb87 (PR run 41196560831).
 - [ ] Lean weighted deletion restriction and law-level pushforward still
       require formal proof, even though their complete mathematical proofs
       and exact finite tests are available.

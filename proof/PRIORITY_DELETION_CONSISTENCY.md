@@ -122,14 +122,17 @@ identifies PL with independent Exp arrival times inside Lean.
 
 ## Remaining Lean proof obligations
 
-1. Actual `List.permutations` equals the unique-head enumeration
-   **as multisets of orders**, not merely as support sets.
-2. Total `orderMass` of that list is one.
-3. Algebraic weighted-list marginal under erasing arbitrary vertices.
-4. Weighted grouping by `greedyOutput`, induction over residual
-   active sets, and equality with `finiteRaceLaw` at `active.card`.
-5. Only then connect the discrete weighted order law to independent
-   continuous exponential clocks in Lean.
+1. **Closed in Lean (S011, IG-L14):** unique-head enumeration of the
+   actual `List.permutations` as lists of orders up to permutation.
+2. **Closed in Lean (S011, IG-L15):** total `orderMass` is one,
+   imported CI at exact SHA a613bb87 (PR run 41196560831).
+3. **Open in Lean:** algebraic weighted-list marginal under erasing
+   arbitrary vertices.
+4. **Open in Lean:** weighted grouping by `greedyOutput`, induction
+   over residual active sets, and equality with `finiteRaceLaw`
+   at `active.card`.
+5. **Open in Lean:** identifying the discrete weighted law with
+   independent continuous exponential clocks.
 
-These obligations are distinct; the first two must not be described
-as completing the latter three.
+The first two established results must not be described as proving
+the remaining three.

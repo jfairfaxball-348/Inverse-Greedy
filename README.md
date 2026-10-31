@@ -156,9 +156,11 @@ pushforward identity to finiteRaceLaw. CI status is tracked in CLAIMS.md.
 actual Mathlib full permutation list decomposes into distinct heads
 and all corresponding tail permutations, *with multiplicity one*;
 exact Python and imported Lean CI passed at SHA 00fb0afe (run
-41195940431). FullPermutationNormalization.lean is the subsequent
-structural normalisation proof attempt: consult CLAIMS.md and exact-head
-CI before declaring its status. The S011 independent Fraction tests
+41195940431). FullPermutationNormalization.lean proves that the weighted `orderMass`
+values of **all actual full permutations sum to exactly 1**, for every
+positive real rate vector. Both imported Lean and Python CI passed at
+exact PR SHA a613bb87a5fa64b54303c66234a63791135e9ca0 (push
+41196557142, PR 41196560831). The S011 independent Fraction tests
 and paper proof establish the finite deletion-consistency and greedy
 pushforward statements mathematically; the full formal law-level
 pushforward remains open.
