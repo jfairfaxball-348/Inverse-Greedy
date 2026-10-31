@@ -59,4 +59,19 @@ theorem projectedOrderMass_head
         · simp [h, heq]
   · simp [h]
 
+
+/-- The scalar cancellation at the heart of the first-retained-winner
+induction. The first retained vertex can win immediately, or all
+first-overall discarded winners can be summed before it wins. This
+algebraic identity alone does not prove the probabilistic marginal. -/
+theorem retained_first_rate_cancellation
+    (retainedRate discardedRate winnerRate : ℝ)
+    (hret : retainedRate ≠ 0)
+    (htotal : retainedRate + discardedRate ≠ 0) :
+    winnerRate / (retainedRate + discardedRate) +
+      discardedRate / (retainedRate + discardedRate) *
+        (winnerRate / retainedRate) = winnerRate / retainedRate := by
+  field_simp
+  ring
+
 end InverseGreedy
