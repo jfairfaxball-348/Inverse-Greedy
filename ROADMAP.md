@@ -96,10 +96,26 @@
 - [ ] The remaining 47 six-vertex graph classifications.
 - [ ] Independent novelty or publication-priority audit.
 
-## S008 — installed
-See sessions/S008.md. Complete the finite-order/permutation-to-law Lean
-bridge and attack 47 unresolved six-vertex instances using exact
-structural or algebraic certificates.
+## S008 — executed 2026-10-31
+- [x] Constructive all-size EGU family: the corona of K_m with one
+      private leaf at each clique vertex; leaf/centre rates 1 and
+      (m+1)^(1/m)-1, producing m+1 equiprobable maximal sets.
+- [x] Exact six-vertex net graph, connected atlas index 8, has rates
+      (1,1,1,cuberoot(4)-1,cuberoot(4)-1,cuberoot(4)-1), and all four
+      MIS have probability 1/4. Certified by independent exact first-
+      choice and all-720-permutation oracles over Q(cuberoot(4)).
+- [x] Updated partial connected atlas to 90/7/46.
+- [x] Added Lean support characterization for actual List.permutations,
+      and reused S007 leaf identity across each supported permutation.
+      Mark Lean checked only after successful exact-head CI.
+- [ ] Total List.permutations mass = 1 Lean theorem, greedy-output
+      pushforward to finiteRaceLaw, and continuous-clock equivalence.
+- [ ] Classify 46 remaining connected n=6 cases with certificates;
+      independent publication-priority review.
+
+## S009 — installed
+See sessions/S009.md: close the missing permutation-sum and greedy
+pushforward bridge in Lean; pursue 46 open six-vertex cases.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal

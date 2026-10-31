@@ -38,6 +38,14 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   six-vertex graphs as EGU (16 exact rational and 3 exact Q(√3)
   lifted witnesses) and 3 more as non-EGU by contraction to P5.
   See proof/FALSE_TWIN_INVARIANCE.md and tests/test_s007.py.
+- **IG-P8 (S008):** for every m>=1, the clique K_m with one private
+  pendant leaf attached to each clique vertex is EGU. Give leaves rate
+  1 and all clique vertices rate (m+1)^(1/m)-1 > 0; each of the m+1
+  MIS then has probability 1/(m+1). At m=3 this proves connected n=6
+  atlas index 8 EGU with the exact algebraic rates
+  (1,1,1,cuberoot(4)-1,cuberoot(4)-1,cuberoot(4)-1), verified
+  independently by first-choice recursion and all 720 weighted
+  permutations in Q(cuberoot(4)). See proof/CLIQUE_CORONA.md.
 - **IG-N1:** C6 cannot be EGU: product of the three opposite-pair
   probabilities ≤1/729, while uniformity would require 1/125.
 - **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a
@@ -64,17 +72,17 @@ Standard-library-only exact rational arithmetic:
 
 Optional NetworkX atlas enumeration:
 
-    python -m pip install 'networkx>=3.4,<4'
+    python -m pip install 'networkx>=3.4,<4' 'sympy>=1.13,<2'
     python experiments/census.py --max-n 6 --max-rate 4
     python experiments/census.py --max-n 6 --max-rate 4 --json
 
 The **143 connected unlabeled graphs through six vertices**
-currently have **89 proven positive**, **7 proven negative
+currently have **90 proven positive**, **7 proven negative
 (P5, P6, C6, K1∨P5, and three false-twin P5 expansions)**, and
-**47 unresolved** instances. This is an
+**46 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
-prove impossibility. See results/S007_ATLAS.md.
+prove impossibility. See results/S008_ATLAS.md.
 
 Optional numerical only:
 
@@ -107,19 +115,25 @@ S007 adds OrderLeafBridge.lean, identifying each duplicate-free
 priority leaf's product of first-choice probabilities with
 `orderMass` (Lean-verified at SHA 543cfe9, green CI run 41131451454); the full
 permutation summation and greedy pushforward are still open.
+S008 adds FullPermutationSupport.lean: the actual Mathlib
+List.permutations enumerates exactly the nodup lists whose underlying
+finset is active, and all members obey the S007 leaf-mass equality.
+It is **not yet** the normalization of the full permutation sum or the
+pushforward identity to finiteRaceLaw. CI status is tracked in CLAIMS.md.
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
 
 ## Navigation
 proof/FALSE_TWIN_INVARIANCE.md — S007 structural closure and obstructions;
-results/S007_ATLAS.md — new 89/7/47 partial census;
+results/S008_ATLAS.md — new 90/7/46 partial census;
+proof/CLIQUE_CORONA.md — all-size constructive clique-corona EGU theorem;
 proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
 proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S008.md — installed next session;
+sessions/S009.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)

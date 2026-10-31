@@ -42,7 +42,7 @@ class S006SixVertexTests(unittest.TestCase):
                                  index_one_closed_form(a,t,u,w))
 
     def test_updated_connected_atlas(self):
-        rows = list(enumerate_atlas(max_n=6, max_rate=4, include_false_twins=False))
+        rows = list(enumerate_atlas(max_n=6, max_rate=4, include_false_twins=False, include_s008=False))
         positive = [r for r in rows if r['status'] == 'proved-positive']
         negative = [r for r in rows if r['status'] == 'proved-negative']
         open_rows = [r for r in rows if r['status'] == 'unresolved']

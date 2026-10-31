@@ -14,7 +14,7 @@ from six_vertex_witnesses import SIX_VERTEX_RATIONAL
 from false_twin import contraction_parent
 
 
-def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True):
+def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True, include_s008=True):
     import networkx as nx
     # S004: the six-vertex cone over P5 is a rigorous negative by
     # join necessity and the already proved strict P5 obstruction.
@@ -70,6 +70,19 @@ def enumerate_atlas(max_n=6, max_rate=4, include_false_twins=True):
                 entry.update(status='proved-positive',
                              certificate='S006 exact positive rational witness; proof/SIX_VERTEX_INDEX1.md',
                              rates=list(rates))
+            # S008: complete-graph corona K3 with a private leaf at each
+            # clique vertex. An exact cubic algebraic rate certificate
+            # is independently checked by two complete exact oracles.
+            if include_s008 and entry['status'] == 'unresolved' and n == 6 and index == 8:
+                from clique_corona import clique_corona_edges
+                import networkx as nx
+                witness = nx.Graph()
+                witness.add_nodes_from(range(6))
+                witness.add_edges_from(clique_corona_edges(3))
+                assert nx.is_isomorphic(g, witness)
+                entry.update(status='proved-positive',
+                             certificate='S008 exact cubic algebraic clique-corona family; proof/CLIQUE_CORONA.md',
+                             rates=['1'] * 3 + ['cuberoot(4)-1'] * 3)
             if entry['status'] == 'unresolved' and n == 4 and nx.is_isomorphic(g, nx.path_graph(4)):
                 entry.update(status='proved-positive', certificate='P4 algebraic witness; proof/FOUNDATIONS.md')
             if entry['status'] == 'unresolved' and n == 5 and nx.is_isomorphic(g, nx.path_graph(5)):
