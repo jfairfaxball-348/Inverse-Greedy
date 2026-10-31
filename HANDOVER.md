@@ -1,62 +1,59 @@
-# S009 handover — 2026-10-31
+# S010 handover — 2026-10-31
 
-## Release and verification
+## Incoming state and release
 
-**S009 PR #8 merged successfully** on 2026-10-31:
-https://github.com/jfairfaxball-348/Inverse-Greedy/pull/8
+S009 was fully merged as PR #8 (squash 9569618) with green Python
+and imported Lean at head ed0d02d4, runs 41188364427 / 41188368166.
+The S010 work was prepared on branch `s010-finite-law-fuel-and-skip`
+as PR #9: https://github.com/jfairfaxball-348/Inverse-Greedy/pull/9
 
-The exact final PR head was `ed0d02d4c6d7819ac51adf86b4da9957ae342a65`.
-Both the **Python exact** and imported **Lean** jobs passed at this
-same SHA in BOTH GitHub Actions runs:
+At branch SHA `fbf578c2a1b877a0c7c1a6217dc00ce785af135c` both the
+exact Python and imported Lean jobs in PR run 41193711626
+passed. This validates the new finite-law Lean module on that exact
+SHA, with syntax repaired after a reserved-keyword error. Later
+documentation commits must be separately verified at their **final**
+PR head before merge; never infer that later changes are CI-green.
 
-- Push run **41188364427**: success.
-- Pull-request run **41188368166**: success.
+## New mathematical results — IG-P9 and IG-P10
 
-Squash merge commit: `956961822b2a758f39de9c555283895845f478b2`.
-This post-merge documentation release records verified results; earlier
-intermediate CI failures (stale historical snapshots and a trivial Lean
-add-zero simplification) were corrected before final green tests.
-S006/S007 historical snapshot tests use `include_s009=False`.
+Write AEGU for graphs whose positive-rate attainable greedy MIS laws
+have uniform MIS law in their total-variation closure. AEGU is **not**
+equivalent to actual EGU.
 
-## New mathematical obstruction — IG-N5
+- Disjoint union G ⊔ H is AEGU iff G and H are AEGU.
+- For nonempty G and H, the graph join G ∨ H is AEGU iff G and H
+  are AEGU, using group-total rate scaling to match MIS counts.
+- Consequently, for star-corona C_m (m>=2) from S009, both C_m ⊔ K2
+  and C_m ∨ K1 are AEGU but remain provably non-EGU.
+- With k=2^m and TV_C(t) from S009, choosing positive rates on the
+  universal joined vertex z equal to total_C/(k+1) gives
+  TV_join(t)=(k+1)/(k+2)*TV_C(t). With an equal-rate K2 component,
+  TV_union(t)=TV_C(t). Both approach zero, neither is ever zero.
 
-For every m>=2 the star-corona K_(1,m) with one private leaf per
-vertex is NON-EGU under all strictly positive asymmetric exponential
-rates. Condition on independent pair-winning indicators X_i; if
-the hub is not selected, spoke subset S has output probability
-q_S = product(x_i or 1-x_i) * (B+sum_{i in S}u_i)/
-(b+B+sum_{i in S}u_i). A strict two-spoke minor
-q_{S+i}q_{S+j} > q_S q_{S+i+j} precludes all probabilities equal.
-Proof: proof/STAR_CORONA_OBSTRUCTION.md, with the detailed m=2
-instance in proof/CORONA_P3_OBSTRUCTION.md.
+Complete informal proofs: proof/APPROXIMATE_EGU_CLOSURE.md.
+Independent exact checks: tests/test_s010.py (first-choice
+recursion and all 7! orders for seven-vertex join).
+The partial connected n<=6 atlas remains 90 EGU / 8 non-EGU /
+45 unresolved.
 
-The connected six-vertex atlas index 3 (corona(P3)) is thereby
-proved negative for ALL positive rates. Partial connected atlas
-n<=6: **90 EGU, 8 non-EGU, 45 unresolved** (all open n=6).
+## New Lean results — IG-L13
 
-An additional IG-N6 theorem constructs positive rate vectors with
-TV(t) < m/((2^m+1)^2*t), proving uniformity is approachable but
-**never attained** for every m>=2. This accounts for apparent
-optimizer boundary convergence, not a positive witness.
+InverseGreedy/FiniteLawFuel.lean, imported in InverseGreedy.lean:
+- afterChoice_subset_erase and afterChoice_card_lt;
+- finiteRaceLaw_fuel_step_stable and finiteRaceLaw_fuel_eq_card;
+- greedyAccept_blocked and greedyOutput_skip_blocked.
 
-Tests exercise 729 rate vectors exactly, the all-720 order oracle,
-and star-corona closed forms m=2,3,4.
-
-## Lean scope
-
-CoronaP3Minor.lean contains only the **algebraic** strict factorisation,
-not the probability-law derivation. The finite full-permutation sum
-normalisation, greedyOutput pushforward to finiteRaceLaw and
-independent continuous Exponential-clock equivalence remain OPEN.
-S008 support and S007 leaf mass identities remain separate.
+These are structural finite combinatorial statements. They do **not**
+establish the whole-weighted-permutation law, the pushforward to
+finiteRaceLaw, or independent exponential-clock semantics. Keep all
+these latter requirements explicitly open.
 
 ## Next
 
-sessions/S010.md. Prove structural List.permutations decomposition,
-then normalisation, then deletion-consistent greedy pushforward in Lean.
-Only after that bridge attempt continuous exponential measures.
-Search other six-vertex families using exact rate certificates and
-all-positive impossibility inequalities. Never use near-zero
-boundary optimizer residuals as exact witnesses.
+sessions/S011.md is installed: structurally decompose actual
+List.permutations exactly once, normalize summed orderMass, then
+combine the skip and fuel lemmas with weighted pushforward and
+eventually continuous clocks. Investigate genuinely new AEGU
+boundary mechanisms with strict proof or exact witnesses.
 
-No independent novelty certification, arXiv or Palomar submission.
+No Inverse Greedy arXiv/Palomar release or independent novelty claim.
