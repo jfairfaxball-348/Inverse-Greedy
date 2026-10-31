@@ -66,6 +66,15 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   proof/CORONA_P3_OBSTRUCTION.md.
 - **IG-N4 (S004):** the six-vertex cone over P5 (K1∨P5) is not EGU by the join theorem; it is atlas index 68.
 
+- **IG-P9/IG-P10 (S010):** Define *approximately EGU* (AEGU) by
+  infimum zero of total variation from the uniform MIS law, without
+  requiring exact attainment. A disjoint union is AEGU iff both
+  components are AEGU; a join of two nonempty graphs is AEGU iff both
+  factors are AEGU. The S009 star coronas therefore generate further
+  **unattained** AEGU families: C_m disjoint union K2 and C_m join K1,
+  with explicit positive rates and exact TV identities.
+  See proof/APPROXIMATE_EGU_CLOSURE.md and tests/test_s010.py.
+
 These are self-contained informal mathematical proofs. Lean verification
 and independent novelty certification must be distinguished; see
 CLAIMS.md. Proofs in proof/FOUNDATIONS.md,
@@ -139,6 +148,14 @@ pushforward identity to finiteRaceLaw. CI status is tracked in CLAIMS.md.
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
 
+**S010 finite-law Lean step:** FiniteLawFuel.lean establishes
+strict cardinality decrease afterChoice, fuel independence of
+finiteRaceLaw above active.card, and deletion of a blocked vertex from
+a complete priority scan. Green Python+Lean CI at SHA fbf578c2 for
+these imported lemmas; the complete `List.permutations` sum and
+pushforward are **still open**. The closure theorem IG-P9/IG-P10
+is an informal proof with exact Python checks, not Lean-formalised.
+
 ## Navigation
 proof/FALSE_TWIN_INVARIANCE.md — S007 structural closure and obstructions;
 results/S009_ATLAS.md — new 90/8/45 partial census;
@@ -148,7 +165,7 @@ proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S010.md — installed next session;
+sessions/S011.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
