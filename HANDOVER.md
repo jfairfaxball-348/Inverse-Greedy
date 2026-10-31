@@ -7,12 +7,15 @@ and imported Lean at head ed0d02d4, runs 41188364427 / 41188368166.
 The S010 work was prepared on branch `s010-finite-law-fuel-and-skip`
 as PR #9: https://github.com/jfairfaxball-348/Inverse-Greedy/pull/9
 
-At branch SHA `fbf578c2a1b877a0c7c1a6217dc00ce785af135c` both the
-exact Python and imported Lean jobs in PR run 41193711626
-passed. This validates the new finite-law Lean module on that exact
-SHA, with syntax repaired after a reserved-keyword error. Later
-documentation commits must be separately verified at their **final**
-PR head before merge; never infer that later changes are CI-green.
+**S010 PR #9 was merged successfully.** The exact final PR head
+`8064bde884981bc8170826db046fea9d582315f2` passed **both**
+the exact Python and imported Lean jobs in GitHub Actions PR run
+**41193924574**. The original new Lean lemmas also passed at
+`fbf578c2a1b877a0c7c1a6217dc00ce785af135c` in PR run
+**41193711626** after correcting a reserved-word naming error.
+Squash merge commit on main:
+`8c6115433a00498bd5ca45c7c7392fc5adac59dc`.
+This post-merge handover records the verified exact release head.
 
 ## New mathematical results — IG-P9 and IG-P10
 
