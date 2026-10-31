@@ -28,3 +28,7 @@ Rigour:
 
 Close every session with verified tests/CI, SHA, revised claim ledger,
 roadmap, handover and installed next-session prompt.
+
+- Atlas regression snapshots are part of test semantics. New census
+  classifiers must have an include_sNNN flag or update earlier
+  snapshots explicitly; S006/S007 require include_s009=False.

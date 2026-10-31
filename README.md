@@ -55,6 +55,13 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   produce an exact two-event bottleneck. Its output law has total
   variation distance **at least 1/25** from uniform, for all positive rates.
 
+- **IG-N5 (S009):** every pendant corona of a star K_(1,m),
+  m>=2, is **non-EGU for all strictly positive rates**, by a
+  strict 2x2 probability minor among four spoke-selection outputs.
+  Its smallest member is the corona of P3, connected n=6 atlas
+  index 3; this supplies an eighth exact negative certificate.
+  See proof/STAR_CORONA_OBSTRUCTION.md and
+  proof/CORONA_P3_OBSTRUCTION.md.
 - **IG-N4 (S004):** the six-vertex cone over P5 (K1∨P5) is not EGU by the join theorem; it is atlas index 68.
 
 These are self-contained informal mathematical proofs. Lean verification
@@ -77,9 +84,9 @@ Optional NetworkX atlas enumeration:
     python experiments/census.py --max-n 6 --max-rate 4 --json
 
 The **143 connected unlabeled graphs through six vertices**
-currently have **90 proven positive**, **7 proven negative
+currently have **90 proven positive**, **8 proven negative
 (P5, P6, C6, K1∨P5, and three false-twin P5 expansions)**, and
-**46 unresolved** instances. This is an
+**45 unresolved** instances. This is an
 exhaustive enumeration but NOT an exhaustive classification:
 a failed finite rate search or numerical optimisation does not
 prove impossibility. See results/S008_ATLAS.md.
@@ -115,6 +122,10 @@ S007 adds OrderLeafBridge.lean, identifying each duplicate-free
 priority leaf's product of first-choice probabilities with
 `orderMass` (Lean-verified at SHA 543cfe9, green CI run 41131451454); the full
 permutation summation and greedy pushforward are still open.
+S009 adds CoronaP3Minor.lean, with the strictly positive algebraic
+four-corner minor for the star-corona obstruction. This was imported
+and verified on GitHub CI at the exact PR commit listed in CLAIMS.md;
+the independent-clock event factorisation remains a paper proof.
 S008 adds FullPermutationSupport.lean: the actual Mathlib
 List.permutations enumerates exactly the nodup lists whose underlying
 finset is active, and all members obey the S007 leaf-mass equality.
@@ -126,16 +137,18 @@ specific build SHA proves.
 
 ## Navigation
 proof/FALSE_TWIN_INVARIANCE.md — S007 structural closure and obstructions;
-results/S008_ATLAS.md — new 90/7/46 partial census;
+results/S009_ATLAS.md — new 90/8/45 partial census;
 proof/CLIQUE_CORONA.md — all-size constructive clique-corona EGU theorem;
 proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
 proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S009.md — installed next session;
+sessions/S010.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)
 (arXiv:2610.02276) is the **equal-rate** predecessor, read-only.
 No Inverse Greedy arXiv publication or Palomar registration is claimed.
+
+See also proof/STAR_CORONA_OBSTRUCTION.md for the S009 all-size non-EGU family.

@@ -69,4 +69,16 @@ theorem coronaP3_strict_minor (x y b B u v : ℝ)
     _ = (((1 - x) * (1 - y)) * coronaP3Survival b B 0) *
         ((x * y) * coronaP3Survival b B (u + v)) := by ring
 
+/-- Shifted four-corner inequality: supports arbitrary fixed choices
+of additional spokes in a star corona (their total rate is t >= 0).
+This is still an algebraic theorem, not the stochastic coupling. -/
+theorem coronaStar_shifted_cross_pos (b B t u v : ℝ)
+    (hb : 0 < b) (hB : 0 < B) (ht : 0 ≤ t)
+    (hu : 0 < u) (hv : 0 < v) :
+    0 < coronaP3Survival b B (t + u) * coronaP3Survival b B (t + v) -
+      coronaP3Survival b B t * coronaP3Survival b B (t + u + v) := by
+  have hB' : 0 < B + t := add_pos_of_pos_of_nonneg hB ht
+  have h := coronaP3_survival_cross_pos b (B + t) u v hb hB' hu hv
+  simpa only [coronaP3Survival, add_assoc] using h
+ 
 end InverseGreedy

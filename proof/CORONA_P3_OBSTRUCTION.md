@@ -85,3 +85,10 @@ algebraic minor under abstract 0<x,y<1 and b,B,u,v>0; the identification
 of these algebraic quantities with the stochastic greedy event
 probabilities, and the full finite pushforward, are not yet end-to-end
 Lean formalised. Do not overstate the Lean scope.
+
+## Infinite-family strengthening
+
+The same clock-pair argument with m>=2 independent end pairs proves
+the strict minor for **every** pendant corona of a star K_(1,m).
+See proof/STAR_CORONA_OBSTRUCTION.md. The six-vertex P3 corona is the
+smallest member, not an isolated accidental counterexample.
