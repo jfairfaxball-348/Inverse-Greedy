@@ -154,10 +154,30 @@
       independent continuous Exp-clock bridge remains unproved.
 - [ ] 45 six-vertex atlas cases remain unresolved; no novelty certificate.
 
-## S011 — installed
-See sessions/S011.md. Finish actual List.permutations decomposition,
-normalization and output pushforward; explore additional AEGU boundary
-families, keeping unattained approximation distinct from exact EGU.
+## S011 — executed 2026-10-31
+- [x] Proved a unique-head decomposition (with exact list multiplicities)
+      of actual `List.permutations`, not merely order support; imported
+      Lean and green Python+Lean CI at commit 00fb0afe, run 41195940431.
+- [x] New complete informal proofs: positive weighted-priority deletion
+      consistency for every subset, and pushforward to the first-choice
+      greedy MIS recurrence for symmetric irreflexive graphs.
+      See proof/PRIORITY_DELETION_CONSISTENCY.md.
+- [x] Independent exact `Fraction` regressions across every subset of
+      unequal rational 4/5-vertex rate vectors, complete n<=6 permutation
+      uniqueness/mass and diverse greedy-law graphs.
+- [ ] Lean normalisation of actual `orderMass` list: added proof attempt
+      in FullPermutationNormalization.lean; verify compilation and update
+      claim status before declaring checked.
+- [ ] Lean weighted deletion restriction and law-level pushforward still
+      require formal proof, even though their complete mathematical proofs
+      and exact finite tests are available.
+- [ ] Continuous independent exponential-clock bridge still open.
+- [ ] Boundary search did not yet certify new atlas instances; baseline
+      90/8/45 stands.
+
+## S012 — installed
+See sessions/S012.md for Lean deletion consistency, full greedy-output
+pushforward and independent continuous-clock semantics.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
