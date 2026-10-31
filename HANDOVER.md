@@ -1,5 +1,16 @@
 # S014 handover — 2026-10-31
 
+## S014 release — merged PR #13
+
+**PR #13 merged** as squash commit
+`713e5641bda05d570c92866ca85f326f5d9ae044` on `main`.
+The exact final S014 PR head
+`66524262097647f7edc5dca34dd1f9e9139a1265`
+passed **both** full Python/certified census and imported Lean in
+GitHub Actions run **41224006146**. This checks the S014 Lean
+claims and exact regressions on the final reviewed code. It does
+not prove full weighted deletion consistency in Lean.
+
 ## S014 work (PR #13)
 
 Branch: `s014-weighted-projection`.
