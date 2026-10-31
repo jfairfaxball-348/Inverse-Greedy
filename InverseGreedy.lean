@@ -17,3 +17,4 @@ import InverseGreedy.GreedyBlockedErasure
 import InverseGreedy.PriorityOutputLaw
 import InverseGreedy.C6TVGap
 import InverseGreedy.P5ApproximateBoundary
+import InverseGreedy.PriorityHeadConditioning
