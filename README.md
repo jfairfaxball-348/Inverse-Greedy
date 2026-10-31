@@ -56,9 +56,26 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   permutations in Q(cuberoot(4)). See proof/CLIQUE_CORONA.md.
 - **IG-N1:** C6 cannot be EGU: product of the three opposite-pair
   probabilities ≤1/729, while uniformity would require 1/125.
+- **IG-N1b (S012):** C6 is not even *approximately* EGU (AEGU).
+  For **every positive rate vector** its greedy-output law has
+  total-variation distance at least **4/45** from the uniform law on
+  its five MIS. The existing three opposite-pair probability product
+  bound forces one pair outcome to have mass at most 1/9, while the
+  uniform target assigns 1/5. The 4/45 bound need not be sharp.
+  See proof/C6_TV_GAP.md and tests/test_s012_c6_gap.py.
 - **IG-N2 (S002):** P5 cannot be EGU: its four probabilities obey a
   strict minor p024*p13 > p03*p14. Since all graphs on ≤4 vertices
   are EGU, P5 is a **smallest-order obstruction**.
+- **IG-N2b (S012): P5 is approximately but not exactly EGU.**
+  With strictly positive rates **(1,1,t,1,1)** on P5 (t>0),
+  its four-output law has exact total variation
+  **t(3t+10)/[4(t+2)(t+4)] < 5t/16** from uniformity.
+  Thus TV approaches zero as t→0+, but exact EGU remains
+  impossible by the strict P5 minor. Since every graph on at most
+  four vertices is exactly EGU, **P5 is the smallest-order
+  unattained AEGU graph**. This is a second primitive boundary
+  mechanism, distinct from star coronas. See
+  proof/P5_APPROXIMATE_UNIFORMITY.md and tests/test_s012_p5_approx.py.
 - **IG-N3 (S003):** P6 cannot be EGU: independent triple-race events
   produce an exact two-event bottleneck. Its output law has total
   variation distance **at least 1/25** from uniform, for all positive rates.
@@ -166,6 +183,25 @@ and paper proof establish the finite deletion-consistency and greedy
 pushforward statements mathematically; the full formal law-level
 pushforward remains open.
 
+**S012 verified Lean advances:** GreedyBlockedErasure.lean proves the
+pointwise first-choice residual identity for symmetric neighbour maps:
+after accepting a vertex, its later neighbours may be deleted without
+changing the final accepted set; scanning nonneighbours is independent
+of the seed containing the first vertex. PriorityOutputLaw.lean defines
+the weighted full-permutation greedy-output event mass and proves it
+is between zero and one for each target using S011 normalization.
+C6TVGap.lean formally derives a 4/45 uniform-event deficit from the
+existing C6 product bound (pure algebra, not the full stochastic
+event-to-TV identification). P5ApproximateBoundary.lean formalises the separate rational TV
+identity and a positive linear upper bound for the new unattained
+P5 approximate-uniformity family; its compilation status is
+in CLAIMS.md. Full Python+Lean CI verification and SHAs
+are in CLAIMS.md. **Weighted restriction and law-level
+priorityOutputMass = finiteRaceLaw remain unproved in Lean**; S013
+targets those separately. C6's quantitative non-AEGU theorem is a
+complete paper result, with exact finite tests, not independently
+certified as novel.
+
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
@@ -182,6 +218,9 @@ is an informal proof with exact Python checks, not Lean-formalised.
 proof/FALSE_TWIN_INVARIANCE.md — S007 structural closure and obstructions;
 results/S009_ATLAS.md — new 90/8/45 partial census;
 proof/CLIQUE_CORONA.md — all-size constructive clique-corona EGU theorem;
+proof/GREEDY_RESIDUAL_IDENTITY.md — S012 deterministic Lean proof;
+proof/C6_TV_GAP.md — S012 non-AEGU C6 TV lower bound;
+proof/P5_APPROXIMATE_UNIFORMITY.md — S012 smallest unattained AEGU;
 proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
 proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;

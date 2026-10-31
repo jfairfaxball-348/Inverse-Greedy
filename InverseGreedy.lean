@@ -13,3 +13,7 @@ import InverseGreedy.CoronaP3Minor
 import InverseGreedy.FiniteLawFuel
 import InverseGreedy.FullPermutationDecomposition
 import InverseGreedy.FullPermutationNormalization
+import InverseGreedy.GreedyBlockedErasure
+import InverseGreedy.PriorityOutputLaw
+import InverseGreedy.C6TVGap
+import InverseGreedy.P5ApproximateBoundary

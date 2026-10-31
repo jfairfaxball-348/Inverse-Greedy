@@ -177,9 +177,39 @@
 - [ ] Boundary search did not yet certify new atlas instances; baseline
       90/8/45 stands.
 
-## S012 — installed
-See sessions/S012.md for Lean deletion consistency, full greedy-output
-pushforward and independent continuous-clock semantics.
+## S012 — executed 2026-10-31
+- [x] Imported Lean theorem giving the deterministic greedy first-choice
+      residual identity under symmetric neighbour relations, including
+      deletion of every later blocked neighbour and independent scan
+      of the surviving suffix (IG-L16).
+- [x] Defined the weighted full-priority-permutation greedy-output event
+      mass; proved nonnegativity and an upper bound of one for every
+      target using S011 structural normalization (IG-L17).
+- [x] Derived a strict positive all-rate C6 TV gap 4/45 from the S001
+      pair-product inequality: C6 is non-AEGU, unlike star coronas
+      with unattained zero infimum (IG-N1b).
+- [x] Proved the algebraic 4/45 single-event deficit in Lean (IG-L18),
+      without claiming stochastic/TV identification in Lean.
+- [x] Proved P5, the order-five smallest non-EGU obstruction, is
+      nevertheless **unattained AEGU** with strictly positive
+      (1,1,t,1,1) rates as t approaches 0; exact
+      TV=t(3t+10)/[4(t+2)(t+4)] < 5t/16. This is a
+      new boundary mechanism separate from star coronas.
+- [x] Exact Fraction first-choice recursion and full 5! priority-order
+      oracle verify the P5 law; pure rational Lean identity and bound
+      in P5ApproximateBoundary.lean (CI status in CLAIMS.md).
+- [x] Added exact state-machine deletion tests, exact C6 TV checks
+      on 729 unequal-rate tuples and two independent weighted order
+      oracles; CI verification recorded in CLAIMS.md.
+- [ ] Full weighted priority restriction to arbitrary subsets is still
+      a **paper proof only**; the Lean law-level equality
+      priorityOutputMass = finiteRaceLaw is **not** yet proved.
+- [ ] Independent continuous-clock bridge remains open.
+- [ ] Six-vertex atlas remains 90/8/45; no novelty certificate.
+
+## S013 — installed
+See sessions/S013.md for law-level weighted marginal,
+formal greedy pushforward and then independent exponential clock semantics.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal
