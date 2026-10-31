@@ -1,5 +1,22 @@
 # S013 handover — 2026-10-31
 
+## Final S013 release
+
+**PR #12 merged successfully** as squash commit
+`12adedef9d0d49fcc5cb43e6f6ac24dadfdbf0aa` on main,
+at 2026-10-31T16:41:17Z. Its exact final branch/PR head
+`50a0010596669380c4deb3e927a3fc35995fa9c4` passed **both**
+the full exact Python/certified census job and all imported Lean
+modules in GitHub Actions push run **41220677570**.
+The corresponding PR run **41220697882** was launched at the same
+head; its completion is separately visible in GitHub Actions.
+
+This certifies IG-L20 and IG-L21 on the released code and the
+S013 Fraction regressions. It does **not** certify weighted projection
+to arbitrary retained subsets, full `finiteRaceLaw` pushforward,
+continuous independent exponential clocks or independent novelty.
+S014 is installed.
+
 ## Incoming verified S012 release
 
 S012 PR #11 merged into main as squash commit
