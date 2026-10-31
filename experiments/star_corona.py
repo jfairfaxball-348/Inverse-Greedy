@@ -42,3 +42,16 @@ def star_corona_exact_law(rates):
     out[hub_mask] = 1 - sum(out.values(), Fraction(0))
     assert out[hub_mask] > 0 and all(p > 0 for p in out.values())
     return out
+
+
+def near_uniform_positive_rates(m, t):
+    """Positive rates approaching uniform law as t -> infinity (m>=2).
+
+    This is NOT an exactly uniform witness for finite t.
+    """
+    if m < 2:
+        raise ValueError("star obstruction requires at least two spokes")
+    t = Fraction(t)
+    if t <= 0:
+        raise ValueError("t must be strictly positive")
+    return (t,) + (Fraction(1),) * m + ((2**m) * t,) + (Fraction(1),) * m

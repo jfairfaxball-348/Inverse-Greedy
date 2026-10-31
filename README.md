@@ -60,6 +60,8 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   strict 2x2 probability minor among four spoke-selection outputs.
   Its smallest member is the corona of P3, connected n=6 atlas
   index 3; this supplies an eighth exact negative certificate.
+  The same family has **unattained TV infimum zero**: a positive
+  one-parameter rate family approaches uniform arbitrarily closely.
   See proof/STAR_CORONA_OBSTRUCTION.md and
   proof/CORONA_P3_OBSTRUCTION.md.
 - **IG-N4 (S004):** the six-vertex cone over P5 (K1∨P5) is not EGU by the join theorem; it is atlas index 68.

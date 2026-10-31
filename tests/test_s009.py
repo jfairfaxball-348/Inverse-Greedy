@@ -8,13 +8,14 @@ NOT enter the non-EGU proof.
 import sys
 import unittest
 from fractions import Fraction
+from math import comb
 from itertools import product
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "experiments"))
 from exact import graph, law_by_recursion, law_by_permutations, maximal_independent_sets
 from census import enumerate_atlas
-from star_corona import star_corona_edges, star_corona_exact_law
+from star_corona import star_corona_edges, star_corona_exact_law, near_uniform_positive_rates
 
 # Private leaf of central 0,1,2 is respectively 3,4,5.
 EDGES = ((0, 1), (1, 2), (0, 3), (1, 4), (2, 5))
@@ -90,6 +91,29 @@ class CoronaP3ObstructionTests(unittest.TestCase):
                     observed = law_by_recursion(adj, rates)
                     self.assertEqual(observed, expected)
                     self.assertEqual(len(observed), 2**m + 1)
+
+    def test_nonattained_zero_tv_infimum(self):
+        for m in (2, 3, 4):
+            k = 2**m
+            uniform = Fraction(1, k + 1)
+            for t in (1, 3, 11, 100):
+                rates = near_uniform_positive_rates(m, t)
+                law = star_corona_exact_law(rates)
+                tv = sum((abs(p - uniform) for p in law.values()),
+                         Fraction(0)) / 2
+                predicted = sum(
+                    (Fraction(comb(m, j), k * (k + 1))
+                     * Fraction(2 * j, (k + 1) * t + 2 * j)
+                     for j in range(1, m + 1)), Fraction(0))
+                self.assertEqual(tv, predicted)
+                self.assertGreater(tv, 0)
+                self.assertLess(tv, Fraction(m, (k + 1)**2 * t))
+                # The empty-spoke corner has exactly uniform mass.
+                hub_leaf = m + 1
+                leaves_mask = 1 << hub_leaf
+                for i in range(1, m + 1):
+                    leaves_mask |= 1 << (m + 1 + i)
+                self.assertEqual(law[leaves_mask], uniform)
 
     def test_independent_permutation_oracle(self):
         for rates in ((1,)*6, (3, 7, 2, 5, 4, 9),

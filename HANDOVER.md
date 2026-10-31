@@ -27,6 +27,11 @@ The connected six-vertex atlas index 3 (corona(P3)) is thereby
 proved negative for ALL positive rates. Partial connected atlas
 n<=6: **90 EGU, 8 non-EGU, 45 unresolved** (all open n=6).
 
+An additional IG-N6 theorem constructs positive rate vectors with
+TV(t) < m/((2^m+1)^2*t), proving uniformity is approachable but
+**never attained** for every m>=2. This accounts for apparent
+optimizer boundary convergence, not a positive witness.
+
 Tests exercise 729 rate vectors exactly, the all-720 order oracle,
 and star-corona closed forms m=2,3,4.
 

@@ -81,3 +81,42 @@ asymmetric positive rate vectors. The six-vertex base case has
 The Lean algebraic theorem in `InverseGreedy/CoronaP3Minor.lean`
 handles the four-corner strict rational factor; the full arbitrary-m
 stochastic event-law identity is **not yet Lean-verified**.
+
+## Exact uniformity is unattainable, but its TV infimum is ZERO
+
+**IG-N6 (complete informal theorem).** For every m>=2, the
+uniform law on the 2^m+1 MIS lies in the **closure** of the
+star-corona's strictly positive-rate attainable output laws, even
+though it is not attained by any positive-rate vector.
+
+Proof: write k=2^m and for each t>0 set
+
+    rate(a_i)=rate(A_i)=1 for every i,
+    rate(b)=t,    rate(B)=k*t.
+
+Then x_i=1/2 and u_i=2. For a spoke subset S of size j,
+
+    q_S = (1/k)*(k*t+2*j)/((k+1)*t+2*j)
+        = 1/(k+1) + [2*j]/[k*(k+1)*((k+1)*t+2*j)].
+
+The empty-spoke corner is **exactly** 1/(k+1). Every nonempty
+spoke corner has a strict positive surplus; the hub outcome
+takes the opposite sum of those surpluses. Therefore the total
+variation distance to uniform is exactly
+
+    TV(t) = 1/[k*(k+1)] *
+            sum_{j=1}^m binom(m,j) * 2*j / ((k+1)*t+2*j).
+
+For any positive finite t this is >0, in agreement with the
+strict-minor obstruction. Since sum_j binom(m,j)*2j=m*k,
+
+    0 < TV(t) < m/[(k+1)^2*t] -> 0 as t -> infinity.
+
+Thus infimum TV = 0 but the infimum is **not achieved**. QED.
+
+This is an analytically certified non-closedness phenomenon for
+attainable greedy MIS laws under strictly positive rates.
+It explains the near-zero numerical optimizer residuals for
+the six-vertex P3 corona: rates diverge towards a boundary regime.
+The exact expression and strict upper bound are checked with Fraction
+arithmetic for m=2,3,4 at multiple finite t in tests/test_s009.py.

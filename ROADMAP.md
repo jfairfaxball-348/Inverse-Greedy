@@ -138,6 +138,12 @@ maximal independent sets, and characterise the attainable output laws.
       finiteRaceLaw in Lean; independent exponential clock semantics.
 - [ ] 45 unresolved n=6 classifications and novelty/priority audit.
 
+- [x] Quantified approximate EGU for every star corona:
+      strict nonuniformity for all finite positive rates but
+      total-variation infimum zero; exact rate family and
+      TV(t) < m/((2^m+1)^2*t).
+- [x] Fraction tests of exact TV expression and bound for m=2,3,4.
+
 ## S010 — installed
 See sessions/S010.md. Prioritise finite-law Lean structural bridge;
 seek stronger general corona obstructions or exact algebraic witnesses.
