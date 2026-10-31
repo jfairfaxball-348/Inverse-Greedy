@@ -14,3 +14,4 @@ import InverseGreedy.FiniteLawFuel
 import InverseGreedy.FullPermutationDecomposition
 import InverseGreedy.FullPermutationNormalization
 import InverseGreedy.GreedyBlockedErasure
+import InverseGreedy.PriorityOutputLaw
