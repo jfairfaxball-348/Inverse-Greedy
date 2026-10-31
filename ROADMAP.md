@@ -207,9 +207,31 @@
 - [ ] Independent continuous-clock bridge remains open.
 - [ ] Six-vertex atlas remains 90/8/45; no novelty certificate.
 
-## S013 — installed
-See sessions/S013.md for law-level weighted marginal,
-formal greedy pushforward and then independent exponential clock semantics.
+## S013 — executed 2026-10-31
+- [x] Proved the general structural weighted first-head expectation
+      identity over **actual** List.permutations, for any real-valued
+      first-vertex/tail statistic, not merely normalization (IG-L20).
+      Imported Lean and full Python CI green at SHA 5cce19f,
+      Actions 41219976009.
+- [x] Formalised the first-head event equation and its deterministic
+      greedy residual-event reduction, with blocked vertices still
+      weighted inside the unfiltered tail (IG-L21; exact-head imported
+      Lean status in CLAIMS.md).
+- [x] Independent exact Fraction regressions for every nonempty subset
+      of a six-vertex rate vector, arbitrary tail-sensitive test
+      functions, and conditional filtered tails on several symmetric
+      graphs; full suite through tests/test_s013.py.
+- [x] Documented exactly where the missing *weighted projection*
+      to the retained vertices is required before claiming the complete
+      finiteRaceLaw equality.
+- [ ] Full arbitrary-subset weighted deletion consistency in Lean.
+- [ ] Full `priorityOutputMass = finiteRaceLaw` proof in Lean.
+- [ ] Independent Exp-clock ordering bridge in Lean.
+- [ ] No new EGU atlas classifications: 90/8/45 remains.
+
+## S014 — installed
+See sessions/S014.md for first-retained-vertex weighted law,
+complete filter pushforward, then the discrete greedy event law.
 
 **Final boss:** classify finite graphs with strictly positive
 exponential vertex priorities yielding uniform greedy terminal

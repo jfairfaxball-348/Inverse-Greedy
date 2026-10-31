@@ -202,6 +202,20 @@ targets those separately. C6's quantitative non-AEGU theorem is a
 complete paper result, with exact finite tests, not independently
 certified as novel.
 
+**S013 discrete law progress:** PriorityHeadConditioning.lean proves
+in Lean that every weighted statistic of the first vertex and suffix,
+summed over the *actual* full List.permutations, factors as a
+firstChoice-weighted sum over all possible heads and their remaining
+priority permutations (IG-L20, green full Python+Lean Actions at SHA
+5cce19f). PriorityHeadEvents.lean applies this to arbitrary events
+and the S012 first-choice deterministic greedy residual equation
+(IG-L21; compiled status in CLAIMS.md). Its conditional tail still
+includes blocked vertices: **the law-level weighted restriction to the
+induced residual vertex subset and the equality
+`priorityOutputMass = finiteRaceLaw` remain unproved in Lean**.
+Continuous independent Exp-clock equivalence is separate and open.
+See proof/WEIGHTED_HEAD_EVENTS.md and tests/test_s013.py.
+
 **An equivalence to independent exponential clocks and the P6/C6
 symbolic event-law formulas have NOT been formalised end-to-end in Lean.** Never report more than the
 specific build SHA proves.
@@ -219,6 +233,7 @@ proof/FALSE_TWIN_INVARIANCE.md — S007 structural closure and obstructions;
 results/S009_ATLAS.md — new 90/8/45 partial census;
 proof/CLIQUE_CORONA.md — all-size constructive clique-corona EGU theorem;
 proof/GREEDY_RESIDUAL_IDENTITY.md — S012 deterministic Lean proof;
+proof/WEIGHTED_HEAD_EVENTS.md — S013 full priority event head law;
 proof/C6_TV_GAP.md — S012 non-AEGU C6 TV lower bound;
 proof/P5_APPROXIMATE_UNIFORMITY.md — S012 smallest unattained AEGU;
 proof/FIVE_VERTEX_ATLAS.md — full n=5 theorem;
