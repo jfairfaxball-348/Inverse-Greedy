@@ -12,3 +12,4 @@ import InverseGreedy.FullPermutationSupport
 import InverseGreedy.CoronaP3Minor
 import InverseGreedy.FiniteLawFuel
 import InverseGreedy.FullPermutationDecomposition
+import InverseGreedy.FullPermutationNormalization
