@@ -106,14 +106,14 @@ theorem greedyAccept_blocked (neighbours : α → Finset α)
   simp [greedyAccept, hblocked]
 
 /-- A blocked vertex may be deleted from any priority list, provided
-its blocker was accepted during the preceding prefix. This is the
+its blocker was accepted during the preceding front. This is the
 local skip law needed to relate full scans to active-set deletions. -/
 theorem greedyOutput_skip_blocked (neighbours : α → Finset α)
-    (prefix suffix : List α) (v : α)
+    (front suffix : List α) (v : α)
     (hblocked : (neighbours v ∩
-      prefix.foldl (greedyAccept neighbours) ∅).Nonempty) :
-    greedyOutput neighbours (prefix ++ v :: suffix) =
-      greedyOutput neighbours (prefix ++ suffix) := by
+      front.foldl (greedyAccept neighbours) ∅).Nonempty) :
+    greedyOutput neighbours (front ++ v :: suffix) =
+      greedyOutput neighbours (front ++ suffix) := by
   unfold greedyOutput
   simp only [List.foldl_append, List.foldl_cons]
   rw [greedyAccept_blocked neighbours _ v hblocked]
