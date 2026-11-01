@@ -30,12 +30,13 @@ theorem filtered_full_order_is_retained_permutation
   · ext w
     simp only [List.mem_toFinset, List.mem_filter]
     constructor
-    · exact And.right
+    · intro hw
+      simpa using hw.2
     · intro hw
       have ha : w ∈ order.toFinset := by
         rw [hset]
         exact hsub hw
-      exact ⟨by simpa using ha, hw⟩
+      exact ⟨by simpa using ha, by simp [hw]⟩
 
 /-- An impossible retained target order has exactly zero mass,
 irrespective of rates. This excludes repeated, missing or extraneous
@@ -87,7 +88,9 @@ theorem projectedOrderMass_singleton (rates : α → ℝ)
       (active.toList.permutations.map (orderMass rates)) := by
     apply List.map_congr_left
     intro order ho
-    simp [hsingle order ho]
+    have hs : order.filter (fun w => w = v) = [v] := by
+      simpa only [Finset.mem_singleton] using hsingle order ho
+    simp only [Finset.mem_singleton, hs, ite_true]
   rw [hmap]
   exact full_priority_orderMass_sum_one rates hrates active
 
