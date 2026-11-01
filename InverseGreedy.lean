@@ -21,3 +21,5 @@ import InverseGreedy.PriorityHeadConditioning
 import InverseGreedy.PriorityHeadEvents
 
 import InverseGreedy.ProjectedOrderLaw
+
+import InverseGreedy.ProjectionSupport
