@@ -245,11 +245,11 @@ exponential vertex priorities yielding uniform greedy terminal
 maximal independent sets, and characterise the attainable output laws
 (including uniform laws in the closure but not the attainable set).
 
-## S015 — executed 2026-11-01 (PR #14, final CI pending)
+## S015 — executed and merged 2026-11-01 (PR #14, exact-head CI green)
 - [x] Added a Lean proof that filtering any actual full permutation to retained ⊆ active gives an actual retained permutation, including correct nodup and underlying finset.
 - [x] Derived exact zero mass for every unsupported retained target for arbitrary real rates, and exact mass one for a singleton retained set at positive rates.
 - [x] Added exhaustive 7-vertex 128-retained-subset Fraction regression checking the full projected law, support, zero impossible targets and normalization.
 - [x] Documented the precise boundary and installed S016.
-- [ ] Verify the final S015 PR #14 head under the full imported Lean and Python/census CI, merge only if both jobs green.
+- [x] Verified final PR #14 head 3583f27d in complete imported Lean and Python/certified census, both green in Actions run 41290187561; merged as fd08c64a.
 - [ ] First retained winner law, multi-vertex deletion consistency and complete greedy-output pushforward remain Lean-open.
 - [ ] Independent exponential-clock semantics and 45 connected six-vertex atlas cases remain open; 90/8/45 unchanged.
