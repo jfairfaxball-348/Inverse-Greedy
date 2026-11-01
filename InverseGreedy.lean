@@ -25,3 +25,4 @@ import InverseGreedy.ProjectedOrderLaw
 import InverseGreedy.ProjectionSupport
 
 import InverseGreedy.FirstRetainedWinner
+import InverseGreedy.FirstRetainedExact
