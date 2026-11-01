@@ -1,7 +1,7 @@
 # S015 handover — 2026-11-01
 
-**PR #14:** https://github.com/jfairfaxball-348/Inverse-Greedy/pull/14
-Branch `s015-projection-support`. Merge and final-head CI status must be checked before describing the release as verified.
+**PR #14 merged:** https://github.com/jfairfaxball-348/Inverse-Greedy/pull/14
+Branch `s015-projection-support` was squash-merged to main as `fd08c64a29fcab5e12ffd0c4ebdbb49a746add9f`. Exact final PR head `3583f27d3a69f5124f88e6b0a859cf065ca8c126` passed both imported Lean and full Python/certified census in GitHub Actions run `41290187561`. This certifies only the S015 support and singleton Lean theorems, not general deletion consistency.
 
 S015 added `InverseGreedy/ProjectionSupport.lean`, proving for every retained ⊆ active that filtering an actual full `List.permutations` order yields an actual complete retained permutation. This implies zero mass for all unsupported filtered targets for arbitrary real rates; a singleton retained set has mass one at the singleton order when all rates are strictly positive, using S011 normalization.
 
