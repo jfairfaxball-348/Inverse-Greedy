@@ -53,7 +53,7 @@ private theorem first_retained_fixed_point (rates : α → ℝ)
         C * (if v ∈ retained then rates v else 0) := by
     intro v hv
     by_cases hvr : v ∈ retained
-    · by_cases heq : v = winner <;> simp [hvr, heq] <;> ring
+    · by_cases heq : v = winner <;> simp [hvr, heq, hw] <;> ring
     · have hneq : v ≠ winner := by
         intro heq
         subst v
@@ -64,9 +64,8 @@ private theorem first_retained_fixed_point (rates : α → ℝ)
         (if v ∈ retained then (if v = winner then (1 : ℝ) else 0)
          else C)) = rates winner + C * Ra - C * Rr := by
     calc
-      _ = (∑ v ∈ active,
-          (if v = winner then rates v else 0) + C * rates v -
-          C * (if v ∈ retained then rates v else 0)) := by
+      _ = (∑ v ∈ active, ((if v = winner then rates v else 0) + C * rates v -
+          C * (if v ∈ retained then rates v else 0))) := by
             apply Finset.sum_congr rfl
             exact hpoint
       _ = (∑ v ∈ active, if v = winner then rates v else 0) +
@@ -100,10 +99,12 @@ private theorem first_retained_fixed_point (rates : α → ℝ)
     (if v ∈ retained then (if v = winner then (1 : ℝ) else 0)
      else C))).sum = C
   rw [hscaled, hnumer]
-  dsimp [C, firstChoice]
+  have hcancel : C * Rr = rates winner := by
+    dsimp [C, firstChoice, Rr]
+    field_simp [ne_of_gt hRr]
+  rw [hcancel]
   have hnRa : Ra ≠ 0 := ne_of_gt hRa
-  have hnRr : Rr ≠ 0 := ne_of_gt hRr
-  field_simp
+  field_simp [hnRa]
   <;> ring
 
 /-- Actual full-permutation first-retained-winner mass equals the
