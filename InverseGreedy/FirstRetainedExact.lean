@@ -101,7 +101,11 @@ private theorem first_retained_fixed_point (rates : α → ℝ)
   rw [hscaled, hnumer]
   have hcancel : C * Rr = rates winner := by
     dsimp [C, firstChoice, Rr]
-    field_simp [ne_of_gt hRr]
+    calc
+      rates winner / activeRate rates retained * activeRate rates retained =
+          rates winner * (activeRate rates retained / activeRate rates retained) := by ring
+      _ = rates winner := by
+        rw [div_self (ne_of_gt hRr), mul_one]
   rw [hcancel]
   have hnRa : Ra ≠ 0 := ne_of_gt hRa
   field_simp [hnRa]
