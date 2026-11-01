@@ -1,5 +1,16 @@
 # Research roadmap — Inverse Greedy
 
+## S016 — executed 2026-11-01
+- [x] Define the actual first-retained-winner event in the complete priority-permutation law.
+- [x] Prove weighted retained/discarded first-head recurrence in Lean using S011 normalization.
+- [x] Prove the *all-positive-real* first-retained-winner marginal r_i/R_A in Lean by induction.
+- [x] Add exact Fraction checks on all subsets of nine vertices, with independent full-permutation checks on six.
+- [x] Imported Lean and full Python/certified census successful at `fd83d359cdb5`, Actions `41345774024`.
+- [ ] Full ordered-list weighted deletion consistency (S017 priority).
+- [ ] Lean priorityOutputMass = finiteRaceLaw; then independent exponential-clock equivalence.
+- [ ] Classify remaining 45 connected six-vertex cases. Baseline remains 90 / 8 / 45.
+
+
 ## S001 — completed 2026-10-30
 - [x] Weighted first-choice recurrence, disjoint-union factorisation.
 - [x] Multipartite/star, P4 constructions; C6 written obstruction.

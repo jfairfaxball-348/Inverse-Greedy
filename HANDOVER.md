@@ -1,3 +1,16 @@
+# S016 handover — 2026-11-01
+
+**PR #15:** https://github.com/jfairfaxball-348/Inverse-Greedy/pull/15
+The first-retained-winner probability theorem is now a compiled Lean theorem, not just a paper claim or a scalar identity. Branch `s016-first-retained-winner`, exact validated code SHA `fd83d359cdb5ef5db527bfe59ae72799d8c9913e`; full Python exact tests, certified connected-graph census and imported Lean were successful in Actions run `41345774024`: https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41345774024. See final PR/head CI for merged release verification.
+
+New `InverseGreedy/FirstRetainedWinner.lean` defines the genuine weighted complete-permutation first-retained event and proves a conditional head recurrence (retained head decides the event immediately, discarded head recurses). `InverseGreedy/FirstRetainedExact.lean` proves for all retained⊆active, retained nonempty, i∈retained and strictly positive rates that `firstRetainedMass rates active retained i = firstChoice rates retained i`. The induction is on the active-cardinality fuel and uses S011 full tail normalization plus an exact proportional-rate fixed-point calculation.
+
+`tests/test_s016.py` independently tests the event with rational head-split DP for all 512 subsets of nine strongly unequal-rate vertices; a separate complete-permutation oracle covers all 64 subsets of six vertices. These finite regressions are not the Lean proof.
+
+**Remaining Lean obligations:** full conditional ordered-sequence deletion consistency, `priorityOutputMass = finiteRaceLaw` with blocked-neighbour filtering, and independent Exp-clock semantics. Do not infer the complete retained law just from its first-element marginal. Six-vertex certified atlas unchanged: 90 EGU / 8 non-EGU / 45 unresolved. Session S017 is installed.
+
+---
+
 # S015 handover — 2026-11-01
 
 **PR #14 merged:** https://github.com/jfairfaxball-348/Inverse-Greedy/pull/14

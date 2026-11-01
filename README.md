@@ -12,6 +12,16 @@ is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
 ## Current mathematical results
+- **IG-L24 (S016, Lean):** the *actual complete-permutation event* that
+  vertex i is the first among any nonempty retained subset A of the
+  active vertices has mass exactly r_i / Σ(A rates), for every strictly
+  positive real rate vector. This closes first-retained-winner
+  conditioning, **not** full ordered-subsequence deletion consistency
+  or the greedy pushforward. See
+  `InverseGreedy/FirstRetainedExact.lean` and
+  `proof/FIRST_RETAINED_WINNER.md`. Exact tests include all subsets
+  of nine strongly unequal-rate vertices. Initial dual-green CI:
+  [run 41345774024](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41345774024).
 - **IG-R1:** exact first-choice weighted recurrence of the terminal law.
 - **IG-R2/IG-R3 (S011):** the finite positive weighted priority-order
   law is **deletion-consistent**: erasing any subset, including after
