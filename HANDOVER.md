@@ -1,3 +1,16 @@
+# S015 handover — 2026-11-01
+
+**PR #14:** https://github.com/jfairfaxball-348/Inverse-Greedy/pull/14
+Branch `s015-projection-support`. Merge and final-head CI status must be checked before describing the release as verified.
+
+S015 added `InverseGreedy/ProjectionSupport.lean`, proving for every retained ⊆ active that filtering an actual full `List.permutations` order yields an actual complete retained permutation. This implies zero mass for all unsupported filtered targets for arbitrary real rates; a singleton retained set has mass one at the singleton order when all rates are strictly positive, using S011 normalization.
+
+`tests/test_s015.py` extends exact rational tests to all 7! complete priority orders and all 128 subsets, independently comparing projected and intrinsic retained laws. The general law equality is a test oracle, not established by these Lean lemmas.
+
+**Remaining**: First-retained-winner probabilities for arbitrary nonempty retained sets of size ≥2, complete weighted deletion-consistency, `priorityOutputMass = finiteRaceLaw`, and independent Exp-clock equivalence remain open in Lean. Baseline 90 EGU / 8 non-EGU / 45 unresolved. S016 installed.
+
+---
+
 # S014 handover — 2026-10-31
 
 ## S014 release — merged PR #13
