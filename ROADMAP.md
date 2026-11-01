@@ -5,7 +5,7 @@
 - [x] Prove weighted retained/discarded first-head recurrence in Lean using S011 normalization.
 - [x] Prove the *all-positive-real* first-retained-winner marginal r_i/R_A in Lean by induction.
 - [x] Add exact Fraction checks on all subsets of nine vertices, with independent full-permutation checks on six.
-- [x] Imported Lean and full Python/certified census successful at `fd83d359cdb5`, Actions `41345774024`.
+- [x] Exact final PR #15 head `ac8e271e5fc5` passed imported Lean and full Python/certified census in push Actions `41346130914` and PR Actions `41346137455`; squash-merged as `b1bd2634fe12`.
 - [ ] Full ordered-list weighted deletion consistency (S017 priority).
 - [ ] Lean priorityOutputMass = finiteRaceLaw; then independent exponential-clock equivalence.
 - [ ] Classify remaining 45 connected six-vertex cases. Baseline remains 90 / 8 / 45.
