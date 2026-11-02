@@ -30,3 +30,5 @@ import InverseGreedy.FirstRetainedExact
 import InverseGreedy.FullProjectedOrderExact
 
 import InverseGreedy.PriorityProjectionPushforward
+
+import InverseGreedy.PriorityProjectionEvent
