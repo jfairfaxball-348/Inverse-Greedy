@@ -1,6 +1,6 @@
 # S018 execution handover — 2026-11-02
 
-**Branch:** `s018-greedy-pushforward`; status governed by exact final CI and PR.
+**Branch:** `s018-greedy-pushforward`, PR #17. Code theorem Lean-verified; final PR-head release verification required.
 The first major S018 theorem, `weighted_priority_projection_expectation`,
 was **imported Lean verified** with complete Python/certified census at SHA
 `75460ab146bf0dc3fbe646f198b729f1af788cdc`,
@@ -12,12 +12,11 @@ plus `proof/GREEDY_OUTPUT_PUSHFORWARD.md` and `tests/test_s018.py`.
 The paper proof deduces the conditional greedy first-choice recurrence
 by deleting blocked tail priorities **in the weighted law**, then
 identifies it with `finiteRaceLaw` by induction. The full imported
-Lean pushforward theorem is **pending exact final SHA dual-green
-verification**; do not describe it as Lean verified until this gate passes.
-The Python independent full-permutation/first-choice regressions and
-complete certified graph census passed at S018 code SHA `6803edf`,
-Actions 41416748876; the earlier Lean job failed on a syntactic
-dependent-`if` simp elaboration, not a theorem counterexample.
+Lean pushforward theorem **compiled successfully at code SHA
+`3a3ea03d12b0752815fa6f6f6111ab58bdd5f1ff`**, with both
+Lean and Python/certified census passing in [Actions 41417057969](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41417057969).
+PR [#17](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/17)
+requires both jobs green at its **exact final head** before merge.
 Follow later CI from the final commit for the actual release status.
 
 Continuous independent Exp-clock ordering equivalence is a distinct
