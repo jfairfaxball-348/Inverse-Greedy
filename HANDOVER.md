@@ -1,3 +1,29 @@
+# S022 execution checkpoint — 2026-11-02
+
+**PR:** [#21](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/21),
+branch `s022-finite-clock-no-ties`. New imported Lean module
+`InverseGreedy/FiniteClockNoTies.lean` gives actual two-coordinate joint
+laws and null ties, then probability-one pairwise-distinct times for
+any finite clock family. Strictly positive real rates; empty and
+singleton index types included. The proof invokes S020 independence
+and actual marginal laws and S019 product-measure zero-diagonal,
+not an assumed Plackett-Luce distribution.
+
+**CI status:** first imported branch head `2cdf7e1d` failed Lean
+because `measure_add_measure_compl` needed an explicit measure
+parameter. Earlier goals had compiled. Corrected at `946a9c92`;
+record the exact final dual-green SHA here only *after* verifying both
+jobs. The four-method independent `tests/test_s022.py` exact rational
+binned-Exp regression was also added. `proof/S022_FINITE_NO_TIES.md`
+contains the measure proof and analytic boundaries.
+
+**Still open:** numerical real-clock race probability, finite sorting
+chamber law, continuous clock-output pushforward and the 45 unresolved
+six-vertex connected graphs (atlas 90/8/45). `sessions/S023.md`
+installed to continue.
+
+---
+
 # S021 FINAL RELEASE — 2026-11-02
 
 **Merged:** [PR #20](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/20),
