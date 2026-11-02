@@ -28,3 +28,9 @@ import InverseGreedy.FirstRetainedWinner
 import InverseGreedy.FirstRetainedExact
 
 import InverseGreedy.FullProjectedOrderExact
+
+import InverseGreedy.PriorityProjectionPushforward
+
+import InverseGreedy.PriorityProjectionEvent
+
+import InverseGreedy.PriorityOutputPushforward
