@@ -11,6 +11,23 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S019: genuine independent exponential clocks (two-clock Lean foundation)
+
+`InverseGreedy/IndependentExpPair.lean` constructs the actual product of
+Mathlib exponential measures on `ℝ × ℝ`, proves it is a probability measure
+for positive rates, proves both coordinate marginal laws and independence,
+and proves that individual exponential times and the two-clock tie event
+have probability zero. These imported Lean results and the full
+Python/certified census passed together at code SHA `b6417d43`,
+[Actions 41421076123](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41421076123).
+The complete all-finite-rate arrival-order formula has a full **informal
+density/chamber proof**, not a Lean proof, in
+`proof/EXPONENTIAL_CLOCK_BRIDGE.md`. Deterministic quadrature tests for
+two and three clocks are in `tests/test_s019.py`.
+The general continuous product-space/sorting pushforward to `orderMass`
+remains open in Lean; `sessions/S020.md` is the next task.
+No EGU atlas changes (90/8/45).
+
 ## S018: exact discrete greedy-output law — formally verified
 
 The S018 imported Lean proof in `InverseGreedy/PriorityOutputPushforward.lean`
@@ -289,7 +306,7 @@ proof/SIX_VERTEX_INDEX1.md and results/S006_ATLAS.md — new n=6 witness;
 CLAIMS.md — rigorous status ledger;
 AGENTS.md — execution and honesty rules;
 HANDOVER.md and ROADMAP.md — progress/next work;
-sessions/S015.md — installed next session;
+sessions/S020.md — installed next session;
 PRIOR_ART.md — preliminary literature, not priority certificate.
 
 The separate [Greedy Uniformity on Trees](https://github.com/jfairfaxball-348/Greedy-Uniformity-on-Trees)

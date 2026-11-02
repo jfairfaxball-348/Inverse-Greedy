@@ -1,5 +1,17 @@
 # Research roadmap — Inverse Greedy
 
+## S019 — 2026-11-02 (two-clock measure-theoretic foundation)
+- [x] Audit genuine Mathlib exponential distribution, product measure and independence at the pinned revision.
+- [x] Import and compile real two-clock exponential product probability measure, both correct marginals and independent coordinate functions.
+- [x] Import and compile exponential singleton nullity and two-clock zero-tie theorem.
+- [x] Full Python/certified census and imported Lean both passed at code SHA `b6417d43`, Actions 41421076123.
+- [x] Write complete informal joint-density/chamber/spacings proof of all finite priority-order probabilities; verify 2–3-clock continuous quadrature tests.
+- [x] Open PR #18 and install `sessions/S020.md`.
+- [ ] Check exact **final** PR head dual-green CI and merge; record merge SHA in HANDOVER.
+- [ ] Prove `P(T_r<T_s)=r/(r+s)` directly in Lean from the product measure (S020).
+- [ ] Formalise finite-indexed joint product, no-ties/sorting, and `orderMass` event law; full continuous pushforward not Lean-verified.
+- [ ] EGU atlas stays 90 positive / 8 negative / 45 unresolved.
+
 ## S018 — 2026-11-02 (discrete theorem formally verified)
 - [x] Formally prove arbitrary weighted retained-order expectation identity from S017.
 - [x] Verify imported Lean and Python/certified atlas at `75460ab`, Actions 41415466242.

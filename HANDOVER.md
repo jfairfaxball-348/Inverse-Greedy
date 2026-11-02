@@ -1,3 +1,36 @@
+# S019 execution handover — 2026-11-02
+
+**Mathematical boundary:** The complete finite-dimensional exponential-order
+density/chamber argument is now written down, but **the all-finite-clock
+`orderMass` equivalence is NOT Lean formalised**. In Lean, S019 proves only
+the genuine two-clock product measure, its probability normalisation,
+the exponential coordinate marginals and independence, exponential
+point-nullity, and zero probability of a tie.
+
+**Verified code checkpoint:** All imported Lean modules and full
+Python/certified census passed at code SHA
+`b6417d43755f94b216ba1212772bd8b0563e45a7`,
+[Actions 41421076123](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41421076123).
+PR [#18](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/18)
+on branch `s019-independent-exp-clocks` needs final-head
+dual-green CI confirmation before merge; this code checkpoint is not
+automatically the final documentation head.
+
+**Files:** `InverseGreedy/IndependentExpPair.lean`, project import,
+`proof/EXPONENTIAL_CLOCK_BRIDGE.md`, `tests/test_s019.py` and
+`sessions/S020.md`. Two new deterministic analytic regression tests
+passed locally and are included in the full Python job. The CI green
+checkpoint is the stronger verification.
+
+**Next:** S020 targets the actual two-clock comparison probability
+directly from product measure, then finite indexed product measure and
+sorting event probabilities. Retain strict positivity and empty/singleton
+boundaries. Do not infer these further results from S019's independent
+coordinates alone. Connected n≤6 census: **90 EGU / 8 non-EGU /
+45 unresolved**. No publication or novelty certification.
+
+---
+
 # S018 execution handover — 2026-11-02
 
 **Final S018 release:** S018 PR #17 was squash-merged to main at `34d3b9ce72e8413055dd6d0404c1d94081c99c78` after both imported Lean and full Python/certified census succeeded on the exact final PR head `217c38964f69a76cb3c7c93863a412ca27c4def1`, [Actions 41417531293](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41417531293).
