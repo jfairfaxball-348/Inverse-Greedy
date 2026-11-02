@@ -11,6 +11,12 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S023: geometric-bin continuous sorting bridge
+
+InverseGreedy/FiniteClockChambers.lean defines genuine real-clock strict-order events and proves their measurability. Imported Lean plus complete Python/census were BOTH green at exact code SHA 6faf5ba21bf585a52412f8e2269e376a03b2de45 in [Actions 41536043877](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536043877). This is event measurability, **not** a computation of chamber probability.
+
+proof/S023_GEOMETRIC_BIN_CHAMBERS.md supplies a complete alternative **informal** proof of all-real finite exponential sorting-chamber probabilities via geometric-bin products and a collision error bound delta times the sum of min(rate_i,rate_j) over pairs. tests/test_s023.py checks two independently derived exact rational bin formulas for integer rates and rigorous collision enclosures. The numerical unequal-rate probability and real-clock greedy pushforward remain **Lean-open**. S024 is installed. The atlas is still **90 / 8 / 45**.
+
 ## S022: real finite-clock pair marginals and almost-sure no ties
 
 `InverseGreedy/FiniteClockNoTies.lean` closes a genuine continuous-clock
