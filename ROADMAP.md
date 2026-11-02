@@ -1,5 +1,22 @@
 # Research roadmap — Inverse Greedy
 
+## S017 — 2026-11-02
+- [x] Prove full supported retained-permutation mass equality by
+      cardinality induction over the actual weighted full permutations.
+- [x] Reuse S016 proportional fixed point, S014 head recurrence,
+      and the exact S015 support/empty-set boundary.
+- [x] Add an all-target equation (valid order → intrinsic mass;
+      invalid target → zero), subject to exact final CI confirmation.
+- [x] Run independent rational projected-order distribution DP on
+      95 nine-vertex subsets and conditional eight-vertex remainders.
+- [x] Imported Lean proof and Python/census green at initial code
+      SHA 0330a640, Actions 41408600557; final PR code/docs CI pending.
+- [x] Install S018 for complete greedy-output law pushforward.
+- [ ] Prove priorityOutputMass = finiteRaceLaw in Lean (S018).
+- [ ] Prove independent continuous exponential-clock semantics.
+- [ ] Resolve 45 remaining connected six-vertex instances; 90/8/45.
+
+
 ## S016 — executed 2026-11-01
 - [x] Define the actual first-retained-winner event in the complete priority-permutation law.
 - [x] Prove weighted retained/discarded first-head recurrence in Lean using S011 normalization.

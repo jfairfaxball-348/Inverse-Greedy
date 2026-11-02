@@ -1,3 +1,33 @@
+# S017 handover — 2026-11-02
+
+S017's central imported Lean proof is the *complete weighted
+retained-permutation law*, valid for all finite active/retained
+sets and strictly positive real rates. New
+`InverseGreedy/FullProjectedOrderExact.lean` proves that
+`projectedOrderMass` agrees with `orderMass` for each complete
+retained list. S015's exact zero-support theorem supplies the
+all-target extension. The proof uses S014's event-level head
+recurrence and the now-public S016 fixed-point identity. It
+inducts over actual complete permutations, not a postulated
+independent restricted race.
+
+**Verification:** imported Lean build and Python-exact/certified
+census both succeeded on S017 code SHA `0330a640`, Actions
+[41408600557](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41408600557).
+An all-target Lean wrapper was subsequently added; verify its
+own final-head CI before claiming it compiled or merging.
+The independent Fraction tests in `tests/test_s017.py`
+cover 95 retained subsets of nine unequal-rate vertices and
+conditional residual laws on eight vertices.
+
+**Open boundary:** `priorityOutputMass = finiteRaceLaw` in Lean
+and the independent Exp-clock ordering semantics remain open.
+No new atlas cases or independent novelty claim: still 90 EGU /
+8 non-EGU / 45 unresolved connected graphs through six vertices.
+S018 is installed in `sessions/S018.md`.
+
+---
+
 # S016 handover — 2026-11-01
 
 **S016 release merged:** PR #15 squash-merged into `main` as `b1bd2634fe12286924a35cc390810e9353feda87`. Exact final PR head `ac8e271e5fc5e4fcd3ddcf7b156d025d12ff4a86` passed both imported Lean and full Python/certified census in **both** push run [41346130914](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41346130914) and PR run [41346137455](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41346137455). The new theorem is all-positive-real first-retained-winner marginal only, **not** full deletion consistency.
