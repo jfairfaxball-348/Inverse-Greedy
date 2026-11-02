@@ -42,9 +42,10 @@ theorem independentExpPair_fst_law (r s : ℝ)
 
 /-- The second clock has the actual rate-`s` exponential distribution. -/
 theorem independentExpPair_snd_law (r s : ℝ)
-    (hr : 0 < r) :
+    (hr : 0 < r) (hs : 0 < s) :
     Measure.map Prod.snd (independentExpPair r s) = expMeasure s := by
   letI : IsProbabilityMeasure (expMeasure r) := isProbabilityMeasure_expMeasure hr
+  letI : IsProbabilityMeasure (expMeasure s) := isProbabilityMeasure_expMeasure hs
   simp [independentExpPair]
 
 /-- Under the joint exponential product measure the arrival times
