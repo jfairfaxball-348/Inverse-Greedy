@@ -1,5 +1,7 @@
 # S018 execution handover — 2026-11-02
 
+**Final S018 release:** S018 PR #17 was squash-merged to main at `34d3b9ce72e8413055dd6d0404c1d94081c99c78` after both imported Lean and full Python/certified census succeeded on the exact final PR head `217c38964f69a76cb3c7c93863a412ca27c4def1`, [Actions 41417531293](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41417531293).
+
 **Branch:** `s018-greedy-pushforward`, PR #17. Code theorem Lean-verified; final PR-head release verification required.
 The first major S018 theorem, `weighted_priority_projection_expectation`,
 was **imported Lean verified** with complete Python/certified census at SHA
@@ -16,7 +18,7 @@ Lean pushforward theorem **compiled successfully at code SHA
 `3a3ea03d12b0752815fa6f6f6111ab58bdd5f1ff`**, with both
 Lean and Python/certified census passing in [Actions 41417057969](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41417057969).
 PR [#17](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/17)
-requires both jobs green at its **exact final head** before merge.
+has been squash-merged after both jobs passed at its **exact final head**.
 Follow later CI from the final commit for the actual release status.
 
 Continuous independent Exp-clock ordering equivalence is a distinct
