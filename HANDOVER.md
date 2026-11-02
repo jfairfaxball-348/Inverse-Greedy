@@ -1,3 +1,39 @@
+# S020 continuous-race partition — 2026-11-02
+
+**PR:** [#19](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/19),
+branch `s020-continuous-race-partition`.
+
+**Verified proof checkpoint:** Imported `InverseGreedy/ContinuousRacePartition.lean`
+and the complete Python/certified census both passed at **exact code SHA
+`253de8d502ec1b91a29d6eb134baf6422d44ba19`**, [GitHub Actions
+41442175794](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41442175794).
+This verifies the new true continuous product-measure statement,
+not the full independent-clock-to-discrete-order equivalence.
+
+**New formal results (IG-L30):** For any `r,s>0`, the disjoint
+events `T_r<T_s` and `T_s<T_r` have probabilities summing to one,
+by the S019 null-tie result and measure additivity. For equal rates,
+`Measure.prod_swap` implies swap invariance and equal probability of
+these two events, hence the balanced identity (informally each is 1/2).
+The proof makes no assumption that the clock law equals the discrete
+Plackett–Luce law. Formal code is at
+`InverseGreedy/ContinuousRacePartition.lean` and the mathematical
+explanation is at `proof/S020_TWO_CLOCK_PARTITION.md`.
+
+**Still open:** the arbitrary positive unequal-rate comparison
+`P(T_r<T_s)=r/(r+s)` in Lean; finite indexed products, null ties,
+sorting measurability, event probabilities `orderMass` and the
+full real-clock greedy output pushforward. See `sessions/S021.md`.
+The 143 connected graphs through six vertices remain 90 proven EGU,
+8 proven non-EGU, 45 open. No novelty certification.
+
+**Release status:** Verify dual-green **exact final PR #19 head**
+after documentation commits; the initial code-only green checkpoint
+does not automatically verify the final PR head. Record final SHA
+and merge result once confirmed.
+
+---
+
 # S019 release and execution handover — 2026-11-02
 
 **S019 exact-final-head release:** PR [#18](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/18) final head `d1a5c3d34fd2dbd10dec7a5691e9a79a8524d733` passed both imported Lean and full Python/certified census in [Actions 41421511927](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41421511927), and was squash-merged to `main` as `fafc4a43313494b1561ebea5d7c18658aa9c3397`. The S019 general continuous-clock ordering theorem remains Lean-open; `sessions/S020.md` is installed.
