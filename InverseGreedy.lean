@@ -36,3 +36,4 @@ import InverseGreedy.PriorityProjectionEvent
 import InverseGreedy.PriorityOutputPushforward
 import InverseGreedy.IndependentExpPair
 import InverseGreedy.ContinuousRacePartition
+import InverseGreedy.FiniteIndependentExp
