@@ -20,6 +20,18 @@ Plackett–Luce law. Formal code is at
 `InverseGreedy/ContinuousRacePartition.lean` and the mathematical
 explanation is at `proof/S020_TWO_CLOCK_PARTITION.md`.
 
+**Finite-product checkpoint (IG-L31):** The imported `InverseGreedy/FiniteIndependentExp.lean`
+defines a genuine `Measure.pi` product of positive-rate exponential measures
+over any finite index type. It proves probability normalization (including the
+empty index type), measurable coordinate projections, exact `expMeasure`
+coordinate marginals, `iIndepFun` of the entire indexed clock family,
+and the probability-zero fixed-time cylinder for each coordinate.
+**Both imported Lean and Python/certified census passed** at exact code
+SHA `f92f6c807f5241768b53ccba11cd38a60ed19968`,
+[Actions 41443061251](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41443061251).
+See `proof/S020_FINITE_CLOCK_MODEL.md`. No all-distinct-clock or sorting
+event theorem has been formalized.
+
 **Still open:** the arbitrary positive unequal-rate comparison
 `P(T_r<T_s)=r/(r+s)` in Lean; finite indexed products, null ties,
 sorting measurability, event probabilities `orderMass` and the
