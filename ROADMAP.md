@@ -7,7 +7,7 @@
 - [x] Full Python/certified census and imported Lean both passed at code SHA `b6417d43`, Actions 41421076123.
 - [x] Write complete informal joint-density/chamber/spacings proof of all finite priority-order probabilities; verify 2–3-clock continuous quadrature tests.
 - [x] Open PR #18 and install `sessions/S020.md`.
-- [ ] Check exact **final** PR head dual-green CI and merge; record merge SHA in HANDOVER.
+- [x] Exact final PR #18 head `d1a5c3d3` passed both imported Lean and complete Python/census, Actions 41421511927; squash merged `fafc4a43`.
 - [ ] Prove `P(T_r<T_s)=r/(r+s)` directly in Lean from the product measure (S020).
 - [ ] Formalise finite-indexed joint product, no-ties/sorting, and `orderMass` event law; full continuous pushforward not Lean-verified.
 - [ ] EGU atlas stays 90 positive / 8 negative / 45 unresolved.

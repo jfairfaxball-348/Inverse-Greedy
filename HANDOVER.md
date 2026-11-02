@@ -1,4 +1,7 @@
-# S019 execution handover — 2026-11-02
+# S019 release and execution handover — 2026-11-02
+
+**S019 exact-final-head release:** PR [#18](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/18) final head `d1a5c3d34fd2dbd10dec7a5691e9a79a8524d733` passed both imported Lean and full Python/certified census in [Actions 41421511927](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41421511927), and was squash-merged to `main` as `fafc4a43313494b1561ebea5d7c18658aa9c3397`. The S019 general continuous-clock ordering theorem remains Lean-open; `sessions/S020.md` is installed.
+
 
 **Mathematical boundary:** The complete finite-dimensional exponential-order
 density/chamber argument is now written down, but **the all-finite-clock

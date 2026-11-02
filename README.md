@@ -24,6 +24,7 @@ The complete all-finite-rate arrival-order formula has a full **informal
 density/chamber proof**, not a Lean proof, in
 `proof/EXPONENTIAL_CLOCK_BRIDGE.md`. Deterministic quadrature tests for
 two and three clocks are in `tests/test_s019.py`.
+PR #18 final head `d1a5c3d3` also passed both jobs in Actions 41421511927 and was squash-merged as `fafc4a43`.
 The general continuous product-space/sorting pushforward to `orderMass`
 remains open in Lean; `sessions/S020.md` is the next task.
 No EGU atlas changes (90/8/45).
