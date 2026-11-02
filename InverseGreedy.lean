@@ -37,3 +37,4 @@ import InverseGreedy.PriorityOutputPushforward
 import InverseGreedy.IndependentExpPair
 import InverseGreedy.ContinuousRacePartition
 import InverseGreedy.FiniteIndependentExp
+import InverseGreedy.ContinuousRaceSwap
