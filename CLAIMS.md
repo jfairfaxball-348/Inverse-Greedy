@@ -1,9 +1,11 @@
-# Claim ledger — S021 (2026-11-02)
+# Claim ledger — S023 (2026-11-02)
 
 Status meanings: **proved-informal** is a complete written proof, not machine-checked or independently novel; **tested-exact** is finite arithmetic checking; **Lean-verified** requires actual successful CI at the stated SHA; **open** means unestablished.
 
 | ID | Claim | Status | Evidence |
 |---|---|---|---|
+| **IG-L35 (S023)** | For every finite index type, the strict real clock ordering event strictClockChamber for any list (even incomplete or containing duplicates) is measurable in the true real-clock sample space. This does NOT compute chamber probability. | **Lean-verified** at imported code SHA 6faf5ba21bf585a52412f8e2269e376a03b2de45; BOTH full Lean and Python/certified census green at Actions 41536043877. Exact final PR head requires its own verification. | InverseGreedy/FiniteClockChambers.lean |
+| **IG-P13 (S023)** | Every finite strictly positive-real-rate exponential chamber has the usual ordered rate-mass product, derived by exact geometric-bin chamber probabilities and a nonasymptotic pair-collision bound. Alternative proof of existing informal IG-P11. | **proved-informal; tested-exact on integer-rate bins, NOT Lean-verified** for numerical probabilities, finite chamber masses, or sorting pushforward. | proof/S023_GEOMETRIC_BIN_CHAMBERS.md; tests/test_s023.py |
 | IG-R1 | Weighted first-choice probability law | proved-informal, tested-exact | proof/FOUNDATIONS.md; experiments/exact.py |
 | **IG-R2** | Positive weighted priority orders are deletion-consistent: projection onto every retained subset, including an empty subset and a conditional residual law after a specified first winner, has the intrinsic Plackett–Luce law on complete retained orders; unsupported target lists have mass zero | **Lean-verified at exact S017 PR #16 head 7b1d6b127491**; both imported Lean and complete Python/certified census green in push Actions 41409002580 and PR Actions 41409033377; merged bd67b5cc; exact independent Fraction oracles through nine vertices | InverseGreedy/FullProjectedOrderExact.lean; proof/FULL_ORDERED_PROJECTION.md; tests/test_s017.py |
 | **IG-R3** | Greedy-output pushforward of the full finite weighted-permutation law equals the first-choice terminal recursion for any finite simple symmetric irreflexive graph | **Lean-verified** at S018 code SHA `3a3ea03d12b075`, Actions 41417057969 (both jobs passed); independent clock semantics separately open | proof/PRIORITY_DELETION_CONSISTENCY.md; tests/test_s011.py |
