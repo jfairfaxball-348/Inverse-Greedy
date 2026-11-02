@@ -51,4 +51,16 @@ theorem finiteIndependentExp_fixed_time_null (rates : ι → ℝ)
   exact Measure.pi_eval_preimage_null
     (fun j => expMeasure (rates j)) (expMeasure_point_null (rates i) t)
 
+/-- The entire finite family of arrival-time coordinates is independent
+under Mathlib's genuine finite exponential product measure. -/
+theorem finiteIndependentExp_coordinates_independent (rates : ι → ℝ)
+    (hpos : ∀ i, 0 < rates i) :
+    iIndepFun (fun i (ω : ι → ℝ) => ω i)
+      (finiteIndependentExp rates) := by
+  letI : ∀ j, IsProbabilityMeasure (expMeasure (rates j)) :=
+    fun j => isProbabilityMeasure_expMeasure (hpos j)
+  simpa [finiteIndependentExp] using
+    (iIndepFun_pi (μ := fun j => expMeasure (rates j))
+      (X := fun _ => fun x : ℝ => x) (fun _ => measurable_id.aemeasurable))
+
 end InverseGreedy
