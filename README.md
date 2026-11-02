@@ -20,9 +20,10 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
   list is a complete permutation of A, and zero otherwise. This includes
   A=∅ and conditional deletion after any prescribed first overall
   vertex. See `InverseGreedy/FullProjectedOrderExact.lean` and
-  `proof/FULL_ORDERED_PROJECTION.md`. The structural Lean induction
-  passed the complete imported build at S017 code SHA `0330a640`;
-  exact full-head release CI is tracked in HANDOVER.md. **Neither
+  `proof/FULL_ORDERED_PROJECTION.md`. The complete all-target Lean theorem
+  passed at exact S017 PR #16 head `7b1d6b127491`, in both
+  push Actions 41409002580 and PR Actions 41409033377;
+  squash merged as `bd67b5cc`. **Neither
   greedy-output pushforward nor independent exponential-clock semantics
   has yet been formally proved.**
 - **IG-L24 (S016, Lean):** the *actual complete-permutation event* that
