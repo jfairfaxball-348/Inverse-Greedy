@@ -7,7 +7,7 @@
 - [x] Build real finite `Measure.pi` exponential-clock probability model, including the empty family, measurable coordinate maps, correct exponential marginals, joint independence `iIndepFun`, and singleton-clock-time nullity in `InverseGreedy/FiniteIndependentExp.lean`. Both imported Lean and full Python/certified census verified at exact code SHA `f92f6c80`, Actions 41443061251. See `proof/S020_FINITE_CLOCK_MODEL.md`.
 - [ ] Extend finite model to pairwise null ties, finite union, measurable sorting and strict-chamber probabilities; current finite product alone does not establish these.
 
-- [ ] Obtain passing imported Lean and full Python/certified census on the exact **final PR #19 head**; record job status in HANDOVER and CLAIMS before merging.
+- [x] **Exact final PR #19 head** `e55b90e13a9738d676d953aae8e2ae6c1df312dd` passed both imported Lean and full Python/certified census in Actions **41443533808**; squash-merged as `9fe340889d9e08d9d1d3c3895795617676da30eb`.
 - [ ] Lean equality `P(T_r<T_s)=r/(r+s)` for arbitrary positive rates; this is S021's first target, not proved by symmetry.
 - [ ] Formal finite-indexed clock independence, no ties, measurable sorting, and `orderMass` event law. S018 discrete greedy law does not close this.
 - [ ] Complete independent novelty audit and 45 unresolved connected six-vertex cases; atlas unchanged 90/8/45.
