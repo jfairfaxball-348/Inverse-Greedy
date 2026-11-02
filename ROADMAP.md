@@ -1,5 +1,17 @@
 # Research roadmap — Inverse Greedy
 
+## S020 — 2026-11-02 (genuine two-clock event partition and symmetry)
+- [x] Use S019's actual exponential product probability measure and null-diagonal theorem to prove that the two strict winner events have probabilities summing to 1.
+- [x] Use `Measure.prod_swap` to prove equal-rate invariance under swapping clocks, equality of their strict winner probabilities, and balanced race identity.
+- [x] Import `InverseGreedy/ContinuousRacePartition.lean` into the project build, add `proof/S020_TWO_CLOCK_PARTITION.md` and install S021.
+- [x] Build real finite `Measure.pi` exponential-clock probability model, including the empty family, measurable coordinate maps, correct exponential marginals, joint independence `iIndepFun`, and singleton-clock-time nullity in `InverseGreedy/FiniteIndependentExp.lean`. Both imported Lean and full Python/certified census verified at exact code SHA `f92f6c80`, Actions 41443061251. See `proof/S020_FINITE_CLOCK_MODEL.md`.
+- [ ] Extend finite model to pairwise null ties, finite union, measurable sorting and strict-chamber probabilities; current finite product alone does not establish these.
+
+- [ ] Obtain passing imported Lean and full Python/certified census on the exact **final PR #19 head**; record job status in HANDOVER and CLAIMS before merging.
+- [ ] Lean equality `P(T_r<T_s)=r/(r+s)` for arbitrary positive rates; this is S021's first target, not proved by symmetry.
+- [ ] Formal finite-indexed clock independence, no ties, measurable sorting, and `orderMass` event law. S018 discrete greedy law does not close this.
+- [ ] Complete independent novelty audit and 45 unresolved connected six-vertex cases; atlas unchanged 90/8/45.
+
 ## S019 — 2026-11-02 (two-clock measure-theoretic foundation)
 - [x] Audit genuine Mathlib exponential distribution, product measure and independence at the pinned revision.
 - [x] Import and compile real two-clock exponential product probability measure, both correct marginals and independent coordinate functions.
