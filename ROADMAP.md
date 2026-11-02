@@ -8,7 +8,7 @@
 - [x] Install sessions/S024.md to formalise true real survival and finite geometric-bin chamber limits.
 - [ ] Lean-verify true unequal-rate two-clock comparison probability and full chamber masses.
 - [ ] Lean-verify true clock sorting/greedy-output pushforward.
-- [ ] Verify exact final PR head with both jobs and release. Atlas unchanged **90 / 8 / 45**.
+- [x] Verify exact final PR #22 head bfb0d2cd6d03 in BOTH [push run 41536696192](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536696192) and [PR run 41536741787](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536741787); squash merge 83a4390f69ac. Atlas unchanged **90 / 8 / 45**.
 
 
 
