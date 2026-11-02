@@ -1,5 +1,15 @@
 # Research roadmap — Inverse Greedy
 
+## S018 — 2026-11-02 (candidate bridge; verification pending)
+- [x] Formally prove arbitrary weighted retained-order expectation identity from S017.
+- [x] Verify imported Lean and Python/certified atlas at `75460ab`, Actions 41415466242.
+- [x] Implement discrete greedy filtered-tail event, residual order support and candidate full recursion proof.
+- [x] Add independent all-target Fraction output-law oracle on empty and graphs through seven vertices.
+- [x] Write `proof/GREEDY_OUTPUT_PUSHFORWARD.md`, install `sessions/S019.md`.
+- [ ] Obtain both green jobs on **exact final S018 PR head**, then merge and record release SHA.
+- [ ] Formalise the product measure of genuinely independent Exp clocks (S019, separate).
+- [ ] Connected six-vertex atlas still 90 EGU / 8 non-EGU / 45 open.
+
 ## S017 — 2026-11-02
 - [x] Prove full supported retained-permutation mass equality by
       cardinality induction over the actual weighted full permutations.
