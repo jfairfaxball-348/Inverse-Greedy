@@ -1,3 +1,17 @@
+# S023 execution handover — 2026-11-02
+
+**Branch:** s023-geometric-bin-chamber based on main c3c4721f802b45d839f229acee8f60296f655970.
+
+**Verified checkpoint:** Imported Lean theorem strictClockChamber_measurable defines strict-order events for actual finite real-function clock spaces and proves their measurability. BOTH full imported Lean and Python/certified census passed at exact code SHA 6faf5ba21bf585a52412f8e2269e376a03b2de45; [Actions 41536043877](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536043877). This checks event measurability only, not chamber probability. Re-check exact final PR head after subsequent changes.
+
+**New mathematical bridge (IG-P13):** proof/S023_GEOMETRIC_BIN_CHAMBERS.md gives a complete alternative informal proof of arbitrary positive-real finite continuous exponential sorting probabilities using an explicit geometric-bin chamber product, a nonasymptotic pair-collision error bound and limit to the usual orderMass product. It builds on genuine exponential survival and independence, not the discrete weighted-priority law. This is **not Lean-verified** for the full limiting theorem.
+
+**Regression:** tests/test_s023.py uses exact fractions and separate gap-versus-memoryless algorithms for integer-rate bin laws, as well as S022 pair-oracle checks, four/smaller vertex enclosures, and zero/one boundaries. Check final CI outcome.
+
+**Next:** sessions/S024.md targets the true exponential survival theorem, bin distribution, pair ratio, all-chamber masses and sorting pushforward. These remain **Lean-open**. The graph atlas stays 90 EGU / 8 non-EGU / 45 unresolved; no novelty certificate.
+
+---
+
 # S022 FINAL RELEASE — 2026-11-02
 
 **Merged:** [PR #21](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/21)

@@ -1,5 +1,17 @@
 # Research roadmap — Inverse Greedy
 
+## S023 — 2026-11-02 (geometric-bin bridge)
+
+- [x] Construct genuine real-clock strict-order chamber events and prove measurability in imported Lean at 6faf5ba21bf585a52412f8e2269e376a03b2de45; both CI jobs green at [Actions 41536043877](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536043877).
+- [x] Give a complete alternative informal proof of all-real finite exponential ordering law by exact independent geometric-bin chamber products, explicit collision-error bounds, and limits.
+- [x] Add two-method exact rational bin oracle tests, including empty and singleton cases; preserve S022 oracle.
+- [x] Install sessions/S024.md to formalise true real survival and finite geometric-bin chamber limits.
+- [ ] Lean-verify true unequal-rate two-clock comparison probability and full chamber masses.
+- [ ] Lean-verify true clock sorting/greedy-output pushforward.
+- [ ] Verify exact final PR head with both jobs and release. Atlas unchanged **90 / 8 / 45**.
+
+
+
 ## S022 — 2026-11-02 (genuine finite-clock no-ties)
 
 - [x] Prove in Lean that distinct coordinates of the genuine
