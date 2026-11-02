@@ -11,9 +11,9 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
-## S018: discrete greedy-output law — verification boundary
+## S018: exact discrete greedy-output law — formally verified
 
-The S018 candidate proof in `InverseGreedy/PriorityOutputPushforward.lean`
+The S018 imported Lean proof in `InverseGreedy/PriorityOutputPushforward.lean`
 establishes the intended exact equality
 `priorityOutputMass rates neighbours active target =
 finiteRaceLaw rates neighbours active.card active target` for every
@@ -24,11 +24,7 @@ proves the weighted expectation identity for arbitrary retained-order
 statistics, and `PriorityProjectionEvent.lean` handles the discrete
 greedy-event and support lemmas.
 
-**Release gate:** treat the full theorem as formally verified only
-once all imported Lean and Python/census jobs succeed on the exact
-final pull-request head SHA. The S018 weighted expectation lemma
-alone already passed both at `75460ab`, Actions 41415466242.
-The full bridge is proved on paper in
+**Verification:** the full imported Lean pushforward and complete Python/certified census passed at code SHA `3a3ea03d12b0752815fa6f6f6111ab58bdd5f1ff`, Actions 41417057969; exact final PR #17 head must also pass both jobs before merge. The weighted expectation lemma separately passed both at `75460ab`, Actions 41415466242. The full bridge is proved on paper in
 `proof/GREEDY_OUTPUT_PUSHFORWARD.md` and independently tested exactly
 in `tests/test_s018.py`. Independent Exp-clock sorting semantics are
 still open and assigned to `sessions/S019.md`.
@@ -65,8 +61,8 @@ still open and assigned to `sessions/S019.md`.
   on the retained set. Consequently its greedy-output pushforward
   satisfies exactly the recursive first-choice law, for finite simple
   graphs. Both theorems have complete informal proofs and independent
-  exact arithmetic tests, but the *law-level Lean pushforward* is
-  not yet formally compiled. See proof/PRIORITY_DELETION_CONSISTENCY.md.
+  exact arithmetic tests, and the *law-level Lean pushforward* is formally verified in S018
+  at code SHA `3a3ea03d`, Actions 41417057969. See proof/PRIORITY_DELETION_CONSISTENCY.md.
 - **IG-P1:** complete multipartite graphs are EGU; a star's centre gets
   the sum of the leaf rates.
 - **IG-P2:** disjoint union is EGU iff every component is EGU.
