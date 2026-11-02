@@ -1,5 +1,17 @@
 # S017 handover — 2026-11-02
 
+**S017 released to main:** PR #16 was squash merged as
+`bd67b5ccad0c429a3d1c10b73ba6105974088652`.
+Exact final PR head
+`7b1d6b127491bc0eb3bc71e5146ec767d1b17d8c`
+passed both imported Lean and complete Python/certified census in
+push [Actions 41409002580](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41409002580)
+and PR [Actions 41409033377](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41409033377).
+[PR #16](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/16).
+The **full all-target theorem** (including off-support zero) compiled
+at that head, not just the supported-order induction.
+
+
 S017's central imported Lean proof is the *complete weighted
 retained-permutation law*, valid for all finite active/retained
 sets and strictly positive real rates. New
