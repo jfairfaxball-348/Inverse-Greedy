@@ -1,5 +1,26 @@
 # Research roadmap — Inverse Greedy
 
+## S021 — 2026-11-02 (continuous unequal-rate swap, finite measurability)
+
+- [x] Show under the *true* continuous exponential product measure that
+      swapping clock coordinates exchanges unequal positive rates, and
+      hence turns the reverse-winner event into the forward-winner event
+      at swapped rates. Imported Lean and full Python/certified census
+      **both green** at exact SHA `d105af449e`, Actions 41445042808.
+- [x] Formalise measurability of each finite coordinate strict comparison
+      and tie event; compiled at that same imported checkpoint.
+- [x] Add measurable finite all-distinct and first-winner events;
+      additional imported source must be verified at its own exact head.
+- [x] Add independent exact oracle from unit Exp(1) replicas and
+      exhaustive permutation enumeration (up to eight replicas).
+      Locally four Python tests passed; full exact suite in CI.
+- [x] Write separate proof-status document and install S022.
+- [ ] Prove numerical unequal-rate comparison `r/(r+s)` directly
+      from the true exponential CDF/survival and integral in Lean.
+- [ ] Prove finite pairwise null ties, chamber masses and real
+      clock-to-greedy output law end to end in Lean.
+- [ ] Confirm full final-head CI and merge S021; 90/8/45 unchanged.
+
 ## S020 — 2026-11-02 (genuine two-clock event partition and symmetry)
 - [x] Use S019's actual exponential product probability measure and null-diagonal theorem to prove that the two strict winner events have probabilities summing to 1.
 - [x] Use `Measure.prod_swap` to prove equal-rate invariance under swapping clocks, equality of their strict winner probabilities, and balanced race identity.

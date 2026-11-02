@@ -1,3 +1,41 @@
+# S021 checkpoint — 2026-11-02
+
+**Branch:** `s021-continuous-race-swap`.
+**First verified imported Lean checkpoint:** exact commit
+`d105af449ef545d8f12ea519db4f2816dac649ff`,
+[Actions 41445042808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41445042808):
+both Lean and complete Python/certified census jobs succeeded.
+
+**New true-measure Lean results (IG-L32):** At arbitrary positive real
+rates the product of actual independent `expMeasure` laws transforms under
+coordinate swap into the continuous product with swapped rates; therefore
+the probability of the reverse strict-winner event at `(r,s)` equals the
+probability of the forward event at `(s,r)`. Neither result assumes or
+derives a discrete first-choice law.
+
+**Event measurability (IG-L33):** Finite-indexed strict-comparison and
+equality events were imported and compiled at the above SHA. The
+all-pairwise-distinct and specified first-winner events were added later;
+verify their own exact-head CI before upgrading that status.
+
+**Independent exact checks:** `tests/test_s021.py` counts unit-rate
+Exp(1) replica arrival permutations, testing the genuine grouped-minima
+law with positive **integer** rates. Four tests passed locally, including
+1:7 and 7:1 races, multi-clock chambers, relabelling, and empty/singleton
+boundaries. See `proof/S021_CONTINUOUS_RACE_SYMMETRY.md`.
+
+**Remaining major obligations:** the actual unequal-rate
+`P(T_r<T_s)=r/(r+s)` integral identity in Lean, finite pairwise no-ties,
+all-chamber probability `orderMass`, and the continuous clock-order
+pushforward to S018's proved discrete greedy law. S022 is installed for
+those gaps. No new EGU atlas cases: 90/8/45. No novelty claim.
+
+**Release:** this entry is a verified *checkpoint*, not a claim of
+final-head CI or merge. Record final verification and release below or
+above once known.
+
+---
+
 # S020 FINAL RELEASE — 2026-11-02
 
 **Merged:** [PR #19](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/19) final head `e55b90e13a9738d676d953aae8e2ae6c1df312dd` passed **both imported Lean and full Python/certified census** in [Actions run 41443533808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41443533808). PR #19 was **squash-merged** into `main` as `9fe340889d9e08d9d1d3c3895795617676da30eb`. The code and docs in this release cover IG-L30 and IG-L31; `sessions/S021.md` is installed. The next open theorems are the arbitrary-rate comparison formula and the all-finite-clock sorting/chamber law. Atlas unchanged: 90 EGU / 8 non-EGU / 45 unresolved. No independent novelty claim.
