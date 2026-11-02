@@ -1,3 +1,27 @@
+# S021 FINAL RELEASE — 2026-11-02
+
+**Merged:** [PR #20](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/20),
+exact final head `ef41930888d2aca53f538777bbfd30604d81e358`
+passed **both** imported Lean and complete Python/certified census in
+[push Actions 41445715430](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41445715430)
+and [PR Actions 41445751233](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41445751233).
+Squash-merged into `main` as `e02afe3769d5f6ff2a787a21dbb8cc13330243fa`.
+
+**Precisely certified (IG-L32, IG-L33):** genuine continuous unequal-rate
+product-law swap and reverse-winner event equality; measurability of finite
+pair-comparison, tie, all-distinct-clock and specified first-winner events.
+No real-clock race ratio, pairwise null-tie probability for finite
+products, full sorting law or end-to-end clock/greedy pushforward was
+Lean-proved. The independent `tests/test_s021.py` replica oracle and
+all existing Python/census tests passed on the exact final head.
+
+**S022 installed:** `sessions/S022.md`; target actual
+`P(T_r<T_s)=r/(r+s)` measure-level integral and finite null ties, sorted
+chamber probabilities and continuous clock-to-greedy bridge.
+Partial atlas unchanged: **90 / 8 / 45**. No independent novelty claim.
+
+---
+
 # S021 checkpoint — 2026-11-02
 
 **Branch:** `s021-continuous-race-swap`.
