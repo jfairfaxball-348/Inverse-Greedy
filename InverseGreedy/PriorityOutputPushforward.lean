@@ -88,12 +88,12 @@ theorem priority_filtered_tail_event_eq
               by_cases hp : insert v (greedyOutput neighbours
                   (tail.filter (fun w => w ∉ neighbours v))) = target
               · have hq := ((hevent tail ht).mp hp).2
-                simp [hp, hq]
+                simp only [if_pos hp, if_pos hq]
               · have hq : greedyOutput neighbours
                     (tail.filter (fun w => w ∈ kept)) ≠ target.erase v := by
                   intro hh
                   exact hp ((hevent tail ht).mpr ⟨hvt, hh⟩)
-                simp [hp, hq]
+                simp only [if_neg hp, if_neg hq]
       _ = priorityOutputMass rates neighbours kept (target.erase v) :=
         hprojection
   · simp only [if_neg hvt]
@@ -110,7 +110,7 @@ theorem priority_filtered_tail_event_eq
           (tail.filter (fun w => w ∉ neighbours v))) = target := by
         intro hh
         exact hvt ((hevent tail ht).mp hh).1
-      simp [hp]
+      simp only [if_neg hp]
     rw [hmap]
     simp
 
