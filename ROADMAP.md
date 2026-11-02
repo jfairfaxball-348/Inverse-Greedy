@@ -10,7 +10,7 @@
 - [x] Run independent rational projected-order distribution DP on
       95 nine-vertex subsets and conditional eight-vertex remainders.
 - [x] Imported Lean proof and Python/census green at initial code
-      SHA 0330a640, Actions 41408600557; final PR code/docs CI pending.
+      SHA 0330a640, Actions 41408600557; **exact final #16 head\n      7b1d6b127491 passed both jobs** in push 41409002580 and PR\n      41409033377; squash merged as bd67b5ccad0c.
 - [x] Install S018 for complete greedy-output law pushforward.
 - [ ] Prove priorityOutputMass = finiteRaceLaw in Lean (S018).
 - [ ] Prove independent continuous exponential-clock semantics.
