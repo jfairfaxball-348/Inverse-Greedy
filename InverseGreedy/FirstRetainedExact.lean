@@ -12,7 +12,7 @@ namespace InverseGreedy
 
 variable {α : Type*} [DecidableEq α]
 
-private theorem first_retained_fixed_point (rates : α → ℝ)
+theorem first_retained_fixed_point (rates : α → ℝ)
     (hrates : ∀ v, 0 < rates v)
     (active retained : Finset α) (winner : α)
     (hsub : retained ⊆ active) (hret : retained.Nonempty)
