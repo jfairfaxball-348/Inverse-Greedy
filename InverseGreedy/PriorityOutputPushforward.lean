@@ -85,9 +85,7 @@ theorem priority_filtered_tail_event_eq
               congr 1
               apply List.map_congr_left
               intro tail ht
-              have hh := propext (hevent tail ht)
-              rw [hh]
-              simp [hvt]
+              simpa [hevent tail ht, hvt]
       _ = priorityOutputMass rates neighbours kept (target.erase v) :=
         hprojection
   · simp only [if_neg hvt]
@@ -100,9 +98,7 @@ theorem priority_filtered_tail_event_eq
             (fun _ => (0 : ℝ)) := by
       apply List.map_congr_left
       intro tail ht
-      have hh := propext (hevent tail ht)
-      rw [hh]
-      simp [hvt]
+      simpa [hevent tail ht, hvt]
     rw [hmap]
     simp
 
@@ -169,12 +165,12 @@ theorem priorityOutputMass_eq_finiteRaceLaw
         have ha : active = ∅ :=
           Finset.card_eq_zero.mp (Nat.eq_zero_of_le_zero hcard)
         subst active
-        simp [priorityOutputMass, finiteRaceLaw, greedyOutput, orderMass]
+        simp [priorityOutputMass, finiteRaceLaw, greedyOutput, orderMass, eq_comm]
     | succ fuel ih =>
         intro active target hcard
         by_cases he : active = ∅
         · subst active
-          simp [priorityOutputMass, finiteRaceLaw, greedyOutput, orderMass]
+          simp [priorityOutputMass, finiteRaceLaw, greedyOutput, orderMass, eq_comm]
         · rw [priorityOutputMass_first_choice rates hrates
             neighbours hSymm active target he]
           rw [finiteRaceLaw_step rates neighbours fuel active target he]
