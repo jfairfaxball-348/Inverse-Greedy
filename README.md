@@ -11,6 +11,28 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S018: discrete greedy-output law — verification boundary
+
+The S018 candidate proof in `InverseGreedy/PriorityOutputPushforward.lean`
+establishes the intended exact equality
+`priorityOutputMass rates neighbours active target =
+finiteRaceLaw rates neighbours active.card active target` for every
+finite target, every finite symmetric neighbour map, and strictly
+positive real rates. It uses the genuine all-target S017 weighted
+priority deletion theorem. `PriorityProjectionPushforward.lean`
+proves the weighted expectation identity for arbitrary retained-order
+statistics, and `PriorityProjectionEvent.lean` handles the discrete
+greedy-event and support lemmas.
+
+**Release gate:** treat the full theorem as formally verified only
+once all imported Lean and Python/census jobs succeed on the exact
+final pull-request head SHA. The S018 weighted expectation lemma
+alone already passed both at `75460ab`, Actions 41415466242.
+The full bridge is proved on paper in
+`proof/GREEDY_OUTPUT_PUSHFORWARD.md` and independently tested exactly
+in `tests/test_s018.py`. Independent Exp-clock sorting semantics are
+still open and assigned to `sessions/S019.md`.
+
 ## Current mathematical results
 - **IG-L25 (S017, Lean):** full weighted deletion consistency for the
   actual complete-permutation law. For every retained subset A⊆V,
