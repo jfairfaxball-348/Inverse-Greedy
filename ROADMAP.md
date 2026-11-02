@@ -1,5 +1,25 @@
 # Research roadmap — Inverse Greedy
 
+## S022 — 2026-11-02 (genuine finite-clock no-ties)
+
+- [x] Prove in Lean that distinct coordinates of the genuine
+      `Measure.pi` exponential product have the prescribed two-clock
+      product measure, via S020 joint independence and marginals.
+- [x] Pull back S019's diagonal-null theorem, show each distinct-index
+      tie event has measure zero and their finite union is null.
+- [x] Derive measure one for the S021 measurable all-distinct event,
+      including empty/singleton types.
+- [x] Independently compute rational exact binned-Exp clock comparison,
+      rate-swap and same-bin probabilities, with a rigorously stated
+      bound `tie <= min(r,s)/n` for positive integer rates.
+- [x] Write proof boundary and install S023.
+- [ ] Verify **exact final branch head** with both imported Lean and
+      full Python/certified census, then merge and annotate this item.
+- [ ] Unequal-rate numerical true continuous-event ratio in Lean:
+      `P(T_r<T_s)=r/(r+s)`.
+- [ ] Finite sorting-chamber probabilities and real-clock greedy
+      pushforward in Lean. Atlas still **90/8/45**.
+
 ## S021 — 2026-11-02 (continuous unequal-rate swap, finite measurability)
 
 - [x] Show under the *true* continuous exponential product measure that

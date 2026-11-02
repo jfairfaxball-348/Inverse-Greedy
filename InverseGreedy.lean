@@ -38,3 +38,4 @@ import InverseGreedy.IndependentExpPair
 import InverseGreedy.ContinuousRacePartition
 import InverseGreedy.FiniteIndependentExp
 import InverseGreedy.ContinuousRaceSwap
+import InverseGreedy.FiniteClockNoTies
