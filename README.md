@@ -17,12 +17,13 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
 product-law rate swapping** at arbitrary strictly positive exponential
 rates and the reverse-winner event identity. It also makes finite
 coordinate comparisons and clock-tie events measurable, and formalises
-the all-distinct/first-winner event predicates. The first four formal
-statements passed imported Lean and complete Python/certified census
-at exact SHA `d105af449ef545d8f12ea519db4f2816dac649ff`,
-[Actions 41445042808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41445042808).
-See `CLAIMS.md` for final-head verification of the additional
-finite measurable events.
+the all-distinct/first-winner event predicates. All listed formal statements passed imported Lean and complete
+Python/certified census at **exact final PR #20 head**
+`ef41930888d2aca53f538777bbfd30604d81e358`,
+[Actions 41445751233](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41445751233).
+[PR #20](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/20)
+was squash-merged as `e02afe3769d5f6ff2a787a21dbb8cc13330243fa`.
+An earlier imported-code checkpoint also passed at `d105af449e`.
 
 `tests/test_s021.py` independently counts all orderings of labelled
 unit-rate exponential replicas (up to eight replicas), exactly checking
