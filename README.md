@@ -17,6 +17,8 @@ InverseGreedy/FiniteClockChambers.lean defines genuine real-clock strict-order e
 
 proof/S023_GEOMETRIC_BIN_CHAMBERS.md supplies a complete alternative **informal** proof of all-real finite exponential sorting-chamber probabilities via geometric-bin products and a collision error bound delta times the sum of min(rate_i,rate_j) over pairs. tests/test_s023.py checks two independently derived exact rational bin formulas for integer rates and rigorous collision enclosures. The numerical unequal-rate probability and real-clock greedy pushforward remain **Lean-open**. S024 is installed. The atlas is still **90 / 8 / 45**.
 
+**S023 FINAL RELEASE:** [PR #22](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/22) exact final branch head bfb0d2cd6d03ca874b026527b0e19c06cc471442 passed BOTH full imported Lean and Python/certified census in [push run 41536696192](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536696192) and [PR run 41536741787](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536741787). Squash-merged to main as 83a4390f69ac04621fa64498d41be93f74fc4c33. Only chamber measurability is Lean-verified, not continuous chamber mass or sorting pushforward. S024 installed. Atlas unchanged 90/8/45.
+
 ## S022: real finite-clock pair marginals and almost-sure no ties
 
 `InverseGreedy/FiniteClockNoTies.lean` closes a genuine continuous-clock
