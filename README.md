@@ -11,6 +11,31 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S021: unequal-rate product-law swap and finite comparison events
+
+`InverseGreedy/ContinuousRaceSwap.lean` proves **genuine continuous
+product-law rate swapping** at arbitrary strictly positive exponential
+rates and the reverse-winner event identity. It also makes finite
+coordinate comparisons and clock-tie events measurable, and formalises
+the all-distinct/first-winner event predicates. The first four formal
+statements passed imported Lean and complete Python/certified census
+at exact SHA `d105af449ef545d8f12ea519db4f2816dac649ff`,
+[Actions 41445042808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41445042808).
+See `CLAIMS.md` for final-head verification of the additional
+finite measurable events.
+
+`tests/test_s021.py` independently counts all orderings of labelled
+unit-rate exponential replicas (up to eight replicas), exactly checking
+the ordered-chamber formula for integer rates, including 1:7 and empty/
+singleton boundary cases. Its independent continuous-clock interpretation
+is proved in `proof/S021_CONTINUOUS_RACE_SYMMETRY.md`.
+
+**Still open in Lean:** unequal-rate numerical identity
+`P(T_r<T_s)=r/(r+s)`, a.s. no ties of distinct coordinates in
+finite products, genuine continuous sorted-chamber probabilities, and
+clock-to-greedy pushforward. `sessions/S022.md` is installed as their
+continuation. The graph atlas is unchanged at **90/8/45**.
+
 ## S020: true continuous two-clock race partition
 
 `InverseGreedy/FiniteIndependentExp.lean` additionally constructs the **genuine
@@ -34,8 +59,7 @@ is in `proof/S020_TWO_CLOCK_PARTITION.md`; PR
 contains the imported Lean module. At exact final PR #19 head `e55b90e13a9738d676d953aae8e2ae6c1df312dd`, both imported Lean and complete Python/census passed in [Actions 41443533808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41443533808). PR #19 was squash-merged as `9fe340889d9e08d9d1d3c3895795617676da30eb`. See `CLAIMS.md` for exact claim boundaries.
 
 **Open:** Lean proof of the unequal-rate event probability
-`r/(r+s)`, the genuine finite-indexed exponential product law,
-almost-sure finite sorting and its `orderMass` pushforward. Those
+`r/(r+s)`, finite-coordinate pairwise no-ties, almost-sure finite sorting and its `orderMass` pushforward. Those
 are distinct from S018's verified discrete first-choice law.
 `sessions/S021.md` is installed. Atlas remains 90/8/45.
 
