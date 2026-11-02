@@ -31,7 +31,7 @@ and equal-rate symmetry. The balanced equal-rate identity implies a
 probability of 1/2 for either strict winner. The mathematical argument
 is in `proof/S020_TWO_CLOCK_PARTITION.md`; PR
 [#19](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/19)
-contains the imported Lean module. See `CLAIMS.md` for exact CI status.
+contains the imported Lean module. At exact final PR #19 head `e55b90e13a9738d676d953aae8e2ae6c1df312dd`, both imported Lean and complete Python/census passed in [Actions 41443533808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41443533808). PR #19 was squash-merged as `9fe340889d9e08d9d1d3c3895795617676da30eb`. See `CLAIMS.md` for exact claim boundaries.
 
 **Open:** Lean proof of the unequal-rate event probability
 `r/(r+s)`, the genuine finite-indexed exponential product law,
