@@ -27,8 +27,7 @@ chambers or a continuous-clock-to-greedy-output pushforward.
 The independent `tests/test_s022.py` regression uses exact rational
 binned versions of genuine exponential arrivals; mathematical details
 are in `proof/S022_FINITE_NO_TIES.md`.
-**Verification status and final SHA:** see the latest S022 handover entry;
-do not infer Lean compilation from the existence of this source.
+**Verification:** Imported Lean and full Python/certified census passed on the **exact final PR #21 head** `c9df8f4aab9303b89eafb8072c3597909536ebc1`, [Actions 41475826383](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41475826383). Squash-merged into `main` as `71a84f55197fc79170bf98fc177ce33d6a86e58d`.
 S023 targets the remaining numerical race law and sorting bridge.
 Connected n≤6 atlas remains **90 / 8 / 45**.
 

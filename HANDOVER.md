@@ -1,3 +1,35 @@
+# S022 FINAL RELEASE — 2026-11-02
+
+**Merged:** [PR #21](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/21)
+was squash-merged into `main` as
+`71a84f55197fc79170bf98fc177ce33d6a86e58d`.
+The **exact final PR head**
+`c9df8f4aab9303b89eafb8072c3597909536ebc1`
+passed BOTH imported Lean and full Python/certified census in
+[Actions 41475826383](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41475826383).
+The initial imported proof had one elaboration failure, corrected
+in `946a9c92` which also passed both jobs. The new rational-bin
+regressions passed together with full CI at `4a2a5cc7` and at
+the exact final head.
+
+**Verified new result (IG-L34):** Under the genuine Mathlib finite
+product of strictly positive-real exponential measures, any distinct
+two coordinate clocks have the exact independent product joint law;
+therefore their tie event is null. The union of all distinct-clock
+ties is null and the all-distinct-clock event has probability one
+for **arbitrary finite index types including empty and singleton**.
+This is actual continuous measure theory, not an algebraic or
+discrete-law surrogate.
+
+**Boundary:** The numerical unequal-rate probability
+`P(T_r<T_s)=r/(r+s)`, probabilities of complete strict sorting
+chambers and real-clock greedy output pushforward are **NOT**
+Lean-verified by S022. `sessions/S023.md` is installed for those.
+Independent novelty remains unverified. Connected n≤6 partial
+atlas unchanged: **90 EGU / 8 non-EGU / 45 unresolved**.
+
+---
+
 # S022 execution checkpoint — 2026-11-02
 
 **PR:** [#21](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/21),

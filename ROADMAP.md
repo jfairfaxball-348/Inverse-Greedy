@@ -13,8 +13,9 @@
       rate-swap and same-bin probabilities, with a rigorously stated
       bound `tie <= min(r,s)/n` for positive integer rates.
 - [x] Write proof boundary and install S023.
-- [ ] Verify **exact final branch head** with both imported Lean and
-      full Python/certified census, then merge and annotate this item.
+- [x] **Exact final PR #21 head** `c9df8f4aab93` passed imported Lean
+      and complete Python/certified census in Actions **41475826383**;
+      squash-merged into main as `71a84f55197f`.
 - [ ] Unequal-rate numerical true continuous-event ratio in Lean:
       `P(T_r<T_s)=r/(r+s)`.
 - [ ] Finite sorting-chamber probabilities and real-clock greedy
