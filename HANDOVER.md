@@ -1,3 +1,9 @@
+# S020 FINAL RELEASE — 2026-11-02
+
+**Merged:** [PR #19](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/19) final head `e55b90e13a9738d676d953aae8e2ae6c1df312dd` passed **both imported Lean and full Python/certified census** in [Actions run 41443533808](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41443533808). PR #19 was **squash-merged** into `main` as `9fe340889d9e08d9d1d3c3895795617676da30eb`. The code and docs in this release cover IG-L30 and IG-L31; `sessions/S021.md` is installed. The next open theorems are the arbitrary-rate comparison formula and the all-finite-clock sorting/chamber law. Atlas unchanged: 90 EGU / 8 non-EGU / 45 unresolved. No independent novelty claim.
+
+---
+
 # S020 continuous-race partition — 2026-11-02
 
 **PR:** [#19](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/19),
