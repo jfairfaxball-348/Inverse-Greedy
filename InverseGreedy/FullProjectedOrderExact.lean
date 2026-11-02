@@ -263,4 +263,24 @@ theorem projectedOrderMass_eq_orderMass (rates : α → ℝ)
   intro active retained target hsub ht
   exact h active.card active retained target (le_refl _) hsub ht
 
+
+/-- Complete all-target weighted projection: supported retained orders
+have their exact intrinsic mass, and unsupported lists have mass zero.
+This includes the empty retained set and arbitrary positive rates. -/
+theorem projectedOrderMass_full_law (rates : α → ℝ)
+    (hrates : ∀ v, 0 < rates v)
+    (active retained : Finset α) (target : List α)
+    (hsub : retained ⊆ active) :
+    projectedOrderMass rates active retained target =
+      if target ∈ retained.toList.permutations
+      then orderMass rates target else 0 := by
+  classical
+  by_cases ht : target ∈ retained.toList.permutations
+  · simpa [ht] using
+      (projectedOrderMass_eq_orderMass rates hrates
+        active retained target hsub ht)
+  · simpa [ht] using
+      (projectedOrderMass_zero_of_not_perm rates
+        active retained hsub target ht)
+
 end InverseGreedy
