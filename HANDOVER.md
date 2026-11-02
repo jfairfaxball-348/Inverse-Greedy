@@ -1,3 +1,31 @@
+# S018 execution handover — 2026-11-02
+
+**Branch:** `s018-greedy-pushforward`; status governed by exact final CI and PR.
+The first major S018 theorem, `weighted_priority_projection_expectation`,
+was **imported Lean verified** with complete Python/certified census at SHA
+`75460ab146bf0dc3fbe646f198b729f1af788cdc`,
+[Actions 41415466242](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41415466242).
+
+Added formal modules `PriorityProjectionPushforward.lean`,
+`PriorityProjectionEvent.lean` and `PriorityOutputPushforward.lean`,
+plus `proof/GREEDY_OUTPUT_PUSHFORWARD.md` and `tests/test_s018.py`.
+The paper proof deduces the conditional greedy first-choice recurrence
+by deleting blocked tail priorities **in the weighted law**, then
+identifies it with `finiteRaceLaw` by induction. The full imported
+Lean pushforward theorem is **pending exact final SHA dual-green
+verification**; do not describe it as Lean verified until this gate passes.
+The Python independent full-permutation/first-choice regressions and
+complete certified graph census passed at S018 code SHA `6803edf`,
+Actions 41416748876; the earlier Lean job failed on a syntactic
+dependent-`if` simp elaboration, not a theorem counterexample.
+Follow later CI from the final commit for the actual release status.
+
+Continuous independent Exp-clock ordering equivalence is a distinct
+open obligation, handed to `sessions/S019.md`. No new EGU atlas
+classification: 90 positive / 8 negative / 45 unresolved.
+
+---
+
 # S017 handover — 2026-11-02
 
 **S017 released to main:** PR #16 was squash merged as
