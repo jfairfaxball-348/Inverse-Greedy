@@ -7,7 +7,7 @@
 - [x] Add independent all-target Fraction output-law oracle on empty and graphs through seven vertices.
 - [x] Write `proof/GREEDY_OUTPUT_PUSHFORWARD.md`, install `sessions/S019.md`.
 - [x] Full imported Lean theorem and Python/certified census both passed at S018 code SHA `3a3ea03d`, Actions 41417057969.
-- [ ] Obtain both green jobs on **exact final PR #17 head**, merge and record release SHA.
+- [x] Both jobs passed on exact final PR #17 head `217c38964f69a76cb3c7c93863a412ca27c4def1`, Actions 41417531293; squash-merged as `34d3b9ce72e8413055dd6d0404c1d94081c99c78`.
 - [ ] Formalise the product measure of genuinely independent Exp clocks (S019, separate).
 - [ ] Connected six-vertex atlas still 90 EGU / 8 non-EGU / 45 open.
 
