@@ -23,6 +23,8 @@ theorem independentExpPair_strict_winners_sum (r s : ℝ)
   have hAB : Disjoint A B := by
     apply Set.disjoint_left.mpr
     intro p hA hB
+    change p.1 < p.2 at hA
+    change p.2 < p.1 at hB
     exact (lt_asymm hA hB)
   have hABD : Disjoint (A ∪ B) D := by
     apply Set.disjoint_left.mpr
