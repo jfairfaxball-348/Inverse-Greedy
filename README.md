@@ -12,6 +12,19 @@ is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
 ## Current mathematical results
+- **IG-L25 (S017, Lean):** full weighted deletion consistency for the
+  actual complete-permutation law. For every retained subset A⊆V,
+  every strictly positive real rate assignment and **every target list**,
+  the weighted mass of complete orders whose projection equals that
+  target is exactly its intrinsic Plackett–Luce order mass when the
+  list is a complete permutation of A, and zero otherwise. This includes
+  A=∅ and conditional deletion after any prescribed first overall
+  vertex. See `InverseGreedy/FullProjectedOrderExact.lean` and
+  `proof/FULL_ORDERED_PROJECTION.md`. The structural Lean induction
+  passed the complete imported build at S017 code SHA `0330a640`;
+  exact full-head release CI is tracked in HANDOVER.md. **Neither
+  greedy-output pushforward nor independent exponential-clock semantics
+  has yet been formally proved.**
 - **IG-L24 (S016, Lean):** the *actual complete-permutation event* that
   vertex i is the first among any nonempty retained subset A of the
   active vertices has mass exactly r_i / Σ(A rates), for every strictly
