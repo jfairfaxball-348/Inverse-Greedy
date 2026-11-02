@@ -72,7 +72,13 @@ theorem finiteIndependentExp_pairwise_distinct_measurable
   intro j
   by_cases h : i = j
   · simp [h]
-  · simpa [h] using (finiteIndependentExp_tie_measurable i j).compl
+  · have heq :
+        {ω : ι → ℝ | i ≠ j → ω i ≠ ω j} =
+          {ω : ι → ℝ | ω i ≠ ω j} := by
+      ext ω
+      simp [h]
+    rw [heq]
+    exact (finiteIndependentExp_tie_measurable i j).compl
 
 /-- For a chosen index, being strictly earlier than every other clock is
 a measurable event in the genuine finite continuous probability space. -/
