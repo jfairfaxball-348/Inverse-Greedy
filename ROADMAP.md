@@ -1,12 +1,13 @@
 # Research roadmap — Inverse Greedy
 
-## S018 — 2026-11-02 (candidate bridge; verification pending)
+## S018 — 2026-11-02 (discrete theorem formally verified)
 - [x] Formally prove arbitrary weighted retained-order expectation identity from S017.
 - [x] Verify imported Lean and Python/certified atlas at `75460ab`, Actions 41415466242.
-- [x] Implement discrete greedy filtered-tail event, residual order support and candidate full recursion proof.
+- [x] Imported Lean proof of filtered greedy event, residual support, full weighted first-choice recursion and `priorityOutputMass_eq_finiteRaceLaw`.
 - [x] Add independent all-target Fraction output-law oracle on empty and graphs through seven vertices.
 - [x] Write `proof/GREEDY_OUTPUT_PUSHFORWARD.md`, install `sessions/S019.md`.
-- [ ] Obtain both green jobs on **exact final S018 PR head**, then merge and record release SHA.
+- [x] Full imported Lean theorem and Python/certified census both passed at S018 code SHA `3a3ea03d`, Actions 41417057969.
+- [ ] Obtain both green jobs on **exact final PR #17 head**, merge and record release SHA.
 - [ ] Formalise the product measure of genuinely independent Exp clocks (S019, separate).
 - [ ] Connected six-vertex atlas still 90 EGU / 8 non-EGU / 45 open.
 
