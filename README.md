@@ -24,7 +24,7 @@ proves the weighted expectation identity for arbitrary retained-order
 statistics, and `PriorityProjectionEvent.lean` handles the discrete
 greedy-event and support lemmas.
 
-**Verification:** the full imported Lean pushforward and complete Python/certified census passed at code SHA `3a3ea03d12b0752815fa6f6f6111ab58bdd5f1ff`, Actions 41417057969; exact final PR #17 head must also pass both jobs before merge. The weighted expectation lemma separately passed both at `75460ab`, Actions 41415466242. The full bridge is proved on paper in
+**Verification:** the full imported Lean pushforward and complete Python/certified census passed at code SHA `3a3ea03d12b0752815fa6f6f6111ab58bdd5f1ff`, Actions 41417057969; exact final PR #17 head `217c38964f69a76cb3c7c93863a412ca27c4def1` also passed both jobs in Actions 41417531293, and PR #17 was squash merged as `34d3b9ce72e8413055dd6d0404c1d94081c99c78`. The weighted expectation lemma separately passed both at `75460ab`, Actions 41415466242. The full bridge is proved on paper in
 `proof/GREEDY_OUTPUT_PUSHFORWARD.md` and independently tested exactly
 in `tests/test_s018.py`. Independent Exp-clock sorting semantics are
 still open and assigned to `sessions/S019.md`.
