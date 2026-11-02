@@ -19,7 +19,7 @@
       from the true exponential CDF/survival and integral in Lean.
 - [ ] Prove finite pairwise null ties, chamber masses and real
       clock-to-greedy output law end to end in Lean.
-- [ ] Confirm full final-head CI and merge S021; 90/8/45 unchanged.
+- [x] Exact final PR #20 head `ef41930888d2` passed **both** imported Lean and full Python/certified census in push Actions 41445715430 and PR Actions 41445751233; squash merged as `e02afe3769d5`. 90/8/45 unchanged.
 
 ## S020 — 2026-11-02 (genuine two-clock event partition and symmetry)
 - [x] Use S019's actual exponential product probability measure and null-diagonal theorem to prove that the two strict winner events have probabilities summing to 1.
