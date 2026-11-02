@@ -94,7 +94,7 @@ theorem finiteIndependentExp_pairwise_distinct_probability_one
   have hnull : finiteIndependentExp rates Aᶜ = 0 := by
     rw [hcompl]
     exact finiteIndependentExp_any_tie_null rates hpos
-  have hsum := measure_add_measure_compl hA
+  have hsum := measure_add_measure_compl (μ := finiteIndependentExp rates) hA
   rw [hnull] at hsum
   simpa [A] using hsum
 
