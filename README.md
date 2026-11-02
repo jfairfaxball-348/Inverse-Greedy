@@ -11,6 +11,27 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S022: real finite-clock pair marginals and almost-sure no ties
+
+`InverseGreedy/FiniteClockNoTies.lean` closes a genuine continuous-clock
+measure-theory gap. From S020's independent exponential coordinate family,
+it derives the exact two-coordinate product law for distinct indices.
+Pulling back S019's zero-measure diagonal proves that any two distinct
+real exponential clocks almost surely never tie, then a finite union
+gives probability **one** of pairwise distinct arrival times for **any
+finite index type**, including the empty and singleton cases.
+
+This does **not** establish the numerical unequal-rate probability
+`P(T_r<T_s)=r/(r+s)`, the probabilities of all finite sorting
+chambers or a continuous-clock-to-greedy-output pushforward.
+The independent `tests/test_s022.py` regression uses exact rational
+binned versions of genuine exponential arrivals; mathematical details
+are in `proof/S022_FINITE_NO_TIES.md`.
+**Verification status and final SHA:** see the latest S022 handover entry;
+do not infer Lean compilation from the existence of this source.
+S023 targets the remaining numerical race law and sorting bridge.
+Connected n≤6 atlas remains **90 / 8 / 45**.
+
 ## S021: unequal-rate product-law swap and finite comparison events
 
 `InverseGreedy/ContinuousRaceSwap.lean` proves **genuine continuous
