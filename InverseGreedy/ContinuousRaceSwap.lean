@@ -54,4 +54,41 @@ theorem finiteIndependentExp_tie_measurable {ι : Type*} [Fintype ι]
     MeasurableSet {ω : ι → ℝ | ω i = ω j} :=
   measurableSet_eq_fun (measurable_pi_apply i) (measurable_pi_apply j)
 
+
+/-- The event of strictly distinct finite clock times is measurable.
+This says nothing yet about the measure of its complement. -/
+theorem finiteIndependentExp_pairwise_distinct_measurable
+    {ι : Type*} [Fintype ι] :
+    MeasurableSet {ω : ι → ℝ | ∀ i j, i ≠ j → ω i ≠ ω j} := by
+  have hset :
+      {ω : ι → ℝ | ∀ i j, i ≠ j → ω i ≠ ω j} =
+        ⋂ i, ⋂ j, {ω : ι → ℝ | i ≠ j → ω i ≠ ω j} := by
+    ext ω
+    simp
+  rw [hset]
+  apply MeasurableSet.iInter
+  intro i
+  apply MeasurableSet.iInter
+  intro j
+  by_cases h : i = j
+  · simp [h]
+  · simpa [h] using (finiteIndependentExp_tie_measurable i j).compl
+
+/-- For a chosen index, being strictly earlier than every other clock is
+a measurable event in the genuine finite continuous probability space. -/
+theorem finiteIndependentExp_first_winner_measurable
+    {ι : Type*} [Fintype ι] (i : ι) :
+    MeasurableSet {ω : ι → ℝ | ∀ j, j ≠ i → ω i < ω j} := by
+  have hset :
+      {ω : ι → ℝ | ∀ j, j ≠ i → ω i < ω j} =
+        ⋂ j, {ω : ι → ℝ | j ≠ i → ω i < ω j} := by
+    ext ω
+    simp
+  rw [hset]
+  apply MeasurableSet.iInter
+  intro j
+  by_cases h : j = i
+  · simp [h]
+  · simpa [h] using finiteIndependentExp_lt_measurable i j
+
 end InverseGreedy
