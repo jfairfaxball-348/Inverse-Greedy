@@ -111,11 +111,8 @@ theorem projectedOrderMass_eq_orderMass (rates : α → ℝ)
         intro active retained target hcard hsub ht
         have ha : active = ∅ :=
           Finset.card_eq_zero.mp (Nat.eq_zero_of_le_zero hcard)
-        have hr : retained = ∅ := by
-          apply Finset.eq_empty_iff_forall_not_mem.mpr
-          intro v hv
-          have := hsub hv
-          simp [ha] at this
+        have hr : retained = ∅ :=
+          Finset.subset_empty.mp (by simpa [ha] using hsub)
         have hnil : target = [] := by
           obtain ⟨_, hset⟩ :=
             (mem_full_priority_permutations_iff retained target).mp ht
@@ -151,11 +148,8 @@ theorem projectedOrderMass_eq_orderMass (rates : α → ℝ)
             Finset.nonempty_iff_ne_empty.mpr hret
           have ha : active ≠ ∅ := by
             intro he
-            have hz : retained = ∅ := by
-              apply Finset.eq_empty_iff_forall_not_mem.mpr
-              intro v hv
-              have := hsub hv
-              simp [he] at this
+            have hz : retained = ∅ :=
+              Finset.subset_empty.mp (by simpa [he] using hsub)
             exact hret hz
           cases target with
           | nil =>
