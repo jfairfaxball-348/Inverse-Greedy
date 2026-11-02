@@ -74,8 +74,8 @@ theorem greedyOutput_subset_vertices (neighbours : α → Finset α)
     (order : List α) :
     greedyOutput neighbours order ⊆ order.toFinset := by
   intro x hx
-  have h := greedyScan_subset_vertices neighbours order ∅ x hx
-  simpa [greedyOutput] using h
+  have h := greedyScan_subset_vertices neighbours order ∅
+  exact h hx
 
 /-- Filtering a list with predicates that agree on its elements gives
 exactly the same list, including order and multiplicity. -/
