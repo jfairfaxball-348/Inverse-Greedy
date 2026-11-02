@@ -11,6 +11,23 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S020: true continuous two-clock race partition
+
+`InverseGreedy/ContinuousRacePartition.lean` derives the measure-one
+strict-winner partition for two actual independent exponential clocks
+at any strictly positive rates, and proves coordinate-swap invariance
+and equal-rate symmetry. The balanced equal-rate identity implies a
+probability of 1/2 for either strict winner. The mathematical argument
+is in `proof/S020_TWO_CLOCK_PARTITION.md`; PR
+[#19](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/19)
+contains the imported Lean module. See `CLAIMS.md` for exact CI status.
+
+**Open:** Lean proof of the unequal-rate event probability
+`r/(r+s)`, the genuine finite-indexed exponential product law,
+almost-sure finite sorting and its `orderMass` pushforward. Those
+are distinct from S018's verified discrete first-choice law.
+`sessions/S021.md` is installed. Atlas remains 90/8/45.
+
 ## S019: genuine independent exponential clocks (two-clock Lean foundation)
 
 `InverseGreedy/IndependentExpPair.lean` constructs the actual product of
