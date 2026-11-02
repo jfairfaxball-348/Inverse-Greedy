@@ -13,6 +13,17 @@ the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
 ## S020: true continuous two-clock race partition
 
+`InverseGreedy/FiniteIndependentExp.lean` additionally constructs the **genuine
+finite-indexed exponential product measure** for arbitrary finite vertex
+sets (including the empty set). It proves probability normalisation,
+measurability and correct exponential marginal of every coordinate,
+**joint independence of all coordinates** and singleton-clock-time
+nullity. Imported Lean and the full Python/certified census both passed at
+exact code SHA `f92f6c807f5241768b53ccba11cd38a60ed19968`,
+[Actions 41443061251](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41443061251).
+See `proof/S020_FINITE_CLOCK_MODEL.md`. This does not yet prove
+pairwise clock tie-nullity or probabilities of finite ordering chambers.
+
 `InverseGreedy/ContinuousRacePartition.lean` derives the measure-one
 strict-winner partition for two actual independent exponential clocks
 at any strictly positive rates, and proves coordinate-swap invariance
