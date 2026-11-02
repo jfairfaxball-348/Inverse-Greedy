@@ -83,6 +83,7 @@ theorem independentExpPair_no_ties (r s : ℝ)
   have hpre : (Prod.mk x) ⁻¹' {p : ℝ × ℝ | p.1 = p.2} = {x} := by
     ext y
     simp
+  change (expMeasure s) ((Prod.mk x) ⁻¹' {p : ℝ × ℝ | p.1 = p.2}) = 0
   rw [hpre]
   exact expMeasure_point_null s x
 
