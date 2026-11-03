@@ -47,3 +47,5 @@ import InverseGreedy.ClockBins
 import InverseGreedy.BinnedRace
 import InverseGreedy.BinnedRaceSeries
 import InverseGreedy.BinnedRaceCollision
+
+import InverseGreedy.BinnedRaceGeometric
