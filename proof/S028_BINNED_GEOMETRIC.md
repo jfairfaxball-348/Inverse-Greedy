@@ -1,3 +1,5 @@
+**S028 FINAL RELEASE (2026-11-03):** [PR #27](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/27) exact final head `d44c27f5905eda93776d0c9f55d89535c5e97d67` passed **both imported Lean and full Python/exact/certified connected graph census** in [push Actions 41618104816](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41618104816) and [PR Actions 41618112258](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41618112258). **Squash-merged into `main`** at `17bcd1f707c25366d30ab7e73c535a72c605f124`. Actual two-clock same-ceiling-bin collision and strict-earlier-bin winner probabilities, their closed ENNReal geometric expressions and exact real-fraction wrappers, are **Lean-verified** for all positive real r,s,δ. Continuous real-clock ratio `Pr(T_r<T_s)=r/(r+s)`, collision-to-zero limit, general finite sorting chambers and real-clock greedy pushforward remain **Lean-open**. `sessions/S029.md` installed. Atlas n≤6 **90 EGU / 8 non-EGU / 45 unresolved**; independent novelty unverified.
+
 # S028 — Actual exponential ceiling-bin geometric evaluation
 
 **Research date:** 2026-11-03
@@ -46,8 +48,7 @@ ENNReal's extended conventions, and makes no probability assumptions.
 ([push CI 41617713182](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41617713182)).
 `InverseGreedy/BinnedRaceGeometric.lean` now verifies both true event
 geometric evaluations and their exact `ENNReal.ofReal` real-fraction forms.
-The independent exact test suite also passed at this SHA. Final documentation
-head CI still requires a separate check before release.
+The independent exact test suite also passed at this SHA. The exact final PR head passed both push and PR CI, and was squash-merged into main.
 The continuous real-clock rate ratio and its collision/limit argument
 remain **Lean-open**.
 
