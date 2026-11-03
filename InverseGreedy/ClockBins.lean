@@ -119,4 +119,81 @@ theorem finiteIndependentExp_clockCeilBins_independent
     (finiteIndependentExp rates)
   exact hind.comp (fun _ => clockCeilBin_measurable δ)
 
+
+/-- The joint law of any two genuine independent exponential ceiling
+bins is the product of their geometric masses. Unlike the rational
+oracle, this theorem uses the actual Mathlib real-clock product measure. -/
+theorem independentExpPair_clockCeilBin_joint
+    (r s δ : ℝ) (hr : 0 < r) (hs : 0 < s)
+    (hδ : 0 < δ) (k l : ℕ) :
+    independentExpPair r s
+      {p : ℝ × ℝ |
+        clockCeilBin δ p.1 = k + 1 ∧ clockCeilBin δ p.2 = l + 1} =
+      ENNReal.ofReal
+        ((1 - Real.exp (-(r * δ))) *
+          (Real.exp (-(r * δ))) ^ k) *
+      ENNReal.ofReal
+        ((1 - Real.exp (-(s * δ))) *
+          (Real.exp (-(s * δ))) ^ l) := by
+  change (expMeasure r).prod (expMeasure s)
+    ({t : ℝ | clockCeilBin δ t = k + 1} ×ˢ
+      {t : ℝ | clockCeilBin δ t = l + 1}) = _
+  rw [Measure.prod_prod]
+  rw [expMeasure_clockCeilBin_succ r δ hr hδ k,
+    expMeasure_clockCeilBin_succ s δ hs hδ l]
+
+/-- The same actual joint bin law for any two distinct coordinates
+inside a genuine finite independent exponential product. -/
+theorem finiteIndependentExp_clockCeilBin_pair_joint
+    {ι : Type*} [Fintype ι] (rates : ι → ℝ)
+    (hpos : ∀ i, 0 < rates i) (i j : ι) (hij : i ≠ j)
+    (δ : ℝ) (hδ : 0 < δ) (k l : ℕ) :
+    finiteIndependentExp rates
+      {ω : ι → ℝ |
+        clockCeilBin δ (ω i) = k + 1 ∧
+          clockCeilBin δ (ω j) = l + 1} =
+      ENNReal.ofReal
+        ((1 - Real.exp (-(rates i * δ))) *
+          (Real.exp (-(rates i * δ))) ^ k) *
+      ENNReal.ofReal
+        ((1 - Real.exp (-(rates j * δ))) *
+          (Real.exp (-(rates j * δ))) ^ l) := by
+  let f : (ι → ℝ) → ℝ × ℝ := fun ω => (ω i, ω j)
+  have hf : Measurable f :=
+    (measurable_pi_apply i).prodMk (measurable_pi_apply j)
+  have hbox :
+      MeasurableSet
+        {p : ℝ × ℝ |
+          clockCeilBin δ p.1 = k + 1 ∧ clockCeilBin δ p.2 = l + 1} := by
+    have hk :
+        MeasurableSet {t : ℝ | clockCeilBin δ t = k + 1} := by
+      rw [clockCeilBin_preimage_succ δ hδ k]
+      exact measurableSet_Ioc
+    have hl :
+        MeasurableSet {t : ℝ | clockCeilBin δ t = l + 1} := by
+      rw [clockCeilBin_preimage_succ δ hδ l]
+      exact measurableSet_Ioc
+    change MeasurableSet
+      ({t : ℝ | clockCeilBin δ t = k + 1} ×ˢ
+        {t : ℝ | clockCeilBin δ t = l + 1})
+    exact hk.prod hl
+  calc
+    finiteIndependentExp rates
+        {ω : ι → ℝ |
+          clockCeilBin δ (ω i) = k + 1 ∧
+            clockCeilBin δ (ω j) = l + 1} =
+      (Measure.map f (finiteIndependentExp rates))
+        {p : ℝ × ℝ |
+          clockCeilBin δ p.1 = k + 1 ∧
+            clockCeilBin δ p.2 = l + 1} := by
+      rw [Measure.map_apply hf hbox]
+      rfl
+    _ = independentExpPair (rates i) (rates j)
+        {p : ℝ × ℝ |
+          clockCeilBin δ p.1 = k + 1 ∧
+            clockCeilBin δ p.2 = l + 1} := by
+      rw [finiteIndependentExp_pair_law rates hpos i j hij]
+    _ = _ := independentExpPair_clockCeilBin_joint
+      (rates i) (rates j) δ (hpos i) (hpos j) hδ k l
+
 end InverseGreedy
