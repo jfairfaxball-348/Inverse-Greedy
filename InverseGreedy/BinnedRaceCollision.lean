@@ -46,7 +46,7 @@ theorem independentExpPair_samePositiveBin_mass (r s δ : ℝ)
 /-- Positive collision cells are pairwise disjoint, because the first
 clock cannot occupy two different integer-valued bins. -/
 theorem samePositiveBinEvent_pairwise_disjoint (δ : ℝ) :
-    Pairwise (Disjoint on (samePositiveBinEvent δ)) := by
+    Pairwise (fun i j : ℕ => Disjoint (samePositiveBinEvent δ i) (samePositiveBinEvent δ j)) := by
   intro i j hij
   apply Set.disjoint_left.mpr
   intro p hi hj
