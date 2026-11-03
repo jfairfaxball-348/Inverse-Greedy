@@ -17,17 +17,18 @@ The one-sided limit is stated explicitly for widths approaching zero
 from above. -/
 theorem exponential_cdf_initial_slope (a : ℝ) :
     Tendsto (fun δ : ℝ => (1 - Real.exp (-(a * δ))) / δ)
-      (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 a) := by
+      (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds a) := by
   have hlin : HasDerivAt (fun t : ℝ => -(a * t)) (-a) (0 : ℝ) := by
-    convert (hasDerivAt_id (0 : ℝ)).mul_const (-a) using 1 <;> ring
+    simpa [neg_mul, mul_comm] using
+      (hasDerivAt_id (0 : ℝ)).mul_const (-a)
   have hexp : HasDerivAt (fun t : ℝ => Real.exp (-(a * t)))
       (-a) (0 : ℝ) := by
-    convert (Real.hasDerivAt_exp (-(a * 0))).comp 0 hlin using 1 <;>
-      simp [Real.exp_zero]
+    simpa using
+      (Real.hasDerivAt_exp (-(a * 0))).comp (0 : ℝ) hlin
   have hderiv : HasDerivAt (fun t : ℝ => 1 - Real.exp (-(a * t)))
       a (0 : ℝ) := by
-    convert (hasDerivAt_const (0 : ℝ) (1 : ℝ)).sub hexp using 1 <;>
-      simp [Real.exp_zero]
+    simpa using
+      (hasDerivAt_const (0 : ℝ) (1 : ℝ)).sub hexp
   have h := hderiv.tendsto_slope_zero_right
   simpa [smul_eq_mul, div_eq_mul_inv, mul_comm] using h
 
@@ -40,20 +41,20 @@ theorem continuous_bin_winner_fraction_tendsto (r s : ℝ)
       (fun δ : ℝ =>
         ((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) /
           (1 - Real.exp (-((r + s) * δ))))
-      (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 (r / (r + s))) := by
+      (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds (r / (r + s))) := by
   have hrs : r + s ≠ 0 := ne_of_gt (add_pos hr hs)
   have hslope :
       Tendsto
         (fun δ : ℝ =>
           ((1 - Real.exp (-(r * δ))) / δ) /
             ((1 - Real.exp (-((r + s) * δ))) / δ))
-        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 (r / (r + s))) :=
+        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds (r / (r + s))) :=
     (exponential_cdf_initial_slope r).div
       (exponential_cdf_initial_slope (r + s)) hrs
   have hc : Continuous (fun δ : ℝ => Real.exp (-(s * δ))) := by fun_prop
   have hExp :
       Tendsto (fun δ : ℝ => Real.exp (-(s * δ)))
-        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 1) := by
+        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds 1) := by
     have h := (hc.continuousAt (0 : ℝ)).tendsto.mono_left nhdsWithin_le_nhds
     simpa using h
   have hProd := hslope.mul hExp
@@ -84,7 +85,7 @@ theorem continuous_bin_winner_ennreal_tendsto (r s : ℝ)
       (fun δ : ℝ => ENNReal.ofReal
         (((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) /
           (1 - Real.exp (-((r + s) * δ)))))
-      (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 (ENNReal.ofReal (r / (r + s)))) :=
+      (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds (ENNReal.ofReal (r / (r + s)))) :=
   ENNReal.tendsto_ofReal (continuous_bin_winner_fraction_tendsto r s hr hs)
 
 /-- Genuine independent exponential clocks have the unequal-rate
@@ -101,18 +102,18 @@ theorem independentExpPair_realWinner_rateRatio (r s : ℝ)
       (((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) /
         (1 - Real.exp (-((r + s) * δ))))
   let C : ℝ → ENNReal := fun δ => ENNReal.ofReal (δ * min r s)
-  have hF : Tendsto F (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 (ENNReal.ofReal (r / (r + s)))) :=
+  have hF : Tendsto F (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds (ENNReal.ofReal (r / (r + s)))) :=
     continuous_bin_winner_ennreal_tendsto r s hr hs
   have hrealC :
-      Tendsto (fun δ : ℝ => δ * min r s) (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 0) := by
+      Tendsto (fun δ : ℝ => δ * min r s) (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds 0) := by
     have hc : Continuous (fun δ : ℝ => δ * min r s) := by fun_prop
     simpa using
       (hc.continuousAt (0 : ℝ)).tendsto.mono_left nhdsWithin_le_nhds
-  have hC : Tendsto C (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 0) := by
+  have hC : Tendsto C (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds 0) := by
     simpa [C] using ENNReal.tendsto_ofReal hrealC
   have hFC :
       Tendsto (fun δ : ℝ => F δ + C δ)
-        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 (ENNReal.ofReal (r / (r + s)))) := by
+        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds (ENNReal.ofReal (r / (r + s)))) := by
     simpa using hF.add hC
   have hlo : ∀ᶠ δ : ℝ in nhdsWithin (0 : ℝ) (Set.Ioi 0), F δ ≤ P := by
     filter_upwards [self_mem_nhdsWithin] with δ hδ
@@ -134,9 +135,9 @@ theorem independentExpPair_realWinner_rateRatio (r s : ℝ)
           r s δ hr hs hδ) _
   have hpin :
       Tendsto (fun _ : ℝ => P)
-        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 (ENNReal.ofReal (r / (r + s)))) :=
+        (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds (ENNReal.ofReal (r / (r + s)))) :=
     tendsto_of_tendsto_of_tendsto_of_le_of_le' hF hFC hlo hhi
-  have hconst : Tendsto (fun _ : ℝ => P) (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (𝓝 P) :=
+  have hconst : Tendsto (fun _ : ℝ => P) (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds P) :=
     tendsto_const_nhds
   exact tendsto_nhds_unique hconst hpin
 
