@@ -58,6 +58,30 @@ class TestS032JointBinAndChamber(unittest.TestCase):
                                              Fraction(2)), repeat=3):
                 self.assertFalse(chamber(order, clocks))
 
+    def test_strict_multi_bin_gap_series_finite_sections(self):
+        """Check the exact gap-coordinate factorisation with Fraction."""
+        qs = (Fraction(1, 2), Fraction(2, 3), Fraction(4, 5),
+              Fraction(3, 7))
+        width = 4
+        for n in range(5):
+            q = qs[:n]
+            direct = Fraction(0)
+            for gaps in itertools.product(range(width), repeat=n):
+                ordered_bins = tuple(sum(gaps[:i + 1]) + i
+                                     for i in range(n))
+                direct += mass(q, ordered_bins)
+            base = math.prod((1 - q[i]) * q[i] ** i for i in range(n))
+            suffix_q = tuple(math.prod(q[i:]) for i in range(n))
+            separated = base * math.prod(
+                sum((Q ** d for d in range(width)), Fraction(0))
+                for Q in suffix_q
+            )
+            closed_infinite = base * math.prod(
+                Fraction(1) / (1 - Q) for Q in suffix_q
+            )
+            self.assertEqual(direct, separated)
+            self.assertLessEqual(direct, closed_infinite)
+
     def test_strict_ceiling_bins_force_clock_order(self):
         times = tuple(Fraction(i, 6) for i in range(-2, 15))
         delta = Fraction(1, 3)
