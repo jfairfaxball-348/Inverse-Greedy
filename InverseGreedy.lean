@@ -54,3 +54,5 @@ import InverseGreedy.BinnedCollisionBound
 
 import InverseGreedy.ContinuousRaceLimit
 import InverseGreedy.FiniteClockPairOrder
+
+import InverseGreedy.FiniteClockJointBins
