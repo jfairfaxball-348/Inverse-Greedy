@@ -1,3 +1,14 @@
+## S032 provisional claim ledger — 2026-11-03 (PR #31; release verification pending)
+
+| ID | Exact claim | Proof/status |
+|---|---|---|
+| IG-L55 | Under the **actual** positive-rate finite real Exp product, any complete specified assignment of nonzero one-based ceiling bins has joint mass equal to the product of the genuine one-clock geometric probabilities, including the empty index type. | `FiniteClockJointBins.lean`, via `Measure.pi_pi` and S026 one-coordinate bin theorem; final-head imported Lean CI to be certified. |
+| IG-L56 | For any two distinct indices inside an arbitrary finite family, the strict `[i,j]` chamber is the true comparison event, with mass `ENNReal.ofReal (rates i/(rates i+rates j))`. | Same imported module using S031 genuine pair formula; final CI pending. |
+| IG-L57 | Any proposed strict chamber which repeats an index at two different positions is empty and has measured mass zero for any rates. | Same imported module; deterministic order contradiction; final CI pending. |
+| IG-T32 | Independent exact rational geometric-cylinder and deterministic chamber regressions, not a continuous probability proof. | `tests/test_s032.py`; full suite/census CI pending. |
+
+**Open:** full multi-index strict-bin series, collision/zero-width limit for n≥3, measurable canonical sorting map and true real-clock greedy output law; no new atlas classification or novelty claim. **S033 installed.**
+
 **S031 FINAL RELEASE (2026-11-03):** [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30) exact final head `09d0b45ddcae35714c1cf0a03af57d62a900781c` passed **both imported Lean and Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41650444708](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650444708) and [PR Actions 41650452725](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650452725). **Squash-merged into main as `06db312e37c7fa9bf05718d7297f43e2cf5405c0`.** Lean now proves genuine finite-family pairwise comparison probabilities and strict-chamber pair upper bounds, plus empty/singleton chamber mass one. The **full n≥3 continuous chamber product** and **true real-clock greedy-output pushforward** remain Lean-open. `sessions/S032.md` installed. Census **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
 
 ## S031 claim ledger — 2026-11-03 (PR #30; final release certified)
