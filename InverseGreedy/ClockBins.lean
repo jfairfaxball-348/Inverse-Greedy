@@ -37,7 +37,7 @@ theorem clockCeilBin_preimage_succ (δ : ℝ) (hδ : 0 < δ) (k : ℕ) :
   change Nat.ceil (t / δ) = k + 1 ↔
     (k : ℝ) * δ < t ∧ t ≤ ((k : ℝ) + 1) * δ
   rw [Nat.ceil_eq_iff (show k + 1 ≠ 0 by omega)]
-  simp only [Nat.add_sub_cancel_left, Nat.cast_add, Nat.cast_one]
+  simp only [Nat.cast_add, Nat.cast_one]
   constructor
   · rintro ⟨hlo, hhi⟩
     exact ⟨(lt_div_iff₀ hδ).mp hlo, (div_le_iff₀ hδ).mp hhi⟩
@@ -117,7 +117,8 @@ theorem finiteIndependentExp_clockCeilBins_independent
   change iIndepFun
     (fun i => (clockCeilBin δ) ∘ (fun ω : ι → ℝ => ω i))
     (finiteIndependentExp rates)
-  exact hind.comp (fun _ => clockCeilBin_measurable δ)
+  exact hind.comp (fun _ => clockCeilBin δ)
+    (fun _ => clockCeilBin_measurable δ)
 
 
 /-- The joint law of any two genuine independent exponential ceiling
