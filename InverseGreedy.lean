@@ -43,3 +43,5 @@ import InverseGreedy.FiniteClockChambers
 import InverseGreedy.ExpSurvival
 import InverseGreedy.ExpBinCells
 import InverseGreedy.ClockBins
+
+import InverseGreedy.BinnedRace
