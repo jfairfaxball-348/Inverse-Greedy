@@ -57,14 +57,14 @@ theorem strictClockChamber_subset_bin_union_collision
     change ¬ (∀ a b : Fin order.length, a < b →
       clockCeilBin δ (ω (order[a])) <
         clockCeilBin δ (ω (order[b]))) at hb
-    push_neg at hb
+    push Not at hb
     obtain ⟨a, b, hab, hnot⟩ := hb
     have hle : clockCeilBin δ (ω (order[a])) ≤
         clockCeilBin δ (ω (order[b])) :=
       clockCeilBin_mono δ hδ (le_of_lt (hω a b hab))
     have heq : clockCeilBin δ (ω (order[a])) =
         clockCeilBin δ (ω (order[b])) :=
-      le_antisymm hle (le_of_not_gt hnot)
+      le_antisymm hle hnot
     exact ⟨a, b, hab, heq⟩
 
 /-- True-measure sandwich; the error term is an actual clock-bin
