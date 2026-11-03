@@ -39,8 +39,11 @@ q_i = e^{-rate_i δ}.
 
 Both the measure-theoretic statements and the arbitrary finite-index
 case include empty and singleton families where meaningful.
-Inspect the exact final CI SHA before claiming these last statements
-are Lean-verified.
+These two independent-bin extensions are **Lean-verified** at code
+SHA `48ea3c284632e2db7a2df438d45a5e263c81aa35`, with both
+imported Lean and full Python/certified census passing in push Actions
+41607939473 and PR Actions 41607949333. The eventual final PR head
+requires a fresh exact-head check.
 
 ## Pair race: exact algebra but still Lean-open measure-level sum
 
@@ -69,5 +72,6 @@ been fully formalised in Lean.
 
 - `InverseGreedy/ClockBins.lean` imported by `InverseGreedy.lean`.
 - First imported milestone dual-green at SHA `67c9b4a0a46cfac6e26cd436bdc115a60bce09c4`, PR Actions 41607274017.
+- Expanded genuine finite-family independence and pair PMFs dual-green at SHA `48ea3c284632e2db7a2df438d45a5e263c81aa35`, push Actions 41607939473 and PR Actions 41607949333.
 - `tests/test_s026.py`: exact rational endpoints, bin masses, binned winner/collision partition, geometric tail remainder. Exact arithmetic is not an all-real stochastic proof.
 - Current connected n≤6 partial atlas: **90 EGU / 8 non-EGU / 45 unresolved**. No priority/novelty certification.

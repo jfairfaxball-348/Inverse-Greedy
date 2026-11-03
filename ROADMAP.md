@@ -2,7 +2,7 @@
 
 - [x] Define the **measurable** one-based ceiling-bin map of genuine real exponential clocks; explicitly match positive bin inverse-images with S025 right-closed cells and prove the nonpositive zero-cell is null.
 - [x] Prove true geometric positive-bin PMFs and their finite-product coordinate marginals for arbitrary positive real rates/widths (first imported Lean milestone, dual-green Actions 41607274017 at 67c9b4a).
-- [ ] Verify the subsequently imported finite-bin `iIndepFun` composition and pair product-box law on final PR head; no substitution of exact Fraction oracle for genuine measure law.
+- [x] Verified finite-bin `iIndepFun` composition and actual two-clock/finite-product pair PMFs: both Lean and full Python/certified census green at code SHA `48ea3c284632` in push Actions 41607939473 and PR Actions 41607949333. Final doc-head recheck before merge.
 - [x] Add four independent exact `Fraction` regression groups for ceiling endpoints, pair product, binned win/collision and finite truncations.
 - [x] Document the scope and install S027.
 - [ ] **Next:** derive strict-bin winning and collision **measure-level** probabilities, prove quantitative collision bound and its zero-width limit, then the continuous pair ratio `r/(r+s)`; extend all finite chambers and greedy sorting pushforward.
