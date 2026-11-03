@@ -1,5 +1,8 @@
 # Claim ledger — S026 (2026-11-03)
 
+**S026 FINAL RELEASE (2026-11-03):** [PR #25](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/25), exact final head `b65e54b36da5240ab44649246b600e56a22339da`, passed **both imported Lean and full Python/exact/certified graph census** in [push Actions 41608546306](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41608546306) and [PR Actions 41608555380](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41608555380). **Squash-merged to `main`** as `72e606464d1638dded0ab898bf280b0f6b112bc5`. This release verifies genuine measurable ceiling-bin PMFs, finite-bin `iIndepFun`, and true pair product-box masses; it does **not** prove the unequal-rate continuous race ratio, full sorting chambers or real-clock greedy pushforward. `sessions/S027.md` installed. Connected n≤6 atlas **90/8/45**; independent novelty unverified.
+
+
 ## S026 claim additions
 
 | ID | Statement | Status and evidence |
