@@ -25,11 +25,15 @@ theorem expMeasure_Ioc_nonnegative (rate a b : ℝ)
   have hset : Set.Ioi a \ Set.Ioi b = Set.Ioc a b := by
     ext x
     simp only [Set.mem_diff, Set.mem_Ioi, Set.mem_Ioc, not_lt]
+  have hsubset : Set.Ioi b ⊆ Set.Ioi a := by
+    intro x hx
+    exact lt_of_le_of_lt hab hx
   calc
     expMeasure rate (Set.Ioc a b) =
         expMeasure rate (Set.Ioi a \ Set.Ioi b) := by rw [hset]
     _ = expMeasure rate (Set.Ioi a) - expMeasure rate (Set.Ioi b) := by
-      rw [measure_diff measurableSet_Ioi measurableSet_Ioi]
+      rw [measure_sdiff hsubset measurableSet_Ioi.nullMeasurableSet
+        (measure_ne_top _ _)]
     _ = ENNReal.ofReal
           (Real.exp (-(rate * a)) - Real.exp (-(rate * b))) := by
       rw [expMeasure_Ioi_nonnegative rate a hr ha,
