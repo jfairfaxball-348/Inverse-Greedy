@@ -23,11 +23,11 @@ theorem exponential_cdf_initial_slope (a : ℝ) :
       (hasDerivAt_id (0 : ℝ)).mul_const (-a)
   have hexp : HasDerivAt (fun t : ℝ => Real.exp (-(a * t)))
       (-a) (0 : ℝ) := by
-    simpa using
+    simpa [Function.comp_def] using
       (Real.hasDerivAt_exp (-(a * 0))).comp (0 : ℝ) hlin
   have hderiv : HasDerivAt (fun t : ℝ => 1 - Real.exp (-(a * t)))
       a (0 : ℝ) := by
-    simpa using
+    simpa [Pi.sub_apply] using
       (hasDerivAt_const (0 : ℝ) (1 : ℝ)).sub hexp
   have h := hderiv.tendsto_slope_zero_right
   simpa [smul_eq_mul, div_eq_mul_inv, mul_comm] using h
@@ -55,7 +55,7 @@ theorem continuous_bin_winner_fraction_tendsto (r s : ℝ)
   have hExp :
       Tendsto (fun δ : ℝ => Real.exp (-(s * δ)))
         (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds 1) := by
-    have h := (hc.continuousAt (0 : ℝ)).tendsto.mono_left nhdsWithin_le_nhds
+    have h := (hc.continuousAt (x := (0 : ℝ))).tendsto.mono_left nhdsWithin_le_nhds
     simpa using h
   have hProd := hslope.mul hExp
   have hEq :
@@ -108,7 +108,7 @@ theorem independentExpPair_realWinner_rateRatio (r s : ℝ)
       Tendsto (fun δ : ℝ => δ * min r s) (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds 0) := by
     have hc : Continuous (fun δ : ℝ => δ * min r s) := by fun_prop
     simpa using
-      (hc.continuousAt (0 : ℝ)).tendsto.mono_left nhdsWithin_le_nhds
+      (hc.continuousAt (x := (0 : ℝ))).tendsto.mono_left nhdsWithin_le_nhds
   have hC : Tendsto C (nhdsWithin (0 : ℝ) (Set.Ioi 0)) (nhds 0) := by
     simpa [C] using ENNReal.tendsto_ofReal hrealC
   have hFC :
@@ -130,7 +130,7 @@ theorem independentExpPair_realWinner_rateRatio (r s : ℝ)
           independentExpPair r s (sameCeilBinEvent δ) := hm
       _ = F δ + independentExpPair r s (sameCeilBinEvent δ) := by
         rw [hbin]
-      _ ≤ F δ + C δ := add_le_add_left
+      _ ≤ F δ + C δ := add_le_add_right
         (independentExpPair_sameCeilBin_le_width_min_rate
           r s δ hr hs hδ) _
   have hpin :
