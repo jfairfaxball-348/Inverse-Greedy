@@ -1,3 +1,36 @@
+# S031 execution handover — 2026-11-03 (PR #30; final verification pending)
+
+The next session is `sessions/S032.md`. The S031 branch
+`s031-finite-clock-pair-chambers` originates at main
+`b190fae9e42d6598d5b53873007ae349aa1f9e78`. Review
+[PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30)
+and its **exact final SHA**, both imported Lean and complete Python/exact/
+certified n≤6 census jobs in BOTH push and PR GitHub Actions, before merge.
+
+Imported `InverseGreedy/FiniteClockPairOrder.lean` proves under the
+**actual** finite `Measure.pi` exponential product and positive rates:
+(1) any distinct-coordinate strict clock comparison has exact mass
+`ENNReal.ofReal(rate_i/(rate_i+rate_j))`, transporting the genuine S030
+two-clock result via S022's true pair joint map; (2) any strict chamber
+is a subset of every required pair-comparison event, giving a true
+measured rate-ratio upper bound; (3) universal chamber probability one
+for empty and singleton proposed order lists. No discrete priority
+measure is used to justify these actual-clock claims.
+
+`tests/test_s031.py` adds exact independent `Fraction` regressions;
+`proof/S031_FINITE_CLOCK_PAIR.md` records the rigorous proof and gap.
+The **general n≥3 full chamber product is NOT formally established**:
+pairwise ordering marginals cannot determine a full joint order law.
+The measurable tie-broken sorting map, its true pushforward, and the
+continuous greedy-output identification with S018's formal discrete
+`finiteRaceLaw` also remain Lean-open; S032 targets these and must
+land only verified partial results if a complete proof is not found.
+
+Connected n≤6 census remains **90 EGU / 8 non-EGU / 45 unresolved**;
+no independent novelty certificate, Palomar or arXiv submission.
+
+---
+
 **S030 FINAL RELEASE (2026-11-03):** [PR #29](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/29) exact final head `94cef7edb07d9e45de559d9c6d02cd1a3d60d572` passed **both complete imported Lean and Python/exact/certified connected-n≤6 census** on BOTH [push Actions 41647662604](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647662604) and [PR Actions 41647671351](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647671351); **squash-merged into `main`** at `abadb58e6b4583729d084b66c1e9096041ce1eb4`. Lean now formally proves the **actual independent continuous exponential two-clock inequality-event mass** `P(T_r<T_s)=ENNReal.ofReal (r/(r+s))` for any r,s>0, using the real analytic small-bin limit and S029 true measured-event squeeze. The full finite strict ordering chamber law and continuous-clock greedy-output pushforward remain **Lean-open**; `sessions/S031.md` installed. Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; independent novelty unverified.
 
 # S030 execution handover — 2026-11-03
