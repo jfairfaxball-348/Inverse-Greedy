@@ -1,3 +1,7 @@
+**S025 FINAL RELEASE (2026-11-03):** [PR #24](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/24) exact final head `1c8a32fb548242cebffe1ebde7e8386ee0bd79c1` passed BOTH imported Lean and full Python/exact/certified graph census in [push Actions 41598540982](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598540982) and [PR Actions 41598576216](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598576216). It was **squash-merged to `main`** as `e10fd67c08e80ea63c8d02b9308b54080fce8fd5`. `sessions/S026.md` is installed. The new genuine interval and finite-coordinate geometric-cell laws are Lean-verified; floor-valued bin independence, unequal-rate race ratio, all-chamber masses and real-clock greedy pushforward remain Lean-open. Atlas still **90/8/45**; no novelty certification.
+
+---
+
 # S025 execution handover — 2026-11-03
 
 **Branch:** `s025-real-bin-cells` from `main` 500d7281f9ec.
@@ -9,7 +13,7 @@ The first new theorem block in `InverseGreedy/ExpBinCells.lean` is imported and 
 
 **Not completed in Lean:** floor/bin PMF, independence of binned clocks, `Pr(T_r<T_s)=r/(r+s)`, all strict sorting-chamber masses and continuous sorted greedy-output pushforward. `sessions/S026.md` installs these targets. Partial atlas remains **90 EGU / 8 non-EGU / 45 unresolved**; no independent novelty certificate.
 
-**Release:** final PR/head CI and merge must be appended after both jobs pass at the *same final head*.
+**Release:** completed as recorded in the S025 final-release entry above.
 
 ---
 
