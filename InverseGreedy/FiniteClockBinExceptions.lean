@@ -82,7 +82,7 @@ theorem finiteIndependentExp_all_positiveBins_probability_one
       change MeasurableSet
         ((fun ω : ι → ℝ => clockCeilBin δ (ω i)) ⁻¹' ({0} : Set ℕ))
       exact (finiteIndependentExp_clockCeilBin_measurable δ i)
-        measurableSet_singleton
+        (measurableSet_singleton (0 : ℕ))
     simpa only [Set.compl_setOf] using hzero.compl
   have hcompl : Aᶜ =
       {ω : ι → ℝ | ∃ i, clockCeilBin δ (ω i) = 0} := by
