@@ -56,3 +56,4 @@ import InverseGreedy.ContinuousRaceLimit
 import InverseGreedy.FiniteClockPairOrder
 
 import InverseGreedy.FiniteClockJointBins
+import InverseGreedy.FiniteClockBinChambers
