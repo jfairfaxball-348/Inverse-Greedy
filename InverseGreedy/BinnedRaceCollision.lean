@@ -46,7 +46,7 @@ theorem independentExpPair_samePositiveBin_mass (r s δ : ℝ)
 /-- Positive collision cells are pairwise disjoint, because the first
 clock cannot occupy two different integer-valued bins. -/
 theorem samePositiveBinEvent_pairwise_disjoint (δ : ℝ) :
-    Pairwise (Disjoint on samePositiveBinEvent δ) := by
+    Pairwise (Disjoint on (samePositiveBinEvent δ)) := by
   intro i j hij
   apply Set.disjoint_left.mpr
   intro p hi hj
@@ -70,7 +70,7 @@ theorem sameCeilBinEvent_eq (δ : ℝ) :
   · intro h
     cases hfirst : clockCeilBin δ p.1 with
     | zero =>
-      exact Or.inl ⟨hfirst, by omega⟩
+      exact Or.inl ⟨rfl, by omega⟩
     | succ k =>
       right
       refine ⟨k, ?_⟩
@@ -99,7 +99,7 @@ theorem independentExpPair_bothZeroBin_null (r s δ : ℝ)
           {p : ℝ × ℝ | clockCeilBin δ p.1 = 0} :=
             measure_mono (by intro p hp; exact hp.1)
       _ = 0 := independentExpPair_fst_zeroBin_null r s δ hr hs hδ
-  · exact zero_le _
+  · exact zero_le
 
 /-- Measure-level countable additivity for genuine two-clock collisions;
 no closed-form geometric-sum formula is assumed. -/
