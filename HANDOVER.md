@@ -1,8 +1,10 @@
-# S031 execution handover — 2026-11-03 (PR #30; final verification pending)
+**S031 FINAL RELEASE (2026-11-03):** [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30) exact final head `09d0b45ddcae35714c1cf0a03af57d62a900781c` passed **both imported Lean and Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41650444708](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650444708) and [PR Actions 41650452725](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650452725). **Squash-merged into main as `06db312e37c7fa9bf05718d7297f43e2cf5405c0`.** Lean now proves genuine finite-family pairwise comparison probabilities and strict-chamber pair upper bounds, plus empty/singleton chamber mass one. The **full n≥3 continuous chamber product** and **true real-clock greedy-output pushforward** remain Lean-open. `sessions/S032.md` installed. Census **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
+
+# S031 execution handover — 2026-11-03 (PR #30; merged and verified)
 
 The next session is `sessions/S032.md`. The S031 branch
 `s031-finite-clock-pair-chambers` originates at main
-`b190fae9e42d6598d5b53873007ae349aa1f9e78`. Review
+`b190fae9e42d6598d5b53873007ae349aa1f9e78`. Final verified merged release:
 [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30)
 and its **exact final SHA**, both imported Lean and complete Python/exact/
 certified n≤6 census jobs in BOTH push and PR GitHub Actions, before merge.

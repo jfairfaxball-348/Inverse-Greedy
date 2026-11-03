@@ -47,9 +47,10 @@ S031 also proves that the empty and singleton comparison lists give
 `strictClockChamber [] = univ` and `strictClockChamber [i] = univ`,
 and both events have mass one for the genuine finite product.
 
-The code is compiled under full imported Lean CI only when its
-specific exact SHA has a successful Lean job. See PR #30 for final
-release-gate provenance.
+The complete imported Lean and Python/census CI passed on exact final head
+`09d0b45ddcae35714c1cf0a03af57d62a900781c` in both push run
+41650444708 and PR run 41650452725; PR #30 squash-merged as
+`06db312e37c7fa9bf05718d7297f43e2cf5405c0`.
 
 ## What these results **do not** establish
 

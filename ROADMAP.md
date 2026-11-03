@@ -1,3 +1,5 @@
+**S031 FINAL RELEASE (2026-11-03):** [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30) exact final head `09d0b45ddcae35714c1cf0a03af57d62a900781c` passed **both imported Lean and Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41650444708](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650444708) and [PR Actions 41650452725](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650452725). **Squash-merged into main as `06db312e37c7fa9bf05718d7297f43e2cf5405c0`.** Lean now proves genuine finite-family pairwise comparison probabilities and strict-chamber pair upper bounds, plus empty/singleton chamber mass one. The **full n≥3 continuous chamber product** and **true real-clock greedy-output pushforward** remain Lean-open. `sessions/S032.md` installed. Census **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
+
 ## S031 — 2026-11-03 (true finite-family pair comparisons; full chambers still open)
 
 - [x] Transport S030's actual continuous two-clock measured rate ratio through S022's true finite-coordinate pair law for arbitrary finite families of positive rates; new imported `FiniteClockPairOrder.lean`.
@@ -5,7 +7,7 @@
 - [x] Add independent exact complete-permutation pair-marginal and chamber-bound regressions `tests/test_s031.py`, mathematical scope note `proof/S031_FINITE_CLOCK_PAIR.md` and S032 handoff.
 - [ ] Full measured strict-order chamber product for n≥3; finite pairwise rates alone are insufficient.
 - [ ] Measurable deterministic tie-broken sorting map, zero-tie pushforward and actual real-clock greedy-output law identifying S018's `finiteRaceLaw`.
-- [ ] Exact final SHA: full imported Lean and Python/exact/census green in both push and PR Actions before merge [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30). Document merge SHA after release.
+- [x] Final SHA `09d0b45d`: both Lean and Python/exact/census green in push Actions 41650444708 and PR Actions 41650452725; [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30) squash-merged as `06db312e`.
 
 **Boundaries:** rates strictly positive; atlas n≤6 remains **90 EGU / 8 non-EGU / 45 unresolved**. No independent novelty claim.
 
