@@ -1,5 +1,33 @@
 # Inverse Greedy
 
+## S025: real exponential bin-cell probability
+
+`InverseGreedy/ExpBinCells.lean` proves directly from Mathlib's
+**genuine** exponential survival law that for every real `r>0`,
+`δ>0`, and natural `k`,
+
+```
+P(kδ < T ≤ (k+1)δ) = (1-exp(-rδ)) exp(-rδ)^k.
+```
+
+The underlying actual real-interval mass theorem, not a stipulated
+geometric distribution, passed imported Lean and complete Python/certified
+census at SHA `9336b4458a4b` in
+[Actions 41598092129](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598092129).
+The finite-clock coordinate cylinder extension was also formally verified at SHA `d081ccd11700`, with BOTH imported Lean and complete Python/census green in [Actions 41598167342](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598167342). Five new exact
+`Fraction` regressions check bin partition and two-clock finite-sum
+algebra. Full mathematical argument:
+`proof/S025_REAL_CLOCK_CELLS.md`.
+
+**Scope:** neither a measurable `floor(T/δ)` map, nor independence
+of those binned variables, nor the actual unequal-rate race probability
+`P(T_r<T_s)=r/(r+s)` has yet been Lean-proved. All finite
+strict-order chamber masses and continuous greedy-output pushforward
+remain formally open. `sessions/S026.md` continues the bridge.
+Partial connected six-vertex atlas unchanged: **90 EGU / 8 non-EGU /
+45 unresolved**. Independent novelty not certified.
+
+
 **Exact Uniformity and Controllability of Random Greedy Independent Sets**
 
 Author: John Fairfax-Ball. Programme started 2026-10-30.
