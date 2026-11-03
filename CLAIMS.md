@@ -1,3 +1,14 @@
+## S033 provisional claim ledger — 2026-11-03 (PR #32; exact-head CI and merge pending)
+
+| ID | Claim | Status |
+|---|---|---|
+| IG-L58 | True-clock strict-bin chamber included in strict-real chamber; strict-real chamber included in strict-bin event union the genuine finite list same-bin collision event, for any list and δ>0. | Imported Lean source `FiniteClockBinChambers.lean`; exact-head CI pending. |
+| IG-L59 | Corresponding measure sandwich under `finiteIndependentExp rates`, without substituting a discrete weighted-permutation law. | Imported Lean source `FiniteClockBinChambers.lean`; exact-head CI pending. |
+| IG-L60 | For arbitrary finite positive-rate exponential products and distinct indices, actual pair same-ceiling-bin collision probability is ≤ `ENNReal.ofReal (δ * min (rates i) (rates j))`. | Imported Lean source `FiniteClockPairBinCollision.lean`; exact-head CI pending. |
+| IG-T33 | Exhaustive deterministic clock/bin event checks and independent exact rational geometric collision/finite-union regressions. | `tests/test_s033.py`; full exact-head CI pending. |
+
+**Not Lean-proven:** finite list collision union error bound `O(δ)`, complete n≥3 strict-bin chamber series, zero-width general real chamber equality with `orderMass`, and measurable sorting/continuous greedy output pushforward. S034 installed. Atlas **90/8/45**, novelty unverified.
+
 **S032 FINAL RELEASE (2026-11-03):** [PR #31](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/31) exact final head `dffde518c3727c4c1fcde4789dc2773ee65e6c62` passed **both imported Lean and complete Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41677475236](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677475236) and [PR Actions 41677479044](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677479044). Squash-merged to main as `c9659d7b4b0ebcc7d7dd297852ba4ea5bca96602`. This verifies the **genuine full finite-family simultaneous ceiling-bin probability** and true two-item/repeated-index strict chamber facts; NOT the full n≥3 sorting-chamber product or real-clock greedy-output pushforward. An explicit multi-geometric gap-series formula has a separate informal mathematical derivation and exact rational regression, not Lean proof. `sessions/S033.md` installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
 
 ## S032 verified claim ledger — 2026-11-03 (PR #31)
