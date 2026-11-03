@@ -14,8 +14,7 @@ The underlying actual real-interval mass theorem, not a stipulated
 geometric distribution, passed imported Lean and complete Python/certified
 census at SHA `9336b4458a4b` in
 [Actions 41598092129](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598092129).
-A further finite-clock coordinate cylinder extension was added;
-see `HANDOVER.md` for its exact final verification. Five new exact
+The finite-clock coordinate cylinder extension was also formally verified at SHA `d081ccd11700`, with BOTH imported Lean and complete Python/census green in [Actions 41598167342](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598167342). Five new exact
 `Fraction` regressions check bin partition and two-clock finite-sum
 algebra. Full mathematical argument:
 `proof/S025_REAL_CLOCK_CELLS.md`.
