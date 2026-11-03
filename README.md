@@ -22,8 +22,7 @@ same tail and that **all** coordinates are nonnegative almost surely,
 including empty and singleton families. The imported Lean build and
 complete Python/certified census passed at code SHA `8f52f3a8a1b9`,
 [Actions 41595641100](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41595641100).
-Exact final PR-head verification and merge status are in
-`HANDOVER.md`.
+**Final S024 release:** exact PR #23 head `3dc4332ea304b15dcbc5b005f48eb5a7c4972837` passed **both** imported Lean and complete Python/certified census in [push Actions 41596092382](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41596092382) and [PR Actions 41596101126](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41596101126); squash-merged to `main` as `be7859cce0dba3613acae9fb47b1f0017206396c`. See `HANDOVER.md` for release provenance.
 
 `proof/S024_EXP_SURVIVAL.md` explains the true measure proof.
 `tests/test_s024.py` adds four exact `Fraction` consistency checks

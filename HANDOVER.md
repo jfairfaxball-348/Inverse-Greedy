@@ -1,3 +1,9 @@
+# S024 FINAL RELEASE — 2026-11-03
+
+**Verified and merged:** [PR #23](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/23) exact final head `3dc4332ea304b15dcbc5b005f48eb5a7c4972837` passed BOTH the imported Lean build and complete Python/exact/certified-graph-census in [push Actions 41596092382](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41596092382) and [PR Actions 41596101126](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41596101126). Squash-merged to `main` as `be7859cce0dba3613acae9fb47b1f0017206396c`. S024 closes genuine one-clock exponential survival, actual finite-clock coordinate tails and almost-sure all-coordinate nonnegative support (IG-L36/IG-L37), with exact rational checks. Numerical unequal-rate pair race, finite geometric-bin measures, strict chamber masses and continuous greedy-output pushforward remain **Lean-open**. S025 is installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no independent novelty claim.
+
+---
+
 # S024 — genuine exponential survival, 2026-11-03
 
 **Execution PR:** [#23](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/23),

@@ -1,9 +1,12 @@
-# Claim ledger — S023 (2026-11-02)
+# Claim ledger — S024 (2026-11-03)
 
 Status meanings: **proved-informal** is a complete written proof, not machine-checked or independently novel; **tested-exact** is finite arithmetic checking; **Lean-verified** requires actual successful CI at the stated SHA; **open** means unestablished.
 
 | ID | Claim | Status | Evidence |
 |---|---|---|---|
+| **IG-L36 (S024)** | True Mathlib `expMeasure` CDF and survival `Pr(T_r>t)=exp(-r*t)` at every `r>0,t≥0`, negative-time CDF zero, and negative support null. | **Lean-verified** at exact final PR #23 head `3dc4332ea304b15dcbc5b005f48eb5a7c4972837` (BOTH Lean and complete Python/certified census passed in push Actions 41596092382 and PR Actions 41596101126); merged `be7859cce0dba3613acae9fb47b1f0017206396c`. | InverseGreedy/ExpSurvival.lean; proof/S024_EXP_SURVIVAL.md |
+| **IG-L37 (S024)** | Exact survival cylinder for each genuine finite-product coordinate and almost-sure nonnegativity of *all* coordinates, including empty/singleton index families. | **Lean-verified** at the same exact final PR #23 head `3dc4332ea304b15dcbc5b005f48eb5a7c4972837`; dual-green Actions 41596092382 and 41596101126, merged `be7859cce0dba3613acae9fb47b1f0017206396c`. | InverseGreedy/ExpSurvival.lean; proof/S024_EXP_SURVIVAL.md |
+| **IG-T24** | Four exact rational checks of exponential survival-bin boundaries, complement, finite partition/tail and finite-product tail algebra for integer rates. | **tested-exact**, not an actual continuous bin-mass Lean theorem. | tests/test_s024.py |
 | **IG-L35 (S023)** | For every finite index type, the strict real clock ordering event strictClockChamber for any list (even incomplete or containing duplicates) is measurable in the true real-clock sample space. This does NOT compute chamber probability. | **Lean-verified** at imported code SHA 6faf5ba21bf585a52412f8e2269e376a03b2de45; BOTH full Lean and Python/certified census green at Actions 41536043877. Exact final PR #22 head bfb0d2cd6d03 passed BOTH jobs in push run 41536696192 and PR run 41536741787; squash merged 83a4390f69ac. | InverseGreedy/FiniteClockChambers.lean |
 | **IG-P13 (S023)** | Every finite strictly positive-real-rate exponential chamber has the usual ordered rate-mass product, derived by exact geometric-bin chamber probabilities and a nonasymptotic pair-collision bound. Alternative proof of existing informal IG-P11. | **proved-informal; tested-exact on integer-rate bins, NOT Lean-verified** for numerical probabilities, finite chamber masses, or sorting pushforward. | proof/S023_GEOMETRIC_BIN_CHAMBERS.md; tests/test_s023.py |
 | IG-R1 | Weighted first-choice probability law | proved-informal, tested-exact | proof/FOUNDATIONS.md; experiments/exact.py |

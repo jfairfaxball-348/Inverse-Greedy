@@ -8,7 +8,7 @@
 - [x] Imported Lean and full Python/certified census **both green** on code SHA `8f52f3a8a1b9`, push Actions [41595641100](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41595641100).
 - [x] Four new independent exact rational CDF/survival/bin consistency regressions locally passed; `tests/test_s024.py` included in full CI.
 - [x] Add `proof/S024_EXP_SURVIVAL.md` and install S025 for the genuine measurable bin distribution.
-- [ ] Verify both CI jobs at the **exact final PR #23 head**, then merge and record merge SHA in HANDOVER.
+- [x] Exact final PR #23 head `3dc4332ea304b15dcbc5b005f48eb5a7c4972837` passed BOTH full imported Lean and Python/certified census in push Actions 41596092382 and PR Actions 41596101126; squash-merged as `be7859cce0dba3613acae9fb47b1f0017206396c`.
 - [ ] Lean-verify true unequal-rate pair race law, geometric bin measures, full strict chamber masses, and real-clock greedy pushforward. These are NOT implied by S024.
 - [ ] Graph atlas unchanged at **90 EGU / 8 non-EGU / 45 unresolved**. No novelty certification.
 
