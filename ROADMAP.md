@@ -1,3 +1,14 @@
+## S031 — 2026-11-03 (true finite-family pair comparisons; full chambers still open)
+
+- [x] Transport S030's actual continuous two-clock measured rate ratio through S022's true finite-coordinate pair law for arbitrary finite families of positive rates; new imported `FiniteClockPairOrder.lean`.
+- [x] Give a genuine strict-chamber upper bound using each required pair comparison, and prove empty/singleton strict-list universal event mass one.
+- [x] Add independent exact complete-permutation pair-marginal and chamber-bound regressions `tests/test_s031.py`, mathematical scope note `proof/S031_FINITE_CLOCK_PAIR.md` and S032 handoff.
+- [ ] Full measured strict-order chamber product for n≥3; finite pairwise rates alone are insufficient.
+- [ ] Measurable deterministic tie-broken sorting map, zero-tie pushforward and actual real-clock greedy-output law identifying S018's `finiteRaceLaw`.
+- [ ] Exact final SHA: full imported Lean and Python/exact/census green in both push and PR Actions before merge [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30). Document merge SHA after release.
+
+**Boundaries:** rates strictly positive; atlas n≤6 remains **90 EGU / 8 non-EGU / 45 unresolved**. No independent novelty claim.
+
 **S030 FINAL RELEASE (2026-11-03):** [PR #29](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/29) exact final head `94cef7edb07d9e45de559d9c6d02cd1a3d60d572` passed **both complete imported Lean and Python/exact/certified connected-n≤6 census** on BOTH [push Actions 41647662604](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647662604) and [PR Actions 41647671351](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647671351); **squash-merged into `main`** at `abadb58e6b4583729d084b66c1e9096041ce1eb4`. Lean now formally proves the **actual independent continuous exponential two-clock inequality-event mass** `P(T_r<T_s)=ENNReal.ofReal (r/(r+s))` for any r,s>0, using the real analytic small-bin limit and S029 true measured-event squeeze. The full finite strict ordering chamber law and continuous-clock greedy-output pushforward remain **Lean-open**; `sessions/S031.md` installed. Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; independent novelty unverified.
 
 ## S030 — 2026-11-03 (genuine continuous two-clock winner, proof complete)
