@@ -1,5 +1,12 @@
 # Inverse Greedy
 
+## S026 — Genuine measurable ceiling-bin clocks (2026-11-03)
+
+The newly imported `InverseGreedy/ClockBins.lean` defines the **real-to-natural measurable** map `clockCeilBin δ t = Nat.ceil (t/δ)`. For every real `δ>0`, its positive cell `Kδ=k+1` is **exactly** `(kδ,(k+1)δ]`, even at boundaries; `Kδ=0` iff `t≤0` and has genuine Exp(rate) probability zero. S025's actual exponential measure thus gives the positive-cell geometric PMF for **all** positive real rates, including k=0. The finite-coordinate marginal, complete finite-index bin-family independence under actual `finiteIndependentExp`, two-clock product-bin PMF and distinct-coordinate finite-product pair PMF are imported theorem statements whose exact-head CI outcome must be checked.
+
+The independent `tests/test_s026.py` checks rational endpoint conventions (including negative inputs), exact geometric box products, two-clock bin-winner/collision algebra and geometric tails with `Fraction`. The unequal-rate **continuous** probability `Pr(T_r<T_s)=r/(r+s)` remains **Lean-open**, as do full chamber masses and the actual greedy-law pushforward. The 90/8/45 atlas and novelty boundary are unchanged. See `proof/S026_MEASURABLE_BINS.md`, `sessions/S027.md`, PR #25.
+
+
 ## S025: real exponential bin-cell probability
 
 **S025 FINAL RELEASE (2026-11-03):** [PR #24](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/24) exact final head `1c8a32fb548242cebffe1ebde7e8386ee0bd79c1` passed BOTH imported Lean and full Python/exact/certified graph census in [push Actions 41598540982](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598540982) and [PR Actions 41598576216](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598576216). It was **squash-merged to `main`** as `e10fd67c08e80ea63c8d02b9308b54080fce8fd5`. `sessions/S026.md` is installed. The new genuine interval and finite-coordinate geometric-cell laws are Lean-verified; floor-valued bin independence, unequal-rate race ratio, all-chamber masses and real-clock greedy pushforward remain Lean-open. Atlas still **90/8/45**; no novelty certification.

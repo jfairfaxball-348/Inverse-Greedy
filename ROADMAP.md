@@ -1,3 +1,13 @@
+## S026 — 2026-11-03 (genuine measurable clock bins)
+
+- [x] Define the **measurable** one-based ceiling-bin map of genuine real exponential clocks; explicitly match positive bin inverse-images with S025 right-closed cells and prove the nonpositive zero-cell is null.
+- [x] Prove true geometric positive-bin PMFs and their finite-product coordinate marginals for arbitrary positive real rates/widths (first imported Lean milestone, dual-green Actions 41607274017 at 67c9b4a).
+- [ ] Verify the subsequently imported finite-bin `iIndepFun` composition and pair product-box law on final PR head; no substitution of exact Fraction oracle for genuine measure law.
+- [x] Add four independent exact `Fraction` regression groups for ceiling endpoints, pair product, binned win/collision and finite truncations.
+- [x] Document the scope and install S027.
+- [ ] **Next:** derive strict-bin winning and collision **measure-level** probabilities, prove quantitative collision bound and its zero-width limit, then the continuous pair ratio `r/(r+s)`; extend all finite chambers and greedy sorting pushforward.
+- [ ] Connected graph atlas **90/8/45**; no novelty certificate.
+
 ## S025 — 2026-11-03 (actual exponential interval and bin cells)
 
 - [x] **S025 FINAL RELEASE (2026-11-03):** [PR #24](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/24) exact final head `1c8a32fb548242cebffe1ebde7e8386ee0bd79c1` passed BOTH imported Lean and full Python/exact/certified graph census in [push Actions 41598540982](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598540982) and [PR Actions 41598576216](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598576216). It was **squash-merged to `main`** as `e10fd67c08e80ea63c8d02b9308b54080fce8fd5`. `sessions/S026.md` is installed. The new genuine interval and finite-coordinate geometric-cell laws are Lean-verified; floor-valued bin independence, unequal-rate race ratio, all-chamber masses and real-clock greedy pushforward remain Lean-open. Atlas still **90/8/45**; no novelty certification.

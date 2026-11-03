@@ -1,3 +1,16 @@
+# S026 execution handover — 2026-11-03
+
+**PR:** https://github.com/jfairfaxball-348/Inverse-Greedy/pull/25
+**Branch:** `s026-genuine-ceiling-bins`, based on `main` at `ae9409cd4586f515665bb0f42594f8c71f44e1c3`.
+
+S026 upgrades the *actual* exponential real-cell mass of S025 to the probability of a genuine measurable one-based ceiling bin random variable. The zero bin is null and every bin `k+1` has mass `(1-q)q^k` with `q=exp(-rate δ)` for arbitrary positive reals. This first milestone passed both imported Lean and full Python/census in [PR Actions 41607274017](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41607274017), code SHA `67c9b4a0a46cfac6e26cd436bdc115a60bce09c4`.
+
+Subsequent module edits extend to measurable `iIndepFun` of every finite family of bins and an exact two-coordinate bin-box mass derived from the actual independent exponential product, not from the stipulated discrete priority model. **Review exact final PR SHA CI before labelling these further theorems verified.** The `Fraction` test addition has four exact endpoint / box / collision / truncation groups; no historical census flags were changed.
+
+**Still open in Lean:** numerical unequal-rate two-clock event `Pr(T_r<T_s)=r/(r+s)`, strict-bin winner and collision sums at the measure level, an analytic collision bound/limit, all finite sorting chamber probabilities and the genuine continuous greedy-output pushforward. The S023 mathematical proof and `Fraction` algebra must not be misrepresented as these Lean results. Atlas 90/8/45, no independent novelty claim. Next handoff: `sessions/S027.md`.
+
+---
+
 **S025 FINAL RELEASE (2026-11-03):** [PR #24](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/24) exact final head `1c8a32fb548242cebffe1ebde7e8386ee0bd79c1` passed BOTH imported Lean and full Python/exact/certified graph census in [push Actions 41598540982](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598540982) and [PR Actions 41598576216](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598576216). It was **squash-merged to `main`** as `e10fd67c08e80ea63c8d02b9308b54080fce8fd5`. `sessions/S026.md` is installed. The new genuine interval and finite-coordinate geometric-cell laws are Lean-verified; floor-valued bin independence, unequal-rate race ratio, all-chamber masses and real-clock greedy pushforward remain Lean-open. Atlas still **90/8/45**; no novelty certification.
 
 ---

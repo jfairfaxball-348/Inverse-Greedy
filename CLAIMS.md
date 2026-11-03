@@ -1,4 +1,15 @@
-# Claim ledger — S025 (2026-11-03)
+# Claim ledger — S026 (2026-11-03)
+
+## S026 claim additions
+
+| ID | Statement | Status and evidence |
+|---|---|---|
+| **IG-L40** | `clockCeilBin δ` is measurable; the zero bin is the nonpositive half-line (null for genuine exponential clocks), and every positive bin has exact inverse image `Ioc (kδ) ((k+1)δ)` and geometric probability for arbitrary positive real rate/width. The same holds for each finite-product coordinate. | **Lean-verified first milestone** at code SHA `67c9b4a0a46cfac6e26cd436bdc115a60bce09c4`, both jobs green [PR run 41607274017](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41607274017); final-release head verification still required. |
+| **IG-L41** | Every finite family of genuine exponential clock ceiling bins is mutually independent, via measurable composition with the actual finite-clock `iIndepFun`. | **Imported Lean code; final-head CI pending.** `InverseGreedy/ClockBins.lean`. |
+| **IG-L42** | Exact true joint geometric mass for two independent clock bins and for any two distinct finite-product clock coordinates. | **Imported Lean code; final-head CI pending.** `InverseGreedy/ClockBins.lean`. |
+| **IG-T26** | Four independent exact rational test groups: endpoint/zero conventions, joint geometric boxes, binned race partition/collision, and finite geometric remainder. | **Locally tested-exact**, included in complete Python/census CI. |
+
+**Still Lean-open:** numerical real-clock race ratio `r/(r+s)`, geometric series measure identification for strict-bin winner/collision events, collision-to-zero limit, all finite chamber masses and continuous greedy pushforward. Connected graph atlas **90 EGU / 8 non-EGU / 45 unresolved**, independent novelty not certified.
 
 Status meanings: **proved-informal** is a complete written proof, not machine-checked or independently novel; **tested-exact** is finite arithmetic checking; **Lean-verified** requires actual successful CI at the stated SHA; **open** means unestablished.
 
