@@ -98,7 +98,7 @@ theorem independentExpPair_zeroFirstBinRace_null (r s δ : ℝ)
 
 /-- The first-positive-bin cylinders are pairwise disjoint. -/
 theorem firstBinSurvivalEvent_pairwise_disjoint (δ : ℝ) :
-    Pairwise (Disjoint on (firstBinSurvivalEvent δ)) := by
+    Pairwise (fun i j : ℕ => Disjoint (firstBinSurvivalEvent δ i) (firstBinSurvivalEvent δ j)) := by
   intro i j hij
   apply Set.disjoint_left.mpr
   intro p hi hj
