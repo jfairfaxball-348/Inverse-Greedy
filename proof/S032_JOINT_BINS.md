@@ -46,6 +46,51 @@ finite geometric products / survival telescoping, deterministic
 two-item chambers, repeated-index impossibility and strict-bin
 order implications. Tests are not a replacement for the Lean theorem.
 
+## Complete strict-bin series: informal derivation for S033
+
+The finite-family joint-cylinder theorem allows a fully explicit
+*mathematical* summation, which is **not yet a Lean theorem**.
+Fix a permutation `order=[i₁,…,iₘ]` of `m` indices and write
+`q_j = exp(-r_(i_j) δ)`, so `0<q_j<1`.
+On the positive (one-based) bins, put `k_j = Kδ(T_(i_j))-1`.
+The strict-bin chamber corresponds to
+`0 ≤ k₁ < k₂ < ⋯ < kₘ` with joint summand
+`∏_j (1-q_j)q_j^(k_j)`.
+
+The gap variables
+
+```text
+d₁ = k₁ ≥ 0;
+d_j = k_j - k_(j-1) - 1 ≥ 0,  j≥2
+```
+
+are a bijection to `ℕ^m`, with
+`k_j = (j-1) + ∑_(a≤j) d_a`.
+Hence, defining `Q_a=∏_(j≥a) q_j`,
+
+```text
+Pr(strictly increasing nonzero bins)
+  = ∏_(j=1)^m (1-q_j)q_j^(j-1)
+      / ∏_(a=1)^m (1-Q_a).
+```
+
+The empty product is 1. This follows from `m` absolutely
+convergent geometric series; every `Q_a` lies strictly in `(0,1)`.
+It also includes the known two-clock formula (S028). For finite
+truncations `0≤d_a<N`, replace `1/(1-Q_a)` by
+`(1-Q_a^N)/(1-Q_a)`. `tests/test_s032.py` checks this
+factorisation with exact rational arithmetic for up to four clocks.
+No numerics or informal series are being passed off as Lean results.
+
+As `δ↓0`, `1-q_j ∼ r_(i_j)δ`,
+`1-Q_a ∼ δ∑_(j≥a)r_(i_j)` and
+`q_j^(j-1)→1`, yielding `orderMass rates order`.
+The true *real-clock* chamber differs from the bin chamber only
+on a collision of at least one pair of bins (plus null zero-bin
+events). A finite union bound and S029's true collision estimate
+then give a quantitative route to the same limit. Formalising
+this gap-series identity, union bound and limit is the S033 task.
+
 ## Still open
 
 The new theorem supplies masses of **individual joint bin
