@@ -43,7 +43,7 @@ theorem strictCeilBinRaceEvent_eq (δ : ℝ) (hδ : 0 < δ) :
   · intro h
     cases hfirst : clockCeilBin δ p.1 with
     | zero =>
-      exact Or.inl ⟨hfirst, by omega⟩
+      exact Or.inl ⟨rfl, by omega⟩
     | succ k =>
       right
       refine ⟨k, ?_⟩
@@ -94,11 +94,11 @@ theorem independentExpPair_zeroFirstBinRace_null (r s δ : ℝ)
           {p : ℝ × ℝ | clockCeilBin δ p.1 = 0} :=
             measure_mono (by intro p hp; exact hp.1)
       _ = 0 := independentExpPair_fst_zeroBin_null r s δ hr hs hδ
-  · exact zero_le _
+  · exact zero_le
 
 /-- The first-positive-bin cylinders are pairwise disjoint. -/
 theorem firstBinSurvivalEvent_pairwise_disjoint (δ : ℝ) :
-    Pairwise (Disjoint on firstBinSurvivalEvent δ) := by
+    Pairwise (Disjoint on (firstBinSurvivalEvent δ)) := by
   intro i j hij
   apply Set.disjoint_left.mpr
   intro p hi hj
