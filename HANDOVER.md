@@ -1,3 +1,13 @@
+# S033 execution handover — 2026-11-03 (partial, PR #32; final verification pending)
+
+[S033 PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) begins from `main` `3257a14e1d86ea8ed0f7d35a9e3c31bfee1d3227`; this `main` includes verified S032 PR #31 (`dffde518...` dual green and squash merge `c9659d7...`). Current S033 branch `s033-finite-bin-chamber-sandwich` introduces `InverseGreedy/FiniteClockBinChambers.lean`, `InverseGreedy/FiniteClockPairBinCollision.lean`, exact `tests/test_s033.py`, `proof/S033_BIN_CHAMBER.md`, and `sessions/S034.md`.
+
+**Partial actual-clock Lean goals targeted:** true-clock strict-bin ⊆ real-chamber ⊆ strict-bin ∪ list same-bin collision, its genuine finite exponential measure sandwich, and the true finite-family pair collision estimate `P(Kδ(T_i)=Kδ(T_j))≤δ·min(r_i,r_j)` for distinct indices. There is **no** complete Lean n≥3 chamber product or continuous greedy-output law yet. The finite list collision union bound, summation of strict-bin joint geometric cylinders, zero-width product limit, and measurable total sort remain precisely for S034. `tests/test_s033.py` independently checks the event implications and rational collision algebra, not a stochastic continuous proof.
+
+**Release gate:** exact final SHA must pass both complete Lean and full Python/exact/certified connected n≤6 atlas in BOTH push and PR Actions before squash merge. No novelty or registration assertion. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+
+---
+
 **S032 FINAL RELEASE (2026-11-03):** [PR #31](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/31) exact final head `dffde518c3727c4c1fcde4789dc2773ee65e6c62` passed **both imported Lean and complete Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41677475236](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677475236) and [PR Actions 41677479044](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677479044). Squash-merged to main as `c9659d7b4b0ebcc7d7dd297852ba4ea5bca96602`. This verifies the **genuine full finite-family simultaneous ceiling-bin probability** and true two-item/repeated-index strict chamber facts; NOT the full n≥3 sorting-chamber product or real-clock greedy-output pushforward. An explicit multi-geometric gap-series formula has a separate informal mathematical derivation and exact rational regression, not Lean proof. `sessions/S033.md` installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
 
 # S032 final handover — 2026-11-03
