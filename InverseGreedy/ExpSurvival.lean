@@ -75,9 +75,12 @@ theorem expMeasure_negative_time_null (rate : ℝ) (hr : 0 < rate) :
   · calc
       expMeasure rate (Set.Iio (0 : ℝ)) ≤
           expMeasure rate (Set.Iic (0 : ℝ)) :=
-        measure_mono (by intro x hx; exact le_of_lt hx)
+        measure_mono (by
+          intro x hx
+          change x < 0 at hx
+          exact le_of_lt hx)
       _ = 0 := hzero
-  · exact zero_le _
+  · exact zero_le
 
 /-- A coordinate of the *genuine finite independent product* retains
 the exact exponential survival law (also for a singleton index type). -/
