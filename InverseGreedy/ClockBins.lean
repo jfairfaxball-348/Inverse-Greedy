@@ -104,4 +104,19 @@ theorem finiteIndependentExp_clockCeilBin_succ
   exact finiteIndependentExp_coordinate_geometric_cell
     rates hpos i δ hδ k
 
+
+/-- Genuine finite-clock bins remain mutually independent because they
+are measurable transformations of the actual independent arrival times.
+This covers arbitrary finite index sets (including empty/singleton). -/
+theorem finiteIndependentExp_clockCeilBins_independent
+    {ι : Type*} [Fintype ι] (rates : ι → ℝ)
+    (hpos : ∀ i, 0 < rates i) (δ : ℝ) :
+    iIndepFun (fun i (ω : ι → ℝ) => clockCeilBin δ (ω i))
+      (finiteIndependentExp rates) := by
+  have hind := finiteIndependentExp_coordinates_independent rates hpos
+  change iIndepFun
+    (fun i => (clockCeilBin δ) ∘ (fun ω : ι → ℝ => ω i))
+    (finiteIndependentExp rates)
+  exact hind.comp (fun _ => clockCeilBin_measurable δ)
+
 end InverseGreedy
