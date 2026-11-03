@@ -43,7 +43,7 @@ theorem realWinner_subset_strictBin_union_sameBin
       strictCeilBinRaceEvent δ ∪ sameCeilBinEvent δ := by
   intro p hp
   have hmono : clockCeilBin δ p.1 ≤ clockCeilBin δ p.2 :=
-    clockCeilBin_mono δ hδ hp
+    clockCeilBin_mono δ hδ (le_of_lt (show p.1 < p.2 from hp))
   change clockCeilBin δ p.1 < clockCeilBin δ p.2 ∨
     clockCeilBin δ p.1 = clockCeilBin δ p.2
   exact lt_or_eq_of_le hmono
