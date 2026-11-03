@@ -84,4 +84,34 @@ theorem expMeasure_geometric_cell (rate δ : ℝ)
       rw [pow_succ]
       ring
 
+/-- A specified coordinate of the *genuine finite independent*
+exponential-clock product has the exact geometric real-cell mass,
+for every positive-real rate and width. This is a measure of a
+real cylinder event, not yet a pushforward law of a floor map. -/
+theorem finiteIndependentExp_coordinate_geometric_cell
+    {ι : Type*} [Fintype ι]
+    (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i)
+    (i : ι) (δ : ℝ) (hδ : 0 < δ) (k : ℕ) :
+    finiteIndependentExp rates
+        {ω : ι → ℝ |
+          (k : ℝ) * δ < ω i ∧ ω i ≤ ((k : ℝ) + 1) * δ} =
+      ENNReal.ofReal
+        ((1 - Real.exp (-(rates i * δ))) *
+          (Real.exp (-(rates i * δ))) ^ k) := by
+  calc
+    finiteIndependentExp rates
+        {ω : ι → ℝ |
+          (k : ℝ) * δ < ω i ∧ ω i ≤ ((k : ℝ) + 1) * δ} =
+        (Measure.map (Function.eval i) (finiteIndependentExp rates))
+          (Set.Ioc ((k : ℝ) * δ) (((k : ℝ) + 1) * δ)) := by
+      rw [Measure.map_apply (measurable_pi_apply i) measurableSet_Ioc]
+      rfl
+    _ = expMeasure (rates i)
+          (Set.Ioc ((k : ℝ) * δ) (((k : ℝ) + 1) * δ)) := by
+      rw [finiteIndependentExp_coordinate_law rates hpos i]
+    _ = ENNReal.ofReal
+          ((1 - Real.exp (-(rates i * δ))) *
+            (Real.exp (-(rates i * δ))) ^ k) :=
+      expMeasure_geometric_cell (rates i) δ (hpos i) hδ k
+
 end InverseGreedy
