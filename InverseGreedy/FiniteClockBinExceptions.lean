@@ -81,8 +81,8 @@ theorem finiteIndependentExp_all_positiveBins_probability_one
         {ω : ι → ℝ | clockCeilBin δ (ω i) = 0} := by
       change MeasurableSet
         ((fun ω : ι → ℝ => clockCeilBin δ (ω i)) ⁻¹' ({0} : Set ℕ))
-      exact measurableSet_singleton.preimage
-        (finiteIndependentExp_clockCeilBin_measurable δ i)
+      exact (finiteIndependentExp_clockCeilBin_measurable δ i)
+        measurableSet_singleton
     simpa only [Set.compl_setOf] using hzero.compl
   have hcompl : Aᶜ =
       {ω : ι → ℝ | ∃ i, clockCeilBin δ (ω i) = 0} := by
