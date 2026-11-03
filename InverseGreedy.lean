@@ -45,3 +45,4 @@ import InverseGreedy.ExpBinCells
 import InverseGreedy.ClockBins
 
 import InverseGreedy.BinnedRace
+import InverseGreedy.BinnedRaceSeries
