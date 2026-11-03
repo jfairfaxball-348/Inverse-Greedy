@@ -49,3 +49,5 @@ import InverseGreedy.BinnedRaceSeries
 import InverseGreedy.BinnedRaceCollision
 
 import InverseGreedy.BinnedRaceGeometric
+import InverseGreedy.ContinuousRaceSandwich
+import InverseGreedy.BinnedCollisionBound
