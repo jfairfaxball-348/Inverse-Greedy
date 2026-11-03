@@ -11,6 +11,29 @@ vertex when none of its already accepted neighbours exists. The output
 is a maximal independent set (MIS). Which graphs permit rates making
 the output exactly **uniform over all MIS**? Such graphs are called EGU.
 
+## S024: actual continuous exponential survival, finite support
+
+`InverseGreedy/ExpSurvival.lean` derives genuine Mathlib
+`expMeasure` CDF and survival formulas for arbitrary positive real
+rates, using `cdf_expMeasure_eq`, `ofReal_cdf` and the complement
+identity, not an assumed weighted priority law. It also proves that
+each coordinate of a genuine finite exponential product has this
+same tail and that **all** coordinates are nonnegative almost surely,
+including empty and singleton families. The imported Lean build and
+complete Python/certified census passed at code SHA `8f52f3a8a1b9`,
+[Actions 41595641100](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41595641100).
+Exact final PR-head verification and merge status are in
+`HANDOVER.md`.
+
+`proof/S024_EXP_SURVIVAL.md` explains the true measure proof.
+`tests/test_s024.py` adds four exact `Fraction` consistency checks
+for rational exponential-bin boundaries. These are algebraic tests,
+**not** measure-level proofs of bin laws. The numerical
+`Pr(T_r<T_s)=r/(r+s)`, complete strict-chamber probabilities
+and the real clock-to-greedy pushforward remain **Lean-open**.
+S025 is installed. Graph atlas stays **90 EGU / 8 non-EGU /
+45 unresolved**; no novelty certificate.
+
 ## S023: geometric-bin continuous sorting bridge
 
 InverseGreedy/FiniteClockChambers.lean defines genuine real-clock strict-order events and proves their measurability. Imported Lean plus complete Python/census were BOTH green at exact code SHA 6faf5ba21bf585a52412f8e2269e376a03b2de45 in [Actions 41536043877](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536043877). This is event measurability, **not** a computation of chamber probability.
