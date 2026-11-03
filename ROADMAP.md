@@ -1,3 +1,16 @@
+**S027 VERIFIED MILESTONE (2026-11-03):** [PR #26](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/26) adds imported genuine exponential first-bin survival cylinders, exact measure of each cylinder and its inclusion in the real winner event; countable disjoint decomposition and infinite-series *identities* for true strict-bin winner and same-bin collision under `independentExpPair`; and 3 independent `Fraction` regression groups. Both imported Lean and full Python/exact/certified census passed at code SHA `9b4ca4ea833233ffca4a2d892dabedc0f64aa27b` in [push Actions 41612217839](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41612217839). **The closed geometric sum evaluations, collision bound/limit, continuous unequal-rate ratio `Pr(T_r<T_s)=r/(r+s)`, full finite sorting-chamber masses and real-clock greedy pushforward are NOT Lean-verified.** `sessions/S028.md` is installed to pursue those obligations. Exact final PR head needs fresh push+PR dual-green verification before merge. Connected n≤6 atlas stays **90 EGU / 8 non-EGU / 45 unresolved**; novelty not certified.
+
+## S027 — verified deliverables and open follow-up
+
+- [x] Genuine real-clock first-bin survival cylinder probability, measurability and inclusion in the continuous winner (imported Lean dual-green).
+- [x] Strict-bin winner event countable decomposition, zero-bin nullity, pairwise disjointness and **actual measure-level infinite series** (Lean dual-green at `9b4ca4ea`).
+- [x] Same-bin collision genuine measure-level infinite series (Lean dual-green at `9b4ca4ea`).
+- [x] Exact independent rational regression and mathematical explanation; S028 installed.
+- [ ] Lean evaluation of both geometric sums into closed-form bin event probabilities.
+- [ ] Lean collision-width bound/limit and the unequal-rate continuous-race probability ratio.
+- [ ] Lean full finite sorting-chamber masses, measurable canonical order and continuous-clock greedy-output pushforward.
+- [ ] Exact final PR head dual-green, merge and independent novelty review (the latter remains outside certification).
+
 **S026 FINAL RELEASE (2026-11-03):** [PR #25](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/25), exact final head `b65e54b36da5240ab44649246b600e56a22339da`, passed **both imported Lean and full Python/exact/certified graph census** in [push Actions 41608546306](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41608546306) and [PR Actions 41608555380](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41608555380). **Squash-merged to `main`** as `72e606464d1638dded0ab898bf280b0f6b112bc5`. This release verifies genuine measurable ceiling-bin PMFs, finite-bin `iIndepFun`, and true pair product-box masses; it does **not** prove the unequal-rate continuous race ratio, full sorting chambers or real-clock greedy pushforward. `sessions/S027.md` installed. Connected n≤6 atlas **90/8/45**; independent novelty unverified.
 
 ## S026 — 2026-11-03 (genuine measurable clock bins)
