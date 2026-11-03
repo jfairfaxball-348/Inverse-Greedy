@@ -95,6 +95,8 @@ theorem strictClockChamber_singleton {ι : Type*} (i : ι) :
   · intro _
     trivial
   · intro _ a b hab
+    have ha : a.val < 1 := by simpa using a.isLt
+    have hb : b.val < 1 := by simpa using b.isLt
     omega
 
 /-- Genuine probability-one boundary for the empty chamber, including
