@@ -1,13 +1,15 @@
-## S032 — 2026-11-03 (PR #31; release verification pending)
+**S032 FINAL RELEASE (2026-11-03):** [PR #31](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/31) exact final head `dffde518c3727c4c1fcde4789dc2773ee65e6c62` passed **both imported Lean and complete Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41677475236](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677475236) and [PR Actions 41677479044](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677479044). Squash-merged to main as `c9659d7b4b0ebcc7d7dd297852ba4ea5bca96602`. This verifies the **genuine full finite-family simultaneous ceiling-bin probability** and true two-item/repeated-index strict chamber facts; NOT the full n≥3 sorting-chamber product or real-clock greedy-output pushforward. An explicit multi-geometric gap-series formula has a separate informal mathematical derivation and exact rational regression, not Lean proof. `sessions/S033.md` installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
 
-- [x] Define a true simultaneous **full finite-coordinate geometric ceiling-bin joint law** under `finiteIndependentExp`; proof uses Mathlib's product-rectangle measure and S026 exponential-bin PMFs, not discrete priority weights. Imported module `FiniteClockJointBins.lean`.
-- [x] Identify the two-item strict chamber with actual clock comparison and reuse S031 true pair probability; prove repeated-index chambers are empty and null for arbitrary rates.
-- [x] Add independent `Fraction` bin-box and deterministic chamber regressions, proof note and next execution prompt `sessions/S033.md`.
-- [ ] Verify imported Lean and full Python/exact/certified census on the **exact final head** in both push and PR Actions, then merge PR #31.
-- [ ] S033: evaluate strict-bin **multi-geometric** chamber sums, show finite collision union bound and zero-width limit, conclude full real-clock n≥3 chamber product in Lean.
-- [ ] Define measurable tie-broken sorting and identify its real-clock greedy-output pushforward with the S018 discrete law.
+## S032 — 2026-11-03 (released PR #31)
 
-**Scope:** claims are partial pending final CI. Connected n≤6 atlas **90/8/45**; independent novelty remains unverified.
+- [x] Prove the simultaneous **all-coordinate** ceiling-bin geometric joint law under the true finite real-exponential product, including zero coordinates; imported `FiniteClockJointBins.lean`.
+- [x] Identify a two-item strict chamber with the true pair inequality and ratio; prove repeated-index chambers are empty/null even for arbitrary rates.
+- [x] Give a rigorous *informal* formula for the multi-geometric strict-bin series via a gap-coordinate bijection, with exact rational finite-section tests; distinguish it from Lean formalisation.
+- [x] Full imported Lean and complete Python/exact/certified census both passed at exact final head `dffde518c372` in [push CI](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677475236) and [PR CI](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41677479044), then [PR #31](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/31) squash-merged as `c9659d7b`.
+- [ ] S033: **formalise** the strict-bin multi-geometric series, collision union bound and zero-width limit, delivering the real n≥3 chamber product in Lean.
+- [ ] Build a measurable total sorting map with deterministic tie breaks and identify its true continuous-clock greedy-output pushforward with S018's discrete theorem.
+
+**Boundary:** partial n≤6 connected atlas **90/8/45** unchanged, novelty uncertified.
 
 **S031 FINAL RELEASE (2026-11-03):** [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30) exact final head `09d0b45ddcae35714c1cf0a03af57d62a900781c` passed **both imported Lean and Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41650444708](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650444708) and [PR Actions 41650452725](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650452725). **Squash-merged into main as `06db312e37c7fa9bf05718d7297f43e2cf5405c0`.** Lean now proves genuine finite-family pairwise comparison probabilities and strict-chamber pair upper bounds, plus empty/singleton chamber mass one. The **full n≥3 continuous chamber product** and **true real-clock greedy-output pushforward** remain Lean-open. `sessions/S032.md` installed. Census **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
 
