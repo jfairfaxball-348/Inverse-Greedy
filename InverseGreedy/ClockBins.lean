@@ -136,6 +136,10 @@ theorem independentExpPair_clockCeilBin_joint
       ENNReal.ofReal
         ((1 - Real.exp (-(s * δ))) *
           (Real.exp (-(s * δ))) ^ l) := by
+  letI : IsProbabilityMeasure (expMeasure r) :=
+    isProbabilityMeasure_expMeasure hr
+  letI : IsProbabilityMeasure (expMeasure s) :=
+    isProbabilityMeasure_expMeasure hs
   change (expMeasure r).prod (expMeasure s)
     ({t : ℝ | clockCeilBin δ t = k + 1} ×ˢ
       {t : ℝ | clockCeilBin δ t = l + 1}) = _
