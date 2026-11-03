@@ -1,3 +1,14 @@
+## S032 — 2026-11-03 (PR #31; release verification pending)
+
+- [x] Define a true simultaneous **full finite-coordinate geometric ceiling-bin joint law** under `finiteIndependentExp`; proof uses Mathlib's product-rectangle measure and S026 exponential-bin PMFs, not discrete priority weights. Imported module `FiniteClockJointBins.lean`.
+- [x] Identify the two-item strict chamber with actual clock comparison and reuse S031 true pair probability; prove repeated-index chambers are empty and null for arbitrary rates.
+- [x] Add independent `Fraction` bin-box and deterministic chamber regressions, proof note and next execution prompt `sessions/S033.md`.
+- [ ] Verify imported Lean and full Python/exact/certified census on the **exact final head** in both push and PR Actions, then merge PR #31.
+- [ ] S033: evaluate strict-bin **multi-geometric** chamber sums, show finite collision union bound and zero-width limit, conclude full real-clock n≥3 chamber product in Lean.
+- [ ] Define measurable tie-broken sorting and identify its real-clock greedy-output pushforward with the S018 discrete law.
+
+**Scope:** claims are partial pending final CI. Connected n≤6 atlas **90/8/45**; independent novelty remains unverified.
+
 **S031 FINAL RELEASE (2026-11-03):** [PR #30](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/30) exact final head `09d0b45ddcae35714c1cf0a03af57d62a900781c` passed **both imported Lean and Python/exact/certified connected-n≤6 census** in BOTH [push Actions 41650444708](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650444708) and [PR Actions 41650452725](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41650452725). **Squash-merged into main as `06db312e37c7fa9bf05718d7297f43e2cf5405c0`.** Lean now proves genuine finite-family pairwise comparison probabilities and strict-chamber pair upper bounds, plus empty/singleton chamber mass one. The **full n≥3 continuous chamber product** and **true real-clock greedy-output pushforward** remain Lean-open. `sessions/S032.md` installed. Census **90 EGU / 8 non-EGU / 45 unresolved**; novelty not independently certified.
 
 ## S031 — 2026-11-03 (true finite-family pair comparisons; full chambers still open)
