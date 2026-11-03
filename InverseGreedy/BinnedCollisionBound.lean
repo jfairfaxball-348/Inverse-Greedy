@@ -35,10 +35,8 @@ theorem independentExpPair_sameCeilBin_le_width_min_rate
   have hq0 : 0 ≤ q := (Real.exp_pos _).le
   have ht0 : 0 ≤ t := (Real.exp_pos _).le
   have hq1 : q < 1 := Real.exp_lt_one_iff.mpr (by
-    dsimp [q]
     nlinarith [mul_pos hr hδ])
   have ht1 : t < 1 := Real.exp_lt_one_iff.mpr (by
-    dsimp [t]
     nlinarith [mul_pos hs hδ])
   have hprod : Real.exp (-((r + s) * δ)) = q * t := by
     dsimp [q,t]
@@ -54,7 +52,7 @@ theorem independentExpPair_sameCeilBin_le_width_min_rate
     have hcore := geometric_collision_fraction_le_first q t hq0 hq1 ht0 ht1
     have hlin : 1 - q ≤ r * δ := by
       dsimp [q]
-      have he := add_one_le_exp (-(r * δ))
+      have he := Real.add_one_le_exp (-(r * δ))
       linarith
     exact le_trans hcore hlin
   have hsecond : ((1 - q) * (1 - t)) / (1 - q * t) ≤ s * δ := by
@@ -64,14 +62,14 @@ theorem independentExpPair_sameCeilBin_le_width_min_rate
       convert hcore using 1 <;> ring
     have hlin : 1 - t ≤ s * δ := by
       dsimp [t]
-      have he := add_one_le_exp (-(s * δ))
+      have he := Real.add_one_le_exp (-(s * δ))
       linarith
     exact le_trans hsymmetric hlin
   have hreal : ((1 - q) * (1 - t)) / (1 - q * t) ≤ δ * min r s := by
     rcases le_total r s with hrs | hsr
-    · rw [min_eq_left hrs, mul_comm]
+    · rw [min_eq_left hrs, mul_comm δ r]
       exact hfirst
-    · rw [min_eq_right hsr, mul_comm]
+    · rw [min_eq_right hsr, mul_comm δ s]
       exact hsecond
   rw [hmass]
   exact ENNReal.ofReal_le_ofReal hreal
