@@ -45,8 +45,12 @@ This argument does **not** replace the actual exponential clocks with an
 assumed Plackett–Luce or geometric measure. S030's
 `InverseGreedy/ContinuousRaceLimit.lean` implements the differentiated
 initial slope, the real fraction's right-hand limit, its `ENNReal.ofReal`
-transport and the measured-event squeeze. Formal certification depends
-on the exact-head GitHub Actions Lean result.
+transport and the measured-event squeeze. The exact source commit `0144a168dd0dfd0ff90d4ea5f089f0bbc55ed319`
+was verified by the full imported Lean build and complete Python/exact/
+connected-n≤6 census in both [push 41647056971](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647056971)
+and [PR 41647064745](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647064745).
+The code checkpoint is certified; final documentation-head and merge
+verification remain a separate release gate.
 
 ## Independent regression
 
