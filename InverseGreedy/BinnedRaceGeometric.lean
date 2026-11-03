@@ -117,4 +117,102 @@ theorem independentExpPair_strictCeilBinRace_geometric (r s δ : ℝ)
           (1 - ENNReal.ofReal (qr * qs))⁻¹ := by
       rw [ENNReal.ofReal_mul h1qr, ENNReal.ofReal_mul hqr0]
 
+
+/-- The ENNReal geometric denominator is the image of the ordinary real
+denominator whenever the ratio is strictly below one. -/
+theorem ennreal_geometric_real_quotient (a q : ℝ)
+    (hq : 0 ≤ q) (hq1 : q < 1) :
+    ENNReal.ofReal a * (1 - ENNReal.ofReal q)⁻¹ =
+      ENNReal.ofReal (a / (1 - q)) := by
+  have hden : (1 : ENNReal) - ENNReal.ofReal q =
+      ENNReal.ofReal (1 - q) := by
+    simpa only [ENNReal.ofReal_one] using
+      (ENNReal.ofReal_sub (1 : ℝ) hq).symm
+  calc
+    ENNReal.ofReal a * (1 - ENNReal.ofReal q)⁻¹ =
+        ENNReal.ofReal a * (ENNReal.ofReal (1 - q))⁻¹ := by
+      rw [hden]
+    _ = ENNReal.ofReal (a / (1 - q)) := by
+      rw [ENNReal.ofReal_div_of_pos (by linarith), div_eq_mul_inv]
+
+/-- Fully real-valued fraction for the true same-bin collision event. -/
+theorem independentExpPair_sameCeilBin_realFraction (r s δ : ℝ)
+    (hr : 0 < r) (hs : 0 < s) (hδ : 0 < δ) :
+    independentExpPair r s (sameCeilBinEvent δ) =
+      ENNReal.ofReal
+        (((1 - Real.exp (-(r * δ))) * (1 - Real.exp (-(s * δ)))) /
+          (1 - Real.exp (-((r + s) * δ)))) := by
+  have hqr1 : Real.exp (-(r * δ)) < 1 :=
+    Real.exp_lt_one_iff.mpr (by nlinarith [mul_pos hr hδ])
+  have hqs1 : Real.exp (-(s * δ)) < 1 :=
+    Real.exp_lt_one_iff.mpr (by nlinarith [mul_pos hs hδ])
+  have hq0 : 0 ≤ Real.exp (-(r * δ)) * Real.exp (-(s * δ)) := by positivity
+  have hq1 : Real.exp (-(r * δ)) * Real.exp (-(s * δ)) < 1 := by
+    calc
+      Real.exp (-(r * δ)) * Real.exp (-(s * δ)) <
+          1 * Real.exp (-(s * δ)) :=
+        mul_lt_mul_of_pos_right hqr1 (Real.exp_pos _)
+      _ = Real.exp (-(s * δ)) := one_mul _
+      _ < 1 := hqs1
+  have hprod : Real.exp (-(r * δ)) * Real.exp (-(s * δ)) =
+      Real.exp (-((r + s) * δ)) := by
+    rw [← Real.exp_add]
+    congr 1
+    ring
+  calc
+    independentExpPair r s (sameCeilBinEvent δ) =
+        ENNReal.ofReal
+          ((1 - Real.exp (-(r * δ))) * (1 - Real.exp (-(s * δ)))) *
+        (1 - ENNReal.ofReal
+          (Real.exp (-(r * δ)) * Real.exp (-(s * δ))))⁻¹ :=
+      independentExpPair_sameCeilBin_geometric r s δ hr hs hδ
+    _ = ENNReal.ofReal
+          (((1 - Real.exp (-(r * δ))) * (1 - Real.exp (-(s * δ)))) /
+            (1 - Real.exp (-(r * δ)) * Real.exp (-(s * δ)))) :=
+      ennreal_geometric_real_quotient _ _ hq0 hq1
+    _ = ENNReal.ofReal
+          (((1 - Real.exp (-(r * δ))) * (1 - Real.exp (-(s * δ)))) /
+            (1 - Real.exp (-((r + s) * δ)))) := by
+      rw [hprod]
+
+/-- Fully real-valued fraction for the true earlier-bin winner event. -/
+theorem independentExpPair_strictCeilBinRace_realFraction (r s δ : ℝ)
+    (hr : 0 < r) (hs : 0 < s) (hδ : 0 < δ) :
+    independentExpPair r s (strictCeilBinRaceEvent δ) =
+      ENNReal.ofReal
+        (((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) /
+          (1 - Real.exp (-((r + s) * δ)))) := by
+  have hqr1 : Real.exp (-(r * δ)) < 1 :=
+    Real.exp_lt_one_iff.mpr (by nlinarith [mul_pos hr hδ])
+  have hqs1 : Real.exp (-(s * δ)) < 1 :=
+    Real.exp_lt_one_iff.mpr (by nlinarith [mul_pos hs hδ])
+  have hq0 : 0 ≤ Real.exp (-(r * δ)) * Real.exp (-(s * δ)) := by positivity
+  have hq1 : Real.exp (-(r * δ)) * Real.exp (-(s * δ)) < 1 := by
+    calc
+      Real.exp (-(r * δ)) * Real.exp (-(s * δ)) <
+          1 * Real.exp (-(s * δ)) :=
+        mul_lt_mul_of_pos_right hqr1 (Real.exp_pos _)
+      _ = Real.exp (-(s * δ)) := one_mul _
+      _ < 1 := hqs1
+  have hprod : Real.exp (-(r * δ)) * Real.exp (-(s * δ)) =
+      Real.exp (-((r + s) * δ)) := by
+    rw [← Real.exp_add]
+    congr 1
+    ring
+  calc
+    independentExpPair r s (strictCeilBinRaceEvent δ) =
+        ENNReal.ofReal
+          ((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) *
+        (1 - ENNReal.ofReal
+          (Real.exp (-(r * δ)) * Real.exp (-(s * δ))))⁻¹ :=
+      independentExpPair_strictCeilBinRace_geometric r s δ hr hs hδ
+    _ = ENNReal.ofReal
+          (((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) /
+            (1 - Real.exp (-(r * δ)) * Real.exp (-(s * δ)))) :=
+      ennreal_geometric_real_quotient _ _ hq0 hq1
+    _ = ENNReal.ofReal
+          (((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) /
+            (1 - Real.exp (-((r + s) * δ)))) := by
+      rw [hprod]
+
 end InverseGreedy
