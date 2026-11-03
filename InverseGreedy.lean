@@ -42,3 +42,4 @@ import InverseGreedy.FiniteClockNoTies
 import InverseGreedy.FiniteClockChambers
 import InverseGreedy.ExpSurvival
 import InverseGreedy.ExpBinCells
+import InverseGreedy.ClockBins
