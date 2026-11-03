@@ -14,7 +14,7 @@ namespace InverseGreedy
 
 /-- A two-factor geometric series, including the extended-value cases.
 No convergence assumption is needed in ENNReal. -/
-theorem ennreal_tsum_two_geometric (a b x y : ℝ≥0∞) :
+theorem ennreal_tsum_two_geometric (a b x y : ENNReal) :
     (∑' k : ℕ, (a * x ^ k) * (b * y ^ k)) =
       (a * b) * (1 - x * y)⁻¹ := by
   calc
@@ -44,10 +44,8 @@ theorem independentExpPair_sameCeilBin_geometric (r s δ : ℝ)
   have hqr0 : 0 ≤ qr := (Real.exp_pos _).le
   have hqs0 : 0 ≤ qs := (Real.exp_pos _).le
   have hqr1 : qr < 1 := Real.exp_lt_one_iff.mpr (by
-    dsimp [qr]
     nlinarith [mul_pos hr hδ])
   have hqs1 : qs < 1 := Real.exp_lt_one_iff.mpr (by
-    dsimp [qs]
     nlinarith [mul_pos hs hδ])
   have h1qr : 0 ≤ 1 - qr := by linarith
   have h1qs : 0 ≤ 1 - qs := by linarith
@@ -70,6 +68,6 @@ theorem independentExpPair_sameCeilBin_geometric (r s δ : ℝ)
       ennreal_tsum_two_geometric _ _ _ _
     _ = ENNReal.ofReal ((1 - qr) * (1 - qs)) *
           (1 - ENNReal.ofReal (qr * qs))⁻¹ := by
-      rw [ENNReal.ofReal_mul h1qr, ENNReal.ofReal_mul hqr]
+      rw [ENNReal.ofReal_mul h1qr, ENNReal.ofReal_mul hqr0]
 
 end InverseGreedy
