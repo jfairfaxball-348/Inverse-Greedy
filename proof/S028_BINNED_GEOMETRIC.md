@@ -41,10 +41,15 @@ The independent ENNReal identity used for this step is
 It is valid even outside the convergent geometric regime under
 ENNReal's extended conventions, and makes no probability assumptions.
 
-**Formal status:** `InverseGreedy/BinnedRaceGeometric.lean`
-was added to the imported Lean build and is subject to exact-head
-CI. Until that CI is green, the new Lean claims are **unverified**.
-Do not interpret a source-level declaration as a checked theorem.
+**Formal status:** The imported Lean build and full Python/certified census
+**passed** at code SHA `dc02f4b738a684a11dd86f9ac20726b93037a2b4`
+([push CI 41617713182](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41617713182)).
+`InverseGreedy/BinnedRaceGeometric.lean` now verifies both true event
+geometric evaluations and their exact `ENNReal.ofReal` real-fraction forms.
+The independent exact test suite also passed at this SHA. Final documentation
+head CI still requires a separate check before release.
+The continuous real-clock rate ratio and its collision/limit argument
+remain **Lean-open**.
 
 ## Further geometric evaluation and limit (mathematical derivation)
 
@@ -97,14 +102,12 @@ checks **do not formalise the limit or continuous race law**.
 
 ## Outstanding proof obligations
 
-1. Verify, at the exact imported Lean head, the actual collision
-   geometric evaluation above.
-2. Evaluate the actual strict-bin winner series, and transport both
-   ENNReal expressions to the real fractions.
-3. Formalise the strict-bin/continuous comparison sandwich,
+1. **Completed at S028 verified code SHA `dc02f4b`**: actual collision and
+   strict-bin winner geometric evaluations and `ENNReal.ofReal` fractions.
+2. Formalise the strict-bin/continuous comparison sandwich,
    collision bound and zero-width limit, to obtain the unequal-rate
    true exponential winner probability as an imported Lean theorem.
-4. General finite sorting-chamber probabilities and the canonical
+3. General finite sorting-chamber probabilities and the canonical
    measurable sorted-clock-to-greedy pushforward remain distinct.
 
 Do not confuse these obligations with the already completed S018
