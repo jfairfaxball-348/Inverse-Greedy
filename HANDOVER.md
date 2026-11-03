@@ -1,3 +1,18 @@
+# S025 execution handover — 2026-11-03
+
+**Branch:** `s025-real-bin-cells` from `main` 500d7281f9ec.
+The first new theorem block in `InverseGreedy/ExpBinCells.lean` is imported and **Lean-verified** at exact SHA `9336b4458a4ba0abf9c52e45c8cf0399837f8edd`: both imported Lean and all Python/exact/certified-census passed in [Actions 41598092129](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598092129). Before this success, earlier drafts had two Lean proof-script failures: incorrect `measure_sdiff` arguments and `ENNReal.ofReal_sub` orientation; both are repaired.
+
+**Mathematical advancement (IG-L38):** From the *genuine* exponential survival measure in S024, prove the actual `Ioc a b` probability `exp(-ra)-exp(-rb)` for `r>0`, `0≤a≤b`. Deduce exact geometric real-bin mass `(1-e^{-rδ})e^{-rkδ}` for all positive real `r,δ` and `k : ℕ`; the proof uses exponential addition, induction and endpoint-measurable sets, not the S018 discrete priority law. S025 also adds a finite-coordinate event theorem; check its exact final CI separately.
+
+**Exact tests:** `tests/test_s025.py` includes five `Fraction` consistency groups for real exponential-survival bin algebra, finite box products, and independent two-clock finite sums. `proof/S025_REAL_CLOCK_CELLS.md` sets out the rigorous distinction between a real-cell probability and an actual floor-valued bin map.
+
+**Not completed in Lean:** floor/bin PMF, independence of binned clocks, `Pr(T_r<T_s)=r/(r+s)`, all strict sorting-chamber masses and continuous sorted greedy-output pushforward. `sessions/S026.md` installs these targets. Partial atlas remains **90 EGU / 8 non-EGU / 45 unresolved**; no independent novelty certificate.
+
+**Release:** final PR/head CI and merge must be appended after both jobs pass at the *same final head*.
+
+---
+
 # S024 FINAL RELEASE — 2026-11-03
 
 **Verified and merged:** [PR #23](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/23) exact final head `3dc4332ea304b15dcbc5b005f48eb5a7c4972837` passed BOTH the imported Lean build and complete Python/exact/certified-graph-census in [push Actions 41596092382](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41596092382) and [PR Actions 41596101126](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41596101126). Squash-merged to `main` as `be7859cce0dba3613acae9fb47b1f0017206396c`. S024 closes genuine one-clock exponential survival, actual finite-clock coordinate tails and almost-sure all-coordinate nonnegative support (IG-L36/IG-L37), with exact rational checks. Numerical unequal-rate pair race, finite geometric-bin measures, strict chamber masses and continuous greedy-output pushforward remain **Lean-open**. S025 is installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no independent novelty claim.
