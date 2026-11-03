@@ -2,6 +2,8 @@
 
 ## S025: real exponential bin-cell probability
 
+**S025 FINAL RELEASE (2026-11-03):** [PR #24](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/24) exact final head `1c8a32fb548242cebffe1ebde7e8386ee0bd79c1` passed BOTH imported Lean and full Python/exact/certified graph census in [push Actions 41598540982](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598540982) and [PR Actions 41598576216](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41598576216). It was **squash-merged to `main`** as `e10fd67c08e80ea63c8d02b9308b54080fce8fd5`. `sessions/S026.md` is installed. The new genuine interval and finite-coordinate geometric-cell laws are Lean-verified; floor-valued bin independence, unequal-rate race ratio, all-chamber masses and real-clock greedy pushforward remain Lean-open. Atlas still **90/8/45**; no novelty certification.
+
 `InverseGreedy/ExpBinCells.lean` proves directly from Mathlib's
 **genuine** exponential survival law that for every real `r>0`,
 `δ>0`, and natural `k`,
