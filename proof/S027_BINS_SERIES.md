@@ -1,3 +1,5 @@
+**Formal check (2026-11-03):** Both genuine countable bin-event series modules are now **Lean-verified** as imported code, together with the complete Python/exact certified census, at exact code SHA `9b4ca4ea833233ffca4a2d892dabedc0f64aa27b`, [push Actions 41612217839](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41612217839). This certifies the equality of the *true event measures* with their *unevaluated* `ENNReal.tsum` series, not either closed-form sum or the continuous unequal-rate limit. Exact final PR-head verification remains necessary.
+
 # S027 — Genuine exponential bin-race series (2026-11-03)
 
 ## Meaning and verification boundary
@@ -17,8 +19,8 @@ and that cylinder is provably contained in the real strict-winner event.
 
 `InverseGreedy/BinnedRaceSeries.lean` and
 `InverseGreedy/BinnedRaceCollision.lean` are the next imported proof
-milestones. **Check exact final CI before marking their countable
-measure statements Lean-verified**. The separate closed-form sums and
+milestones. These countable-measure statements **are Lean-verified at code SHA
+`9b4ca4ea`**; final documentation-head CI must be checked before merge. The separate closed-form sums and
 continuous ratio are not established by those modules alone.
 
 ## Mathematical proof (continuous measure, not discrete postulate)
