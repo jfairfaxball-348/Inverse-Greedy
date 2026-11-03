@@ -1,6 +1,17 @@
-# Claim ledger — S024 (2026-11-03)
+# Claim ledger — S025 (2026-11-03)
 
 Status meanings: **proved-informal** is a complete written proof, not machine-checked or independently novel; **tested-exact** is finite arithmetic checking; **Lean-verified** requires actual successful CI at the stated SHA; **open** means unestablished.
+
+## S025 claim additions — 2026-11-03
+
+| ID | Claim | Status | Evidence |
+|---|---|---|---|
+| **IG-L38 (S025)** | For every positive real exponential rate `r`, nonnegative thresholds `a≤b`, and positive real width `δ`, the genuine Mathlib measure satisfies `Pr(a<T≤b)=exp(-ra)-exp(-rb)` and `Pr(kδ<T≤(k+1)δ)=(1-exp(-rδ))exp(-rδ)^k` for every natural `k`. These are **real-cell event masses**, not yet the PMF of a measurable floor-valued variable. | **Lean-verified** at SHA `9336b4458a4ba0abf9c52e45c8cf0399837f8edd`, both imported Lean and Python/census passed in Actions 41598092129. | `InverseGreedy/ExpBinCells.lean`; `proof/S025_REAL_CLOCK_CELLS.md` |
+| **IG-L39 (S025)** | Transport the genuine geometric real-cell probability to an arbitrary coordinate of the finite independent exponential product; include empty-product statement only vacuously (no coordinate exists). | **Source added; exact-head imported Lean verification pending** for the coordinate extension. | `InverseGreedy/ExpBinCells.lean` |
+| **IG-T25** | Five exact rational survival-difference, partition, finite-product-box, two-clock finite-sum/remainder, and parameter-boundary regressions. | **tested-exact** at S025 test inclusion; arithmetic only, not Lean measure-level bin independence. | `tests/test_s025.py` |
+
+**Still formally open:** measurable floor/bin random-variable law, binned-coordinate independence, unequal-rate real-clock winner ratio `r/(r+s)`, complete strict-chamber masses, continuous sorted-greedy pushforward. Connected graph atlas: **90/8/45**. Independent novelty unverified.
+
 
 | ID | Claim | Status | Evidence |
 |---|---|---|---|
