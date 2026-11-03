@@ -1,3 +1,13 @@
+## S025 — 2026-11-03 (actual exponential interval and bin cells)
+
+- [x] Derive a genuine exponential **half-open real interval** probability from S024 survival and subset-aware measure subtraction, for arbitrary positive real rates.
+- [x] Derive the exact geometric cell mass `(1-exp(-rδ))exp(-rδ)^k` for arbitrary real `r,δ>0` and all natural `k`, without stipulating a geometric law. Imported Lean and full exact Python/census green on SHA `9336b4458a4b`, Actions 41598092129.
+- [x] Add a finite-coordinate cylinder-mass theorem to the genuine `Measure.pi` model; exact-head CI for this addition still to be recorded.
+- [x] Add five independent exact rational tests for bin cells, tails, product boxes, and a finite two-clock geometric winner sum, retaining complete certified census.
+- [x] Document the actual interval proof and endpoint issue, and install `sessions/S026.md`.
+- [ ] **Open:** a measurable natural-valued floor/bin map, genuine joint independent-bin law, pair collision bound/limit, unequal-rate real-clock winner ratio in Lean, full strict-chamber masses and greedy pushforward.
+- [ ] Connected n≤6 atlas remains **90 EGU / 8 non-EGU / 45 unresolved**; novelty unverified.
+
 # Research roadmap — Inverse Greedy
 
 ## S024 — 2026-11-03 (genuine exponential survival and finite support)
