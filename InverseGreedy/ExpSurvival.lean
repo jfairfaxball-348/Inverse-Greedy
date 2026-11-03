@@ -100,4 +100,49 @@ theorem finiteIndependentExp_coordinate_survival {ι : Type*} [Fintype ι]
     _ = ENNReal.ofReal (Real.exp (-(rates i * t))) :=
       expMeasure_Ioi_nonnegative (rates i) t (hpos i) ht
 
+/-- A coordinate of a genuine finite exponential clock family cannot
+arrive at a negative time, including singleton families. -/
+theorem finiteIndependentExp_coordinate_negative_null {ι : Type*} [Fintype ι]
+    (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i) (i : ι) :
+    finiteIndependentExp rates {ω : ι → ℝ | ω i < 0} = 0 := by
+  calc
+    finiteIndependentExp rates {ω : ι → ℝ | ω i < 0} =
+        (Measure.map (Function.eval i) (finiteIndependentExp rates))
+          (Set.Iio (0 : ℝ)) := by
+      rw [Measure.map_apply (measurable_pi_apply i) measurableSet_Iio]
+      rfl
+    _ = expMeasure (rates i) (Set.Iio (0 : ℝ)) := by
+      rw [finiteIndependentExp_coordinate_law rates hpos i]
+    _ = 0 := expMeasure_negative_time_null (rates i) (hpos i)
+
+/-- Under the actual independent finite exponential law every arrival
+time is nonnegative almost surely; empty index types are included. -/
+theorem finiteIndependentExp_all_nonnegative_probability_one
+    {ι : Type*} [Fintype ι]
+    (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i) :
+    finiteIndependentExp rates {ω : ι → ℝ | ∀ i, 0 ≤ ω i} = 1 := by
+  letI : IsProbabilityMeasure (finiteIndependentExp rates) :=
+    finiteIndependentExp_probability rates hpos
+  let A : Set (ι → ℝ) := {ω | ∀ i, 0 ≤ ω i}
+  have hA : MeasurableSet A := by
+    have hset : A = ⋂ i, {ω : ι → ℝ | ω i ∈ Set.Ici (0 : ℝ)} := by
+      ext ω
+      simp [A]
+    rw [hset]
+    apply MeasurableSet.iInter
+    intro i
+    exact measurableSet_Ici.preimage (measurable_pi_apply i)
+  have hcompl : Aᶜ = ⋃ i, {ω : ι → ℝ | ω i < 0} := by
+    ext ω
+    simp [A, not_le]
+  have hnull : finiteIndependentExp rates Aᶜ = 0 := by
+    rw [hcompl]
+    apply measure_iUnion_null
+    intro i
+    exact finiteIndependentExp_coordinate_negative_null rates hpos i
+  have hsum := measure_add_measure_compl
+    (μ := finiteIndependentExp rates) hA
+  rw [hnull] at hsum
+  simpa [A] using hsum
+
 end InverseGreedy
