@@ -84,11 +84,13 @@ theorem strictClockChamber_eq_empty_of_repeated
     (a b : Fin order.length) (hab : a < b)
     (heq : order[a] = order[b]) :
     strictClockChamber order = ∅ := by
-  apply Set.eq_empty_iff_forall_not_mem.mpr
-  intro ω hω
-  have hlt := hω a b hab
-  rw [heq] at hlt
-  exact (lt_irrefl _ hlt)
+  ext ω
+  constructor
+  · intro hω
+    have hlt := hω a b hab
+    rw [heq] at hlt
+    exact (lt_irrefl _ hlt)
+  · simp
 
 /-- Accordingly, any product probability of a repeated-index strict
 chamber is zero, even when its rates are not positive. -/
