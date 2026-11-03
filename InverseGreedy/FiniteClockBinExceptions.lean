@@ -1,20 +1,24 @@
-import InverseGreedy.FiniteClockJointBins
-import InverseGreedy.BinnedCollisionBound
+import InverseGreedy.ClockBins
 
 /-!
-# S033 companion: genuine finite-family bin exceptional events
+# S033 companion: zero-bin nullity for every finite exponential family
 
-S032 establishes individual joint positive-bin cylinders. This module
-handles the genuine zero-bin exception and transports S029's continuous
-two-clock bin-collision bound to arbitrary pairs of coordinates in a
-finite independent family. No discrete PL priority law is assumed.
+The right-closed one-based ceiling-bin partition has an exceptional
+bin zero, corresponding to nonpositive arrival times. S026 proved
+this exceptional cell is null for one exponential clock; the results
+below establish that none of the coordinates of an arbitrary finite
+independent exponential family occupy bin zero, almost surely.
+
+These statements use Mathlib's genuine continuous independent
+exponential product measure, including empty and singleton index
+types. No discrete priority permutation law is involved.
 -/
 
 open MeasureTheory ProbabilityTheory
 namespace InverseGreedy
 
-/-- The one-based ceiling-bin convention has a null zero bin in
-every coordinate of an actual independent exponential family. -/
+/-- The exceptional zero ceiling bin of any coordinate has zero mass
+under the actual finite independent exponential measure. -/
 theorem finiteIndependentExp_coordinate_zeroBin_null
     {ι : Type*} [Fintype ι]
     (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i)
@@ -35,8 +39,8 @@ theorem finiteIndependentExp_coordinate_zeroBin_null
       rw [finiteIndependentExp_coordinate_law rates hpos i]
     _ = 0 := expMeasure_clockCeilBin_zero (rates i) δ (hpos i) hδ
 
-/-- The union of all zero-bin exceptional coordinate events is null,
-including empty and singleton index types. -/
+/-- The entire union of exceptional zero-bin events is null, including
+the empty family (empty union). -/
 theorem finiteIndependentExp_any_zeroBin_null
     {ι : Type*} [Fintype ι]
     (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i)
@@ -52,56 +56,43 @@ theorem finiteIndependentExp_any_zeroBin_null
   exact measure_iUnion_null (fun i =>
     finiteIndependentExp_coordinate_zeroBin_null rates hpos δ hδ i)
 
-/-- The actual same-bin event for two real clocks is measurable.
-The proof uses an explicit countable union of equal integer cells. -/
-theorem sameCeilBinEvent_measurable (δ : ℝ) :
-    MeasurableSet (sameCeilBinEvent δ) := by
-  have hf : Measurable (fun p : ℝ × ℝ => clockCeilBin δ p.1) :=
-    (clockCeilBin_measurable δ).comp measurable_fst
-  have hg : Measurable (fun p : ℝ × ℝ => clockCeilBin δ p.2) :=
-    (clockCeilBin_measurable δ).comp measurable_snd
-  have hset : sameCeilBinEvent δ =
-      ⋃ k : ℕ, {p : ℝ × ℝ |
-        clockCeilBin δ p.1 = k ∧ clockCeilBin δ p.2 = k} := by
-    ext p
-    simp only [sameCeilBinEvent, Set.mem_setOf_eq, Set.mem_iUnion]
-    constructor
-    · intro h
-      exact ⟨clockCeilBin δ p.1, rfl, h.symm⟩
-    · rintro ⟨k, h₁, h₂⟩
-      exact h₁.trans h₂.symm
-  rw [hset]
-  apply MeasurableSet.iUnion
-  intro k
-  exact (measurableSet_singleton.preimage hf).inter
-    (measurableSet_singleton.preimage hg)
-
-/-- The two-coordinate collision estimate holds inside *any* finite
-independent exponential clock family, not only the two-clock product. -/
-theorem finiteIndependentExp_pair_sameBin_le_width_min_rate
+/-- All actual finite exponential coordinates lie in positive
+(one-based) ceiling bins simultaneously, with probability one.
+The assertion also holds for the unique empty family. -/
+theorem finiteIndependentExp_all_positiveBins_probability_one
     {ι : Type*} [Fintype ι]
     (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i)
-    (δ : ℝ) (hδ : 0 < δ)
-    (i j : ι) (hij : i ≠ j) :
+    (δ : ℝ) (hδ : 0 < δ) :
     finiteIndependentExp rates
-      {ω : ι → ℝ |
-        clockCeilBin δ (ω i) = clockCeilBin δ (ω j)} ≤
-      ENNReal.ofReal (δ * min (rates i) (rates j)) := by
-  let F : (ι → ℝ) → ℝ × ℝ := fun ω => (ω i, ω j)
-  have hF : Measurable F :=
-    (measurable_pi_apply i).prodMk (measurable_pi_apply j)
-  calc
-    finiteIndependentExp rates
-        {ω : ι → ℝ |
-          clockCeilBin δ (ω i) = clockCeilBin δ (ω j)} =
-        (Measure.map F (finiteIndependentExp rates))
-          (sameCeilBinEvent δ) := by
-            rw [Measure.map_apply hF (sameCeilBinEvent_measurable δ)]
-            rfl
-    _ = independentExpPair (rates i) (rates j) (sameCeilBinEvent δ) := by
-      rw [finiteIndependentExp_pair_law rates hpos i j hij]
-    _ ≤ ENNReal.ofReal (δ * min (rates i) (rates j)) :=
-      independentExpPair_sameCeilBin_le_width_min_rate
-        (rates i) (rates j) δ (hpos i) (hpos j) hδ
+      {ω : ι → ℝ | ∀ i, clockCeilBin δ (ω i) ≠ 0} = 1 := by
+  letI : IsProbabilityMeasure (finiteIndependentExp rates) :=
+    finiteIndependentExp_probability rates hpos
+  let A : Set (ι → ℝ) :=
+    {ω | ∀ i, clockCeilBin δ (ω i) ≠ 0}
+  have hA : MeasurableSet A := by
+    have hset : A =
+        ⋂ i, {ω : ι → ℝ | clockCeilBin δ (ω i) ≠ 0} := by
+      ext ω
+      simp [A]
+    rw [hset]
+    apply MeasurableSet.iInter
+    intro i
+    have hzero : MeasurableSet
+        {ω : ι → ℝ | clockCeilBin δ (ω i) = 0} := by
+      change MeasurableSet
+        ((fun ω : ι → ℝ => clockCeilBin δ (ω i)) ⁻¹' ({0} : Set ℕ))
+      exact measurableSet_singleton.preimage
+        (finiteIndependentExp_clockCeilBin_measurable δ i)
+    simpa only [Set.compl_setOf] using hzero.compl
+  have hcompl : Aᶜ =
+      {ω : ι → ℝ | ∃ i, clockCeilBin δ (ω i) = 0} := by
+    ext ω
+    simp [A]
+  have hnull : finiteIndependentExp rates Aᶜ = 0 := by
+    rw [hcompl]
+    exact finiteIndependentExp_any_zeroBin_null rates hpos δ hδ
+  have hsum := measure_add_measure_compl (μ := finiteIndependentExp rates) hA
+  rw [hnull] at hsum
+  simpa [A] using hsum
 
 end InverseGreedy
