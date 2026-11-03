@@ -1,3 +1,14 @@
+## S030 — 2026-11-03 (genuine continuous two-clock winner, proof complete)
+
+- [x] Derive the real right-hand zero-width exponential slope and binned winner ratio limit for all strictly positive rates, imported `ContinuousRaceLimit.lean`.
+- [x] Transport the limit to ENNReal and squeeze the **genuine product measure** between S029's true strict-bin probability and collision error: Lean-checked `independentExpPair_realWinner_rateRatio` (`P(T_r<T_s)=r/(r+s)`).
+- [x] Independently check exact symbolic rate-ratio, bin collision first-order term and three-way partition with `tests/test_s030.py`.
+- [x] Verify both imported Lean and full Python/exact/n≤6 census on exact code SHA `0144a168dd0dfd0ff90d4ea5f089f0bbc55ed319` in [push 41647056971](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647056971) and [PR 41647064745](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647064745).
+- [ ] Final docs-head dual-green verification, merge [PR #29](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/29).
+- [ ] S031: prove the full strict finite real-clock chamber mass formula, measurable canonical tie-broken sorting map, and true greedy-output law pushforward. These are **not** consequences of the two-clock theorem without additional argument and are **not yet Lean-proved**.
+
+Connected n≤6 atlas stays 90 EGU / 8 non-EGU / 45 unresolved; novelty not independently certified.
+
 **S029 FINAL RELEASE (2026-11-03):** [PR #28](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/28) exact final head `3c2150a8668fd3869318810f9e02eb65289d47e8` passed **both imported Lean and full Python/exact/certified connected-n≤6 graph census**, on BOTH [push Actions 41625700011](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41625700011) and [PR Actions 41625709665](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41625709665). **Squash-merged into `main`** as `bc586f6c679fe1a49db3e3127ab0e8c5f5727ca0`. Lean now verifies the genuine real-clock/bin-event measure sandwich, S028's exact real-fraction wrapper and the true collision bound `P(same ceiling bin) ≤ δ·min(r,s)` for all positive rates/widths. The **analytic zero-width limit**, continuous rate ratio `P(T_r<T_s)=r/(r+s)`, finite sorting-chamber masses and actual real-clock greedy-output pushforward remain **Lean-open**. `sessions/S030.md` installed. Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; independent novelty unverified.
 
 ## S029 — 2026-11-03 (true continuous-clock event sandwich)
