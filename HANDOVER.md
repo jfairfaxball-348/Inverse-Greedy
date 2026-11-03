@@ -1,3 +1,39 @@
+# S024 — genuine exponential survival, 2026-11-03
+
+**Execution PR:** [#23](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/23),
+branch `s024-exp-survival` based on main `5adfe08427d7`.
+The first full imported Lean and Python/certified census verification
+**passed on exact code SHA `8f52f3a8a1b9266bf2664a5b611f2194847d529e`**
+in [Actions 41595641100](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41595641100).
+An earlier draft `db78f855` failed on two minor elaboration errors
+in the negative-time support lemma; both were repaired and CI passed
+at `e98804be`, before the finite all-nonnegative theorem.
+
+**Verified mathematics (IG-L36, IG-L37):**
+`InverseGreedy/ExpSurvival.lean` proves, from actual Mathlib
+exponential CDF and complement rather than a discrete assumed law,
+`Pr(T_r>t)=exp(-r*t)` for all `r>0,t≥0`, correct negative-time
+zero lower-tail support, and the exact finite coordinate survival
+law. It also proves all coordinates of a finite independent Exp family
+are nonnegative almost surely, for empty/singleton index types too.
+
+**Independent exact regression:** `tests/test_s024.py` uses `Fraction`
+for four consistency groups covering CDF, tail, bin differences,
+finite partial sums, and independent family products at rational
+survival bins. All four passed locally. These do not replace the
+continuous measure proof.
+
+**Release checkpoint:** Exact final PR head verification and squash
+merge must be recorded only after both final-head CI jobs pass.
+S025 is installed. The real-clock `Pr(T_r<T_s)=r/(r+s)`,
+geometric-bin probability law, all finite strict chamber masses,
+and continuous sorting/greedy pushforward are **Lean-open**.
+`proof/S024_EXP_SURVIVAL.md` spells out the remaining obligations.
+Graph atlas unchanged **90 EGU / 8 non-EGU / 45 unresolved**.
+Independent novelty is not claimed.
+
+---
+
 # S023 FINAL RELEASE — 2026-11-02
 
 **S023 FINAL RELEASE:** [PR #22](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/22) exact final branch head bfb0d2cd6d03ca874b026527b0e19c06cc471442 passed BOTH full imported Lean and Python/certified census in [push run 41536696192](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536696192) and [PR run 41536741787](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536741787). Squash-merged to main as 83a4390f69ac04621fa64498d41be93f74fc4c33. Only chamber measurability is Lean-verified, not continuous chamber mass or sorting pushforward. S024 installed. Atlas unchanged 90/8/45.
