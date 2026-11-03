@@ -43,6 +43,7 @@ import InverseGreedy.FiniteClockChambers
 import InverseGreedy.ExpSurvival
 import InverseGreedy.ExpBinCells
 import InverseGreedy.ClockBins
+import InverseGreedy.FiniteClockBinExceptions
 
 import InverseGreedy.BinnedRace
 import InverseGreedy.BinnedRaceSeries
@@ -56,5 +57,3 @@ import InverseGreedy.ContinuousRaceLimit
 import InverseGreedy.FiniteClockPairOrder
 
 import InverseGreedy.FiniteClockJointBins
-
-import InverseGreedy.FiniteClockBinExceptions
