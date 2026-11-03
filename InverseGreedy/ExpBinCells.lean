@@ -25,21 +25,17 @@ theorem expMeasure_Ioc_nonnegative (rate a b : ℝ)
   have hset : Set.Ioi a \ Set.Ioi b = Set.Ioc a b := by
     ext x
     simp only [Set.mem_diff, Set.mem_Ioi, Set.mem_Ioc, not_lt]
-    tauto
-  have hbound : Real.exp (-(rate * b)) ≤ Real.exp (-(rate * a)) := by
-    apply Real.exp_le_exp.mpr
-    nlinarith [mul_le_mul_of_nonneg_left hab (le_of_lt hr)]
   calc
     expMeasure rate (Set.Ioc a b) =
         expMeasure rate (Set.Ioi a \ Set.Ioi b) := by rw [hset]
     _ = expMeasure rate (Set.Ioi a) - expMeasure rate (Set.Ioi b) := by
-      rw [measure_diff measurableSet_Ioi (measure_ne_top _ _)]
+      rw [measure_diff measurableSet_Ioi measurableSet_Ioi]
     _ = ENNReal.ofReal
           (Real.exp (-(rate * a)) - Real.exp (-(rate * b))) := by
       rw [expMeasure_Ioi_nonnegative rate a hr ha,
         expMeasure_Ioi_nonnegative rate b hr (le_trans ha hab)]
-      exact (ENNReal.ofReal_sub (Real.exp (-(rate * a)))
-        (sub_nonneg.mpr hbound)).symm
+      rw [← ENNReal.ofReal_sub (Real.exp (-(rate * a)))
+        (le_of_lt (Real.exp_pos _))]
 
 /-- Every genuine exponential clock cell has geometric mass. This is
 a theorem about *real intervals*, not a separately postulated
