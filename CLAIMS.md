@@ -1,11 +1,13 @@
-## S033 provisional claim ledger — 2026-11-03 (PR #32; exact-head CI and merge pending)
+## S033 verified partial claim ledger — 2026-11-03
+
+exact final PR head `6b57057e6711b4d17d183a277305a0e08376eba9` passed imported Lean and full Python/exact/certified connected-n≤6 atlas in BOTH [push Actions 41692437332](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692437332) and [PR Actions 41692441926](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692441926); [PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) squash-merged as `025cf356d0afa8fcefeb12191103b51703fe4d6a`.
 
 | ID | Claim | Status |
 |---|---|---|
-| IG-L58 | True-clock strict-bin chamber included in strict-real chamber; strict-real chamber included in strict-bin event union the genuine finite list same-bin collision event, for any list and δ>0. | Imported Lean source `FiniteClockBinChambers.lean`; exact-head CI pending. |
-| IG-L59 | Corresponding measure sandwich under `finiteIndependentExp rates`, without substituting a discrete weighted-permutation law. | Imported Lean source `FiniteClockBinChambers.lean`; exact-head CI pending. |
-| IG-L60 | For arbitrary finite positive-rate exponential products and distinct indices, actual pair same-ceiling-bin collision probability is ≤ `ENNReal.ofReal (δ * min (rates i) (rates j))`. | Imported Lean source `FiniteClockPairBinCollision.lean`; exact-head CI pending. |
-| IG-T33 | Exhaustive deterministic clock/bin event checks and independent exact rational geometric collision/finite-union regressions. | `tests/test_s033.py`; full exact-head CI pending. |
+| IG-L58 | True-clock strict-bin chamber included in strict-real chamber; strict-real chamber included in strict-bin event union the genuine finite list same-bin collision event, for any list and δ>0. | **Lean-verified**, exact-head dual-green push and PR CI. |
+| IG-L59 | Corresponding measure sandwich under `finiteIndependentExp rates`, without substituting a discrete weighted-permutation law. | **Lean-verified**, exact-head dual-green push and PR CI. |
+| IG-L60 | For arbitrary finite positive-rate exponential products and distinct indices, actual pair same-ceiling-bin collision probability is ≤ `ENNReal.ofReal (δ * min (rates i) (rates j))`. | **Lean-verified**, exact-head dual-green push and PR CI. |
+| IG-T33 | Exhaustive deterministic clock/bin event checks and independent exact rational geometric collision/finite-union regressions. | **Python/exact/census verified** at exact final head in both push and PR CI. |
 
 **Not Lean-proven:** finite list collision union error bound `O(δ)`, complete n≥3 strict-bin chamber series, zero-width general real chamber equality with `orderMass`, and measurable sorting/continuous greedy output pushforward. S034 installed. Atlas **90/8/45**, novelty unverified.
 

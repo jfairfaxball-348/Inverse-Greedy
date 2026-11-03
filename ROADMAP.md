@@ -1,9 +1,11 @@
-## S033 — 2026-11-03 (partial; PR #32, final CI pending)
+## S033 — 2026-11-03 (partial theorem progress, verified and squash-merged PR #32)
+
+exact final PR head `6b57057e6711b4d17d183a277305a0e08376eba9` passed imported Lean and full Python/exact/certified connected-n≤6 atlas in BOTH [push Actions 41692437332](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692437332) and [PR Actions 41692441926](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692441926); [PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) squash-merged as `025cf356d0afa8fcefeb12191103b51703fe4d6a`.
 
 - [x] Import a true-clock strict-ceiling-bin / strict-real-clock chamber sandwich using a genuine same-bin collision event as the discrepancy.
 - [x] Lift S029's true measured two-clock same-bin `≤ δ min(rate_i,rate_j)` inequality through S022's actual finite-coordinate pair law for arbitrary positive-rate finite families.
 - [x] Add independent exact/deterministic regressions, `proof/S033_BIN_CHAMBER.md`, and the S034 execution prompt.
-- [ ] **Release gate**: verify complete imported Lean plus Python/exact/certified n≤6 census at exact final head in BOTH push and PR CI, squash-merge, record SHA.
+- [x] **Release gate**: imported Lean and Python/exact/certified n≤6 census passed at identical final PR head in both push and PR CI; squash-merged to main.
 - [ ] In S034, prove the **finite pair-collision union bound in Lean** for distinct complete orders, making the chamber error `O(δ)`.
 - [ ] In S034, evaluate genuine strict-bin multi-geometric chamber mass and take the actual continuous zero-width limit; then construct measurable total sorting and true greedy-output pushforward.
 
