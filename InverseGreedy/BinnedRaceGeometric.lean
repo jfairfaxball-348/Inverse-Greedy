@@ -70,4 +70,51 @@ theorem independentExpPair_sameCeilBin_geometric (r s δ : ℝ)
           (1 - ENNReal.ofReal (qr * qs))⁻¹ := by
       rw [ENNReal.ofReal_mul h1qr, ENNReal.ofReal_mul hqr0]
 
+
+/-- The true strictly earlier ceiling-bin winner event also admits a
+geometric closed form. This is not the yet-open continuous race ratio. -/
+theorem independentExpPair_strictCeilBinRace_geometric (r s δ : ℝ)
+    (hr : 0 < r) (hs : 0 < s) (hδ : 0 < δ) :
+    independentExpPair r s (strictCeilBinRaceEvent δ) =
+      ENNReal.ofReal
+        ((1 - Real.exp (-(r * δ))) * Real.exp (-(s * δ))) *
+      (1 - ENNReal.ofReal
+        (Real.exp (-(r * δ)) * Real.exp (-(s * δ))))⁻¹ := by
+  let qr : ℝ := Real.exp (-(r * δ))
+  let qs : ℝ := Real.exp (-(s * δ))
+  have hqr0 : 0 ≤ qr := (Real.exp_pos _).le
+  have hqs0 : 0 ≤ qs := (Real.exp_pos _).le
+  have hqr1 : qr < 1 := Real.exp_lt_one_iff.mpr (by
+    nlinarith [mul_pos hr hδ])
+  have h1qr : 0 ≤ 1 - qr := by linarith
+  have hexp (k : ℕ) :
+      Real.exp (-(s * (((k : ℝ) + 1) * δ))) = qs ^ (k + 1) := by
+    dsimp [qs]
+    rw [← Real.exp_nat_mul]
+    congr 1
+    push_cast
+    ring
+  change independentExpPair r s (strictCeilBinRaceEvent δ) =
+    ENNReal.ofReal ((1 - qr) * qs) *
+      (1 - ENNReal.ofReal (qr * qs))⁻¹
+  calc
+    independentExpPair r s (strictCeilBinRaceEvent δ) =
+        ∑' k : ℕ,
+          (ENNReal.ofReal (1 - qr) * (ENNReal.ofReal qr) ^ k) *
+          (ENNReal.ofReal qs * (ENNReal.ofReal qs) ^ k) := by
+      rw [independentExpPair_strictCeilBinRace_tsum r s δ hr hs hδ]
+      congr 1
+      funext k
+      rw [hexp k, pow_succ]
+      rw [ENNReal.ofReal_mul h1qr, ENNReal.ofReal_pow hqr0 k,
+          ENNReal.ofReal_mul (pow_nonneg hqs0 k),
+          ENNReal.ofReal_pow hqs0 k]
+      ac_rfl
+    _ = (ENNReal.ofReal (1 - qr) * ENNReal.ofReal qs) *
+          (1 - ENNReal.ofReal qr * ENNReal.ofReal qs)⁻¹ :=
+      ennreal_tsum_two_geometric _ _ _ _
+    _ = ENNReal.ofReal ((1 - qr) * qs) *
+          (1 - ENNReal.ofReal (qr * qs))⁻¹ := by
+      rw [ENNReal.ofReal_mul h1qr, ENNReal.ofReal_mul hqr0]
+
 end InverseGreedy
