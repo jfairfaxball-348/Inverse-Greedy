@@ -1,5 +1,17 @@
 # Research roadmap — Inverse Greedy
 
+## S024 — 2026-11-03 (genuine exponential survival and finite support)
+
+- [x] Derive the exact nonnegative-time CDF from Mathlib's actual `expMeasure` and `ofReal_cdf`; handle the negative-time branch separately.
+- [x] Derive actual survival `expMeasure rate (Ioi t) = ofReal(exp(-rate*t))` for positive real rates and nonnegative real times, by complement and probability normalization.
+- [x] Transport the genuine tail to arbitrary finite independent exponential products via measurable coordinate maps, and prove all coordinate times nonnegative almost surely, including empty/singleton types.
+- [x] Imported Lean and full Python/certified census **both green** on code SHA `8f52f3a8a1b9`, push Actions [41595641100](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41595641100).
+- [x] Four new independent exact rational CDF/survival/bin consistency regressions locally passed; `tests/test_s024.py` included in full CI.
+- [x] Add `proof/S024_EXP_SURVIVAL.md` and install S025 for the genuine measurable bin distribution.
+- [ ] Verify both CI jobs at the **exact final PR #23 head**, then merge and record merge SHA in HANDOVER.
+- [ ] Lean-verify true unequal-rate pair race law, geometric bin measures, full strict chamber masses, and real-clock greedy pushforward. These are NOT implied by S024.
+- [ ] Graph atlas unchanged at **90 EGU / 8 non-EGU / 45 unresolved**. No novelty certification.
+
 ## S023 — 2026-11-02 (geometric-bin bridge)
 
 - [x] Construct genuine real-clock strict-order chamber events and prove measurability in imported Lean at 6faf5ba21bf585a52412f8e2269e376a03b2de45; both CI jobs green at [Actions 41536043877](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41536043877).
