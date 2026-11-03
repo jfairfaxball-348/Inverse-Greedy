@@ -1,3 +1,13 @@
+# S030 execution handover — 2026-11-03
+
+**Branch/PR:** `s030-continuous-race-limit`, [PR #29](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/29), based on `main` `d3f75bf1d0f2100750f49a4b453ff066a1a674e0`.
+
+**Certified code checkpoint:** `0144a168dd0dfd0ff90d4ea5f089f0bbc55ed319`, with imported Lean + complete Python exact tests, exact demo and certified connected graph n≤6 census, **both GREEN on exact same head**, [push 41647056971](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647056971) and [PR 41647064745](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41647064745). `InverseGreedy/ContinuousRaceLimit.lean` imports S029 actual measured exponential-bin sandwich/collision bound; proves exponential CDF initial slope, strict-bin real analytic right-limit, ENNReal lift, and the actual continuous unequal-rate product-measure winner law `independentExpPair_realWinner_rateRatio`, not a declared priority surrogate. `tests/test_s030.py` adds independent symbolic regression; `proof/S030_RATE_RATIO.md` gives mathematical details.
+
+**Outstanding release gate:** after docs updates, verify both push and PR Actions jobs on the exact *final* head SHA and squash-merge only when dual green. **Next session S031** installed: prove genuine finite exponential sorted strict chamber probabilities (empty/singleton included), measurable canonical tie-breaking sort, and real-clock greedy-output pushforward to prior discrete finiteRaceLaw. These are still Lean-open even with the pair theorem. Atlas 90 EGU / 8 non-EGU / 45 unresolved; no novelty or Palomar/arXiv certification.
+
+---
+
 **S029 FINAL RELEASE (2026-11-03):** [PR #28](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/28) exact final head `3c2150a8668fd3869318810f9e02eb65289d47e8` passed **both imported Lean and full Python/exact/certified connected-n≤6 graph census**, on BOTH [push Actions 41625700011](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41625700011) and [PR Actions 41625709665](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41625709665). **Squash-merged into `main`** as `bc586f6c679fe1a49db3e3127ab0e8c5f5727ca0`. Lean now verifies the genuine real-clock/bin-event measure sandwich, S028's exact real-fraction wrapper and the true collision bound `P(same ceiling bin) ≤ δ·min(r,s)` for all positive rates/widths. The **analytic zero-width limit**, continuous rate ratio `P(T_r<T_s)=r/(r+s)`, finite sorting-chamber masses and actual real-clock greedy-output pushforward remain **Lean-open**. `sessions/S030.md` installed. Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; independent novelty unverified.
 
 # S029 execution handover — 2026-11-03
