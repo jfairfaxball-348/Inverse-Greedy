@@ -53,4 +53,43 @@ theorem gapBinValue_lower_bound {n : ℕ} (gaps : Fin n → ℕ)
   unfold gapBinValue
   omega
 
+/-- Adjacent bins differ by exactly one plus the new gap.
+This recurrence is the local identity needed for the inverse gap map. -/
+theorem gapBinValue_succ {n : ℕ} (gaps : Fin (n + 1) → ℕ)
+    (j : Fin n) :
+    gapBinValue gaps (Fin.succ j) =
+      gapBinValue gaps (Fin.castSucc j) + 1 + gaps (Fin.succ j) := by
+  have hfilter :
+      (Finset.univ.filter (fun i : Fin (n + 1) => i ≤ Fin.succ j)) =
+        insert (Fin.succ j)
+          (Finset.univ.filter (fun i : Fin (n + 1) => i ≤ Fin.castSucc j)) := by
+    ext i
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and, Finset.mem_insert]
+    constructor
+    · intro hi
+      by_cases heq : i = Fin.succ j
+      · exact Or.inl heq
+      · right
+        apply Fin.le_def.mpr
+        have hv : i.val ≤ j.val + 1 := Fin.le_def.mp hi
+        have hneq : i.val ≠ j.val + 1 := by
+          intro hval
+          exact heq (Fin.ext hval)
+        omega
+    · rintro (heq | hi)
+      · rw [heq]
+      · apply Fin.le_def.mpr
+        have hv : i.val ≤ j.val := Fin.le_def.mp hi
+        omega
+  have hnot :
+      Fin.succ j ∉
+        (Finset.univ.filter (fun i : Fin (n + 1) => i ≤ Fin.castSucc j)) := by
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+    intro h
+    have hv : j.val + 1 ≤ j.val := Fin.le_def.mp h
+    omega
+  dsimp only [gapBinValue]
+  rw [hfilter, Finset.sum_insert hnot]
+  omega
+
 end InverseGreedy
