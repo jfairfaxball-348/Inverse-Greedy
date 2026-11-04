@@ -101,7 +101,7 @@ theorem finiteIndependentExp_strictChamber_le_bin_add_pair_sum
             ENNReal.ofReal (δ * min (rates (order[a])) (rates (order[b])))
           else 0 := by
   exact (finiteIndependentExp_strictChamber_bin_sandwich rates δ hδ order).2.trans
-    (add_le_add_left
+    (add_le_add_right
       (finiteIndependentExp_clockBinCollisionOnList_le_pair_sum
         rates hpos δ hδ order hdistinct) _)
 
