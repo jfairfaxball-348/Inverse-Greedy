@@ -1,3 +1,13 @@
+# S035 execution handover — 2026-11-04 (partial PR #35; exact final verification pending)
+
+Started from `main` `09912950920f4121a0750f002dbfb5598b83e21c`, with S034 PR #34 already verified and merged. S035 [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) carries imported candidate `InverseGreedy/FiniteClockBinSeries.lean`, independent exact `tests/test_s035.py`, `proof/S035_BIN_SERIES.md`, and `sessions/S036.md`.
+
+The new candidate starts from **actual product-measure exponential clocks**: a positive-bin strict chamber is precisely a disjoint union of measurable admissible one-based bin cylinders. S032's genuine finite-coordinate geometric probabilities and countable additivity identify its mass as a countable sum. S033's genuine zero-bin nullity makes this the full strict-bin chamber mass. This does not evaluate the sum into a closed product, establish the full n≥3 real-clock strict-chamber mass, or construct measurable sorting/continuous greedy-output pushforward. S036 targets exactly those obligations. No model is allowed to assume discrete sorting law as a premise.
+
+**Release gate not yet complete:** confirm imported Lean and full Python/exact/certified n≤6 census on the exact final PR head in both push and PR Actions; then record SHA and squash-merge. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, no novelty/Palomar claim.
+
+---
+
 # S034 final handover — 2026-11-04 (verified partial release)
 
 Exact final PR head `32c28558efe9d685d2ac7123bd2ba2887890c898` passed the **complete imported Lean** build and **full Python/exact/certified connected n≤6 census** in both [push Actions 41807976461](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807976461) and [PR Actions 41807983429](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807983429); [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) was squash-merged into `main` as `e7947eb1382e8838485e7b761615f2bb8cf4442e`. 
