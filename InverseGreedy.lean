@@ -63,3 +63,4 @@ import InverseGreedy.FiniteClockBinUnion
 import InverseGreedy.FiniteClockBinSeries
 import InverseGreedy.FiniteClockGapEncoding
 import InverseGreedy.FiniteClockGapInverse
+import InverseGreedy.FiniteClockCompleteOrder
