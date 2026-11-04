@@ -1,13 +1,15 @@
-## S035 partial claim ledger — 2026-11-04 (PR #35; final-head verification pending)
+## S035 verified partial claim ledger — 2026-11-04
+
+Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`.
 
 | ID | Claim | Status |
 |---|---|---|
-| IG-L63 | The strict-bin chamber intersected with the all-positive actual-bin event is exactly a union of admissible positive-bin assignments over `ι → ℕ`, for arbitrary finite index types and lists. | **Lean proof candidate**, exact-final-head CI pending. |
-| IG-L64 | Positive-bin cylinders are Borel measurable and pairwise disjoint; the filtered admissible cylinders inherit both properties. | **Lean proof candidate**, exact-final-head CI pending. |
-| IG-L65 | Under the **genuine** finite independent Exp-clock product, the full strict-bin chamber has measure equal to the countable sum of admissible positive-bin joint geometric masses. The zero-bin correction is null, not asserted to be set-theoretically empty. | **Lean proof candidate**, exact-final-head CI pending. |
-| IG-T35 | Independent exact Fraction finite-gap geometric factorisation and strict-bin series/truncation checks including zero, one and repeated-index cases. | **Python verification pending exact final head**. |
+| IG-L63 | The actual strict-bin chamber intersected with the all-positive event equals the union of admissible positive-bin assignments for arbitrary finite index types and lists. | **Lean-verified**, exact-final-head dual-green CI. |
+| IG-L64 | Actual positive-bin cylinders are measurable and pairwise disjoint; admissible filtered cylinders inherit both properties. | **Lean-verified**, same dual-green CI. |
+| IG-L65 | The genuine finite independent Exp-clock product assigns the strict-bin chamber exactly the countable sum of admissible geometric joint-cell masses; zero-bin exceptional coordinates are null, not set-theoretically empty. | **Lean-verified**, same dual-green CI. |
+| IG-T35 | Independent Fraction tests for truncated geometric gap factorisation, strict-bin series, normalization and empty/singleton/duplicate-list boundaries. | **Python/exact/census verified**, same dual-green CI. |
 
-**Unproved in Lean:** evaluation of the countable multiple series as a finite geometric product, δ→0 real-chamber law for n≥3, tie-broken measurable sorting, and continuous-clock greedy-output pushforward. S036 installed. Atlas **90/8/45** unchanged; no novelty certification.
+**Still Lean-open:** the countable series' closed finite multiple-geometric evaluation; the zero-width limit and n≥3 real-clock chamber law; deterministic measurable total sorting and continuous-clock greedy-output pushforward. `sessions/S036.md` installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, no independent novelty certificate.
 
 ## S034 verified partial claim ledger — 2026-11-04
 
