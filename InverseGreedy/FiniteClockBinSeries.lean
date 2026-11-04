@@ -18,6 +18,7 @@ separate obligations.
 -/
 
 open MeasureTheory ProbabilityTheory
+open scoped Classical
 namespace InverseGreedy
 
 /-- A genuine simultaneous positive, one-based bin assignment. -/
@@ -34,7 +35,7 @@ def strictBinAssignment {ι : Type*} (order : List ι) (bins : ι → ℕ) :
 
 /-- Filter the positive-bin cylinders to those supporting the required
 strict ordering. -/
-def validBinCylinder {ι : Type*} (δ : ℝ) (order : List ι)
+noncomputable def validBinCylinder {ι : Type*} (δ : ℝ) (order : List ι)
     (bins : ι → ℕ) : Set (ι → ℝ) :=
   if strictBinAssignment order bins then
     positiveClockBinCylinder δ bins
@@ -73,7 +74,7 @@ theorem strictBinChamber_positive_eq_iUnion
       by_contra hn
       have hfalse : ω ∈ (∅ : Set (ι → ℝ)) := by
         simpa [validBinCylinder, hn] using hmem
-      exact Set.not_mem_empty ω hfalse
+      exact (by simpa using hfalse)
     have hbin : ∀ i, clockCeilBin δ (ω i) = bins i + 1 := by
       simpa [validBinCylinder, horder, positiveClockBinCylinder] using hmem
     constructor
@@ -121,7 +122,8 @@ theorem positiveClockBinCylinder_disjoint
 and singleton index types. -/
 theorem validBinCylinder_pairwise_disjoint
     {ι : Type*} [Fintype ι] (δ : ℝ) (order : List ι) :
-    Pairwise (Disjoint on (validBinCylinder δ order)) := by
+    Pairwise (fun a b : ι → ℕ =>
+      Disjoint (validBinCylinder δ order a) (validBinCylinder δ order b)) := by
   classical
   intro bins other hne
   apply Set.disjoint_left.mpr
@@ -130,7 +132,7 @@ theorem validBinCylinder_pairwise_disjoint
     by_contra hn
     have : ω ∈ (∅ : Set (ι → ℝ)) := by
       simpa [validBinCylinder, hn] using hfirst
-    exact Set.not_mem_empty ω this
+    exact (by simpa using this)
   have hother : strictBinAssignment order other := by
     by_contra hn
     have : ω ∈ (∅ : Set (ι → ℝ)) := by
@@ -209,7 +211,7 @@ theorem finiteIndependentExp_strictBin_series
     by_cases hp : ∀ i, clockCeilBin δ (ω i) ≠ 0
     · exact Or.inl ⟨hC, hp⟩
     · right
-      push_neg at hp
+      push Not at hp
       exact hp
   have hzero : finiteIndependentExp rates Z = 0 :=
     finiteIndependentExp_any_zeroBin_null rates hpos δ hδ
