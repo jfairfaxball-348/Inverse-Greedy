@@ -1,3 +1,14 @@
+## S035 — 2026-11-04 (partial work on PR #35; exact final verification pending)
+
+- [x] Implement candidate Lean pointwise positive-bin set decomposition, cylinder measurability and disjointness, and countable-additivity identification of the genuine Exp-clock strict-bin chamber measure with an admissible geometric series.
+- [x] Explicitly use S033's zero-bin null event to pass from the positive-bin restricted chamber to the whole strict-bin chamber (no false set equality).
+- [x] Add independent Fraction finite-gap/finite-truncation tests, scope note `proof/S035_BIN_SERIES.md`, and install `sessions/S036.md`.
+- [ ] Confirm complete imported Lean plus full exact Python/certified connected n≤6 atlas at exact final PR head in both push and PR Actions, then squash-merge.
+- [ ] S036: Lean-evaluate the genuine multiple geometric series for complete permutations, take δ→0 using S034 collision error, and prove the true n≥3 continuous clock-chamber product.
+- [ ] Total measurable tie-broken sorting and true continuous greedy-output pushforward.
+
+Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved** and snapshot flags unchanged; novelty unverified.
+
 ## S034 — 2026-11-04 (verified partial release; PR #34 squash-merged)
 
 Exact final PR head `32c28558efe9d685d2ac7123bd2ba2887890c898` passed the **complete imported Lean** build and **full Python/exact/certified connected n≤6 census** in both [push Actions 41807976461](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807976461) and [PR Actions 41807983429](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807983429); [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) was squash-merged into `main` as `e7947eb1382e8838485e7b761615f2bb8cf4442e`. 
