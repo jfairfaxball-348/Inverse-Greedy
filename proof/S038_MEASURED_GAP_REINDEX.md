@@ -1,6 +1,6 @@
 # S038 — certified finite orders and true measured chamber gap series
 
-**Date:** 2026-11-04. **Work:** [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38). Release verification/merge to be recorded only after exact-final-head dual-green CI.
+**Date:** 2026-11-04. **Verified release:** Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.
 
 ## Exact mathematical statement
 

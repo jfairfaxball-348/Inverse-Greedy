@@ -1,10 +1,12 @@
-## S038 provisional ledger — 2026-11-04 (final CI pending)
+## S038 verified partial claim ledger — 2026-11-04
 
-| ID | Claim | Verification boundary |
+Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.
+
+| ID | Claim | Scope |
 |---|---|---|
-| IG-L71 | Complete-order certificate yields injective and surjective list-position map and forbids silently using incomplete or repeated orders. | Proposed imported Lean `CompleteClockOrder.positions_injective`, `.positions_surjective`; final-head CI pending. |
-| IG-L72 | Admissible vertex bin assignments are equivalent to increasing positional bin vectors and S037 finite gap vectors. | Proposed `completeClockOrderValidBinEquiv` and `completeClockOrderGapEquiv`; final-head CI pending. |
-| IG-L73 | The **true Exp-clock measured** S035 strict-bin chamber `tsum` is exactly reindexed over gap assignments. | Proposed imported `finiteIndependentExp_strictBin_gap_series` via `tsum_subtype` and `Equiv.tsum_eq`; final-head CI pending. |
+| IG-L71 | Complete-order certificate yields injective and surjective list-position map and forbids silently using incomplete or repeated orders. | **Lean-verified** imported `CompleteClockOrder.positions_injective` and `.positions_surjective` on the exact final head. |
+| IG-L72 | Admissible vertex bin assignments are equivalent to increasing positional bin vectors and S037 finite gap vectors. | **Lean-verified** imported `completeClockOrderValidBinEquiv` and `completeClockOrderGapEquiv` on the exact final head. |
+| IG-L73 | The **true Exp-clock measured** S035 strict-bin chamber `tsum` is exactly reindexed over gap assignments. | **Lean-verified** imported `finiteIndependentExp_strictBin_gap_series` via `tsum_subtype` and `Equiv.tsum_eq` on the exact final head. |
 | IG-T38 | Exact Fraction checks finite truncated sums, suffix monomial factorisation, invalid orders and n=0/1 cases. | Python regression only; no Lean geometric product or real-clock limit. |
 
 **Still not proved:** Lean geometric infinite-series evaluation, measured finite-width closed formula, general n≥3 real-clock chamber identity, measurable sort and genuine continuous greedy-output pushforward. Next `sessions/S039.md`. Atlas **90/8/45** unchanged; no independent novelty or submission claim.

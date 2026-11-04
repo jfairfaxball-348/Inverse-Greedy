@@ -1,8 +1,10 @@
-# S038 provisional handover — 2026-11-04 (PR #38, final certification pending)
+# S038 final handover — 2026-11-04 (verified partial release)
 
-Branch `s038-measured-gap-reindex`, [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38), starts at verified S037 `main`. Proposed imports `InverseGreedy/FiniteClockCompleteOrder.lean` and `InverseGreedy/FiniteClockMeasuredGapSeries.lean` make the no-repeat/full-coverage hypothesis explicit and use it to reindex **S035's actual independent Exp-clock measured countable series** via S037 finite gaps. This does not evaluate the multiple geometric sum or prove any n≥3 continuous-clock order mass. `tests/test_s038.py` provides separate exact rational tests; scope note `proof/S038_MEASURED_GAP_REINDEX.md`; next `sessions/S039.md`.
+Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.
 
-**Before declaring this release verified:** check final-head full imported Lean and complete Python/exact/certified connected n≤6 census **in both push and PR workflow runs on the exact same final SHA**, then squash merge and record final head, both workflow IDs, and merge SHA. Do not claim a success without reading the workflow conclusions. Preserve atlas **90 EGU / 8 non-EGU / 45 unresolved**, no novelty/registration claim.
+Branch `s038-measured-gap-reindex`, [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38), starts at verified S037 `main`. Verified imported modules `InverseGreedy/FiniteClockCompleteOrder.lean` and `InverseGreedy/FiniteClockMeasuredGapSeries.lean` make the no-repeat/full-coverage hypothesis explicit and use it to reindex **S035's actual independent Exp-clock measured countable series** via S037 finite gaps. This does not evaluate the multiple geometric sum or prove any n≥3 continuous-clock order mass. `tests/test_s038.py` provides separate exact rational tests; scope note `proof/S038_MEASURED_GAP_REINDEX.md`; next `sessions/S039.md`.
+
+**Release gate fulfilled:** the exact final head is verified as successful in the imported Lean and Python/exact/certified census jobs in **both** push and PR workflow runs, and PR #38 was squash-merged. Next: `sessions/S039.md`. Preserve atlas **90 EGU / 8 non-EGU / 45 unresolved**, no novelty/registration claim.
 
 ---
 

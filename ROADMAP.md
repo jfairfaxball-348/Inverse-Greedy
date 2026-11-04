@@ -1,10 +1,12 @@
-## S038 — 2026-11-04 (partial execution; verification/merge pending)
+## S038 — 2026-11-04 (verified partial release; PR #38 merged)
 
-- [x] Implement explicit `CompleteClockOrder` witness tying every list position to exactly one coordinate, with injectivity and surjectivity proofs (Lean source; CI pending).
-- [x] Implement admissible assignment equivalence with increasing positional bins and S037 gaps (Lean source; CI pending).
-- [x] Implement direct transport of S035's **true measured countable bin-chamber series** to a finite-gap `tsum` (Lean source; CI pending).
+Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.
+
+- [x] Implement explicit `CompleteClockOrder` witness tying every list position to exactly one coordinate, with injectivity and surjectivity proofs (**Lean-verified** at exact final PR head).
+- [x] Implement admissible assignment equivalence with increasing positional bins and S037 gaps (**Lean-verified** at exact final PR head).
+- [x] Implement direct transport of S035's **true measured countable bin-chamber series** to a finite-gap `tsum` (**Lean-verified** at exact final PR head).
 - [x] Add independent rational/exhaustive `tests/test_s038.py`, proof scope note and S039 next execution prompt.
-- [ ] Exact-final-head dual-green full Lean + Python/exact/certified connected n≤6 census in both push/PR Actions, then squash merge.
+- [x] Exact-final-head dual-green full Lean + Python/exact/certified connected n≤6 census in both push and PR Actions; squash-merged PR #38.
 - [ ] S039: formal ENNReal suffix monomial product factorisation and geometric `tsum` evaluation, measured finite-width product, then `δ↓0+`, real-clock chamber formula and genuine sorting/pushforward.
 
 Connected n≤6 **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/registration claim.
