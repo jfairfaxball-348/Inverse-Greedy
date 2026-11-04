@@ -65,11 +65,13 @@ theorem strictBinAssignment_iff_strictMono
       StrictMono (completeClockOrderBinEquiv h bins) := by
   constructor
   · intro hb a b hab
+    change bins (h.index a) < bins (h.index b)
     have hl := hb a b hab
-    simpa only [completeClockOrderBinEquiv, h.agrees a, h.agrees b] using hl
+    simpa only [h.agrees a, h.agrees b] using hl
   · intro hb a b hab
     have hl := hb hab
-    simpa only [completeClockOrderBinEquiv, h.agrees a, h.agrees b] using hl
+    change bins (h.index a) < bins (h.index b) at hl
+    simpa only [h.agrees a, h.agrees b] using hl
 
 /-- The admissible vertex-indexed assignments are equivalent to
 strictly increasing bins indexed by their certified positions. -/
