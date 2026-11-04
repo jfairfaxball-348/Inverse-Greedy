@@ -1,3 +1,11 @@
+# S036 provisional execution handover — 2026-11-04 (PR #36)
+
+Repository S035 is a verified merged release: genuine finite Exp strict-bin chamber countable geometric series under the actual measured clock product. S036 opened [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36), added imported `InverseGreedy/FiniteClockGapEncoding.lean` and exact `tests/test_s036.py`, plus `proof/S036_GAP_ENCODING.md` and next-session `sessions/S037.md`.
+
+The formal new gap map is `k_j = j + Σ_(a≤j) gaps(a)`. Imported Lean already establishes strict monotonicity, position-injectivity and `j≤k_j`; earlier exact-head push/PR CI for the original module plus tests was green. An added successor recurrence is awaiting latest CI; do not claim it verified before checking. Exact Python `Fraction` regressions cover the two-sided gap bijection and monomial factorisation **only computationally**; neither is yet a complete imported Lean theorem. **S036 has not evaluated the S035 measured `tsum`** and has not proved the continuous n≥3 chamber law or the true clock-to-greedy pushforward. Continue precisely with `sessions/S037.md`.
+
+Exact final-head dual-green push and PR verification, followed by squash merge, is a gate and **not yet attested** in this provisional handover. Preserve connected n≤6 atlas **90/8/45**, no novelty or registry claim.
+
 # S035 final handover — 2026-11-04 (verified partial release)
 
 Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`.

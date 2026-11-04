@@ -1,3 +1,15 @@
+## S036 — 2026-11-04 (partial branch PR #36; final-head CI pending)
+
+- [x] Formalise the forward gap vector → strict increasing bin vector, including `Fin 0` and singleton boundary cases, in imported Lean.
+- [x] Add independent exact exhaustive gap inverse and rational monomial-factorisation regressions, proof scope note and S037 prompt.
+- [ ] Finish an imported Lean two-sided gap bijection for complete non-repeating orders and reindex the **genuine S035 measured** `tsum`.
+- [ ] Evaluate the finite multiple geometric product with all suffix positivity and geometric-convergence obligations.
+- [ ] Take the measured zero-width limit, squeeze with S034's true collision bound, and derive arbitrary n≥3 real-clock chamber probability in Lean.
+- [ ] Prove measurable total clock sorting and genuine continuous greedy-output pushforward.
+- [ ] Close exact final-head dual-green push/PR Lean and full Python/exact/certified connected-n≤6 census and squash-merge PR #36.
+
+Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty certification or registration.
+
 ## S035 — 2026-11-04 (verified partial release; PR #35 squash-merged)
 
 Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`.

@@ -17,7 +17,7 @@ change of variables for an ordered list of length `n`. For arbitrary
 `k_j = j + Σ_(a≤j) gaps(a)`.
 
 Lean proves `gapBinValue_strictMono`: if `a<b`, then `k_a<k_b`;
-it also proves position-injectivity and `j≤k_j`. This covers
+it also proves position-injectivity and `j≤k_j`. A proposed successor recurrence `gapBinValue_succ` additionally states that consecutive bins differ by `1+newGap`; it remains subject to exact-head CI. This covers
 `n=0` and `n=1` without side-case assumptions. Crucially **this is
 only the forward direction**. The new module does NOT yet construct a
 Lean inverse or reindex the S035 sum.
