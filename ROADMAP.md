@@ -1,13 +1,15 @@
-## S035 — 2026-11-04 (partial work on PR #35; exact final verification pending)
+## S035 — 2026-11-04 (verified partial release; PR #35 squash-merged)
 
-- [x] Implement candidate Lean pointwise positive-bin set decomposition, cylinder measurability and disjointness, and countable-additivity identification of the genuine Exp-clock strict-bin chamber measure with an admissible geometric series.
-- [x] Explicitly use S033's zero-bin null event to pass from the positive-bin restricted chamber to the whole strict-bin chamber (no false set equality).
-- [x] Add independent Fraction finite-gap/finite-truncation tests, scope note `proof/S035_BIN_SERIES.md`, and install `sessions/S036.md`.
-- [ ] Confirm complete imported Lean plus full exact Python/certified connected n≤6 atlas at exact final PR head in both push and PR Actions, then squash-merge.
-- [ ] S036: Lean-evaluate the genuine multiple geometric series for complete permutations, take δ→0 using S034 collision error, and prove the true n≥3 continuous clock-chamber product.
-- [ ] Total measurable tie-broken sorting and true continuous greedy-output pushforward.
+Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`.
 
-Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved** and snapshot flags unchanged; novelty unverified.
+- [x] Prove an actual-clock positive-bin strict-chamber pointwise countable-union decomposition, plus measurability and disjointness of genuine bin cylinders in imported Lean.
+- [x] Use S032 true joint-cylinder masses, countable additivity and S033 zero-bin nullity to prove the **full strict-bin chamber countable geometric series** in imported Lean, including empty/singleton finite index sets and arbitrary lists.
+- [x] Add independent Fraction finite-gap/truncation regressions, exact scope note `proof/S035_BIN_SERIES.md`, and install `sessions/S036.md`.
+- [x] Exact final PR head passed both Lean and full Python/exact/certified connected n≤6 census in BOTH push and PR Actions; squash-merged.
+- [ ] S036: evaluate the genuine countable series as a finite geometric product; take δ→0 with S034 collision bound to prove the full n≥3 real-clock chamber product in Lean.
+- [ ] Build a total measurable tie-broken sort and true continuous-clock greedy-output pushforward.
+
+Connected n≤6 census **90 EGU / 8 non-EGU / 45 unresolved**; snapshot flags unchanged; independent novelty not certified.
 
 ## S034 — 2026-11-04 (verified partial release; PR #34 squash-merged)
 
