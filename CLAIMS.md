@@ -1,3 +1,14 @@
+## S035 partial claim ledger — 2026-11-04 (PR #35; final-head verification pending)
+
+| ID | Claim | Status |
+|---|---|---|
+| IG-L63 | The strict-bin chamber intersected with the all-positive actual-bin event is exactly a union of admissible positive-bin assignments over `ι → ℕ`, for arbitrary finite index types and lists. | **Lean proof candidate**, exact-final-head CI pending. |
+| IG-L64 | Positive-bin cylinders are Borel measurable and pairwise disjoint; the filtered admissible cylinders inherit both properties. | **Lean proof candidate**, exact-final-head CI pending. |
+| IG-L65 | Under the **genuine** finite independent Exp-clock product, the full strict-bin chamber has measure equal to the countable sum of admissible positive-bin joint geometric masses. The zero-bin correction is null, not asserted to be set-theoretically empty. | **Lean proof candidate**, exact-final-head CI pending. |
+| IG-T35 | Independent exact Fraction finite-gap geometric factorisation and strict-bin series/truncation checks including zero, one and repeated-index cases. | **Python verification pending exact final head**. |
+
+**Unproved in Lean:** evaluation of the countable multiple series as a finite geometric product, δ→0 real-chamber law for n≥3, tie-broken measurable sorting, and continuous-clock greedy-output pushforward. S036 installed. Atlas **90/8/45** unchanged; no novelty certification.
+
 ## S034 verified partial claim ledger — 2026-11-04
 
 Exact final PR head `32c28558efe9d685d2ac7123bd2ba2887890c898` passed the **complete imported Lean** build and **full Python/exact/certified connected n≤6 census** in both [push Actions 41807976461](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807976461) and [PR Actions 41807983429](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807983429); [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) was squash-merged into `main` as `e7947eb1382e8838485e7b761615f2bb8cf4442e`. 
