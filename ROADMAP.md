@@ -1,3 +1,14 @@
+## S034 — 2026-11-04 (PR #34 candidate; exact final CI pending)
+
+- [x] Implement in an imported Lean module the finite union estimate over distinct list positions under the genuine finite Exp product, and propagate its explicit finite ENNReal pair sum to the strict-real/bin chamber sandwich.
+- [x] Cover empty/singleton cases by the uniform Fin-indexed statement, exclude repeated coordinates explicitly, and retain complete-permutation applicability without unnecessary completeness assumptions.
+- [x] Add exact rational regression, proof scope note and S035 execution prompt.
+- [ ] Certify imported Lean + complete Python/exact/connected n≤6 atlas at exact final SHA in BOTH push and PR Actions, then squash merge.
+- [ ] S035: strictly ordered positive-bin countable union and mass series, multiple geometric product, δ→0+ limit and genuine n≥3 continuous chamber theorem.
+- [ ] Complete measurable deterministic total sorting map and continuous-clock greedy-output pushforward.
+
+Snapshot **90 EGU / 8 non-EGU / 45 unresolved**, novelty not independently established.
+
 ## S033 — 2026-11-03 (partial theorem progress, verified and squash-merged PR #32)
 
 exact final PR head `6b57057e6711b4d17d183a277305a0e08376eba9` passed imported Lean and full Python/exact/certified connected-n≤6 atlas in BOTH [push Actions 41692437332](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692437332) and [PR Actions 41692441926](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692441926); [PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) squash-merged as `025cf356d0afa8fcefeb12191103b51703fe4d6a`.
