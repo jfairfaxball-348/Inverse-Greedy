@@ -38,7 +38,10 @@ theorem gapBinValue_zero {n : ℕ} (gaps : Fin (n + 1) → ℕ) :
     · intro hi
       subst i
       exact le_refl 0
-  simp [gapBinValue, hs]
+  change 0 +
+      (Finset.univ.filter (fun i : Fin (n + 1) => i ≤ 0)).sum gaps = gaps 0
+  rw [hs]
+  simp
 
 /-- Taking successive differences of the prefix-sum encoding recovers
 the original nonnegative gaps at every position. -/
