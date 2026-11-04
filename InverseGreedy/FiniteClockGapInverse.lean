@@ -114,4 +114,28 @@ theorem gapBinValue_vector_injective {n : ℕ} :
     _ = gapDifferenceSucc (gapBinValue y) := by rw [h]
     _ = y := gapDifferenceSucc_gapBinValue y
 
+/-- Genuine equivalence between nonnegative finite gaps and strictly
+increasing zero-based bin vectors. Includes the empty index type. -/
+def finiteGapBinEquiv (n : ℕ) :
+    (Fin n → ℕ) ≃ {bins : Fin n → ℕ // StrictMono bins} := by
+  cases n with
+  | zero =>
+      refine
+        { toFun := fun gaps => ⟨gaps, ?_⟩
+          invFun := fun bins => bins.val
+          left_inv := by intro gaps; rfl
+          right_inv := by intro bins; apply Subtype.ext; rfl }
+      intro a b hab
+      exact Fin.elim0 a
+  | succ n =>
+      exact
+        { toFun := fun gaps =>
+            ⟨gapBinValue gaps, gapBinValue_strictMono gaps⟩
+          invFun := fun bins => gapDifferenceSucc bins.val
+          left_inv := gapDifferenceSucc_gapBinValue
+          right_inv := by
+            intro bins
+            apply Subtype.ext
+            exact gapBinValue_gapDifferenceSucc bins.val bins.property }
+
 end InverseGreedy
