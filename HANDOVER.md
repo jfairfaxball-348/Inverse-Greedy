@@ -1,10 +1,12 @@
-# S035 execution handover — 2026-11-04 (partial PR #35; exact final verification pending)
+# S035 final handover — 2026-11-04 (verified partial release)
 
-Started from `main` `09912950920f4121a0750f002dbfb5598b83e21c`, with S034 PR #34 already verified and merged. S035 [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) carries imported candidate `InverseGreedy/FiniteClockBinSeries.lean`, independent exact `tests/test_s035.py`, `proof/S035_BIN_SERIES.md`, and `sessions/S036.md`.
+Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`.
 
-The new candidate starts from **actual product-measure exponential clocks**: a positive-bin strict chamber is precisely a disjoint union of measurable admissible one-based bin cylinders. S032's genuine finite-coordinate geometric probabilities and countable additivity identify its mass as a countable sum. S033's genuine zero-bin nullity makes this the full strict-bin chamber mass. This does not evaluate the sum into a closed product, establish the full n≥3 real-clock strict-chamber mass, or construct measurable sorting/continuous greedy-output pushforward. S036 targets exactly those obligations. No model is allowed to assume discrete sorting law as a premise.
+Started from `main` `09912950920f4121a0750f002dbfb5598b83e21c`, after S034's verified merged release. The S035 branch `s035-positive-bin-series` introduced imported `InverseGreedy/FiniteClockBinSeries.lean`, independent `tests/test_s035.py`, `proof/S035_BIN_SERIES.md`, and installed `sessions/S036.md`.
 
-**Release gate not yet complete:** confirm imported Lean and full Python/exact/certified n≤6 census on the exact final PR head in both push and PR Actions; then record SHA and squash-merge. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, no novelty/Palomar claim.
+The new formal result is an **actual-clock measure** statement: on all-positive one-based ceiling bins, the strict-bin chamber is exactly a disjoint countable union of measurable admissible joint cylinders; S032's genuine independent Exp joint law gives their masses. S033 zero-bin exception is null, so the resulting countable geometric series equals the full strict-bin chamber probability. The proof is not an assumed discrete ordering law and handles empty/singleton types without separate exceptions.
+
+**Still Lean-open:** finite geometric evaluation of the multiple series, the δ→0 limit of that product to the discrete `orderMass` formula, continuous n≥3 strict-real-clock chamber probability, total measurable sorting and actual continuous greedy-output pushforward. S036 must proceed from the genuine S035 series, not an unverified sorting-law assumption. Connected n≤6 atlas remains **90 EGU / 8 non-EGU / 45 unresolved** with existing snapshot flags; no novelty/Palomar registration.
 
 ---
 
