@@ -1,3 +1,13 @@
+## S034 candidate claim ledger — 2026-11-04 (PR #34, final CI pending)
+
+| ID | Claim | Status |
+|---|---|---|
+| IG-L61 | For a non-repeating finite list (explicit pairwise indexed distinctness), positive rates and δ>0, the actual probability of any same-ceiling-bin position pair is bounded by the finite ENNReal sum of δ times the pairwise minimum rates; no completeness needed. | **Lean source submitted for imported CI**, not certified until exact final SHA passes. |
+| IG-L62 | The genuine strict-real-clock chamber upper bound from S033 can use that explicit finite sum as an error rather than an opaque collision event. | **Lean source submitted for imported CI**, pending exact final SHA. |
+| IG-T34 | Independent exact rational finite-section collision/union tests, permuted lists, empty/singleton and width scaling. | **Regression source added**; complete CI pending. |
+
+**Still Lean-open:** countable strict-bin chamber series and its multiple-geometric evaluation, general continuous n≥3 chamber product limit, total tie-broken measurable sorting and the true continuous-clock greedy-output pushforward. The connected n≤6 atlas remains 90/8/45 and novelty is unverified. `sessions/S035.md` is installed.
+
 ## S033 verified partial claim ledger — 2026-11-03
 
 exact final PR head `6b57057e6711b4d17d183a277305a0e08376eba9` passed imported Lean and full Python/exact/certified connected-n≤6 atlas in BOTH [push Actions 41692437332](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692437332) and [PR Actions 41692441926](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692441926); [PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) squash-merged as `025cf356d0afa8fcefeb12191103b51703fe4d6a`.

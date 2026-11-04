@@ -1,3 +1,13 @@
+# S034 working handover — 2026-11-04 (PR #34, verification pending)
+
+Started from GitHub `main` `eb5966a0d284d9ed8c75ea8894e3eb2aa783c73e`, with S033 [PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) already merged and certified at its exact PR head. S034 [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) adds imported `InverseGreedy/FiniteClockBinUnion.lean`, independent `tests/test_s034.py`, `proof/S034_FINITE_UNION.md` and `sessions/S035.md`. All new Lean claims are **candidates** until final-head dual push+PR imported Lean and full Python/exact/certified atlas CI are green; record final SHA and merge before saying verified.
+
+The new finite ENNReal sum controls the genuine probability of some two *list positions* sharing an actual ceiling bin by the sum of S033's true exponential pair-marginal collision bounds. A hypothesis explicitly forbids repeated vertex indices across different list positions. There is no completeness condition, so all complete permutations qualify; empty and singleton lists have zero collision probability. Combining it with the true S033 chamber sandwich gives a quantitative `O(δ)` error for any fixed finite distinct list. This alone **does not** evaluate strict-bin chamber mass or prove the full n≥3 real chamber product; nor does it identify the real-clock sorting/greedy pushforward. S035 targets the remaining countable disjoint geometric summation and zero-width limit, then total sorting map.
+
+Preserve n≤6 connected atlas **90 EGU / 8 non-EGU / 45 unresolved**, no novelty certification.
+
+---
+
 # S033 final handover — 2026-11-03 (verified partial release)
 
 exact final PR head `6b57057e6711b4d17d183a277305a0e08376eba9` passed imported Lean and full Python/exact/certified connected-n≤6 atlas in BOTH [push Actions 41692437332](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692437332) and [PR Actions 41692441926](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41692441926); [PR #32](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/32) squash-merged as `025cf356d0afa8fcefeb12191103b51703fe4d6a`.
