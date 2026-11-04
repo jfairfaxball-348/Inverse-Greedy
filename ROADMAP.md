@@ -1,9 +1,11 @@
-## S037 — 2026-11-04 (proof candidate, final release verification pending)
+## S037 — 2026-11-04 (verified partial release; PR #37 squash-merged)
+
+Exact final PR head `8043465835fed9b1245b98f1e1e59bfe743dae8b` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census in **both** push [Actions 41875794221](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875794221) and PR [Actions 41875873962](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875873962); [PR #37](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/37) squash-merged to `main` as `93c20facf8d3e396374aa066e6b46b266312431f`.
 
 - [x] Construct finite-difference map and two inverse identities in an imported Lean source file; cover `Fin (n+1)` directly.
 - [x] Include zero-length case and package `finiteGapBinEquiv n` over all finite natural lengths.
 - [x] Add exact rational complete-enumeration permutation/truncated geometric series tests, scope note and S038 execution prompt.
-- [ ] Certify imported Lean + full Python/exact/connected n≤6 census on exact final PR head in **both** push and PR Actions, then squash-merge.
+- [x] Certified complete imported Lean and full Python/exact/certified connected n≤6 census on exact final head in both push and PR Actions; squash-merged PR #37.
 - [ ] S038: transport the gap equivalence across complete `List ι` enumerations, reindex S035 true measured `tsum`, prove ENNReal geometric product formula.
 - [ ] Derive real-clock strict chamber rate formula via `δ→0+`, build measurable sorting and true greedy-output pushforward.
 

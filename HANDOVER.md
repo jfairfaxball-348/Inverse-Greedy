@@ -1,8 +1,10 @@
-# S037 handover — 2026-11-04 (work branch; pending final dual-green certification)
+# S037 final handover — 2026-11-04 (verified partial release)
+
+Exact final PR head `8043465835fed9b1245b98f1e1e59bfe743dae8b` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census in **both** push [Actions 41875794221](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875794221) and PR [Actions 41875873962](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875873962); [PR #37](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/37) squash-merged to `main` as `93c20facf8d3e396374aa066e6b46b266312431f`.
 
 Work branch `s037-gap-inverse` extends S036 with imported `InverseGreedy/FiniteClockGapInverse.lean`: consecutive finite-difference gaps, both explicit inverse identities and `finiteGapBinEquiv n` (including `Fin 0`). The additional vector injectivity is different from S036's position-injectivity. Exact `tests/test_s037.py` checks *complete* finite permutations and refuses repeated/incomplete lists; these tests do not establish a genuine measured infinite series or stochastic limit. Proof note `proof/S037_GAP_INVERSE.md`; next `sessions/S038.md`.
 
-Still pending: exact-final-head push and PR Lean/Python/census certification and merge; transfer the equivalence through complete vertex enumerations to S035's actual measured countable series; ENNReal multiple geometric evaluation and `δ↓0` analytic limit; genuine continuous-clock order law, measurable sorting and greedy-output pushforward. Census **90 EGU / 8 non-EGU / 45 unresolved** unchanged. No independent novelty or Palomar/arXiv submission.
+Still pending: transfer the equivalence through complete vertex enumerations to S035's actual measured countable series; ENNReal multiple geometric evaluation and `δ↓0` analytic limit; genuine continuous-clock order law, measurable sorting and greedy-output pushforward. Census **90 EGU / 8 non-EGU / 45 unresolved** unchanged. No independent novelty or Palomar/arXiv submission.
 
 ---
 

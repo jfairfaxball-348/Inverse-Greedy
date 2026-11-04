@@ -1,10 +1,12 @@
-## S037 proposed partial claim ledger — 2026-11-04 (exact-final-head verification pending)
+## S037 verified partial claim ledger — 2026-11-04
+
+Exact final PR head `8043465835fed9b1245b98f1e1e59bfe743dae8b` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census in **both** push [Actions 41875794221](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875794221) and PR [Actions 41875873962](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875873962); [PR #37](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/37) squash-merged to `main` as `93c20facf8d3e396374aa066e6b46b266312431f`.
 
 | ID | Claim | Scope |
 |---|---|---|
-| IG-L68 | Taking finite differences after the S036 prefix-sum map recovers the exact gap vector `Fin (n+1) → ℕ`. | New imported `gapDifferenceSucc_gapBinValue`; awaiting final-head Lean CI. |
-| IG-L69 | For strictly increasing `Fin (n+1) → ℕ` bin vectors, prefix sums of finite differences recover the original bin vector. | New imported `gapBinValue_gapDifferenceSucc`; awaiting final-head Lean CI. |
-| IG-L70 | `finiteGapBinEquiv n` is a full equivalence between gap vectors and strict-increase bin vectors for every finite `n`, including empty index. | New Lean definition using both inverse lemmas; awaiting final-head CI. |
+| IG-L68 | Taking finite differences after the S036 prefix-sum map recovers the exact gap vector `Fin (n+1) → ℕ`. | **Lean-verified** imported `gapDifferenceSucc_gapBinValue` at exact final dual-green head. |
+| IG-L69 | For strictly increasing `Fin (n+1) → ℕ` bin vectors, prefix sums of finite differences recover the original bin vector. | **Lean-verified** imported `gapBinValue_gapDifferenceSucc` at exact final dual-green head. |
+| IG-L70 | `finiteGapBinEquiv n` is a full equivalence between gap vectors and strict-increase bin vectors for every finite `n`, including empty index. | **Lean-verified** finite equivalence at exact final dual-green head. |
 | IG-T37 | Exact Fraction test compares complete-permutation bin sums to constrained gap sums for all order permutations up to four items; rejects invalid incomplete/repeated lists and checks analytic product upper bound. | Independent Python regression; **not** a measured series or limit theorem. |
 
 **Not proved by S037:** reindexing S035 measured `tsum` over arbitrary index types; ENNReal infinite geometric-product evaluation; the continuous n≥3 true-clock chamber rate formula; total measurable sorting and actual greedy-output pushforward. `sessions/S038.md` installed. Connected n≤6 atlas **90/8/45**; no novelty or registration claim.
