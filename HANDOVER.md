@@ -1,3 +1,11 @@
+# S037 handover — 2026-11-04 (work branch; pending final dual-green certification)
+
+Work branch `s037-gap-inverse` extends S036 with imported `InverseGreedy/FiniteClockGapInverse.lean`: consecutive finite-difference gaps, both explicit inverse identities and `finiteGapBinEquiv n` (including `Fin 0`). The additional vector injectivity is different from S036's position-injectivity. Exact `tests/test_s037.py` checks *complete* finite permutations and refuses repeated/incomplete lists; these tests do not establish a genuine measured infinite series or stochastic limit. Proof note `proof/S037_GAP_INVERSE.md`; next `sessions/S038.md`.
+
+Still pending: exact-final-head push and PR Lean/Python/census certification and merge; transfer the equivalence through complete vertex enumerations to S035's actual measured countable series; ENNReal multiple geometric evaluation and `δ↓0` analytic limit; genuine continuous-clock order law, measurable sorting and greedy-output pushforward. Census **90 EGU / 8 non-EGU / 45 unresolved** unchanged. No independent novelty or Palomar/arXiv submission.
+
+---
+
 # S036 final handover — 2026-11-04 (verified partial release)
 
 Exact final PR head `badc40d639370827930a5a93681ae9c56daf43ff` passed **both imported Lean and complete Python/exact/certified connected n≤6 census** in push [Actions 41858484562](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858484562) and PR [Actions 41858495527](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858495527); [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36) squash-merged into `main` as `9161943595035a17a07a66ee1b3c6251e945f540`.
