@@ -60,3 +60,4 @@ import InverseGreedy.FiniteClockJointBins
 import InverseGreedy.FiniteClockBinChambers
 import InverseGreedy.FiniteClockPairBinCollision
 import InverseGreedy.FiniteClockBinUnion
+import InverseGreedy.FiniteClockBinSeries
