@@ -22,6 +22,21 @@ private theorem ennreal_pow_finset_sum {α : Type*} (x : ENNReal)
   | @insert a s ha ih =>
       simp [ha, pow_add, ih]
 
+/-- A filtered finite product is the full finite product with unit
+factors at precisely those indices that fail the predicate. -/
+private theorem finite_prod_filter_ite {α M : Type*} [DecidableEq α]
+    [CommMonoid M] (s : Finset α) (p : α → Prop)
+    [DecidablePred p] (f : α → M) :
+    (s.filter p).prod f =
+      s.prod (fun a => if p a then f a else 1) := by
+  classical
+  induction s using Finset.induction_on with
+  | empty => simp
+  | @insert a s ha ih =>
+      by_cases hp : p a
+      · simp [Finset.filter_insert, hp, ha, ih]
+      · simp [Finset.filter_insert, hp, ha, ih]
+
 /-- Exchange the triangular product in positions j with the triangular
 product in gap coordinates a. No nonzero or finiteness assumptions are
 needed, even with the values 0 and infinity in ENNReal. -/
@@ -40,7 +55,8 @@ theorem ennreal_prefix_suffix_pow_product {n : ℕ}
           apply Finset.prod_congr rfl
           intro j _
           rw [ennreal_pow_finset_sum]
-          simp
+          exact finite_prod_filter_ite Finset.univ
+            (fun a : Fin n => a ≤ j) (fun a => (q j) ^ gaps a)
     _ = ∏ a : Fin n, ∏ j : Fin n,
           if a ≤ j then (q j) ^ gaps a else 1 := by
             rw [Finset.prod_comm]
@@ -51,7 +67,9 @@ theorem ennreal_prefix_suffix_pow_product {n : ℕ}
           calc
             (∏ j : Fin n, if a ≤ j then (q j) ^ gaps a else 1) =
               (Finset.univ.filter (fun j : Fin n => a ≤ j)).prod
-                (fun j => (q j) ^ gaps a) := by simp
+                (fun j => (q j) ^ gaps a) := by
+                exact (finite_prod_filter_ite Finset.univ
+                  (fun j : Fin n => a ≤ j) (fun j => (q j) ^ gaps a)).symm
             _ = ((Finset.univ.filter (fun j : Fin n => a ≤ j)).prod q) ^
                   gaps a := by rw [Finset.prod_pow]
 
