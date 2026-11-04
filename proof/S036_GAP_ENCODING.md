@@ -17,7 +17,7 @@ change of variables for an ordered list of length `n`. For arbitrary
 `k_j = j + Σ_(a≤j) gaps(a)`.
 
 Lean proves `gapBinValue_strictMono`: if `a<b`, then `k_a<k_b`;
-it also proves position-injectivity and `j≤k_j`. A proposed successor recurrence `gapBinValue_succ` additionally states that consecutive bins differ by `1+newGap`; it remains subject to exact-head CI. This covers
+it also proves position-injectivity and `j≤k_j`. Lean-verified `gapBinValue_succ` additionally states that consecutive bins differ by `1+newGap`. This covers
 `n=0` and `n=1` without side-case assumptions. Crucially **this is
 only the forward direction**. The new module does NOT yet construct a
 Lean inverse or reindex the S035 sum.
@@ -63,6 +63,10 @@ strict increasing nonnegative bin tuple of length 0–5 inside
 vectors, invalid boundary sequences, and empty cases. These tests
 are independent of Lean and do not prove convergence, the true
 continuous-clock law or novelty.
+
+## Verified release record
+
+Exact final PR head `badc40d639370827930a5a93681ae9c56daf43ff` passed **both imported Lean and complete Python/exact/certified connected n≤6 census** in push [Actions 41858484562](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858484562) and PR [Actions 41858495527](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858495527); [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36) squash-merged into `main` as `9161943595035a17a07a66ee1b3c6251e945f540`.
 
 ## Remaining obligations
 

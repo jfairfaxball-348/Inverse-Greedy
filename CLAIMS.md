@@ -1,12 +1,14 @@
-## S036 partial execution ledger — 2026-11-04 (PR #36; exact-final verification pending)
+## S036 verified partial claim ledger — 2026-11-04
 
-| ID | Claim | Current evidence |
+Exact final PR head `badc40d639370827930a5a93681ae9c56daf43ff` passed **both imported Lean and complete Python/exact/certified connected n≤6 census** in push [Actions 41858484562](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858484562) and PR [Actions 41858495527](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858495527); [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36) squash-merged into `main` as `9161943595035a17a07a66ee1b3c6251e945f540`.
+
+| ID | Claim | Status |
 |---|---|---|
-| IG-L66 | `gapBinValue` sends each `Fin n → ℕ` nonnegative gap vector to a strictly increasing bin sequence, injective **in positions** and with `j≤k_j`. | Imported `FiniteClockGapEncoding.lean`, push and PR full Lean/graph-census CI green on earlier head `f42f847663d8115e2ddb32492e93850f8446603b`; final branch head still under verification. |
-| IG-L67 | Consecutive gap-encoded bins differ by `1+newGap`. | Lean theorem `gapBinValue_succ` proposed, exact head CI pending. |
-| IG-T36 | Exhaustive finite gap ↔ strictly increasing bins and exact rational monomial factorisation. | `tests/test_s036.py`, run green on prior PR head; exact final-head gate pending. |
+| IG-L66 | For every `Fin n → ℕ` gap vector, `gapBinValue` is strictly monotone in position, hence position-injective, and `j≤k_j`. | **Lean-verified**, exact-final-head dual-green push/PR Lean and full Python/census CI. |
+| IG-L67 | Successor recurrence: consecutive gap-bin values satisfy `k_(j+1)=k_j+1+d_(j+1)`. | **Lean-verified** same exact final head CI. |
+| IG-T36 | Independent exhaustive inverse-gap and rational monomial-factorisation regressions, including empty/singleton boundaries. | **Python/exact/census verified** same exact final head CI; this is not a Lean proof of the inverse. |
 
-**Not proved in Lean:** an inverse/surjective gap encoding, a genuine S035-series reindexing, the finite geometric product, its zero-width limit, n≥3 actual real-clock chamber law, measurable total sort, or continuous greedy-output pushforward. `sessions/S037.md` installed. Atlas **90/8/45** unchanged; novelty unverified.
+**Lean-open:** the two-sided gap bijection, reindexing S035's *actual measured* countable sum, geometric product evaluation, zero-width continuous n≥3 chamber law, total measurable sorting and greedy-output pushforward. `sessions/S037.md` installed. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, no novelty claim or registration.
 
 ## S035 verified partial claim ledger — 2026-11-04
 

@@ -1,14 +1,16 @@
-## S036 — 2026-11-04 (partial branch PR #36; final-head CI pending)
+## S036 — 2026-11-04 (verified partial release; PR #36 squash-merged)
 
-- [x] Formalise the forward gap vector → strict increasing bin vector, including `Fin 0` and singleton boundary cases, in imported Lean.
-- [x] Add independent exact exhaustive gap inverse and rational monomial-factorisation regressions, proof scope note and S037 prompt.
-- [ ] Finish an imported Lean two-sided gap bijection for complete non-repeating orders and reindex the **genuine S035 measured** `tsum`.
-- [ ] Evaluate the finite multiple geometric product with all suffix positivity and geometric-convergence obligations.
-- [ ] Take the measured zero-width limit, squeeze with S034's true collision bound, and derive arbitrary n≥3 real-clock chamber probability in Lean.
-- [ ] Prove measurable total clock sorting and genuine continuous greedy-output pushforward.
-- [ ] Close exact final-head dual-green push/PR Lean and full Python/exact/certified connected-n≤6 census and squash-merge PR #36.
+Exact final PR head `badc40d639370827930a5a93681ae9c56daf43ff` passed **both imported Lean and complete Python/exact/certified connected n≤6 census** in push [Actions 41858484562](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858484562) and PR [Actions 41858495527](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858495527); [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36) squash-merged into `main` as `9161943595035a17a07a66ee1b3c6251e945f540`.
 
-Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty certification or registration.
+- [x] Imported Lean proves forward `Fin n → ℕ` gap encoding is strictly increasing, position-injective, and `j≤k_j` (empty/singleton included).
+- [x] Imported Lean proves the adjacent gap-bin recurrence, prerequisite for the two-sided encoding.
+- [x] Exact exhaustive independent two-sided Python gap/regression and rational monomial factorisation; proof scope note `proof/S036_GAP_ENCODING.md` and S037 prompt installed.
+- [x] Exact final PR head dual-green complete imported Lean and Python/exact/certified n≤6 census in both push and PR Actions; squash-merged.
+- [ ] S037: Lean-prove the inverse gap map and bijection onto complete-permutation strict bin assignments, then reindex genuine S035 measure series and evaluate its product.
+- [ ] Lean-prove measured `δ→0+` and full n≥3 continuous chamber formula with S034 true collision bounds.
+- [ ] Formalise total measurable tie-broken sort and continuous greedy-output pushforward.
+
+Snapshot **90 EGU / 8 non-EGU / 45 unresolved**; no independent novelty certification.
 
 ## S035 — 2026-11-04 (verified partial release; PR #35 squash-merged)
 
