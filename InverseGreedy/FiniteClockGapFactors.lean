@@ -153,7 +153,7 @@ theorem clockBinSuffixRatio_geometric_series {ι : Type*}
     (∑' k : ℕ,
         (ENNReal.ofReal (clockBinSuffixRatio rates δ order a)) ^ k) =
       (1 - ENNReal.ofReal (clockBinSuffixRatio rates δ order a))⁻¹ :=
-      ENNReal.tsum_geometric
+      ENNReal.tsum_geometric (ENNReal.ofReal (clockBinSuffixRatio rates δ order a))
     _ = ENNReal.ofReal 1 *
         (1 - ENNReal.ofReal (clockBinSuffixRatio rates δ order a))⁻¹ := by
       simp
