@@ -1,10 +1,12 @@
-## S034 candidate claim ledger — 2026-11-04 (PR #34, final CI pending)
+## S034 verified partial claim ledger — 2026-11-04
+
+Exact final PR head `32c28558efe9d685d2ac7123bd2ba2887890c898` passed the **complete imported Lean** build and **full Python/exact/certified connected n≤6 census** in both [push Actions 41807976461](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807976461) and [PR Actions 41807983429](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807983429); [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) was squash-merged into `main` as `e7947eb1382e8838485e7b761615f2bb8cf4442e`. 
 
 | ID | Claim | Status |
 |---|---|---|
-| IG-L61 | For a non-repeating finite list (explicit pairwise indexed distinctness), positive rates and δ>0, the actual probability of any same-ceiling-bin position pair is bounded by the finite ENNReal sum of δ times the pairwise minimum rates; no completeness needed. | **Lean source submitted for imported CI**, not certified until exact final SHA passes. |
-| IG-L62 | The genuine strict-real-clock chamber upper bound from S033 can use that explicit finite sum as an error rather than an opaque collision event. | **Lean source submitted for imported CI**, pending exact final SHA. |
-| IG-T34 | Independent exact rational finite-section collision/union tests, permuted lists, empty/singleton and width scaling. | **Regression source added**; complete CI pending. |
+| IG-L61 | For a non-repeating finite list (explicit pairwise indexed distinctness), positive rates and δ>0, the actual probability of any same-ceiling-bin position pair is bounded by the finite ENNReal sum of δ times the pairwise minimum rates; no completeness needed. | **Lean-verified**, exact final-head push and PR imported Lean plus full Python/census CI GREEN. |
+| IG-L62 | The genuine strict-real-clock chamber upper bound from S033 can use that explicit finite sum as an error rather than an opaque collision event. | **Lean-verified**, same dual-green exact final head. |
+| IG-T34 | Independent exact rational finite-section collision/union tests, permuted lists, empty/singleton and width scaling. | **Python/exact/census verified**, same final-head dual-green Actions. |
 
 **Still Lean-open:** countable strict-bin chamber series and its multiple-geometric evaluation, general continuous n≥3 chamber product limit, total tie-broken measurable sorting and the true continuous-clock greedy-output pushforward. The connected n≤6 atlas remains 90/8/45 and novelty is unverified. `sessions/S035.md` is installed.
 

@@ -1,10 +1,10 @@
 # S034 — finite union inequality for genuine clock-bin collisions
 
-**Date:** 2026-11-04. [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34). Proposed imported module: `InverseGreedy/FiniteClockBinUnion.lean`.
+**Date:** 2026-11-04. [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34). Verified imported module: `InverseGreedy/FiniteClockBinUnion.lean`.
 
 ## Actual measure, hypotheses, statement
 
-Let `ι` be finite, `r : ι → ℝ` have positive rates, and `δ>0`. The law is `finiteIndependentExp r`, Mathlib's genuine finite product of exponential measures. Let `order` be a finite list such that `order[a] ≠ order[b]` whenever `a<b`. The event `clockBinCollisionOnList δ order` says that at least one pair of distinct list positions has the **same actual ceiling bin**. The proposed theorem bounds its real-clock product-measure probability by
+Let `ι` be finite, `r : ι → ℝ` have positive rates, and `δ>0`. The law is `finiteIndependentExp r`, Mathlib's genuine finite product of exponential measures. Let `order` be a finite list such that `order[a] ≠ order[b]` whenever `a<b`. The event `clockBinCollisionOnList δ order` says that at least one pair of distinct list positions has the **same actual ceiling bin**. The imported Lean theorem bounds its real-clock product-measure probability by
 
 ```text
 ∑ a : Fin order.length, ∑ b : Fin order.length,
@@ -31,6 +31,6 @@ Both are *actual measured clock* statements, never the postulated discrete Plack
 
 ## Scope, tests and remaining obligations
 
-`tests/test_s034.py` independently checks finite rational-geometric truncations for all permutations up to four vertices, empty and singleton boundaries, necessity of excluding repeated indices, and linear width scaling. These exact calculations are not Lean evidence for the actual continuous product law. The Lean claim must be compiled in the full imported build and certified at the exact final PR head in both push and PR Actions.
+`tests/test_s034.py` independently checks finite rational-geometric truncations for all permutations up to four vertices, empty and singleton boundaries, necessity of excluding repeated indices, and linear width scaling. These exact calculations are not Lean evidence for the actual continuous product law. The theorem has passed the full imported Lean build plus exact Python/certified n≤6 census at the exact final PR head in both push and PR Actions; Exact final PR head `32c28558efe9d685d2ac7123bd2ba2887890c898` passed the **complete imported Lean** build and **full Python/exact/certified connected n≤6 census** in both [push Actions 41807976461](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807976461) and [PR Actions 41807983429](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807983429); [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) was squash-merged into `main` as `e7947eb1382e8838485e7b761615f2bb8cf4442e`. 
 
 **Not yet formalised:** strict positive-bin complete-chamber probability as a true countable series; the multiple-gap geometric product and its zero-width limit; any general `n≥3` continuous-clock chamber closed formula; measurable tie-broken sorting and continuous greedy-output pushforward. No atlas promotion or novelty registration. Snapshot **90/8/45**.

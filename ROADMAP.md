@@ -1,9 +1,11 @@
-## S034 — 2026-11-04 (PR #34 candidate; exact final CI pending)
+## S034 — 2026-11-04 (verified partial release; PR #34 squash-merged)
+
+Exact final PR head `32c28558efe9d685d2ac7123bd2ba2887890c898` passed the **complete imported Lean** build and **full Python/exact/certified connected n≤6 census** in both [push Actions 41807976461](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807976461) and [PR Actions 41807983429](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41807983429); [PR #34](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/34) was squash-merged into `main` as `e7947eb1382e8838485e7b761615f2bb8cf4442e`. 
 
 - [x] Implement in an imported Lean module the finite union estimate over distinct list positions under the genuine finite Exp product, and propagate its explicit finite ENNReal pair sum to the strict-real/bin chamber sandwich.
 - [x] Cover empty/singleton cases by the uniform Fin-indexed statement, exclude repeated coordinates explicitly, and retain complete-permutation applicability without unnecessary completeness assumptions.
 - [x] Add exact rational regression, proof scope note and S035 execution prompt.
-- [ ] Certify imported Lean + complete Python/exact/connected n≤6 atlas at exact final SHA in BOTH push and PR Actions, then squash merge.
+- [x] Certified imported Lean + complete Python/exact/connected n≤6 atlas at exact final SHA in BOTH push and PR Actions; PR #34 squash-merged.
 - [ ] S035: strictly ordered positive-bin countable union and mass series, multiple geometric product, δ→0+ limit and genuine n≥3 continuous chamber theorem.
 - [ ] Complete measurable deterministic total sorting map and continuous-clock greedy-output pushforward.
 
