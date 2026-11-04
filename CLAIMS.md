@@ -1,3 +1,14 @@
+## S037 proposed partial claim ledger — 2026-11-04 (exact-final-head verification pending)
+
+| ID | Claim | Scope |
+|---|---|---|
+| IG-L68 | Taking finite differences after the S036 prefix-sum map recovers the exact gap vector `Fin (n+1) → ℕ`. | New imported `gapDifferenceSucc_gapBinValue`; awaiting final-head Lean CI. |
+| IG-L69 | For strictly increasing `Fin (n+1) → ℕ` bin vectors, prefix sums of finite differences recover the original bin vector. | New imported `gapBinValue_gapDifferenceSucc`; awaiting final-head Lean CI. |
+| IG-L70 | `finiteGapBinEquiv n` is a full equivalence between gap vectors and strict-increase bin vectors for every finite `n`, including empty index. | New Lean definition using both inverse lemmas; awaiting final-head CI. |
+| IG-T37 | Exact Fraction test compares complete-permutation bin sums to constrained gap sums for all order permutations up to four items; rejects invalid incomplete/repeated lists and checks analytic product upper bound. | Independent Python regression; **not** a measured series or limit theorem. |
+
+**Not proved by S037:** reindexing S035 measured `tsum` over arbitrary index types; ENNReal infinite geometric-product evaluation; the continuous n≥3 true-clock chamber rate formula; total measurable sorting and actual greedy-output pushforward. `sessions/S038.md` installed. Connected n≤6 atlas **90/8/45**; no novelty or registration claim.
+
 ## S036 verified partial claim ledger — 2026-11-04
 
 Exact final PR head `badc40d639370827930a5a93681ae9c56daf43ff` passed **both imported Lean and complete Python/exact/certified connected n≤6 census** in push [Actions 41858484562](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858484562) and PR [Actions 41858495527](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858495527); [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36) squash-merged into `main` as `9161943595035a17a07a66ee1b3c6251e945f540`.

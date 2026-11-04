@@ -1,3 +1,14 @@
+## S037 — 2026-11-04 (proof candidate, final release verification pending)
+
+- [x] Construct finite-difference map and two inverse identities in an imported Lean source file; cover `Fin (n+1)` directly.
+- [x] Include zero-length case and package `finiteGapBinEquiv n` over all finite natural lengths.
+- [x] Add exact rational complete-enumeration permutation/truncated geometric series tests, scope note and S038 execution prompt.
+- [ ] Certify imported Lean + full Python/exact/connected n≤6 census on exact final PR head in **both** push and PR Actions, then squash-merge.
+- [ ] S038: transport the gap equivalence across complete `List ι` enumerations, reindex S035 true measured `tsum`, prove ENNReal geometric product formula.
+- [ ] Derive real-clock strict chamber rate formula via `δ→0+`, build measurable sorting and true greedy-output pushforward.
+
+Connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; novelty and registration unverified.
+
 ## S036 — 2026-11-04 (verified partial release; PR #36 squash-merged)
 
 Exact final PR head `badc40d639370827930a5a93681ae9c56daf43ff` passed **both imported Lean and complete Python/exact/certified connected n≤6 census** in push [Actions 41858484562](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858484562) and PR [Actions 41858495527](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41858495527); [PR #36](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/36) squash-merged into `main` as `9161943595035a17a07a66ee1b3c6251e945f540`.
