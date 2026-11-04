@@ -1,3 +1,14 @@
+## S039 provisional claim ledger — 2026-11-04
+
+| ID | Claim | Verification boundary |
+|---|---|---|
+| IG-L74 | Actual exponential-bin ratio exp(-rate_i δ) lies in (0,1) for positive rate and width. | Proposed Lean clockBinRatio_pos, clockBinRatio_lt_one; CI pending. |
+| IG-L75 | Every positional suffix ratio Q_a lies in (0,1); all 1-Q_a denominators are positive. | Proposed imported Lean clockBinSuffixRatio_pos_lt_one and one_sub_clockBinSuffixRatio_pos; CI pending. |
+| IG-L76 | Each individual genuine-bin suffix geometric ENNReal tsum equals ofReal(1/(1-Q_a)). | Proposed Lean clockBinSuffixRatio_geometric_series (CI pending); does not commute the multiple gap tsum. |
+| IG-T39 | Exact rational gap monomial factorisation and multiple geometric finite truncation tests through n=4. | Python only, does NOT prove countable ENNReal evaluation. |
+
+**Open:** genuine measured multiple geometric tsum, closed product, δ→0+, full real-clock n≥3 order probability and sorting/greedy-output pushforward. Next sessions/S040.md. Atlas **90/8/45** unchanged; no novelty/registration.
+
 ## S038 verified partial claim ledger — 2026-11-04
 
 Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.

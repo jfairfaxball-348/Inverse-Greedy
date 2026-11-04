@@ -1,3 +1,15 @@
+## S039 — 2026-11-04 (partial execution; release CI pending)
+
+- [x] Imported candidate Lean positivity/bounds for actual exponential bin ratios and every nonempty suffix product (CI pending).
+- [x] Show every 1-Q_a is positive; handle no-suffix empty order without false strictness.
+- [x] Imported one-dimensional ENNReal geometric tsum evaluation for each suffix (CI pending); multivariate combination still open.
+- [x] Independent rational exact monomial and truncated multi-geometric checks through n=4.
+- [x] Proof note and installed S040.
+- [ ] Exact-final-head dual-green imported Lean and complete Python/exact/certified atlas on both push and PR, then squash merge.
+- [ ] S040 Lean pointwise factorisation, multiple ENNReal tsum and genuine measured closed product; δ↓0+, sorting and pushforward afterwards.
+
+Atlas **90 EGU / 8 non-EGU / 45 unresolved** unchanged.
+
 ## S038 — 2026-11-04 (verified partial release; PR #38 merged)
 
 Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.
