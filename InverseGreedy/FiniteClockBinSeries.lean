@@ -137,7 +137,7 @@ theorem validBinCylinder_pairwise_disjoint
     by_contra hn
     have : ω ∈ (∅ : Set (ι → ℝ)) := by
       simpa [validBinCylinder, hn] using hsecond
-    exact Set.not_mem_empty ω this
+    exact (by simpa using this)
   have h1 : ω ∈ positiveClockBinCylinder δ bins := by
     simpa [validBinCylinder, horder] using hfirst
   have h2 : ω ∈ positiveClockBinCylinder δ other := by
