@@ -50,10 +50,9 @@ theorem finiteIndependentExp_strictBin_gap_series
         finiteExpPositiveBinMonomial rates δ bins else 0) =
         ∑' bins : {bins : ι → ℕ // strictBinAssignment order bins},
           finiteExpPositiveBinMonomial rates δ bins.val := by
-            simpa [Set.indicator] using
-              (tsum_subtype
-                {bins : ι → ℕ | strictBinAssignment order bins}
-                (finiteExpPositiveBinMonomial rates δ)).symm
+            convert (tsum_subtype
+              {bins : ι → ℕ | strictBinAssignment order bins}
+              (finiteExpPositiveBinMonomial rates δ)).symm using 1 <;> rfl
     _ = ∑' gaps : Fin order.length → ℕ,
           finiteExpPositiveBinMonomial rates δ
             (((completeClockOrderGapEquiv hcomplete).symm gaps).val) :=
