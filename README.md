@@ -1,22 +1,4 @@
-## S039 partial execution — 2026-11-04 (CI/merge pending)
-
-Branch `s039-clock-suffix-geometry` adds imported
-`InverseGreedy/FiniteClockGapFactors.lean`: true exponential
-geometric ratios `q_i=exp(-rates_i δ)` are strictly between 0 and 1
-and every nonempty positional suffix product `Q_a` is likewise;
-hence every proposed geometric denominator `1-Q_a` is positive.
-Each suffix also has a proved one-dimensional ENNReal geometric series equal to ofReal(1/(1-Q_a)), using the existing two-clock geometric quotient bridge (CI pending). These are formal components for evaluating S038's true measured
-countable gap series; they do **not** evaluate that series in Lean.
-
-Independent exact `tests/test_s039.py` validates finite gap-monomial
-factorisation and truncated/closed geometric products for up to four
-coordinates. Proof note `proof/S039_SUFFIX_GEOMETRY.md`; next
-`sessions/S040.md`. The multivariate ENNReal pointwise factorisation,
-measured geometric closed product, δ↓0+, real-clock chamber formula,
-measurable sorting and real greedy-output pushforward remain Lean-open.
-**Do not call Lean-verified until exact-final-head CI is green in both
-push and PR runs.** Atlas 90 EGU / 8 non-EGU / 45 unresolved, unchanged;
-no novelty/registration claim.
+**S039 FINAL VERIFIED PARTIAL RELEASE (2026-11-04):** Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`. New imported `InverseGreedy/FiniteClockGapFactors.lean` proves (i) genuine Exp-clock bin ratios `q_i = exp(-rates_i δ)` lie strictly in `(0,1)` for positive rates and width; (ii) every indexed nonempty suffix product `Q_a` lies in `(0,1)`, with strictly positive `1-Q_a`; and (iii) the **individual** geometric `ENNReal` series `Σ'_k (ofReal Q_a)^k = ofReal (1/(1-Q_a))`. A zero-length order has no suffix index, and singleton orders are covered. Independent `tests/test_s039.py` uses exact `Fraction` arithmetic to check all complete orders through four coordinates, finite gap-monomial factorisation and truncated multiple-geometric products. Proof note `proof/S039_SUFFIX_GEOMETRY.md`; next `sessions/S040.md`. **Not yet formally proved:** the multivariate ENNReal monomial factorisation and countable gap-tsum evaluation from S038's *actual measured probability*, its finite-width closed product, the δ→0+ n≥3 real-clock strict-order law, total measurable sorting, or the real-clock greedy-output pushforward. Preserve connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/Palomar claim.
 
 **S038 FINAL VERIFIED PARTIAL RELEASE (2026-11-04):** Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`. This release includes imported `FiniteClockCompleteOrder.lean` and `FiniteClockMeasuredGapSeries.lean`. The complete-order witness explicitly certifies coverage and no repeated list indices, transports S035 valid bins to S037 nonnegative gaps, and reindexes the **genuine measured Exp-clock `tsum`** via a subtype sum and an equivalence (not an assumed PL law). Exact rational `tests/test_s038.py`, `proof/S038_MEASURED_GAP_REINDEX.md`, next `sessions/S039.md`. **Both new Lean modules are now verified on the exact final dual-green head**. Still open: measured multi-geometric evaluation, `δ↓0+`, general real-clock chamber theorem, total measurable sorting and actual continuous greedy-output pushforward. Connected n≤6 **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/registration assertion.
 

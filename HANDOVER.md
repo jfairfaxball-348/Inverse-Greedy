@@ -1,26 +1,12 @@
-# S039 provisional handover — 2026-11-04 (PR/CI pending)
+# S039 final handover — 2026-11-04 (verified partial release)
 
-## S039 partial execution — 2026-11-04 (CI/merge pending)
+Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
 
-Branch `s039-clock-suffix-geometry` adds imported
-`InverseGreedy/FiniteClockGapFactors.lean`: true exponential
-geometric ratios `q_i=exp(-rates_i δ)` are strictly between 0 and 1
-and every nonempty positional suffix product `Q_a` is likewise;
-hence every proposed geometric denominator `1-Q_a` is positive.
-Each suffix also has a proved one-dimensional ENNReal geometric series equal to ofReal(1/(1-Q_a)), using the existing two-clock geometric quotient bridge (CI pending). These are formal components for evaluating S038's true measured
-countable gap series; they do **not** evaluate that series in Lean.
+New imported `InverseGreedy/FiniteClockGapFactors.lean` proves (i) genuine Exp-clock bin ratios `q_i = exp(-rates_i δ)` lie strictly in `(0,1)` for positive rates and width; (ii) every indexed nonempty suffix product `Q_a` lies in `(0,1)`, with strictly positive `1-Q_a`; and (iii) the **individual** geometric `ENNReal` series `Σ'_k (ofReal Q_a)^k = ofReal (1/(1-Q_a))`. A zero-length order has no suffix index, and singleton orders are covered. Independent `tests/test_s039.py` uses exact `Fraction` arithmetic to check all complete orders through four coordinates, finite gap-monomial factorisation and truncated multiple-geometric products. Proof note `proof/S039_SUFFIX_GEOMETRY.md`; next `sessions/S040.md`.
 
-Independent exact `tests/test_s039.py` validates finite gap-monomial
-factorisation and truncated/closed geometric products for up to four
-coordinates. Proof note `proof/S039_SUFFIX_GEOMETRY.md`; next
-`sessions/S040.md`. The multivariate ENNReal pointwise factorisation,
-measured geometric closed product, δ↓0+, real-clock chamber formula,
-measurable sorting and real greedy-output pushforward remain Lean-open.
-**Do not call Lean-verified until exact-final-head CI is green in both
-push and PR runs.** Atlas 90 EGU / 8 non-EGU / 45 unresolved, unchanged;
-no novelty/registration claim.
+**Not yet formally proved:** the multivariate ENNReal monomial factorisation and countable gap-tsum evaluation from S038's *actual measured probability*, its finite-width closed product, the δ→0+ n≥3 real-clock strict-order law, total measurable sorting, or the real-clock greedy-output pushforward. Preserve connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/Palomar claim.
 
-**Release gate:** require final head SHA and successful complete Lean plus Python/exact/certified n≤6 census in BOTH push and PR runs before merge; record their workflow IDs and squash SHA afterward. No claim of full continuous theorem.
+**Next execution prompt:** `sessions/S040.md`, starting from the squash merge on `main`. Continue from the genuine measured S038 series; do not assume the Plackett–Luce law or advertise a completed continuous theorem.
 
 ---
 

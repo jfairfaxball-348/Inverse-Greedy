@@ -1,13 +1,15 @@
-## S039 provisional claim ledger — 2026-11-04
+## S039 verified partial claim ledger — 2026-11-04
 
-| ID | Claim | Verification boundary |
+Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
+
+| ID | Claim | Formal verification boundary |
 |---|---|---|
-| IG-L74 | Actual exponential-bin ratio exp(-rate_i δ) lies in (0,1) for positive rate and width. | Proposed Lean clockBinRatio_pos, clockBinRatio_lt_one; CI pending. |
-| IG-L75 | Every positional suffix ratio Q_a lies in (0,1); all 1-Q_a denominators are positive. | Proposed imported Lean clockBinSuffixRatio_pos_lt_one and one_sub_clockBinSuffixRatio_pos; CI pending. |
-| IG-L76 | Each individual genuine-bin suffix geometric ENNReal tsum equals ofReal(1/(1-Q_a)). | Proposed Lean clockBinSuffixRatio_geometric_series (CI pending); does not commute the multiple gap tsum. |
-| IG-T39 | Exact rational gap monomial factorisation and multiple geometric finite truncation tests through n=4. | Python only, does NOT prove countable ENNReal evaluation. |
+| IG-L74 | Each actual Exp-clock geometric bin ratio is strictly between zero and one for positive rate/width. | **Lean-verified** imported `clockBinRatio_pos` and `clockBinRatio_lt_one` on exact final head. |
+| IG-L75 | Each indexed nonempty positional suffix ratio is in (0,1), and its geometric denominator is positive. | **Lean-verified** imported `clockBinSuffixRatio_pos_lt_one` and `one_sub_clockBinSuffixRatio_pos` on final head. |
+| IG-L76 | The **single** ENNReal geometric sum for each suffix equals `ofReal(1/(1-Q_a))`. | **Lean-verified** `clockBinSuffixRatio_geometric_series` using Mathlib `ENNReal.tsum_geometric` and the verified real-quotient bridge. No multivariate sum. |
+| IG-T39 | Exact rational monomial factorisation and multivariate finite truncation checks through four clocks. | Independent Python/exact regression only; NOT a Lean countable sum result. |
 
-**Open:** genuine measured multiple geometric tsum, closed product, δ→0+, full real-clock n≥3 order probability and sorting/greedy-output pushforward. Next sessions/S040.md. Atlas **90/8/45** unchanged; no novelty/registration.
+**Not yet formally proved:** the multivariate ENNReal monomial factorisation and countable gap-tsum evaluation from S038's *actual measured probability*, its finite-width closed product, the δ→0+ n≥3 real-clock strict-order law, total measurable sorting, or the real-clock greedy-output pushforward. Preserve connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/Palomar claim. Next `sessions/S040.md`.
 
 ## S038 verified partial claim ledger — 2026-11-04
 

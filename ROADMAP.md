@@ -1,14 +1,15 @@
-## S039 — 2026-11-04 (partial execution; release CI pending)
+## S039 — 2026-11-04 (verified partial release; PR #39 squash-merged)
 
-- [x] Imported candidate Lean positivity/bounds for actual exponential bin ratios and every nonempty suffix product (CI pending).
-- [x] Show every 1-Q_a is positive; handle no-suffix empty order without false strictness.
-- [x] Imported one-dimensional ENNReal geometric tsum evaluation for each suffix (CI pending); multivariate combination still open.
-- [x] Independent rational exact monomial and truncated multi-geometric checks through n=4.
-- [x] Proof note and installed S040.
-- [ ] Exact-final-head dual-green imported Lean and complete Python/exact/certified atlas on both push and PR, then squash merge.
-- [ ] S040 Lean pointwise factorisation, multiple ENNReal tsum and genuine measured closed product; δ↓0+, sorting and pushforward afterwards.
+Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
 
-Atlas **90 EGU / 8 non-EGU / 45 unresolved** unchanged.
+- [x] Formal strict positivity and strict contraction of true exponential-bin ratios.
+- [x] Formal strict contraction of nonempty finite suffix ratios and positive geometric denominators, including correct n=0/1 treatment.
+- [x] Formal one-dimensional ENNReal geometric-series real-fraction evaluation for every suffix.
+- [x] Independent exact Fraction monomial factorisation and finite-truncation tests up to n=4; scope note and S040 handoff.
+- [x] Exact-final-head full imported Lean plus Python/exact/certified connected n≤6 census green in both push and PR Actions; squash merge.
+- [ ] S040: **Lean** multivariate monomial factorisation and commute/evaluate S038's true-measure gap tsum; measured finite-width product, then δ→0+ and continuous real-clock sorting/output law.
+
+**Not yet formally proved:** the multivariate ENNReal monomial factorisation and countable gap-tsum evaluation from S038's *actual measured probability*, its finite-width closed product, the δ→0+ n≥3 real-clock strict-order law, total measurable sorting, or the real-clock greedy-output pushforward. Preserve connected n≤6 atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/Palomar claim.
 
 ## S038 — 2026-11-04 (verified partial release; PR #38 merged)
 

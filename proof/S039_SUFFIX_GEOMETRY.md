@@ -1,10 +1,12 @@
 # S039 — positive suffix ratios and the finite-width product target
 
-Date: 2026-11-04. Working branch: `s039-clock-suffix-geometry`.
+Date: 2026-11-04. **Lean and complete Python/exact/census CI verified in both push and PR on exact final head. PR #39 merged.**
+
+Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
 
 ## Formal scope
 
-The imported Lean module `InverseGreedy/FiniteClockGapFactors.lean` establishes,
+The **verified imported Lean module** `InverseGreedy/FiniteClockGapFactors.lean` establishes,
 for arbitrary positive real rates `rates i` and any `δ>0`:
 
 * `clockBinRatio_pos` and `clockBinRatio_lt_one`: `0 < q_i := exp(-rates_i δ) < 1`.
