@@ -75,11 +75,13 @@ theorem gapBinValue_succ {n : ℕ} (gaps : Fin (n + 1) → ℕ)
         have hneq : i.val ≠ j.val + 1 := by
           intro hval
           exact heq (Fin.ext hval)
+        change i.val ≤ j.val
         omega
     · rintro (heq | hi)
       · rw [heq]
       · apply Fin.le_def.mpr
         have hv : i.val ≤ j.val := Fin.le_def.mp hi
+        change i.val ≤ j.val + 1
         omega
   have hnot :
       Fin.succ j ∉
@@ -90,6 +92,14 @@ theorem gapBinValue_succ {n : ℕ} (gaps : Fin (n + 1) → ℕ)
     omega
   dsimp only [gapBinValue]
   rw [hfilter, Finset.sum_insert hnot]
+  change (j.val + 1) +
+        (gaps (Fin.succ j) +
+          (Finset.univ.filter
+            (fun i : Fin (n + 1) => i ≤ Fin.castSucc j)).sum gaps) =
+      j.val +
+        (Finset.univ.filter
+          (fun i : Fin (n + 1) => i ≤ Fin.castSucc j)).sum gaps +
+        1 + gaps (Fin.succ j)
   omega
 
 end InverseGreedy
