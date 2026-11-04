@@ -5,7 +5,7 @@ Branch `s039-clock-suffix-geometry` adds imported
 geometric ratios `q_i=exp(-rates_i δ)` are strictly between 0 and 1
 and every nonempty positional suffix product `Q_a` is likewise;
 hence every proposed geometric denominator `1-Q_a` is positive.
-These are formal preconditions for evaluating S038's true measured
+Each suffix also has a proved one-dimensional ENNReal geometric series equal to ofReal(1/(1-Q_a)), using the existing two-clock geometric quotient bridge (CI pending). These are formal components for evaluating S038's true measured
 countable gap series; they do **not** evaluate that series in Lean.
 
 Independent exact `tests/test_s039.py` validates finite gap-monomial

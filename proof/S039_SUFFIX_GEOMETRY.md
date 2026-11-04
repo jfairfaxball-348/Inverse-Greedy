@@ -11,6 +11,10 @@ for arbitrary positive real rates `rates i` and any `δ>0`:
 * `clockBinSuffixRatio_pos_lt_one`: every *indexed* suffix product
   `Q_a = ∏_(j : Fin n, a≤j) q_(order[j])` lies strictly in `(0,1)`.
 * `one_sub_clockBinSuffixRatio_pos`: all `1-Q_a` are strictly positive.
+* `clockBinSuffixRatio_geometric_series`: for each suffix independently,
+  `Σ'_{k:ℕ} (ENNReal.ofReal Q_a)^k = ENNReal.ofReal (1/(1-Q_a))`,
+  using Mathlib's ENNReal geometric-series theorem and the pre-existing
+  verified real-quotient conversion. This is NOT a multiple-series evaluation.
 
 Suffix nonemptiness is justified by the element `a` itself; there is no assertion
 that an *empty* product is below one. The lemma is actually valid for arbitrary

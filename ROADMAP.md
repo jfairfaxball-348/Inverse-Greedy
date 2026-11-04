@@ -2,6 +2,7 @@
 
 - [x] Imported candidate Lean positivity/bounds for actual exponential bin ratios and every nonempty suffix product (CI pending).
 - [x] Show every 1-Q_a is positive; handle no-suffix empty order without false strictness.
+- [x] Imported one-dimensional ENNReal geometric tsum evaluation for each suffix (CI pending); multivariate combination still open.
 - [x] Independent rational exact monomial and truncated multi-geometric checks through n=4.
 - [x] Proof note and installed S040.
 - [ ] Exact-final-head dual-green imported Lean and complete Python/exact/certified atlas on both push and PR, then squash merge.

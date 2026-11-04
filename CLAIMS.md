@@ -4,6 +4,7 @@
 |---|---|---|
 | IG-L74 | Actual exponential-bin ratio exp(-rate_i δ) lies in (0,1) for positive rate and width. | Proposed Lean clockBinRatio_pos, clockBinRatio_lt_one; CI pending. |
 | IG-L75 | Every positional suffix ratio Q_a lies in (0,1); all 1-Q_a denominators are positive. | Proposed imported Lean clockBinSuffixRatio_pos_lt_one and one_sub_clockBinSuffixRatio_pos; CI pending. |
+| IG-L76 | Each individual genuine-bin suffix geometric ENNReal tsum equals ofReal(1/(1-Q_a)). | Proposed Lean clockBinSuffixRatio_geometric_series (CI pending); does not commute the multiple gap tsum. |
 | IG-T39 | Exact rational gap monomial factorisation and multiple geometric finite truncation tests through n=4. | Python only, does NOT prove countable ENNReal evaluation. |
 
 **Open:** genuine measured multiple geometric tsum, closed product, δ→0+, full real-clock n≥3 order probability and sorting/greedy-output pushforward. Next sessions/S040.md. Atlas **90/8/45** unchanged; no novelty/registration.

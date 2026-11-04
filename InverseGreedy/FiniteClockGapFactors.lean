@@ -1,4 +1,5 @@
 import InverseGreedy.FiniteClockMeasuredGapSeries
+import InverseGreedy.BinnedRaceGeometric
 
 /-!
 # S039: strictly contractive geometric ratios for actual clock bins
@@ -134,5 +135,31 @@ theorem one_sub_clockBinSuffixRatio_pos {ι : Type*}
     0 < 1 - clockBinSuffixRatio rates δ order a := by
   have h := (clockBinSuffixRatio_pos_lt_one rates hpos δ hδ order a).2
   linarith
+
+/-- Each individual suffix's genuine exponential-bin geometric series
+evaluates to an ordinary finite real fraction, embedded in ENNReal.
+This is ONE series only, not yet the full multiple gap series of S038. -/
+theorem clockBinSuffixRatio_geometric_series {ι : Type*}
+    (rates : ι → ℝ) (hpos : ∀ i, 0 < rates i)
+    (δ : ℝ) (hδ : 0 < δ) (order : List ι)
+    (a : Fin order.length) :
+    (∑' k : ℕ,
+      (ENNReal.ofReal (clockBinSuffixRatio rates δ order a)) ^ k) =
+      ENNReal.ofReal ((1 : ℝ) /
+        (1 - clockBinSuffixRatio rates δ order a)) := by
+  have hq :=
+    clockBinSuffixRatio_pos_lt_one rates hpos δ hδ order a
+  calc
+    (∑' k : ℕ,
+        (ENNReal.ofReal (clockBinSuffixRatio rates δ order a)) ^ k) =
+      (1 - ENNReal.ofReal (clockBinSuffixRatio rates δ order a))⁻¹ :=
+      ENNReal.tsum_geometric
+    _ = ENNReal.ofReal 1 *
+        (1 - ENNReal.ofReal (clockBinSuffixRatio rates δ order a))⁻¹ := by
+      simp
+    _ = ENNReal.ofReal ((1 : ℝ) /
+        (1 - clockBinSuffixRatio rates δ order a)) :=
+      ennreal_geometric_real_quotient 1
+        (clockBinSuffixRatio rates δ order a) hq.1.le hq.2
 
 end InverseGreedy
