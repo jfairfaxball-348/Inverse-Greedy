@@ -1,3 +1,13 @@
+## S036 partial execution ledger — 2026-11-04 (PR #36; exact-final verification pending)
+
+| ID | Claim | Current evidence |
+|---|---|---|
+| IG-L66 | `gapBinValue` sends each `Fin n → ℕ` nonnegative gap vector to a strictly increasing bin sequence, injective **in positions** and with `j≤k_j`. | Imported `FiniteClockGapEncoding.lean`, push and PR full Lean/graph-census CI green on earlier head `f42f847663d8115e2ddb32492e93850f8446603b`; final branch head still under verification. |
+| IG-L67 | Consecutive gap-encoded bins differ by `1+newGap`. | Lean theorem `gapBinValue_succ` proposed, exact head CI pending. |
+| IG-T36 | Exhaustive finite gap ↔ strictly increasing bins and exact rational monomial factorisation. | `tests/test_s036.py`, run green on prior PR head; exact final-head gate pending. |
+
+**Not proved in Lean:** an inverse/surjective gap encoding, a genuine S035-series reindexing, the finite geometric product, its zero-width limit, n≥3 actual real-clock chamber law, measurable total sort, or continuous greedy-output pushforward. `sessions/S037.md` installed. Atlas **90/8/45** unchanged; novelty unverified.
+
 ## S035 verified partial claim ledger — 2026-11-04
 
 Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`.
