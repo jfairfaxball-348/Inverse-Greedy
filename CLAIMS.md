@@ -1,3 +1,13 @@
+## S040 proposed partial claim ledger — 2026-11-04 (CI verification pending)
+
+| ID | Claim | Current formal boundary |
+|---|---|---|
+| IG-L77 | In an arbitrary finite index length n, the ENNReal product of powers with prefix sums equals the finite product of suffix factors raised to gap coordinates. | Imported `ennreal_prefix_suffix_pow_product` proposed; exact-head full Lean CI required. |
+| IG-L78 | Finite positional ENNReal gap monomial factorises into a base factor times finite suffix powers for all n including 0 and 1. | Imported `ennreal_gapBinValue_monomial_factor` proposed; exact-head full Lean CI required. This is **not yet identified with S038's genuine measured monomial**. |
+| IG-T40 | Independent exact finite Fraction factorisation regressions including zero factors and empty/singleton boundaries. | Python test `tests/test_s040.py`; exact-head full CI required. |
+
+**Open:** actual S038 measured monomial transport, multivariate `tsum` geometric evaluation, finite-width measured probability, continuous δ↓0 strict-order law, measurable sorting and continuous-clock greedy-output pushforward. Next `sessions/S041.md`. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, novelty unverified.
+
 ## S039 verified partial claim ledger — 2026-11-04
 
 Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
