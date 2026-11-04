@@ -87,7 +87,6 @@ positive width and finite vertex index sets. Boundary events for
 the nonpositive/zero ceiling bin are handled through genuine nullity
 rather than false event equality.
 
-Release verification: **pending exact-final-head dual-green push and PR
-CI and squash merge**. No published or priority novelty claim.
+Release verification: **exact-final-head dual-green in both push and PR Actions; squash-merged**. Exact final PR head `2edf01c7da105403ac75c8959fce292a34da34ce` passed **complete imported Lean** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41823819781](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823819781) and [PR Actions 41823826234](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41823826234); [PR #35](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/35) was squash-merged to `main` as `4aa7459c5bd1a66a612134d106c467ff3d2d7000`. No published or priority novelty claim.
 Connected n≤6 census remains **90 EGU / 8 non-EGU / 45 unresolved**;
 snapshot flags unchanged.
