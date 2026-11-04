@@ -1,3 +1,11 @@
+# S040 development handover — 2026-11-04 (PR #40; verification pending)
+
+Branch `s040-gap-monomial-factor` started from `main` `8f8d1bde0cf709d0d7d5937329d6493c65d998b8`. [PR #40](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/40) proposes imported `FiniteClockGapMonomial.lean`: a general finite ENNReal prefix/suffix power rearrangement and positional gap monomial factorisation, independent of positivity assumptions and valid for Fin 0/1. New `tests/test_s040.py`, `proof/S040_FINITE_GAP_MONOMIAL.md`, and `sessions/S041.md` are included. **Do not call these Lean-verified until the exact final head has full imported Lean and full Python/exact/certified connected n≤6 census green in both push and PR workflows; do not merge before that.**
+
+S041 must formally connect the positional factorisation to S038's *actual measured* vertex-indexed monomial and then commute/evaluate the multivariate ENNReal gap tsum. Neither that connection nor the finite-width measured law, δ↓0+ n≥3 real-chamber theorem, measurable sorting or real-clock greedy-output pushforward is claimed in S040. Atlas 90 EGU / 8 non-EGU / 45 unresolved; novelty unverified.
+
+---
+
 # S039 final handover — 2026-11-04 (verified partial release)
 
 Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
