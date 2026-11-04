@@ -1,3 +1,14 @@
+## S038 provisional ledger — 2026-11-04 (final CI pending)
+
+| ID | Claim | Verification boundary |
+|---|---|---|
+| IG-L71 | Complete-order certificate yields injective and surjective list-position map and forbids silently using incomplete or repeated orders. | Proposed imported Lean `CompleteClockOrder.positions_injective`, `.positions_surjective`; final-head CI pending. |
+| IG-L72 | Admissible vertex bin assignments are equivalent to increasing positional bin vectors and S037 finite gap vectors. | Proposed `completeClockOrderValidBinEquiv` and `completeClockOrderGapEquiv`; final-head CI pending. |
+| IG-L73 | The **true Exp-clock measured** S035 strict-bin chamber `tsum` is exactly reindexed over gap assignments. | Proposed imported `finiteIndependentExp_strictBin_gap_series` via `tsum_subtype` and `Equiv.tsum_eq`; final-head CI pending. |
+| IG-T38 | Exact Fraction checks finite truncated sums, suffix monomial factorisation, invalid orders and n=0/1 cases. | Python regression only; no Lean geometric product or real-clock limit. |
+
+**Still not proved:** Lean geometric infinite-series evaluation, measured finite-width closed formula, general n≥3 real-clock chamber identity, measurable sort and genuine continuous greedy-output pushforward. Next `sessions/S039.md`. Atlas **90/8/45** unchanged; no independent novelty or submission claim.
+
 ## S037 verified partial claim ledger — 2026-11-04
 
 Exact final PR head `8043465835fed9b1245b98f1e1e59bfe743dae8b` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census in **both** push [Actions 41875794221](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875794221) and PR [Actions 41875873962](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875873962); [PR #37](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/37) squash-merged to `main` as `93c20facf8d3e396374aa066e6b46b266312431f`.
