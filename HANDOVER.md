@@ -1,3 +1,29 @@
+# S039 provisional handover — 2026-11-04 (PR/CI pending)
+
+## S039 partial execution — 2026-11-04 (CI/merge pending)
+
+Branch `s039-clock-suffix-geometry` adds imported
+`InverseGreedy/FiniteClockGapFactors.lean`: true exponential
+geometric ratios `q_i=exp(-rates_i δ)` are strictly between 0 and 1
+and every nonempty positional suffix product `Q_a` is likewise;
+hence every proposed geometric denominator `1-Q_a` is positive.
+These are formal preconditions for evaluating S038's true measured
+countable gap series; they do **not** evaluate that series in Lean.
+
+Independent exact `tests/test_s039.py` validates finite gap-monomial
+factorisation and truncated/closed geometric products for up to four
+coordinates. Proof note `proof/S039_SUFFIX_GEOMETRY.md`; next
+`sessions/S040.md`. The multivariate ENNReal pointwise factorisation,
+measured geometric closed product, δ↓0+, real-clock chamber formula,
+measurable sorting and real greedy-output pushforward remain Lean-open.
+**Do not call Lean-verified until exact-final-head CI is green in both
+push and PR runs.** Atlas 90 EGU / 8 non-EGU / 45 unresolved, unchanged;
+no novelty/registration claim.
+
+**Release gate:** require final head SHA and successful complete Lean plus Python/exact/certified n≤6 census in BOTH push and PR runs before merge; record their workflow IDs and squash SHA afterward. No claim of full continuous theorem.
+
+---
+
 # S038 final handover — 2026-11-04 (verified partial release)
 
 Exact final PR head `212f0d8a6e7aed1337f3fe6726cd88480f45d384` passed **both full imported Lean and complete Python/exact/certified connected n≤6 census** in **both** push [Actions 41896636575](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896636575) and PR [Actions 41896648063](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41896648063); [PR #38](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/38) squash-merged into `main` as `f67768d261884cc87a729fbafa3d0632b1f34312`.
