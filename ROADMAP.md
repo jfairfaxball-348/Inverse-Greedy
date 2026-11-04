@@ -1,3 +1,14 @@
+## S038 — 2026-11-04 (partial execution; verification/merge pending)
+
+- [x] Implement explicit `CompleteClockOrder` witness tying every list position to exactly one coordinate, with injectivity and surjectivity proofs (Lean source; CI pending).
+- [x] Implement admissible assignment equivalence with increasing positional bins and S037 gaps (Lean source; CI pending).
+- [x] Implement direct transport of S035's **true measured countable bin-chamber series** to a finite-gap `tsum` (Lean source; CI pending).
+- [x] Add independent rational/exhaustive `tests/test_s038.py`, proof scope note and S039 next execution prompt.
+- [ ] Exact-final-head dual-green full Lean + Python/exact/certified connected n≤6 census in both push/PR Actions, then squash merge.
+- [ ] S039: formal ENNReal suffix monomial product factorisation and geometric `tsum` evaluation, measured finite-width product, then `δ↓0+`, real-clock chamber formula and genuine sorting/pushforward.
+
+Connected n≤6 **90 EGU / 8 non-EGU / 45 unresolved**; no novelty/registration claim.
+
 ## S037 — 2026-11-04 (verified partial release; PR #37 squash-merged)
 
 Exact final PR head `8043465835fed9b1245b98f1e1e59bfe743dae8b` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census in **both** push [Actions 41875794221](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875794221) and PR [Actions 41875873962](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41875873962); [PR #37](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/37) squash-merged to `main` as `93c20facf8d3e396374aa066e6b46b266312431f`.
