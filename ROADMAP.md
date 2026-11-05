@@ -1,3 +1,15 @@
+## S041 (continued) — graph theorems in Lean
+
+- [x] Certified race-term expansion and kernel-checked rational witnesses.
+- [x] P5, C6, P6, cone(P5), corona(P3) and **all** star coronas m≥2 not EGU (genuine clocks).
+- [x] Union/join laws and EGU iff; scaling and relabelling invariance; cographs and complete multipartite EGU.
+- [x] False-twin invariance; clique coronas EGU for all m.
+- [x] All 98 decided atlas graphs (90 EGU, 8 non-EGU) as Lean theorems.
+- [x] TV/AEGU: C6 gap 4/45, P5 and corona(P3) unattained AEGU, P6 sharp gap, union AEGU iff.
+- [ ] IG-P10 AEGU join closure; IG-N6 for m≥3.
+- [ ] Formal exhaustiveness of the connected n≤6 enumeration (then IG-P5 for all graphs on ≤5 vertices).
+- [ ] Open research: the 45 unresolved graphs; classification of EGU graphs.
+
 ## S041 — 2026-11-05 (built on S040 PR #40)
 
 - [x] Transport S038's actual measured monomial through the complete-order equivalence (all n, incl. 0/1).

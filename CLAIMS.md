@@ -1,3 +1,24 @@
+## S041 graph-theorem ledger — 2026-11-05 (local full Lean build; exact-head GitHub CI to be recorded)
+
+| ID | Claim | Lean theorem(s) |
+|---|---|---|
+| IG-L86 | Certified computable expansion of the first-choice recursion; kernel-checkable rational EGU witnesses are sound. | `finiteRaceLaw_eq_raceValue`, `realClockEGU_of_ratWitness` |
+| IG-L87 | IG-N2: P5 not EGU (strict minor, all positive rates). | `p5Nb_not_realClockEGU` |
+| IG-L88 | IG-N1: C6 not EGU. | `c6Nb_not_realClockEGU` |
+| IG-L89 | IG-N3: P6 not EGU. | `p6Nb_not_realClockEGU` |
+| IG-L90 | IG-N4: K1∨P5 not EGU. | `coneP5Nb_not_realClockEGU` |
+| IG-L91 | IG-N5: every pendant star corona K_{1,m}∘K1, m≥2, not EGU. | `starCorona_not_realClockEGU`, `coronaP3Nb_not_realClockEGU` |
+| IG-L92 | IG-P2: disjoint union law `P(I⊔J)=P_G(I)P_H(J)`; union EGU iff both EGU. | `finiteRaceLaw_union`, `realClockEGU_union_iff` |
+| IG-L93 | IG-P4: join block law; join of nonempty graphs EGU iff both EGU; scaling invariance. | `finiteRaceLaw_join`, `realClockEGU_join_iff`, `finiteRaceLaw_scale` |
+| IG-L94 | EGU is an isomorphism invariant; every cotree (cograph) graph EGU; IG-P1 complete multipartite EGU; edgeless graphs EGU. | `realClockEGU_congr_equiv`, `Cotree.realClockEGU`, `IsCograph.realClockEGU`, `Cotree.completeMultipartite_realClockEGU` |
+| IG-L95 | IG-P7: false-twin extension preserves the law (merged rates) and EGU both ways. | `finiteRaceLaw_twinExtend`, `realClockEGU_twinExtend_iff` |
+| IG-L96 | IG-P8: every clique corona K_m∘K1, m≥1, EGU at rates 1 and (m+1)^(1/m)−1. | `cliqueCorona_realClockEGU` |
+| IG-L97 | IG-A9 per graph: 90 certified positives `RealClockEGU`, 8 certified negatives `¬RealClockEGU` (NetworkX labellings; includes IG-P3 P4, IG-P5 connected n=5, IG-P6 index 1). | `atlas_n_le_6_certified` |
+| IG-L98 | TV layer: deficits bound; IG-N1b C6 TV≥4/45, not AEGU; IG-N2b P5 unattained AEGU with exact TV; IG-N3b P6 TV≥2√(2/5)−6/5; IG-N6 (m=2) corona(P3) unattained AEGU; IG-P9 union AEGU iff. | `realClockTV_ge_deficits`, `c6_not_realClockAEGU`, `p5_unattained_realClockAEGU`, `p6_realClockTV_ge`, `coronaP3_unattained_realClockAEGU`, `realClockAEGU_union_iff` |
+| IG-T42 | Independent exact Python checks of union/join laws, scaling, clique corona m≤4, star corona minors m≤4, false-twin law, P5 and corona(P3) TV families. | `tests/test_s041_graphs.py` |
+
+**Not formalised:** IG-P10 (AEGU join closure); IG-N6 for m≥3; exhaustiveness of the NetworkX atlas enumeration (so the "all graphs on ≤5 vertices" form of IG-P5 rests on NetworkX); IG-O1/IG-O2 are open problems (no proof exists); IG-O4 novelty is not a mathematical statement. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+
 ## S041 claim ledger — 2026-11-05 (local full Lean build green; exact-head GitHub push+PR CI to be recorded)
 
 | ID | Claim | Formal verification boundary |

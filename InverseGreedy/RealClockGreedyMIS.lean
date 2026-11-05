@@ -103,10 +103,8 @@ theorem realClockGreedyOutput_mem_maximalIndependentSets [Fintype α]
     (hSymm : ∀ x y, y ∈ neighbours x → x ∈ neighbours y)
     (hIrr : ∀ v, v ∉ neighbours v) (ω : α → ℝ) :
     realClockGreedyOutput neighbours ω ∈ maximalIndependentSets neighbours := by
-  classical
-  unfold maximalIndependentSets
-  convert Finset.mem_filter.mpr ⟨Finset.mem_univ _,
-    realClockGreedyOutput_isMaximalIndependentSet neighbours hSymm hIrr ω⟩
+  rw [mem_maximalIndependentSets]
+  exact realClockGreedyOutput_isMaximalIndependentSet neighbours hSymm hIrr ω
 
 /-- Targets that are not maximal independent sets have probability zero
 (no rate hypothesis needed). -/

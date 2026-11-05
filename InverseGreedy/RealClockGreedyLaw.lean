@@ -284,12 +284,30 @@ adjacent to (a neighbour of) some member. -/
 def IsMaximalIndependentSet (neighbours : α → Finset α) (I : Finset α) : Prop :=
   IsIndependentSet neighbours I ∧ ∀ v, v ∉ I → ∃ u ∈ I, v ∈ neighbours u
 
-/-- The finite family of maximal independent sets. -/
-noncomputable def maximalIndependentSets [Fintype α] (neighbours : α → Finset α) :
-    Finset (Finset α) := by
-  classical
-  exact (Finset.univ : Finset (Finset α)).filter
+instance IsIndependentSet.decidable [DecidableEq α]
+    (neighbours : α → Finset α) (I : Finset α) :
+    Decidable (IsIndependentSet neighbours I) := by
+  unfold IsIndependentSet
+  infer_instance
+
+instance IsMaximalIndependentSet.decidable [Fintype α] [DecidableEq α]
+    (neighbours : α → Finset α) (I : Finset α) :
+    Decidable (IsMaximalIndependentSet neighbours I) := by
+  unfold IsMaximalIndependentSet
+  infer_instance
+
+/-- The finite family of maximal independent sets (computable, so that
+concrete instances can be checked by kernel `decide`). -/
+def maximalIndependentSets [Fintype α] [DecidableEq α]
+    (neighbours : α → Finset α) : Finset (Finset α) :=
+  (Finset.univ : Finset (Finset α)).filter
     (IsMaximalIndependentSet neighbours)
+
+theorem mem_maximalIndependentSets [Fintype α] [DecidableEq α]
+    (neighbours : α → Finset α) (I : Finset α) :
+    I ∈ maximalIndependentSets neighbours ↔
+      IsMaximalIndependentSet neighbours I := by
+  simp [maximalIndependentSets]
 
 /-- The charter's EGU property with *genuine* independent exponential
 clocks and strictly positive real rates. -/
