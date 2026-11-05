@@ -5,9 +5,11 @@
 - [x] δ↓0⁺ limit and S033/S034 squeeze: **genuine real-clock strict-order law = `orderMass`** for every complete order.
 - [x] Measurable tie-broken (stable merge) clock sort; real-clock greedy output; law = `priorityOutputMass` = `finiteRaceLaw`.
 - [x] Charter EGU with genuine clocks ⟺ first-choice-recursion EGU (symmetric neighbours).
+- [x] Greedy output is always a maximal independent set (symmetric irreflexive neighbours); real-clock law sums to one over MISs.
 - [x] Independent exact regression `tests/test_s041.py`, proof note, S042 handoff.
+- [x] First code head `4da0188` dual-green: push 42039828348, PR 42039904870 (PR #41).
 - [ ] Exact-final-head full imported Lean + Python/exact/certified n≤6 census green in **both** push and PR Actions; merge (together with PR #40's commits).
-- [ ] S042: Lean proof that `greedyOutput` is always a maximal independent set; restate verified graph theorems (C6/P5/P6 obstructions, cograph/join constructions) directly as `RealClockEGU` statements via the bridge.
+- [ ] S042: restate verified graph theorems (C6/P5/P6 obstructions, cograph/join constructions) directly as `RealClockEGU` statements via the bridge.
 
 Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
 

@@ -5,6 +5,9 @@ Branch `ccr-64572a8e-98j7ug` starts from `main` `8f8d1bde0cf709d0d7d5937329d6493
 * `FiniteClockGapClosedForm.lean` — `ennreal_tsum_fin_pi_prod`, measured-monomial transport, **`finiteIndependentExp_strictBin_closedForm`**.
 * `FiniteClockOrderLaw.lean` — `clockSuffixRate`, `orderMass_eq_suffix_prod`, factor limits, **`finiteIndependentExp_strictClockChamber_orderMass`**.
 * `RealClockGreedyLaw.lean` — `clockSortedOrder`, `realClockGreedyOutput`, measurability, chamber/sort identification, **`finiteIndependentExp_realClockGreedyOutput_eq_priorityOutputMass`**, `…_eq_finiteRaceLaw`, `IsMaximalIndependentSet`, `RealClockEGU`, `FirstChoiceEGU`, **`realClockEGU_iff_firstChoiceEGU`**.
+* `RealClockGreedyMIS.lean` — **`greedyOutput_isMaximalIndependentSet`**, non-MIS targets null, **`finiteIndependentExp_realClockGreedyOutput_sum_MIS`**.
+
+First code head `4da018802b86c3a0396bed9f935b253d66bf1dab` passed full imported Lean + Python/exact/certified census in push 42039828348 and PR 42039904870 ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); the MIS module is on the next head — check its exact-head push+PR runs before merging.
 
 Local: full `lake build` of root `InverseGreedy` green; `#print axioms` on the headline theorems lists only `propext`, `Classical.choice`, `Quot.sound`; no sorry/admit/native_decide. Python: full `unittest discover`, `experiments/exact.py`, and `census.py --max-n 6 --max-rate 4` run locally (see S041 CI record for GitHub runs). This closes the S040/S041 prompt obligations 1–5 (measured monomial, multivariate tsum, closed product, δ→0⁺ chamber law, measurable sort and greedy pushforward). Remaining work is graph-theoretic: see `sessions/S042.md`. Atlas 90/8/45; novelty unverified; Plackett–Luce for exponential races is classical.
 

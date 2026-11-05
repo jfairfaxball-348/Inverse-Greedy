@@ -70,3 +70,4 @@ import InverseGreedy.FiniteClockGapMonomial
 import InverseGreedy.FiniteClockGapClosedForm
 import InverseGreedy.FiniteClockOrderLaw
 import InverseGreedy.RealClockGreedyLaw
+import InverseGreedy.RealClockGreedyMIS

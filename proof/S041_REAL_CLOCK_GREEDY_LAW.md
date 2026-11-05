@@ -96,8 +96,13 @@ discrete one; `ofReal` is injective on `[0,∞)`, and both `finiteRaceLaw`
   `finiteRaceLaw` uniformity transfer verbatim to genuine clocks; existing Lean
   files that formalise only rational identities still do not by themselves
   formalise those graph theorems.
-* Not formalised: that `greedyOutput` is always a maximal independent set (exact
-  Python check only, `tests/test_s041.py`), or any classification of EGU graphs.
+* **(E)** `RealClockGreedyMIS.lean`: for symmetric irreflexive neighbours every greedy
+  scan of a list containing all vertices outputs a maximal independent set (invariant:
+  each step preserves independence; each scanned vertex is accepted or has an
+  accepted neighbour, and accepted sets only grow). Hence non-MIS targets are null and
+  the real-clock MIS probabilities sum to one, so `RealClockEGU` says the output law
+  is exactly uniform on the MIS family.
+* Not formalised: any classification of EGU graphs.
 * Atlas unchanged: connected n≤6 **90 EGU / 8 non-EGU / 45 unresolved**.
 
 ## Independent checks
