@@ -1,5 +1,7 @@
 # S041 (continued) handover — graph theorems in Lean
 
+Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green. Merge decision (PR #41 includes PR #40's commits) left to the owner.
+
 The user asked for "the full thing" in Lean. Beyond the real-clock law, S041 now formalises every proved graph theorem except IG-N6 (m≥3) and n=6 enumeration exhaustiveness (IG-P5 is exhaustive for n≤5); see `proof/S041_GRAPH_THEOREMS_LEAN.md` for the theorem-by-theorem map. Generated modules (`SmallGraphObstructions.lean`, `Atlas/Part00–16.lean`, `AtlasCertificates.lean`) come from `experiments/gen_small_graph_obstructions.py` and `experiments/gen_atlas_lean.py`; regenerate with `python3 experiments/gen_small_graph_obstructions.py` and `cd experiments && python3 gen_atlas_lean.py`. Lean memory: each atlas part ~20 s; the generator splits parts (`ATLAS_PER`, default 6) because a single atlas file exceeded 13 GB. No sorry/admit/native code evaluation. Next: `sessions/S042.md`.
 
 ---

@@ -1,5 +1,7 @@
 ## S041 (continued) — graph theorems in Lean
 
+Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green.
+
 - [x] Certified race-term expansion and kernel-checked rational witnesses.
 - [x] P5, C6, P6, cone(P5), corona(P3) and **all** star coronas m≥2 not EGU (genuine clocks).
 - [x] Union/join laws and EGU iff; scaling and relabelling invariance; cographs and complete multipartite EGU.
