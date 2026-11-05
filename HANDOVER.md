@@ -1,6 +1,6 @@
 # S041 (continued) handover — graph theorems in Lean
 
-The user asked for "the full thing" in Lean. Beyond the real-clock law, S041 now formalises every proved graph theorem except IG-P10, IG-N6 (m≥3) and enumeration exhaustiveness; see `proof/S041_GRAPH_THEOREMS_LEAN.md` for the theorem-by-theorem map. Generated modules (`SmallGraphObstructions.lean`, `Atlas/Part00–16.lean`, `AtlasCertificates.lean`) come from `experiments/gen_small_graph_obstructions.py` and `experiments/gen_atlas_lean.py`; regenerate with `python3 experiments/gen_small_graph_obstructions.py` and `cd experiments && python3 gen_atlas_lean.py`. Lean memory: each atlas part ~20 s; the generator splits parts (`ATLAS_PER`, default 6) because a single atlas file exceeded 13 GB. No sorry/admit/native code evaluation. Next: `sessions/S042.md`.
+The user asked for "the full thing" in Lean. Beyond the real-clock law, S041 now formalises every proved graph theorem except IG-N6 (m≥3) and enumeration exhaustiveness; see `proof/S041_GRAPH_THEOREMS_LEAN.md` for the theorem-by-theorem map. Generated modules (`SmallGraphObstructions.lean`, `Atlas/Part00–16.lean`, `AtlasCertificates.lean`) come from `experiments/gen_small_graph_obstructions.py` and `experiments/gen_atlas_lean.py`; regenerate with `python3 experiments/gen_small_graph_obstructions.py` and `cd experiments && python3 gen_atlas_lean.py`. Lean memory: each atlas part ~20 s; the generator splits parts (`ATLAS_PER`, default 6) because a single atlas file exceeded 13 GB. No sorry/admit/native code evaluation. Next: `sessions/S042.md`.
 
 ---
 

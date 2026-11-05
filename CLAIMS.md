@@ -14,10 +14,10 @@
 | IG-L95 | IG-P7: false-twin extension preserves the law (merged rates) and EGU both ways. | `finiteRaceLaw_twinExtend`, `realClockEGU_twinExtend_iff` |
 | IG-L96 | IG-P8: every clique corona K_m∘K1, m≥1, EGU at rates 1 and (m+1)^(1/m)−1. | `cliqueCorona_realClockEGU` |
 | IG-L97 | IG-A9 per graph: 90 certified positives `RealClockEGU`, 8 certified negatives `¬RealClockEGU` (NetworkX labellings; includes IG-P3 P4, IG-P5 connected n=5, IG-P6 index 1). | `atlas_n_le_6_certified` |
-| IG-L98 | TV layer: deficits bound; IG-N1b C6 TV≥4/45, not AEGU; IG-N2b P5 unattained AEGU with exact TV; IG-N3b P6 TV≥2√(2/5)−6/5; IG-N6 (m=2) corona(P3) unattained AEGU; IG-P9 union AEGU iff. | `realClockTV_ge_deficits`, `c6_not_realClockAEGU`, `p5_unattained_realClockAEGU`, `p6_realClockTV_ge`, `coronaP3_unattained_realClockAEGU`, `realClockAEGU_union_iff` |
+| IG-L98 | TV layer: deficits bound; IG-N1b C6 TV≥4/45, not AEGU; IG-N2b P5 unattained AEGU with exact TV; IG-N3b P6 TV≥2√(2/5)−6/5; IG-N6 (m=2) corona(P3) unattained AEGU; IG-P9 union AEGU iff; IG-P10 join AEGU iff. | `realClockAEGU_join_iff`, `realClockTV_ge_deficits`, `c6_not_realClockAEGU`, `p5_unattained_realClockAEGU`, `p6_realClockTV_ge`, `coronaP3_unattained_realClockAEGU`, `realClockAEGU_union_iff` |
 | IG-T42 | Independent exact Python checks of union/join laws, scaling, clique corona m≤4, star corona minors m≤4, false-twin law, P5 and corona(P3) TV families. | `tests/test_s041_graphs.py` |
 
-**Not formalised:** IG-P10 (AEGU join closure); IG-N6 for m≥3; exhaustiveness of the NetworkX atlas enumeration (so the "all graphs on ≤5 vertices" form of IG-P5 rests on NetworkX); IG-O1/IG-O2 are open problems (no proof exists); IG-O4 novelty is not a mathematical statement. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+**Not formalised:** IG-N6 for m≥3; exhaustiveness of the NetworkX atlas enumeration (so the "all graphs on ≤5 vertices" form of IG-P5 rests on NetworkX); IG-O1/IG-O2 are open problems (no proof exists); IG-O4 novelty is not a mathematical statement. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
 
 ## S041 claim ledger — 2026-11-05 (local full Lean build green; exact-head GitHub push+PR CI to be recorded)
 

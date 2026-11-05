@@ -233,12 +233,12 @@ theorem realClockAEGU_join_iff (nG : α → Finset α) (nH : β → Finset β)
       rw [Finset.mul_sum]
     refine ⟨sumRates rG (fun b => c * rH b), sumRates_pos hrG hrH', ?_⟩
     rw [realClockTV_join_eq nG nH hGs hHs hGi hHi rG _ hrG hrH', hcast, hΛH']
-    have hλ : activeRate rG Finset.univ / (activeRate rG Finset.univ + c * activeRate rH Finset.univ)
-        = mG / (mG + mH) := by rw [hcdef]; field_simp; ring
-    have hμ : c * activeRate rH Finset.univ /
+    have hlamG : activeRate rG Finset.univ / (activeRate rG Finset.univ + c * activeRate rH Finset.univ)
+        = mG / (mG + mH) := by rw [hcdef]; field_simp
+    have hlamH : c * activeRate rH Finset.univ /
         (activeRate rG Finset.univ + c * activeRate rH Finset.univ) = mH / (mG + mH) := by
-      rw [hcdef]; field_simp; ring
-    rw [hλ, hμ]
+      rw [hcdef]; field_simp
+    rw [hlamG, hlamH]
     have hscale : ∀ J, realClockProb nH (fun b => c * rH b) J = realClockProb nH rH J := by
       intro J
       rw [realClockProb_eq nH hHs _ hrH', realClockProb_eq nH hHs rH hrH, finiteRaceLaw_scale rH c hc nH]

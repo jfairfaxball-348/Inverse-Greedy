@@ -6,7 +6,8 @@
 - [x] False-twin invariance; clique coronas EGU for all m.
 - [x] All 98 decided atlas graphs (90 EGU, 8 non-EGU) as Lean theorems.
 - [x] TV/AEGU: C6 gap 4/45, P5 and corona(P3) unattained AEGU, P6 sharp gap, union AEGU iff.
-- [ ] IG-P10 AEGU join closure; IG-N6 for m≥3.
+- [x] IG-P10 AEGU join closure (`realClockAEGU_join_iff`).
+- [ ] IG-N6 for m≥3.
 - [ ] Formal exhaustiveness of the connected n≤6 enumeration (then IG-P5 for all graphs on ≤5 vertices).
 - [ ] Open research: the 45 unresolved graphs; classification of EGU graphs.
 

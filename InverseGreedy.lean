@@ -81,3 +81,4 @@ import InverseGreedy.FalseTwins
 import InverseGreedy.GeneralFamilies
 import InverseGreedy.AtlasCertificates
 import InverseGreedy.ApproximateEGU
+import InverseGreedy.ApproximateJoin

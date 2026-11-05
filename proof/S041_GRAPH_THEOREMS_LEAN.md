@@ -47,6 +47,7 @@ them GitHub-verified.
 | IG-N3b P6 TV ≥ 2√(2/5) − 6/5 for all rates | `p6_realClockTV_ge` (Cauchy–Schwarz + case analysis in `p6_tv_analytic`) |
 | IG-N6 (m = 2) corona(P3) unattained AEGU along `(1,t,1,1,4t,1)` | `coronaP3_unattained_realClockAEGU` |
 | IG-P9 disjoint union AEGU ⟺ both parts AEGU | `realClockAEGU_union_iff` |
+| IG-P10 join of nonempty graphs AEGU ⟺ both AEGU | `realClockAEGU_join_iff` (ApproximateJoin.lean) |
 
 ## Proof ideas (informal, matching the Lean)
 
@@ -78,8 +79,8 @@ them GitHub-verified.
 
 ## Not formalised (and why)
 
-* **IG-P10** (AEGU closure under joins) and **IG-N6 for m ≥ 3**: proved informally,
-  not yet in Lean (the m ≥ 3 family needs the full hub analysis).
+* **IG-N6 for m ≥ 3**: proved informally, not yet in Lean (the family needs the
+  full hub analysis of the star-corona recursion).
 * **Exhaustiveness**: that the NetworkX atlas lists *every* connected graph of
   order ≤ 6 up to isomorphism, and hence the "all graphs on ≤ 5 vertices" form of
   IG-P5. Every listed graph's status is a Lean theorem; the enumeration is not.
