@@ -8,7 +8,8 @@
 - [x] TV/AEGU: C6 gap 4/45, P5 and corona(P3) unattained AEGU, P6 sharp gap, union AEGU iff.
 - [x] IG-P10 AEGU join closure (`realClockAEGU_join_iff`).
 - [ ] IG-N6 for m≥3.
-- [ ] Formal exhaustiveness of the connected n≤6 enumeration (then IG-P5 for all graphs on ≤5 vertices).
+- [x] IG-P5 exhaustive for all graphs on ≤5 vertices (`graphs_le_five_classification`).
+- [ ] Formal exhaustiveness of the connected n=6 enumeration (2^15 labelled graphs).
 - [ ] Open research: the 45 unresolved graphs; classification of EGU graphs.
 
 ## S041 — 2026-11-05 (built on S040 PR #40)

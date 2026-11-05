@@ -149,3 +149,34 @@ class S041GraphTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class S041ClassificationTests(unittest.TestCase):
+    """Independent check of the IG-P5 classification data (networkx atlas)."""
+
+    def test_graph_counts_and_only_p5(self):
+        import networkx as nx
+        counts = {}
+        non_egu = []
+        for g in nx.graph_atlas_g():
+            n = len(g)
+            if n > 5:
+                continue
+            counts[n] = counts.get(n, 0) + 1
+            if n == 5 and nx.is_connected(g) and nx.is_isomorphic(g, nx.path_graph(5)):
+                non_egu.append(g)
+        self.assertEqual([counts[n] for n in range(6)], [1, 1, 2, 4, 11, 34])
+        self.assertEqual(len(non_egu), 1)
+
+    def test_labelled_graph_classes_n5(self):
+        import networkx as nx
+        from itertools import combinations
+        pairs = list(combinations(range(5), 2))
+        reps = []
+        for code in range(1 << len(pairs)):
+            g = nx.Graph()
+            g.add_nodes_from(range(5))
+            g.add_edges_from(p for i, p in enumerate(pairs) if (code >> i) & 1)
+            if not any(nx.is_isomorphic(g, h) for h in reps):
+                reps.append(g)
+        self.assertEqual(len(reps), 34)

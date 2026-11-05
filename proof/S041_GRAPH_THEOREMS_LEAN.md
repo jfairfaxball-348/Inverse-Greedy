@@ -26,7 +26,7 @@ them GitHub-verified.
 | IG-P2 disjoint union EGU ⟺ both parts EGU | `realClockEGU_union_iff` |
 | IG-P3 P4 is EGU (rates `1+√3, 2, 2, 1+√3`) | `atlas4_1_egu` |
 | IG-P4 join of nonempty graphs EGU ⟺ both EGU; every cograph EGU | `realClockEGU_join_iff`, `Cotree.realClockEGU`, `IsCograph.realClockEGU` |
-| IG-P5 (connected part) the 20 connected five-vertex positives | `atlas5_*_egu` |
+| IG-P5 **every** graph on ≤ 5 vertices is EGU unless ≅ P5 | `graphs_le_five_classification`, `fin5_realClockEGU_iff_not_P5` |
 | IG-P6 six-vertex atlas index 1 is EGU | `atlas6_1_egu` |
 | IG-P7 false-twin extension preserves EGU, both directions | `realClockEGU_twinExtend_iff` |
 | IG-P8 every clique corona `K_m ∘ K₁` (m ≥ 1) is EGU | `cliqueCorona_realClockEGU` |
@@ -81,9 +81,10 @@ them GitHub-verified.
 
 * **IG-N6 for m ≥ 3**: proved informally, not yet in Lean (the family needs the
   full hub analysis of the star-corona recursion).
-* **Exhaustiveness**: that the NetworkX atlas lists *every* connected graph of
-  order ≤ 6 up to isomorphism, and hence the "all graphs on ≤ 5 vertices" form of
-  IG-P5. Every listed graph's status is a Lean theorem; the enumeration is not.
+* **Exhaustiveness at n = 6**: that the NetworkX atlas lists every connected
+  six-vertex graph up to isomorphism (needed only for the *counts* 60/7/45 at
+  n = 6). For n ≤ 5 exhaustiveness is proved in Lean via Boolean edge-vector
+  certificate tables (`EdgeSetGraphs.lean`, `SmallGraphClassification.lean`).
 * **Open problems**: the 45 unresolved six-vertex graphs and the classification of
   all EGU graphs (IG-O1, IG-O2) have no proofs to formalise.
 * **Novelty** (IG-O4) is a bibliographic question, not a theorem.
