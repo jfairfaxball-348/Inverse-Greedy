@@ -4,8 +4,7 @@ Date: 2026-11-05. All statements below are Lean theorems about
 `RealClockEGU` / `RealClockAEGU`, i.e. about Mathlib's **actual** independent
 exponential product measure (via the S041 bridge
 `realClockEGU_iff_firstChoiceEGU`), for **all strictly positive real rate
-vectors**. Check the exact-head push and PR CI of the S041 PR before calling
-them GitHub-verified.
+vectors**. GitHub-verified (dual-green push and PR CI on the final S041 heads) and merged via PR #41.
 
 ## Infrastructure
 

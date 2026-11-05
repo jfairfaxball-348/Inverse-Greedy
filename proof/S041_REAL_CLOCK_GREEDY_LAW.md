@@ -1,11 +1,9 @@
 # S041 — genuine real-clock strict-order law and greedy-output pushforward
 
 Date: 2026-11-05. Builds on S035–S039 (merged) and S040 (PR #40, the
-generic ENNReal triangular monomial identity). Check the S041 PR's
-exact-head push **and** PR CI before describing anything below as
-Lean-verified on GitHub; at the time of writing it was verified by a
-local full `lake build` of the imported root plus `#print axioms`
-(only `propext`, `Classical.choice`, `Quot.sound`).
+generic ENNReal triangular monomial identity). GitHub-verified: dual-green push and PR CI
+on every S041 code head; merged via PR #41. `#print axioms` lists only
+`propext`, `Classical.choice`, `Quot.sound`.
 
 ## Statements
 

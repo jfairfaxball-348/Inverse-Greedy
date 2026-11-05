@@ -24,17 +24,19 @@ Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean a
 - [x] Greedy output is always a maximal independent set (symmetric irreflexive neighbours); real-clock law sums to one over MISs.
 - [x] Independent exact regression `tests/test_s041.py`, proof note, S042 handoff.
 - [x] First code head `4da0188` dual-green: push 42039828348, PR 42039904870 (PR #41).
-- [ ] Exact-final-head full imported Lean + Python/exact/certified n≤6 census green in **both** push and PR Actions; merge (together with PR #40's commits).
+- [x] Exact-final-head full imported Lean + Python/exact/certified n≤6 census green in **both** push and PR Actions; PR #40 and PR #41 squash-merged.
 - [ ] S042: restate verified graph theorems (C6/P5/P6 obstructions, cograph/join constructions) directly as `RealClockEGU` statements via the bridge.
 
 Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
 
-## S040 — 2026-11-04 (partial PR #40; exact-head CI pending)
+## S040 — 2026-11-04 (PR #40; verified and merged)
+
+PR #40 exact head `9b32ed5a67f752960aa0b660faf80963beb00248` passed full Lean and Python/census CI in push [41913092754](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913092754) and PR [41913102175](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913102175); squash-merged into `main` (2026-11-05).
 
 - [x] Write a general ENNReal finite triangular prefix/suffix power-product identity and positional gap monomial factorisation, including n=0/1, in an imported Lean module.
 - [x] Add independent bounded exact Fraction regressions, scope-correct proof note and S041 handoff.
-- [ ] Verify complete imported Lean plus full Python/exact/certified connected n≤6 census on **identical final head** in both push and PR CI; only then merge.
-- [ ] S041: transport S038's actual measured monomial through its complete-order equivalence, evaluate the full multivariate ENNReal geometric tsum, establish finite-width measured product, then δ↓0+ and genuine continuous sorting/output pushforward.
+- [x] Verified on the identical final head in both push and PR CI; merged.
+- [x] S041: transport S038's actual measured monomial through its complete-order equivalence, evaluate the full multivariate ENNReal geometric tsum, establish finite-width measured product, then δ↓0+ and genuine continuous sorting/output pushforward.
 
 Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
 

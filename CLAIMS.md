@@ -22,7 +22,9 @@ Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean a
 
 **Not formalised:** IG-N6 for m≥3; exhaustiveness of the connected n=6 NetworkX enumeration (IG-P5 for n≤5 is now exhaustive in Lean); IG-O1/IG-O2 are open problems (no proof exists); IG-O4 novelty is not a mathematical statement. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
 
-## S041 claim ledger — 2026-11-05 (local full Lean build green; exact-head GitHub push+PR CI to be recorded)
+## S041 claim ledger — 2026-11-05 (GitHub-verified; merged)
+
+Code head `4da018802b86c3a0396bed9f935b253d66bf1dab` dual-green (push 42039828348, PR 42039904870); superseded by the final S041 heads recorded above; PR #41 squash-merged into `main` (2026-11-05).
 
 | ID | Claim | Formal verification boundary |
 |---|---|---|
@@ -35,17 +37,19 @@ Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean a
 | IG-L85 | For symmetric irreflexive neighbours, every greedy scan of a list containing all vertices outputs a maximal independent set; hence the real-clock output law gives non-MIS targets probability 0 and sums to 1 over `maximalIndependentSets`. | Imported `greedyOutput_isMaximalIndependentSet`, `realClockGreedyOutput_mem_maximalIndependentSets`, `finiteIndependentExp_realClockGreedyOutput_nonMIS`, `finiteIndependentExp_realClockGreedyOutput_sum_MIS` (RealClockGreedyMIS.lean). |
 | IG-T41 | Closed product vs independent memoryless recursion (n≤4), truncation bracket, symbolic δ→0⁺ limit = Plackett–Luce, pushforward = first-choice recursion on small graphs, MIS support. | Independent exact Python `tests/test_s041.py`; finite checks only. |
 
-First code head `4da018802b86c3a0396bed9f935b253d66bf1dab` (IG-L79–L84) passed full imported Lean and Python/exact/certified n≤6 census in both [push 42039828348](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42039828348) and [PR 42039904870](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42039904870) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)). IG-L85 is added on the following head; all IG-L79–L85 compiled in a local full imported `lake build`; `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. **Status upgrades to GitHub-verified only after exact-final-head push and PR CI are green.** **Not claimed:** Lean real-clock re-proofs of C6/P5/P6/cograph/corona results; any EGU classification; novelty/Palomar. The exponential-race Plackett–Luce law itself is classical probability. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+First code head `4da018802b86c3a0396bed9f935b253d66bf1dab` (IG-L79–L84) passed full imported Lean and Python/exact/certified n≤6 census in both [push 42039828348](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42039828348) and [PR 42039904870](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42039904870) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)). IG-L85 is added on the following head; all IG-L79–L85 compiled in a local full imported `lake build`; `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. All later S041 heads, through the final head, were dual-green (see the graph-theorem ledger above); merged. The C6/P5/P6/cograph/corona and classification items once listed here as not claimed were formalised later in S041 (IG-L86–L99); novelty/Palomar is still not claimed. The exponential-race Plackett–Luce law itself is classical probability. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
 
-## S040 proposed partial claim ledger — 2026-11-04 (CI verification pending)
+## S040 claim ledger — 2026-11-04 (GitHub-verified; merged)
+
+PR #40 exact head `9b32ed5a67f752960aa0b660faf80963beb00248` passed full Lean and Python/census CI in push [41913092754](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913092754) and PR [41913102175](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913102175); squash-merged into `main` (2026-11-05).
 
 | ID | Claim | Current formal boundary |
 |---|---|---|
-| IG-L77 | In an arbitrary finite index length n, the ENNReal product of powers with prefix sums equals the finite product of suffix factors raised to gap coordinates. | Imported `ennreal_prefix_suffix_pow_product` proposed; exact-head full Lean CI required. |
-| IG-L78 | Finite positional ENNReal gap monomial factorises into a base factor times finite suffix powers for all n including 0 and 1. | Imported `ennreal_gapBinValue_monomial_factor` proposed; exact-head full Lean CI required. This is **not yet identified with S038's genuine measured monomial**. |
-| IG-T40 | Independent exact finite Fraction factorisation regressions including zero factors and empty/singleton boundaries. | Python test `tests/test_s040.py`; exact-head full CI required. |
+| IG-L77 | In an arbitrary finite index length n, the ENNReal product of powers with prefix sums equals the finite product of suffix factors raised to gap coordinates. | Imported `ennreal_prefix_suffix_pow_product` **Lean-verified** at the exact head above. |
+| IG-L78 | Finite positional ENNReal gap monomial factorises into a base factor times finite suffix powers for all n including 0 and 1. | Imported `ennreal_gapBinValue_monomial_factor` **Lean-verified** at the exact head above. This is **not yet identified with S038's genuine measured monomial**. |
+| IG-T40 | Independent exact finite Fraction factorisation regressions including zero factors and empty/singleton boundaries. | Python test `tests/test_s040.py`, green in the CI above. |
 
-**Open:** actual S038 measured monomial transport, multivariate `tsum` geometric evaluation, finite-width measured probability, continuous δ↓0 strict-order law, measurable sorting and continuous-clock greedy-output pushforward. Next `sessions/S041.md`. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, novelty unverified.
+**Open items of S040 were closed in S041.**
 
 ## S039 verified partial claim ledger — 2026-11-04
 
