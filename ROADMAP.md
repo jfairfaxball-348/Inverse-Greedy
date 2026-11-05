@@ -1,3 +1,16 @@
+## S041 — 2026-11-05 (built on S040 PR #40)
+
+- [x] Transport S038's actual measured monomial through the complete-order equivalence (all n, incl. 0/1).
+- [x] Finite-index ENNReal Tonelli product of geometric `tsum`s; measured finite-width closed product.
+- [x] δ↓0⁺ limit and S033/S034 squeeze: **genuine real-clock strict-order law = `orderMass`** for every complete order.
+- [x] Measurable tie-broken (stable merge) clock sort; real-clock greedy output; law = `priorityOutputMass` = `finiteRaceLaw`.
+- [x] Charter EGU with genuine clocks ⟺ first-choice-recursion EGU (symmetric neighbours).
+- [x] Independent exact regression `tests/test_s041.py`, proof note, S042 handoff.
+- [ ] Exact-final-head full imported Lean + Python/exact/certified n≤6 census green in **both** push and PR Actions; merge (together with PR #40's commits).
+- [ ] S042: Lean proof that `greedyOutput` is always a maximal independent set; restate verified graph theorems (C6/P5/P6 obstructions, cograph/join constructions) directly as `RealClockEGU` statements via the bridge.
+
+Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
+
 ## S040 — 2026-11-04 (partial PR #40; exact-head CI pending)
 
 - [x] Write a general ENNReal finite triangular prefix/suffix power-product identity and positional gap monomial factorisation, including n=0/1, in an imported Lean module.

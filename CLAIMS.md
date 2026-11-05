@@ -1,3 +1,17 @@
+## S041 claim ledger — 2026-11-05 (local full Lean build green; exact-head GitHub push+PR CI to be recorded)
+
+| ID | Claim | Formal verification boundary |
+|---|---|---|
+| IG-L79 | Finite-index Tonelli in ENNReal: `Σ'_{d : Fin n → ℕ} ∏_a f_a(d_a) = ∏_a Σ'_k f_a(k)`, all n incl. 0. | Imported `ennreal_tsum_fin_pi_prod` (FiniteClockGapClosedForm.lean). |
+| IG-L80 | S038's *actual measured* vertex monomial at the gap equivalence equals the positional ENNReal monomial; `finiteGapBinEquiv` evaluates to `gapBinValue` for all n. | Imported `finiteExpPositiveBinMonomial_gap_positional`, `finiteGapBinEquiv_val`, `completeClockOrderGapEquiv_symm_val`. |
+| IG-L81 | **Measured finite-width closed product:** `μ(strict-bin chamber) = ofReal(∏_j (1-q_j) q_j^j/(1-Q_j))` for δ>0, positive rates, certified complete order. | Imported `finiteIndependentExp_strictBin_closedForm`; left side is the genuine product measure. |
+| IG-L82 | **Real-clock strict-order law:** for every complete order, `μ{ω_{σ0}<⋯<ω_{σ(n-1)}} = ofReal(orderMass rates σ)`, any finite n. | Imported `finiteIndependentExp_strictClockChamber_orderMass` (δ→0⁺ squeeze via S030/S033/S034); `orderMass_eq_suffix_prod`. |
+| IG-L83 | **Measurable sorted-clock greedy output and its law:** output events measurable; law = `priorityOutputMass` and, for symmetric neighbours, `finiteRaceLaw`. | Imported `realClockGreedyOutput_event_measurable`, `finiteIndependentExp_realClockGreedyOutput_eq_priorityOutputMass`, `…_eq_finiteRaceLaw`. |
+| IG-L84 | **EGU bridge:** for symmetric neighbour maps, `RealClockEGU ↔ FirstChoiceEGU` (same strictly positive rates). | Imported `realClockEGU_iff_firstChoiceEGU`. Definitions of independent/maximal independent sets are new in Lean. |
+| IG-T41 | Closed product vs independent memoryless recursion (n≤4), truncation bracket, symbolic δ→0⁺ limit = Plackett–Luce, pushforward = first-choice recursion on small graphs, MIS support. | Independent exact Python `tests/test_s041.py`; finite checks only. |
+
+All IG-L79–L84 compiled in a local full imported `lake build`; `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. **Status upgrades to GitHub-verified only after exact-final-head push and PR CI are green.** **Not claimed:** Lean real-clock re-proofs of C6/P5/P6/cograph/corona results; a Lean proof that greedy output is always an MIS; any EGU classification; novelty/Palomar. The exponential-race Plackett–Luce law itself is classical probability. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+
 ## S040 proposed partial claim ledger — 2026-11-04 (CI verification pending)
 
 | ID | Claim | Current formal boundary |

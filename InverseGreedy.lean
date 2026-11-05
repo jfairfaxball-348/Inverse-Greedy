@@ -67,3 +67,6 @@ import InverseGreedy.FiniteClockCompleteOrder
 import InverseGreedy.FiniteClockMeasuredGapSeries
 import InverseGreedy.FiniteClockGapFactors
 import InverseGreedy.FiniteClockGapMonomial
+import InverseGreedy.FiniteClockGapClosedForm
+import InverseGreedy.FiniteClockOrderLaw
+import InverseGreedy.RealClockGreedyLaw

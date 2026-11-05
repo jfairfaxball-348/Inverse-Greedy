@@ -1,3 +1,15 @@
+# S041 development handover — 2026-11-05 (verification pending)
+
+Branch `ccr-64572a8e-98j7ug` starts from `main` `8f8d1bde0cf709d0d7d5937329d6493c65d998b8` and **fast-forwards onto S040 PR #40's head `9b32ed5a67f752960aa0b660faf80963beb00248`** (dual-green push 41913092754 / PR 41913102175 at that head), so it carries `FiniteClockGapMonomial.lean` unchanged. S041 adds three imported modules:
+
+* `FiniteClockGapClosedForm.lean` — `ennreal_tsum_fin_pi_prod`, measured-monomial transport, **`finiteIndependentExp_strictBin_closedForm`**.
+* `FiniteClockOrderLaw.lean` — `clockSuffixRate`, `orderMass_eq_suffix_prod`, factor limits, **`finiteIndependentExp_strictClockChamber_orderMass`**.
+* `RealClockGreedyLaw.lean` — `clockSortedOrder`, `realClockGreedyOutput`, measurability, chamber/sort identification, **`finiteIndependentExp_realClockGreedyOutput_eq_priorityOutputMass`**, `…_eq_finiteRaceLaw`, `IsMaximalIndependentSet`, `RealClockEGU`, `FirstChoiceEGU`, **`realClockEGU_iff_firstChoiceEGU`**.
+
+Local: full `lake build` of root `InverseGreedy` green; `#print axioms` on the headline theorems lists only `propext`, `Classical.choice`, `Quot.sound`; no sorry/admit/native_decide. Python: full `unittest discover`, `experiments/exact.py`, and `census.py --max-n 6 --max-rate 4` run locally (see S041 CI record for GitHub runs). This closes the S040/S041 prompt obligations 1–5 (measured monomial, multivariate tsum, closed product, δ→0⁺ chamber law, measurable sort and greedy pushforward). Remaining work is graph-theoretic: see `sessions/S042.md`. Atlas 90/8/45; novelty unverified; Plackett–Luce for exponential races is classical.
+
+---
+
 # S040 development handover — 2026-11-04 (PR #40; verification pending)
 
 Branch `s040-gap-monomial-factor` started from `main` `8f8d1bde0cf709d0d7d5937329d6493c65d998b8`. [PR #40](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/40) proposes imported `FiniteClockGapMonomial.lean`: a general finite ENNReal prefix/suffix power rearrangement and positional gap monomial factorisation, independent of positivity assumptions and valid for Fin 0/1. New `tests/test_s040.py`, `proof/S040_FINITE_GAP_MONOMIAL.md`, and `sessions/S041.md` are included. **Do not call these Lean-verified until the exact final head has full imported Lean and full Python/exact/certified connected n≤6 census green in both push and PR workflows; do not merge before that.**
