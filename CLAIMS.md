@@ -1,3 +1,9 @@
+## S042 final Lean/CI certification — 2026-11-06
+
+Final PR head `c30a140103a1dd038e92fee80d846f84b4cf8172` passed full imported Lean and Python/exact/certified connected n≤6 atlas in both [push 42183171138](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183171138) and [PR 42183205404](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183205404). Squash-merged into `main` as `b8788ce4ef563602285b0aee8acf3750360f7946`. Hence claim IG-L100 (`realClockTV_le_of_pointwise_lower_bound`) is **imported Lean-verified**. IG-N6 all-m AEGU remains **mathematics-only** and IG-T42a six-vertex orbit completeness remains **Python-only**, as stated in the ledger below. All new exact regressions and the unchanged n≤6 certified census are green. Next `sessions/S043.md`; no novelty claim.
+
+---
+
 ## S042 claim ledger — 2026-11-06 (mathematical result; Lean scope limited)
 
 | ID | Result | Verification boundary |
