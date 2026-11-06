@@ -1,9 +1,42 @@
-## S040 — 2026-11-04 (partial PR #40; exact-head CI pending)
+## S041 (continued) — graph theorems in Lean
+
+Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green.
+
+- [x] Certified race-term expansion and kernel-checked rational witnesses.
+- [x] P5, C6, P6, cone(P5), corona(P3) and **all** star coronas m≥2 not EGU (genuine clocks).
+- [x] Union/join laws and EGU iff; scaling and relabelling invariance; cographs and complete multipartite EGU.
+- [x] False-twin invariance; clique coronas EGU for all m.
+- [x] All 98 decided atlas graphs (90 EGU, 8 non-EGU) as Lean theorems.
+- [x] TV/AEGU: C6 gap 4/45, P5 and corona(P3) unattained AEGU, P6 sharp gap, union AEGU iff.
+- [x] IG-P10 AEGU join closure (`realClockAEGU_join_iff`).
+- [ ] IG-N6 for m≥3.
+- [x] IG-P5 exhaustive for all graphs on ≤5 vertices (`graphs_le_five_classification`).
+- [ ] Formal exhaustiveness of the connected n=6 enumeration (2^15 labelled graphs).
+- [ ] Open research: the 45 unresolved graphs; classification of EGU graphs.
+
+## S041 — 2026-11-05 (built on S040 PR #40)
+
+- [x] Transport S038's actual measured monomial through the complete-order equivalence (all n, incl. 0/1).
+- [x] Finite-index ENNReal Tonelli product of geometric `tsum`s; measured finite-width closed product.
+- [x] δ↓0⁺ limit and S033/S034 squeeze: **genuine real-clock strict-order law = `orderMass`** for every complete order.
+- [x] Measurable tie-broken (stable merge) clock sort; real-clock greedy output; law = `priorityOutputMass` = `finiteRaceLaw`.
+- [x] Charter EGU with genuine clocks ⟺ first-choice-recursion EGU (symmetric neighbours).
+- [x] Greedy output is always a maximal independent set (symmetric irreflexive neighbours); real-clock law sums to one over MISs.
+- [x] Independent exact regression `tests/test_s041.py`, proof note, S042 handoff.
+- [x] First code head `4da0188` dual-green: push 42039828348, PR 42039904870 (PR #41).
+- [x] Exact-final-head full imported Lean + Python/exact/certified n≤6 census green in **both** push and PR Actions; PR #40 and PR #41 squash-merged.
+- [ ] S042: restate verified graph theorems (C6/P5/P6 obstructions, cograph/join constructions) directly as `RealClockEGU` statements via the bridge.
+
+Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
+
+## S040 — 2026-11-04 (PR #40; verified and merged)
+
+PR #40 exact head `9b32ed5a67f752960aa0b660faf80963beb00248` passed full Lean and Python/census CI in push [41913092754](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913092754) and PR [41913102175](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913102175); squash-merged into `main` (2026-11-05).
 
 - [x] Write a general ENNReal finite triangular prefix/suffix power-product identity and positional gap monomial factorisation, including n=0/1, in an imported Lean module.
 - [x] Add independent bounded exact Fraction regressions, scope-correct proof note and S041 handoff.
-- [ ] Verify complete imported Lean plus full Python/exact/certified connected n≤6 census on **identical final head** in both push and PR CI; only then merge.
-- [ ] S041: transport S038's actual measured monomial through its complete-order equivalence, evaluate the full multivariate ENNReal geometric tsum, establish finite-width measured product, then δ↓0+ and genuine continuous sorting/output pushforward.
+- [x] Verified on the identical final head in both push and PR CI; merged.
+- [x] S041: transport S038's actual measured monomial through its complete-order equivalence, evaluate the full multivariate ENNReal geometric tsum, establish finite-width measured product, then δ↓0+ and genuine continuous sorting/output pushforward.
 
 Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
 

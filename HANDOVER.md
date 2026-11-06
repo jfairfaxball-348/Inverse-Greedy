@@ -1,4 +1,29 @@
-# S040 development handover — 2026-11-04 (PR #40; verification pending)
+# S041 (continued) handover — graph theorems in Lean
+
+Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green. PR #40 and PR #41 squash-merged into `main` (2026-11-05).
+
+The user asked for "the full thing" in Lean. Beyond the real-clock law, S041 now formalises every proved graph theorem except IG-N6 (m≥3) and n=6 enumeration exhaustiveness (IG-P5 is exhaustive for n≤5); see `proof/S041_GRAPH_THEOREMS_LEAN.md` for the theorem-by-theorem map. Generated modules (`SmallGraphObstructions.lean`, `Atlas/Part00–16.lean`, `AtlasCertificates.lean`) come from `experiments/gen_small_graph_obstructions.py` and `experiments/gen_atlas_lean.py`; regenerate with `python3 experiments/gen_small_graph_obstructions.py` and `cd experiments && python3 gen_atlas_lean.py`. Lean memory: each atlas part ~20 s; the generator splits parts (`ATLAS_PER`, default 6) because a single atlas file exceeded 13 GB. No sorry/admit/native code evaluation. Next: `sessions/S042.md`.
+
+---
+
+# S041 development handover — 2026-11-05 (verified; merged)
+
+Branch `ccr-64572a8e-98j7ug` starts from `main` `8f8d1bde0cf709d0d7d5937329d6493c65d998b8` and **fast-forwards onto S040 PR #40's head `9b32ed5a67f752960aa0b660faf80963beb00248`** (dual-green push 41913092754 / PR 41913102175 at that head), so it carries `FiniteClockGapMonomial.lean` unchanged. S041 adds three imported modules:
+
+* `FiniteClockGapClosedForm.lean` — `ennreal_tsum_fin_pi_prod`, measured-monomial transport, **`finiteIndependentExp_strictBin_closedForm`**.
+* `FiniteClockOrderLaw.lean` — `clockSuffixRate`, `orderMass_eq_suffix_prod`, factor limits, **`finiteIndependentExp_strictClockChamber_orderMass`**.
+* `RealClockGreedyLaw.lean` — `clockSortedOrder`, `realClockGreedyOutput`, measurability, chamber/sort identification, **`finiteIndependentExp_realClockGreedyOutput_eq_priorityOutputMass`**, `…_eq_finiteRaceLaw`, `IsMaximalIndependentSet`, `RealClockEGU`, `FirstChoiceEGU`, **`realClockEGU_iff_firstChoiceEGU`**.
+* `RealClockGreedyMIS.lean` — **`greedyOutput_isMaximalIndependentSet`**, non-MIS targets null, **`finiteIndependentExp_realClockGreedyOutput_sum_MIS`**.
+
+First code head `4da018802b86c3a0396bed9f935b253d66bf1dab` passed full imported Lean + Python/exact/certified census in push 42039828348 and PR 42039904870 ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); the MIS module and all later work are on later dual-green heads (recorded above); merged.
+
+Local: full `lake build` of root `InverseGreedy` green; `#print axioms` on the headline theorems lists only `propext`, `Classical.choice`, `Quot.sound`; no sorry/admit/native_decide. Python: full `unittest discover`, `experiments/exact.py`, and `census.py --max-n 6 --max-rate 4` run locally (see S041 CI record for GitHub runs). This closes the S040/S041 prompt obligations 1–5 (measured monomial, multivariate tsum, closed product, δ→0⁺ chamber law, measurable sort and greedy pushforward). Remaining work is graph-theoretic: see `sessions/S042.md`. Atlas 90/8/45; novelty unverified; Plackett–Luce for exponential races is classical.
+
+---
+
+# S040 development handover — 2026-11-04 (PR #40; verified; merged)
+
+PR #40 exact head `9b32ed5a67f752960aa0b660faf80963beb00248` passed full Lean and Python/census CI in push [41913092754](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913092754) and PR [41913102175](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913102175); squash-merged into `main` (2026-11-05).
 
 Branch `s040-gap-monomial-factor` started from `main` `8f8d1bde0cf709d0d7d5937329d6493c65d998b8`. [PR #40](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/40) proposes imported `FiniteClockGapMonomial.lean`: a general finite ENNReal prefix/suffix power rearrangement and positional gap monomial factorisation, independent of positivity assumptions and valid for Fin 0/1. New `tests/test_s040.py`, `proof/S040_FINITE_GAP_MONOMIAL.md`, and `sessions/S041.md` are included. **Do not call these Lean-verified until the exact final head has full imported Lean and full Python/exact/certified connected n≤6 census green in both push and PR workflows; do not merge before that.**
 

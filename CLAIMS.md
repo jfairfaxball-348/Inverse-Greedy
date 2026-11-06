@@ -1,12 +1,55 @@
-## S040 proposed partial claim ledger — 2026-11-04 (CI verification pending)
+## S041 graph-theorem ledger — 2026-11-05 (GitHub-verified)
+
+Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green.
+
+| ID | Claim | Lean theorem(s) |
+|---|---|---|
+| IG-L86 | Certified computable expansion of the first-choice recursion; kernel-checkable rational EGU witnesses are sound. | `finiteRaceLaw_eq_raceValue`, `realClockEGU_of_ratWitness` |
+| IG-L87 | IG-N2: P5 not EGU (strict minor, all positive rates). | `p5Nb_not_realClockEGU` |
+| IG-L88 | IG-N1: C6 not EGU. | `c6Nb_not_realClockEGU` |
+| IG-L89 | IG-N3: P6 not EGU. | `p6Nb_not_realClockEGU` |
+| IG-L90 | IG-N4: K1∨P5 not EGU. | `coneP5Nb_not_realClockEGU` |
+| IG-L91 | IG-N5: every pendant star corona K_{1,m}∘K1, m≥2, not EGU. | `starCorona_not_realClockEGU`, `coronaP3Nb_not_realClockEGU` |
+| IG-L92 | IG-P2: disjoint union law `P(I⊔J)=P_G(I)P_H(J)`; union EGU iff both EGU. | `finiteRaceLaw_union`, `realClockEGU_union_iff` |
+| IG-L93 | IG-P4: join block law; join of nonempty graphs EGU iff both EGU; scaling invariance. | `finiteRaceLaw_join`, `realClockEGU_join_iff`, `finiteRaceLaw_scale` |
+| IG-L94 | EGU is an isomorphism invariant; every cotree (cograph) graph EGU; IG-P1 complete multipartite EGU; edgeless graphs EGU. | `realClockEGU_congr_equiv`, `Cotree.realClockEGU`, `IsCograph.realClockEGU`, `Cotree.completeMultipartite_realClockEGU` |
+| IG-L95 | IG-P7: false-twin extension preserves the law (merged rates) and EGU both ways. | `finiteRaceLaw_twinExtend`, `realClockEGU_twinExtend_iff` |
+| IG-L96 | IG-P8: every clique corona K_m∘K1, m≥1, EGU at rates 1 and (m+1)^(1/m)−1. | `cliqueCorona_realClockEGU` |
+| IG-L97 | IG-A9 per graph: 90 certified positives `RealClockEGU`, 8 certified negatives `¬RealClockEGU` (NetworkX labellings; includes IG-P3 P4, IG-P5 connected n=5, IG-P6 index 1). | `atlas_n_le_6_certified` |
+| IG-L98 | TV layer: deficits bound; IG-N1b C6 TV≥4/45, not AEGU; IG-N2b P5 unattained AEGU with exact TV; IG-N3b P6 TV≥2√(2/5)−6/5; IG-N6 (m=2) corona(P3) unattained AEGU; IG-P9 union AEGU iff; IG-P10 join AEGU iff. | `realClockAEGU_join_iff`, `realClockTV_ge_deficits`, `c6_not_realClockAEGU`, `p5_unattained_realClockAEGU`, `p6_realClockTV_ge`, `coronaP3_unattained_realClockAEGU`, `realClockAEGU_union_iff` |
+| IG-L99 | **IG-P5 exhaustive:** for every n≤5 and every symmetric irreflexive neighbour map on `Fin n`, RealClockEGU holds unless the graph is isomorphic to P5; on `Fin 5`, EGU ⟺ not ≅ P5. | `graphs_le_five_classification`, `fin5_realClockEGU_iff_not_P5` (Boolean edge-vector certificates, `allBool` + `decide +kernel`) |
+| IG-T42 | Independent exact Python checks of union/join laws, scaling, clique corona m≤4, star corona minors m≤4, false-twin law, P5 and corona(P3) TV families. | `tests/test_s041_graphs.py` |
+
+**Not formalised:** IG-N6 for m≥3; exhaustiveness of the connected n=6 NetworkX enumeration (IG-P5 for n≤5 is now exhaustive in Lean); IG-O1/IG-O2 are open problems (no proof exists); IG-O4 novelty is not a mathematical statement. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+
+## S041 claim ledger — 2026-11-05 (GitHub-verified; merged)
+
+Code head `4da018802b86c3a0396bed9f935b253d66bf1dab` dual-green (push 42039828348, PR 42039904870); superseded by the final S041 heads recorded above; PR #41 squash-merged into `main` (2026-11-05).
+
+| ID | Claim | Formal verification boundary |
+|---|---|---|
+| IG-L79 | Finite-index Tonelli in ENNReal: `Σ'_{d : Fin n → ℕ} ∏_a f_a(d_a) = ∏_a Σ'_k f_a(k)`, all n incl. 0. | Imported `ennreal_tsum_fin_pi_prod` (FiniteClockGapClosedForm.lean). |
+| IG-L80 | S038's *actual measured* vertex monomial at the gap equivalence equals the positional ENNReal monomial; `finiteGapBinEquiv` evaluates to `gapBinValue` for all n. | Imported `finiteExpPositiveBinMonomial_gap_positional`, `finiteGapBinEquiv_val`, `completeClockOrderGapEquiv_symm_val`. |
+| IG-L81 | **Measured finite-width closed product:** `μ(strict-bin chamber) = ofReal(∏_j (1-q_j) q_j^j/(1-Q_j))` for δ>0, positive rates, certified complete order. | Imported `finiteIndependentExp_strictBin_closedForm`; left side is the genuine product measure. |
+| IG-L82 | **Real-clock strict-order law:** for every complete order, `μ{ω_{σ0}<⋯<ω_{σ(n-1)}} = ofReal(orderMass rates σ)`, any finite n. | Imported `finiteIndependentExp_strictClockChamber_orderMass` (δ→0⁺ squeeze via S030/S033/S034); `orderMass_eq_suffix_prod`. |
+| IG-L83 | **Measurable sorted-clock greedy output and its law:** output events measurable; law = `priorityOutputMass` and, for symmetric neighbours, `finiteRaceLaw`. | Imported `realClockGreedyOutput_event_measurable`, `finiteIndependentExp_realClockGreedyOutput_eq_priorityOutputMass`, `…_eq_finiteRaceLaw`. |
+| IG-L84 | **EGU bridge:** for symmetric neighbour maps, `RealClockEGU ↔ FirstChoiceEGU` (same strictly positive rates). | Imported `realClockEGU_iff_firstChoiceEGU`. Definitions of independent/maximal independent sets are new in Lean. |
+| IG-L85 | For symmetric irreflexive neighbours, every greedy scan of a list containing all vertices outputs a maximal independent set; hence the real-clock output law gives non-MIS targets probability 0 and sums to 1 over `maximalIndependentSets`. | Imported `greedyOutput_isMaximalIndependentSet`, `realClockGreedyOutput_mem_maximalIndependentSets`, `finiteIndependentExp_realClockGreedyOutput_nonMIS`, `finiteIndependentExp_realClockGreedyOutput_sum_MIS` (RealClockGreedyMIS.lean). |
+| IG-T41 | Closed product vs independent memoryless recursion (n≤4), truncation bracket, symbolic δ→0⁺ limit = Plackett–Luce, pushforward = first-choice recursion on small graphs, MIS support. | Independent exact Python `tests/test_s041.py`; finite checks only. |
+
+First code head `4da018802b86c3a0396bed9f935b253d66bf1dab` (IG-L79–L84) passed full imported Lean and Python/exact/certified n≤6 census in both [push 42039828348](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42039828348) and [PR 42039904870](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42039904870) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)). IG-L85 is added on the following head; all IG-L79–L85 compiled in a local full imported `lake build`; `#print axioms` shows only `propext`, `Classical.choice`, `Quot.sound`. All later S041 heads, through the final head, were dual-green (see the graph-theorem ledger above); merged. The C6/P5/P6/cograph/corona and classification items once listed here as not claimed were formalised later in S041 (IG-L86–L99); novelty/Palomar is still not claimed. The exponential-race Plackett–Luce law itself is classical probability. Atlas **90 EGU / 8 non-EGU / 45 unresolved**.
+
+## S040 claim ledger — 2026-11-04 (GitHub-verified; merged)
+
+PR #40 exact head `9b32ed5a67f752960aa0b660faf80963beb00248` passed full Lean and Python/census CI in push [41913092754](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913092754) and PR [41913102175](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41913102175); squash-merged into `main` (2026-11-05).
 
 | ID | Claim | Current formal boundary |
 |---|---|---|
-| IG-L77 | In an arbitrary finite index length n, the ENNReal product of powers with prefix sums equals the finite product of suffix factors raised to gap coordinates. | Imported `ennreal_prefix_suffix_pow_product` proposed; exact-head full Lean CI required. |
-| IG-L78 | Finite positional ENNReal gap monomial factorises into a base factor times finite suffix powers for all n including 0 and 1. | Imported `ennreal_gapBinValue_monomial_factor` proposed; exact-head full Lean CI required. This is **not yet identified with S038's genuine measured monomial**. |
-| IG-T40 | Independent exact finite Fraction factorisation regressions including zero factors and empty/singleton boundaries. | Python test `tests/test_s040.py`; exact-head full CI required. |
+| IG-L77 | In an arbitrary finite index length n, the ENNReal product of powers with prefix sums equals the finite product of suffix factors raised to gap coordinates. | Imported `ennreal_prefix_suffix_pow_product` **Lean-verified** at the exact head above. |
+| IG-L78 | Finite positional ENNReal gap monomial factorises into a base factor times finite suffix powers for all n including 0 and 1. | Imported `ennreal_gapBinValue_monomial_factor` **Lean-verified** at the exact head above. This is **not yet identified with S038's genuine measured monomial**. |
+| IG-T40 | Independent exact finite Fraction factorisation regressions including zero factors and empty/singleton boundaries. | Python test `tests/test_s040.py`, green in the CI above. |
 
-**Open:** actual S038 measured monomial transport, multivariate `tsum` geometric evaluation, finite-width measured probability, continuous δ↓0 strict-order law, measurable sorting and continuous-clock greedy-output pushforward. Next `sessions/S041.md`. Atlas **90 EGU / 8 non-EGU / 45 unresolved**, novelty unverified.
+**Open items of S040 were closed in S041.**
 
 ## S039 verified partial claim ledger — 2026-11-04
 
