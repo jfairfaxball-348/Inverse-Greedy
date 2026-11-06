@@ -1,3 +1,15 @@
+# S042 handover — 2026-11-06 (partial formal release)
+
+S041 is merged in `main` `f82a6ee8a0072440cd6e200ceac8fd6d90472a39`, with [main CI green](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42179021649). S042 branch: `s042-fast-pair-and-orbit-audit`.
+
+**New complete mathematics:** Every star corona `K_{1,m}∘K₁` (m≥2) is AEGU. For `N=2^m+1`, assign rates hub=t, hub-leaf=2^m t, each spoke/leaf=1. The first vertex of the exponential race lies in the hub pair with probability `Nt/(Nt+2m)`. Conditional on that event, the greedy MIS distribution is *exactly uniform*. Thus `TV≤2m/(Nt+2m)`→0 as t→∞. Together with the previously Lean-certified all-m non-EGU theorem, this completes IG-N6 **mathematically, not in all-m Lean**. The m=2 AEGU proof already is in Lean. No zero rates or infinite-rate EGU witness is used.
+
+**New exact computation:** Standalone pure-Python `experiments/s042_six_vertex_orbits.py` checks all `2^15=32768` labelled n=6 graphs by explicit vertex permutations, giving 156 isomorphism classes / 112 connected / 44 disconnected. Independent `tests/test_s042.py` performs rational-rate greedy-law and orbit regressions. **Lean n=6 exhaustiveness still open**. Candidate imported `InverseGreedy/ApproximateLowerBound.lean` gives a generic total-variation estimate from pointwise probability minors; check CI before claiming kernel verification.
+
+Proof and boundaries: `proof/S042_FAST_PAIR_AND_ORBITS.md`. Next: `sessions/S043.md`, formalise the all-m AEGU statement and import six-vertex orbit certificates. Keep 90/8/45 unchanged; no novelty/Palomar claim. Do not merge without exact-final-head dual-green Lean plus Python/exact/census GitHub Actions.
+
+---
+
 # S041 (continued) handover — graph theorems in Lean
 
 Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green. PR #40 and PR #41 squash-merged into `main` (2026-11-05).
