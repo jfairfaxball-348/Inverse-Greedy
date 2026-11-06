@@ -1,3 +1,16 @@
+## S042 claim ledger — 2026-11-06 (mathematical result; Lean scope limited)
+
+| ID | Result | Verification boundary |
+|---|---|---|
+| IG-N6 (all m≥2) | `K_{1,m}∘K₁` is AEGU but not EGU; for `N=2^m+1`, rates (hub t, hub leaf 2^m t, every other vertex 1), `TV ≤ 2m/(Nt+2m)`. | **Complete ordinary mathematical proof** in `proof/S042_FAST_PAIR_AND_ORBITS.md`; exact Fraction regression in `tests/test_s042.py`. AEGU Lean proof **only for m=2** remains S041; non-EGU **all m** Lean proof already S041. |
+| IG-L100 (supporting lemma) | `realClockTV_le_of_pointwise_lower_bound`: if every MIS has probability at least q≤1/M, then TV≤1−Mq. | Candidate imported Lean theorem `ApproximateLowerBound.lean`; requires exact-final-head CI before calling Lean verified. |
+| IG-T42a | Enumerates all 2^15 labelled six-vertex graphs by adjacent vertex permutations; verifies 156 isomorphism classes, of which 112 connected; explicit checked permutation witness for every graph. | **Exact, independent Python finite computation** `experiments/s042_six_vertex_orbits.py` (and `tests/test_s042.py`). **Not a Lean certificate.** |
+| IG-O1/IG-O2 | General classification and the 45 unresolved n≤6 cases. | **Open.** No inferred obstructions from numerical tests. |
+
+Atlas 90 EGU / 8 non-EGU / 45 unresolved. See `sessions/S043.md`. No originality or registration claim.
+
+---
+
 ## S041 graph-theorem ledger — 2026-11-05 (GitHub-verified)
 
 Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green.
