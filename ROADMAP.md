@@ -1,3 +1,12 @@
+## S040 — 2026-11-04 (partial PR #40; exact-head CI pending)
+
+- [x] Write a general ENNReal finite triangular prefix/suffix power-product identity and positional gap monomial factorisation, including n=0/1, in an imported Lean module.
+- [x] Add independent bounded exact Fraction regressions, scope-correct proof note and S041 handoff.
+- [ ] Verify complete imported Lean plus full Python/exact/certified connected n≤6 census on **identical final head** in both push and PR CI; only then merge.
+- [ ] S041: transport S038's actual measured monomial through its complete-order equivalence, evaluate the full multivariate ENNReal geometric tsum, establish finite-width measured product, then δ↓0+ and genuine continuous sorting/output pushforward.
+
+Atlas **90 EGU / 8 non-EGU / 45 unresolved**; no novelty or Palomar claim.
+
 ## S039 — 2026-11-04 (verified partial release; PR #39 squash-merged)
 
 Exact final PR head `516df6d5743aa637f4b244caf8f798b4c37b6c9a` passed the **complete imported Lean build** and **full Python/exact/certified connected n≤6 census** in both [push Actions 41902458188](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902458188) and [PR Actions 41902473442](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/41902473442). [PR #39](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/39) squash-merged into `main` as `3a0b60ada77e4feab90ec10852398924fec9b904`.
