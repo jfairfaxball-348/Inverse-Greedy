@@ -1,3 +1,9 @@
+## S042 verified release gate — 2026-11-06
+
+Final PR head `c30a140103a1dd038e92fee80d846f84b4cf8172` passed full imported Lean and Python/exact/certified connected n≤6 atlas in both [push 42183171138](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183171138) and [PR 42183205404](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183205404). Squash-merged into `main` as `b8788ce4ef563602285b0aee8acf3750360f7946`. The abstract TV-from-lower-mass Lean theorem and Python regression are verified. The **all-m star-corona AEGU Lean theorem**, **six-vertex Lean exhaustive atlas**, and **45 unresolved graphs** are still pending S043 or later. No changes to 90/8/45.
+
+---
+
 ## S042 — 2026-11-06: all-m fast-pair proof and six-vertex exhaustive exact orbit audit
 
 - [x] Find and prove a closed-form uniform-convergence construction for **all** pendant star coronas m≥2: `TV≤2m/((2^m+1)t+2m)` for strictly positive finite rates. Combined with S041 all-m non-EGU this proves IG-N6 mathematically.
