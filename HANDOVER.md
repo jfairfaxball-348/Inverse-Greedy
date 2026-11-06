@@ -1,3 +1,9 @@
+# S042 final verified release — 2026-11-06
+
+Final PR head `c30a140103a1dd038e92fee80d846f84b4cf8172` passed full imported Lean and Python/exact/certified connected n≤6 atlas in both [push 42183171138](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183171138) and [PR 42183205404](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183205404). Squash-merged into `main` as `b8788ce4ef563602285b0aee8acf3750360f7946`. The new imported `realClockTV_le_of_pointwise_lower_bound` is Lean-verified; `tests/test_s042.py` and the complete exact regression/census are GitHub-verified. **Only the abstract TV lemma is new Lean work:** the full star-corona all-m AEGU proof (IG-N6) is mathematically complete but not yet Lean formalised, and the six-vertex 32768-graph orbit computation is exact Python but not Lean-certified. See `proof/S042_FAST_PAIR_AND_ORBITS.md` and `sessions/S043.md`. Atlas 90/8/45 unchanged; novelty unverified.
+
+---
+
 # S042 handover — 2026-11-06 (partial formal release)
 
 S041 is merged in `main` `f82a6ee8a0072440cd6e200ceac8fd6d90472a39`, with [main CI green](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42179021649). S042 branch: `s042-fast-pair-and-orbit-audit`.
