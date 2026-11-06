@@ -1,3 +1,17 @@
+## S042 — 2026-11-06: all-m fast-pair proof and six-vertex exhaustive exact orbit audit
+
+- [x] Find and prove a closed-form uniform-convergence construction for **all** pendant star coronas m≥2: `TV≤2m/((2^m+1)t+2m)` for strictly positive finite rates. Combined with S041 all-m non-EGU this proves IG-N6 mathematically.
+- [x] Add independent `Fraction` regression covering m=2..6 and an epsilon-choice construction.
+- [x] Pure-Python exact orbit enumeration over all 32768 labelled n=6 graphs with an explicitly checked vertex relabelling per graph; 156 unlabelled / 112 connected.
+- [x] Add reusable real-clock TV-from-lower-mass Lean lemma (verification subject to exact-final-head CI).
+- [ ] **Not yet Lean:** all-m IG-N6 AEGU proof, including the 2^m+1 MIS count and uniform first-step branch.
+- [ ] **Not yet Lean:** six-vertex orbit-table completeness and identification with all connected atlas records.
+- [ ] Research: resolve any of the 45 remaining n≤6 graphs rigorously, not by numerical residuals.
+
+Proof note: `proof/S042_FAST_PAIR_AND_ORBITS.md`. Handoff: `sessions/S043.md`. Atlas **90/8/45**, unchanged; no novelty claim.
+
+---
+
 ## S041 (continued) — graph theorems in Lean
 
 Code head `adb420f3b93ccd2c98ef73127ebbf318d7548d0d` passed full imported Lean and Python/exact/certified n≤6 census in both [push 42065650195](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065650195) and [PR 42065663973](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42065663973) ([PR #41](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/41)); earlier heads cd4021c and ed12c1d also dual-green.
