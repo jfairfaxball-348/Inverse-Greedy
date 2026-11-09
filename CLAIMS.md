@@ -1,3 +1,9 @@
+## S044 verified scope — 2026-11-09
+
+S044 final PR head `39fc14da79ac8731cc5bb78706a4a842aab5e287` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census at that **identical exact SHA** in both [push Actions 42635260726](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42635260726) and [PR Actions 42635294288](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42635294288). [PR #44](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/44) squash-merged into `main` as `ab48ecbd365951a2f661d70e7df773f8a28fcf20`. The new imported Lean singleton/co-singleton edge isomorphisms and Burnside-table **arithmetic** are verified; the fixed-count table and all 156/112 orbit classification are still only exact Python, **not** a kernel proof. All-m star-corona AEGU likewise remains ordinary mathematics (not all-m Lean). Certified atlas stays **90/8/45**. Next: `sessions/S045.md`; no novelty claim.
+
+---
+
 ## S044 evidence boundary — 2026-11-09 (dual-green verification pending)
 
 **New exact Python only:** independent Burnside fixed-graph enumeration by 11 vertex cycle types reproduces 156 unlabeled / 112 connected n=6, independent of S042/S043 graph-code orbit traversals. **New imported Lean candidate:** `SixVertexBurnsideChecks.lean` explicitly verifies the single-edge and co-single-edge families of six-vertex graph isomorphisms (15 each) and merely verifies the weighted integer arithmetic of the Burnside table. The fixed-graph table entries, Burnside action, 156/112 completeness, and 112 connected atlas bridge are **not kernel-certified**. All-m approximate EGU for star coronas: S042 complete informal proof, **not** all-m Lean; all-m non-EGU is Lean-certified. Atlas 90 certified EGU / 8 certified non-EGU / 45 unresolved unchanged. Verify new statements at final dual-green CI before calling them Lean checked. No novelty claim.

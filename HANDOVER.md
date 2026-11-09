@@ -1,3 +1,11 @@
+# S044 final verified partial release — 2026-11-09
+
+S044 final PR head `39fc14da79ac8731cc5bb78706a4a842aab5e287` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census at that **identical exact SHA** in both [push Actions 42635260726](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42635260726) and [PR Actions 42635294288](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42635294288). [PR #44](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/44) squash-merged into `main` as `ab48ecbd365951a2f661d70e7df773f8a28fcf20`. The new imported Lean singleton/co-singleton edge isomorphisms and Burnside-table **arithmetic** are verified; the fixed-count table and all 156/112 orbit classification are still only exact Python, **not** a kernel proof. All-m star-corona AEGU likewise remains ordinary mathematics (not all-m Lean). Certified atlas stays **90/8/45**. Next: `sessions/S045.md`; no novelty claim.
+
+The prior S044 and S043 "CI pending" entries below are historic development snapshots; this verified release note supersedes their CI status, without upgrading their mathematical scope.
+
+---
+
 # S044 partial — 2026-11-09 (verification pending)
 
 S043 [PR #43](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/43) released: exact final head `a5d23a31a5c118e33eb2111ca358e32a534a9a88` verified full Lean + Python/exact/census in [push 42615967435](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42615967435) and [PR 42616010544](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42616010544); squash merge `892ca2620b994efffd99395f7185310742bd99e1`.

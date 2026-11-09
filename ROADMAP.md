@@ -1,3 +1,14 @@
+## S044 verified release gate — 2026-11-09
+
+- [x] Exact final-head full Lean and Python/exact/census green in **both** push 42635260726 and PR 42635294288.
+- [x] [PR #44](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/44) squash merged `ab48ecbd365951a2f661d70e7df773f8a28fcf20` (code head `39fc14da`).
+- [x] Independent Burnside Python counts 156/112, kernel-checkable 15+15 specific edge orbit isomorphisms and arithmetic of the eleven-row table.
+- [ ] Kernel proof of fixed graph counts, full 156/112 orbit partition, connected atlas correspondence, all-m star-corona AEGU, and research classification of the 45 open cases.
+
+Next `sessions/S045.md`; **90/8/45** unchanged, no novelty/publication claim.
+
+---
+
 ## S044 — 2026-11-09: independent Burnside audit and partial kernel orbit certificates (CI pending)
 
 - [x] S043 exact-final-head full dual-green: push [42615967435](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42615967435) / PR [42616010544](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42616010544), final `a5d23a31`, merged `892ca262`.
