@@ -1,3 +1,13 @@
+## S043 partial claim ledger — 2026-11-09 (CI pending)
+
+| ID | Claim | Scope |
+|---|---|---|
+| IG-L80 | Every symmetric irreflexive neighbour map on `Fin 6` equals the decoding of its 15 Boolean edges using the explicit lexicographic rank/pair table. | Imported Lean module `SixVertexEdgeEncoding.lean`; **CI pending**. This does not count isomorphism classes. |
+| IG-T43a | Independent all-720-permutations orbit check verifies that S042's 156 canonical representatives partition all 32768 labelled n=6 graphs. | Exact Python, locally tested; **not Lean enumeration**. |
+| IG-T43b | All 112 connected NetworkX n=6 atlas records map bijectively to the 112 connected representative orbits by independently checked vertex permutations. | Exact Python, locally tested; **not Lean atlas completeness**. |
+
+**Open:** all-m `RealClockAEGU (starCoronaNb k)` in Lean; Lean-certified n=6 156/112 orbit enumeration; 45 undecided graphs. Proof note `proof/S043_CROSSWALK.md`; next `sessions/S044.md`. Atlas 90/8/45 unchanged. No novelty claim.
+
 ## S042 final Lean/CI certification — 2026-11-06
 
 Final PR head `c30a140103a1dd038e92fee80d846f84b4cf8172` passed full imported Lean and Python/exact/certified connected n≤6 atlas in both [push 42183171138](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183171138) and [PR 42183205404](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183205404). Squash-merged into `main` as `b8788ce4ef563602285b0aee8acf3750360f7946`. Hence claim IG-L100 (`realClockTV_le_of_pointwise_lower_bound`) is **imported Lean-verified**. IG-N6 all-m AEGU remains **mathematics-only** and IG-T42a six-vertex orbit completeness remains **Python-only**, as stated in the ledger below. All new exact regressions and the unchanged n≤6 certified census are green. Next `sessions/S043.md`; no novelty claim.
