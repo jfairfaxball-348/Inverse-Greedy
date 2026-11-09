@@ -87,3 +87,4 @@ import InverseGreedy.SmallGraphClassification
 import InverseGreedy.ApproximateLowerBound
 
 import InverseGreedy.SixVertexEdgeEncoding
+import InverseGreedy.SixVertexBurnsideChecks

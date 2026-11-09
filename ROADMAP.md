@@ -1,3 +1,16 @@
+## S044 — 2026-11-09: independent Burnside audit and partial kernel orbit certificates (CI pending)
+
+- [x] S043 exact-final-head full dual-green: push [42615967435](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42615967435) / PR [42616010544](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42616010544), final `a5d23a31`, merged `892ca262`.
+- [x] Independent Burnside conjugacy-class edge-orbit count, n=1..6: 156 unlabeled / 112 connected at n=6 (**Python exact**).
+- [x] Add first 2 kernel-isomorphism families for all 15 one-edge and 15 co-single-edge six-vertex graphs, plus Burnside table arithmetic (**Lean code, CI pending**).
+- [ ] **Not proved in Lean:** eleven permutation-type fixed-graph counts and Burnside-action theorem; full 156/112 six-vertex exhaustiveness; 112 atlas correspondence.
+- [ ] **Not proved in Lean:** all-k `RealClockAEGU (starCoronaNb k)` fast-pair witness; mathematical proof remains S042.
+- [ ] 45 unresolved connected cases. Counts **90/8/45** remain unchanged.
+
+Next `sessions/S045.md`, scope `proof/S044_BURNSIDE_CHECKS.md`; no novelty/registration/publication claim.
+
+---
+
 ## S043 partial — 2026-11-09 (release CI pending)
 
 - [x] Establish lexicographic `Fin 15` Boolean graph encoding for all six-vertex loop-free symmetric graphs, imported into root Lean build (**CI pending**).

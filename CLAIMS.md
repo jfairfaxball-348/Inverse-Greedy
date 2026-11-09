@@ -1,3 +1,11 @@
+## S044 evidence boundary — 2026-11-09 (dual-green verification pending)
+
+**New exact Python only:** independent Burnside fixed-graph enumeration by 11 vertex cycle types reproduces 156 unlabeled / 112 connected n=6, independent of S042/S043 graph-code orbit traversals. **New imported Lean candidate:** `SixVertexBurnsideChecks.lean` explicitly verifies the single-edge and co-single-edge families of six-vertex graph isomorphisms (15 each) and merely verifies the weighted integer arithmetic of the Burnside table. The fixed-graph table entries, Burnside action, 156/112 completeness, and 112 connected atlas bridge are **not kernel-certified**. All-m approximate EGU for star coronas: S042 complete informal proof, **not** all-m Lean; all-m non-EGU is Lean-certified. Atlas 90 certified EGU / 8 certified non-EGU / 45 unresolved unchanged. Verify new statements at final dual-green CI before calling them Lean checked. No novelty claim.
+
+S043 final head `a5d23a31a5c118e33eb2111ca358e32a534a9a88` passed exact-head full dual-green push 42615967435 and PR 42616010544; squash-merged PR #43 to `892ca2620b994efffd99395f7185310742bd99e1`.
+
+---
+
 ## S043 partial claim ledger — 2026-11-09 (CI pending)
 
 | ID | Claim | Scope |
