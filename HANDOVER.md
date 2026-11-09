@@ -1,3 +1,13 @@
+# S044 partial — 2026-11-09 (verification pending)
+
+S043 [PR #43](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/43) released: exact final head `a5d23a31a5c118e33eb2111ca358e32a534a9a88` verified full Lean + Python/exact/census in [push 42615967435](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42615967435) and [PR 42616010544](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42616010544); squash merge `892ca2620b994efffd99395f7185310742bd99e1`.
+
+S044 branch `s044-burnside-kernel-orbits` introduces `experiments/s044_burnside.py` and independent exact test; new Lean `SixVertexBurnsideChecks.lean` certifies all 15 single-edge and 15 co-single-edge orbit isomorphisms plus numeric arithmetic on the 11 Burnside rows. **This is NOT Lean proof of all 156/112 orbits**: fixed counts and Burnside's lemma are not established in Lean. The general all-m AEGU theorem remains ordinary mathematics only; all-m non-EGU is already in Lean. Atlas 90/8/45 unchanged. Scope: `proof/S044_BURNSIDE_CHECKS.md`; next `sessions/S045.md`.
+
+Run exact final-head full imported Lean + Python/exact/census in BOTH push and PR Actions before merging. Do not describe new Lean statements as verified until that happens.
+
+---
+
 # S043 partial handover — 2026-11-09 (CI pending)
 
 Working branch `s043-six-vertex-crosswalk`, based on verified S042 main `6620998cacb22caabc4b04d7a65750bf2a7f4afb`. Added imported `InverseGreedy/SixVertexEdgeEncoding.lean` (15 undirected edge pairs and `nbOf_fOf` decoding), new `experiments/s043_atlas_crosswalk.py` (independent 720-permutation orbit partition, all 32768 codes, bijection to the 112 connected NetworkX atlas rows via verified vertex permutations), `tests/test_s043.py`, and `proof/S043_CROSSWALK.md`. The new standalone tests passed locally (3 tests). **Full imported Lean build and complete regression/census in GitHub Actions have not yet been verified on the final PR head**; do not merge until green in both push and PR. The 156/112 counts remain exact Python, **not Lean**. S042 general star-corona AEGU remains complete mathematically but unformalised in all-m Lean. See `sessions/S044.md` for both unfinished obligations. Atlas **90/8/45** unchanged; no novelty/registration/publication claim.
