@@ -1,3 +1,17 @@
+## S043 partial — 2026-11-09 (release CI pending)
+
+- [x] Establish lexicographic `Fin 15` Boolean graph encoding for all six-vertex loop-free symmetric graphs, imported into root Lean build (**CI pending**).
+- [x] Independently verify canonical-orbit partition via all 720 permutations per representative and exact coverage of 32768 labelled graphs (**Python only**).
+- [x] Produce explicit 112-entry atlas-to-orbit bijection with edge-checked vertex relabellings and optional JSON export (**Python only**).
+- [x] Add independent exact Python regressions, proof-scope note and `sessions/S044.md`.
+- [ ] All-m fast-pair `RealClockAEGU (starCoronaNb k)` statement in Lean. S042 proof is only ordinary mathematics for general m.
+- [ ] `156` unlabelled/`112` connected n=6 classes as a Lean-kernel exhaustive theorem, and Lean crosswalk to 90/8/45 atlas.
+- [ ] Classify remaining 45 graphs rigorously.
+
+Atlas **90 EGU / 8 non-EGU / 45 unresolved**. `proof/S043_CROSSWALK.md`. Final-head GitHub CI required before merge. No novelty claim.
+
+---
+
 ## S042 verified release gate — 2026-11-06
 
 Final PR head `c30a140103a1dd038e92fee80d846f84b4cf8172` passed full imported Lean and Python/exact/certified connected n≤6 atlas in both [push 42183171138](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183171138) and [PR 42183205404](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42183205404). Squash-merged into `main` as `b8788ce4ef563602285b0aee8acf3750360f7946`. The abstract TV-from-lower-mass Lean theorem and Python regression are verified. The **all-m star-corona AEGU Lean theorem**, **six-vertex Lean exhaustive atlas**, and **45 unresolved graphs** are still pending S043 or later. No changes to 90/8/45.
