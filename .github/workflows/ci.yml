@@ -18,6 +18,8 @@ jobs:
         run: python experiments/exact.py
       - name: Certified connected-graph atlas
         run: python experiments/census.py --max-n 6 --max-rate 4
+      - name: Palomar static preflight (informational until registration port)
+        run: python experiments/palomar_preflight.py || true
   lean:
     runs-on: ubuntu-latest
     steps:
