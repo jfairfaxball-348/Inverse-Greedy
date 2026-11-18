@@ -1,3 +1,7 @@
+**CURRENT NEXT SESSION (owner direction, 2026-11-18):** [S045 — Palomar Candidate Audit and Registration](sessions/S045.md). A publicly verified Palomar registration of a genuinely Lean-proved Inverse Greedy theorem is required **before any paper drafting**. First candidate: complete EGU classification on at most five vertices; perform specific prior-art and Comparator audits. Previous S045 all-m star-corona and six-vertex work is deferred, not completed. No registration claimed yet; atlas 90/8/45 unchanged.
+
+---
+
 **S044 VERIFIED PARTIAL RELEASE — 2026-11-09.** S044 final PR head `39fc14da79ac8731cc5bb78706a4a842aab5e287` passed the complete imported Lean build and full Python/exact/certified connected n≤6 census at that **identical exact SHA** in both [push Actions 42635260726](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42635260726) and [PR Actions 42635294288](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/42635294288). [PR #44](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/44) squash-merged into `main` as `ab48ecbd365951a2f661d70e7df773f8a28fcf20`. The new imported Lean singleton/co-singleton edge isomorphisms and Burnside-table **arithmetic** are verified; the fixed-count table and all 156/112 orbit classification are still only exact Python, **not** a kernel proof. All-m star-corona AEGU likewise remains ordinary mathematics (not all-m Lean). Certified atlas stays **90/8/45**. Next: `sessions/S045.md`; no novelty claim.
 
 ---
