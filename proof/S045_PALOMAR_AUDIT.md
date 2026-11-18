@@ -35,7 +35,7 @@ Official sources (accessed 2026-11-18):
 - https://github.com/PalomarRegistry/PalomarTemplate
 - https://submit.palomar-registry.org/
 
-At S045's initial `main` commit `ada7a67dfe85a4f69058e7775bf2b03a915d9550`, GitHub tree lists **95** tracked Lean source files and no root `LICENSE`/`LICENCE`/`COPYING`, `Challenge.lean`, `Solution.lean`, `comparator.json`, or `formalization.yaml`. Sampled imported files (`InverseGreedy.lean`, `SmallGraphClassification.lean`, `EdgeSetGraphs.lean`, `RealClockGreedyLaw.lean`, `GraphOperationsEGU.lean`, `CographEGU.lean`, `FalseTwins.lean`) begin with old-style `import`, not the required `module` header. No assertion is made that all 95 are defective without the complete preflight scan.
+At S045's initial `main` commit `ada7a67dfe85a4f69058e7775bf2b03a915d9550`, GitHub tree lists **95** tracked Lean source files and no root `LICENSE`/`LICENCE`/`COPYING`, `Challenge.lean`, `Solution.lean`, `comparator.json`, or `formalization.yaml`. Sampled imported files (`InverseGreedy.lean`, `SmallGraphClassification.lean`, `EdgeSetGraphs.lean`, `RealClockGreedyLaw.lean`, `GraphOperationsEGU.lean`, `CographEGU.lean`, `FalseTwins.lean`) begin with old-style `import`, not the required `module` header. The subsequent exact-head S045 CI preflight scanned all 95 tracked Lean files and reported **95/95 lacking modern module headers**. The report is a local heuristic structural diagnostic, not Lean's official module verifier.
 
 Palomar requires **every** regular Lean source in the submitted repository (even unused files and contained projects) to have a modern module header and at most 10,000 physical lines. A Challenge has a stricter 1,000 lines / 100 KiB cap and transitive imports only from permitted core/Mathlib/Tau Ceti closure. Solution may use pinned local or Git dependencies; this **does not** exempt the substantive source tree from module checks. Adding `module` is not sufficient: public declarations/imports must be migrated and the entire proof rebuilt. All of this must be tested against official Comparator and its independent kernels, rather than assuming that prior `lake build` applies.
 
@@ -57,9 +57,9 @@ Potential research audience: probabilistic combinatorics, random greedy algorith
 
 - Prior actual **S044** code head `39fc14da79ac8731cc5bb78706a4a842aab5e287`: dual-green push run 42635260726 and PR run 42635294288, before squash merge.
 - Prior S044 main squash merge `ab48ecbd365951a2f661d70e7df773f8a28fcf20`.
-- At audit time S045-installed `main` SHA `ada7a67dfe85a4f69058e7775bf2b03a915d9550`; workflow `44366116204` was **in progress**, not a verified successful final build. Do not substitute S044 CI for S045 head.
+- At audit time S045-installed `main` SHA `ada7a67dfe85a4f69058e7775bf2b03a915d9550`; workflow `44366116204` subsequently passed. S045 PR #45 code head `3595d041f97aa25ff2b6f8bc3255a745fcab08d6` passed both push and PR CI in runs 44368658437 / 44368676610, and was squash-merged as `ea4eb45bc78e5ecd565a6362e918cc826ebb902a`.
 - S045 adds `experiments/palomar_preflight.py` plus isolated unit tests. This is **static structural preflight only**; running it can identify packaging blockers but cannot certify theorem proof, metadata truth, axioms or Comparator.
-- Full `lake build`, full Python/exact/census, `#print axioms`, `lake comparator`, public Palomar verification/review and registration: **NOT EXECUTED / NOT VERIFIED FOR S045** at the time of this note. Update with links only when confirmed.
+- Full imported Lean build and Python tests/exact/census: **verified by GitHub push and PR CI on the identical S045 PR code head** above. Local `#print axioms` for the proposed Comparator interface, official `lake comparator`, independent Palomar verification/editorial review and registration: **NOT EXECUTED / NOT VERIFIED**.
 - No Palomar ID, status page or registration evidence exists in this audit. Submission **must not** occur against the current incomplete source.
 
 ## Next exact gates
