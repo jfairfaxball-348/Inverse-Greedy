@@ -1,3 +1,7 @@
+## S045 audit complete (2026-11-18) — registration blocked, S046 installed
+
+**Hard owner gate: public Palomar entry and ID before any paper.** Candidate selected: complete at-most-five-vertex `RealClockEGU` iff classification (P5 alone excluded). Supporting genuine Exp-clock bridge and cograph, union/join and false-twin laws already in imported Lean; none substitutes for Palomar module/Challenge/Comparator verification. S045 added `proof/S045_PALOMAR_AUDIT.md`, `experiments/palomar_preflight.py`, and test coverage. At audit: repository contains 95 Lean files, sampled old imports without mandatory modern module header, no root owner-approved licence and no Challenge/Solution/Comparator/metadata. **No Palomar submission, no public ID, no official Comparator pass.** Port and reverify in `sessions/S046.md`; preserve open all-m star-corona AEGU, n=6 Lean exhaustiveness, and 90/8/45 ledger. No manuscript.
+
 ## S045 new research priority — Palomar registration before paper (2026-11-18)
 
 - [x] Install `sessions/S045.md` for a theorem-specific formalisation/novelty audit and executable Palomar submission workflow.
