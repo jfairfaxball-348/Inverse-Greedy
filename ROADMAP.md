@@ -1,3 +1,14 @@
+## S045 new research priority — Palomar registration before paper (2026-11-18)
+
+- [x] Install `sessions/S045.md` for a theorem-specific formalisation/novelty audit and executable Palomar submission workflow.
+- [ ] Select a substantial theorem already proved in Lean; first candidate: EGU classification for all graphs on <=5 vertices, supported by the genuine exponential-clock bridge.
+- [ ] Construct current-compliant Palomar Challenge/Solution/Comparator/metadata and obtain independent verification.
+- [ ] Obtain and publicly verify a Palomar ID and registered entry (owner approval where required).
+- [ ] **Only after registration** plan manuscript; no writing a paper before the Palomar gate.
+- [ ] Prior S045 goals deferred: all-m star-corona AEGU in Lean, complete six-vertex Lean-orbit certification and remaining 45 cases; no change to mathematical claim status.
+
+---
+
 ## S044 verified release gate — 2026-11-09
 
 - [x] Exact final-head full Lean and Python/exact/census green in **both** push 42635260726 and PR 42635294288.
