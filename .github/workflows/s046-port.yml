@@ -29,6 +29,14 @@ jobs:
           assert not bad, bad
           print('All migrated Lean files have module headers.')
           PY
+      - name: Palomar-template Lean source and size check
+        run: python scripts/check-lean-sources.py
+      - name: Palomar static package preflight (blocking)
+        run: python experiments/palomar_preflight.py
+      - name: Validate formalization.yaml against pinned official v0.4 schema
+        run: |
+          python -m pip install -q 'PyYAML==6.0.2' 'jsonschema==4.23.0'
+          python scripts/validate_formalization.py
       - uses: leanprover/lean-action@v1
         with:
           use-mathlib-cache: true
