@@ -41,3 +41,11 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "S046: modern-module source migration after successful full Lean build"
           git push origin HEAD:refs/heads/s046-modern-lean-port
+      - name: Compile Mathlib-only Challenge (intentional theorem hole allowed)
+        run: lake env lean Challenge.lean
+      - name: Compile separately proved Solution and report exact Lean axioms
+        run: lake env lean Solution.lean
+      - name: Install Comparator sandbox dependency
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq bubblewrap
+      - name: Official lake comparator with bundled independent kernels
+        run: bash scripts/verify-comparator.sh
