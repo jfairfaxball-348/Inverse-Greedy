@@ -1,3 +1,7 @@
+**S049 CLAIM STATUS — 19 Nov 2026:** Paper draft only, no additional proven claim. The eight-page manuscript with seven purposeful vector figures reports precisely the previously checked positive finite independent Exp-clock at-most-five-vertex iff (sole exception whole-graph P5). [S049 report](manuscript/S049_REPORT.md) records exact figure validations and review boundaries. Palomar entry supplied by owner is version 1 of PALOMAR-2026-11-19-000021; immutable registry SHA cross-check remains pending, and no independent journal refereeing or novelty finding has been completed. No changes to six-vertex 90/8/45 status or all-m AEGU.
+
+---
+
 **PALOMAR PREFLIGHT DISTINCT FROM LOCAL PROOF CHECK (S047):** Standalone official `lake comparator` independently accepted the theorem on the exact checked premerge SHA, but Palomar's live agent protocol demands its **complete pinned PalomarSubmission reusable full workflow** before intake. It adds independent source/dependency provenance and resource checks and produces the authoritative preflight mechanical report. [Workflow](.github/workflows/palomar-preflight.yml) is installed; a green local CI does NOT imply official preflight pass. Source theorem and 90/8/45 ledger unchanged. **Not submitted / not registered / no manuscript.** [Evidence](proof/S047_PALOMAR_VERIFICATION.md).
 
 ---

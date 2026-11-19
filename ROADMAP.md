@@ -1,3 +1,14 @@
+## S049 delivered — visual manuscript, 19 November 2026
+
+- [x] First eight-page, seven-figure LaTeX manuscript with source-controlled editable vector figures, including all 53 small-graph atlas classes.
+- [x] Exact symbolic/rational checks for P3, P4, K1,3, P5 four MIS, obstruction inequality, and source figure ledger.
+- [x] PDF build and print-scale layout polish; S049 report and reproducible build documented.
+- [x] Targeted original-literature check (no novelty guarantee).
+- [ ] S050: independent critical mathematical referee review, wider forward-citation/novelty check, actual Palomar immutable source SHA v1, journal-interest decision and submission preparation.
+- No Lean/Palomar source changes, large proof workflows or journal submission solely for this editorial phase.
+
+---
+
 ## S047 newly identified Palomar-owned full mechanical preflight gate (2026-11-19)
 
 - [x] Read [live Palomar preflight protocol](https://submit.palomar-registry.org/llms.txt) and pin [PalomarSubmission workflow](https://github.com/PalomarRegistry/PalomarSubmission/blob/14aa8d6b3c2f14a8540605e37144560b9a00e7e7/.github/workflows/submission.yml) and pipeline_commit to `14aa8d6b3c2f14a8540605e37144560b9a00e7e7`.
