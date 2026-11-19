@@ -114,6 +114,9 @@ theorem gapBinValue_vector_injective {n : ℕ} :
     _ = gapDifferenceSucc (gapBinValue y) := by rw [h]
     _ = y := gapDifferenceSucc_gapBinValue y
 
+-- Module-system compatibility: this exposed Equiv packages proofs in public data.
+set_option backward.proofsInPublic true
+
 /-- Genuine equivalence between nonnegative finite gaps and strictly
 increasing zero-based bin vectors. Includes the empty index type. -/
 def finiteGapBinEquiv (n : ℕ) :
