@@ -1,4 +1,8 @@
-import InverseGreedy.BinnedRaceCollision
+module
+public import InverseGreedy.BinnedRaceCollision
+
+@[expose] public section
+
 
 /-!
 # S028: geometric evaluation for actual exponential ceiling-bin collisions

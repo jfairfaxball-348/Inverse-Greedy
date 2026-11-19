@@ -1,4 +1,8 @@
-import InverseGreedy.RealClockGreedyMIS
+module
+public import InverseGreedy.RealClockGreedyMIS
+
+@[expose] public section
+
 
 /-!
 # S041: exact laws of disjoint unions and joins; EGU closure (IG-P2, IG-P4)

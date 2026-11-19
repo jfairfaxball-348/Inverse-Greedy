@@ -1,4 +1,8 @@
-import InverseGreedy.SixVertexEdgeEncoding
+module
+public import InverseGreedy.SixVertexEdgeEncoding
+
+@[expose] public section
+
 
 /-!
 # S044: two formally certified six-vertex orbits and Burnside arithmetic

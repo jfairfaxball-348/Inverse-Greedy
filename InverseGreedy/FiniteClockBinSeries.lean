@@ -1,6 +1,10 @@
-import InverseGreedy.FiniteClockJointBins
-import InverseGreedy.FiniteClockBinChambers
-import InverseGreedy.FiniteClockBinExceptions
+module
+public import InverseGreedy.FiniteClockJointBins
+public import InverseGreedy.FiniteClockBinChambers
+public import InverseGreedy.FiniteClockBinExceptions
+
+@[expose] public section
+
 
 /-!
 # S035: countable positive-bin decomposition of genuine finite clock chambers

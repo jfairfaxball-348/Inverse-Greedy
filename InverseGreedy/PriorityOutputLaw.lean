@@ -1,4 +1,8 @@
-import InverseGreedy.GreedyBlockedErasure
+module
+public import InverseGreedy.GreedyBlockedErasure
+
+@[expose] public section
+
 
 /-!
 # S012: weighted greedy-output event law as a pushforward

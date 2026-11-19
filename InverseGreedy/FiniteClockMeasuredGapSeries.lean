@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockCompleteOrder
+module
+public import InverseGreedy.FiniteClockCompleteOrder
+
+@[expose] public section
+
 
 /-!
 # S038: reindex S035's *genuine measured* chamber series by finite gaps

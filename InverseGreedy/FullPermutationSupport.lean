@@ -1,4 +1,8 @@
-import InverseGreedy.OrderLeafBridge
+module
+public import InverseGreedy.OrderLeafBridge
+
+@[expose] public section
+
 
 /-!
 # S008: support of the complete finite priority-permutation law

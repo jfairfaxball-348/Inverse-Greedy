@@ -1,4 +1,8 @@
-import InverseGreedy.ClockBins
+module
+public import InverseGreedy.ClockBins
+
+@[expose] public section
+
 
 /-!
 # S027: true two-clock first-bin race cylinders

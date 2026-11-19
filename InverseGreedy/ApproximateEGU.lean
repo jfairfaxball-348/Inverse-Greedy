@@ -1,7 +1,11 @@
-import InverseGreedy.SmallGraphObstructions
-import InverseGreedy.GraphOperationsEGU
-import InverseGreedy.C6TVGap
-import InverseGreedy.P5ApproximateBoundary
+module
+public import InverseGreedy.SmallGraphObstructions
+public import InverseGreedy.GraphOperationsEGU
+public import InverseGreedy.C6TVGap
+public import InverseGreedy.P5ApproximateBoundary
+
+@[expose] public section
+
 
 /-!
 # S041: approximate EGU and total-variation gaps for genuine clocks

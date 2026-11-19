@@ -1,4 +1,8 @@
-import InverseGreedy.ClockBins
+module
+public import InverseGreedy.ClockBins
+
+@[expose] public section
+
 
 /-!
 # S033 companion: zero-bin nullity for every finite exponential family

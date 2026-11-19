@@ -1,4 +1,8 @@
-import Mathlib
+module
+public import Mathlib
+
+@[expose] public section
+
 
 /-!
 # Cubic AM-GM via a polynomial sum-of-squares certificate

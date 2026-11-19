@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockChambers
+module
+public import InverseGreedy.FiniteClockChambers
+
+@[expose] public section
+
 
 /-!
 # S024: exact survival of genuine exponential clocks

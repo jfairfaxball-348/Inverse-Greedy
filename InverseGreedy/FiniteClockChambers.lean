@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockNoTies
+module
+public import InverseGreedy.FiniteClockNoTies
+
+@[expose] public section
+
 
 /-!
 # S023: measurable strict sorting chambers of genuine finite real clocks

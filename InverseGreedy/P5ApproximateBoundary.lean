@@ -1,4 +1,8 @@
-import Mathlib
+module
+public import Mathlib
+
+@[expose] public section
+
 
 /-!
 # S012: a positive-rate P5 family approaching exact uniformity

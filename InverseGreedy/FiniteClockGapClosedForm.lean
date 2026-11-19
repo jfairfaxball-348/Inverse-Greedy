@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockGapMonomial
+module
+public import InverseGreedy.FiniteClockGapMonomial
+
+@[expose] public section
+
 
 /-!
 # S041: exact finite-width closed product of the measured strict-bin chamber

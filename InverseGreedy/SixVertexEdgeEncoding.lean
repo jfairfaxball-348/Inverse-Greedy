@@ -1,4 +1,8 @@
-import InverseGreedy.EdgeSetGraphs
+module
+public import InverseGreedy.EdgeSetGraphs
+
+@[expose] public section
+
 
 /-!
 # S043: formal Boolean edge encoding of every six-vertex simple graph

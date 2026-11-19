@@ -1,4 +1,8 @@
-import InverseGreedy.ProjectionSupport
+module
+public import InverseGreedy.ProjectionSupport
+
+@[expose] public section
+
 
 /-!
 # S016: first retained winner as an actual weighted permutation event

@@ -1,4 +1,8 @@
-import InverseGreedy.RealClockGreedyMIS
+module
+public import InverseGreedy.RealClockGreedyMIS
+
+@[expose] public section
+
 
 /-!
 # S041: certified symbolic expansion of the first-choice recursion

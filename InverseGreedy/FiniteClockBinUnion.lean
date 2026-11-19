@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockPairBinCollision
+module
+public import InverseGreedy.FiniteClockPairBinCollision
+
+@[expose] public section
+
 
 /-!
 # S034: finite unions of genuine exponential clock-bin collisions

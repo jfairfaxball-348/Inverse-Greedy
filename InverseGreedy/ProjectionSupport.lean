@@ -1,4 +1,8 @@
-import InverseGreedy.ProjectedOrderLaw
+module
+public import InverseGreedy.ProjectedOrderLaw
+
+@[expose] public section
+
 
 /-!
 # S015: exact support of weighted projected-order events

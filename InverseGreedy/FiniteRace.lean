@@ -1,4 +1,8 @@
-import Mathlib
+module
+public import Mathlib
+
+@[expose] public section
+
 
 /-!
 # Finite weighted races and the greedy output map

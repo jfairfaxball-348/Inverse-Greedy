@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockGapEncoding
+module
+public import InverseGreedy.FiniteClockGapEncoding
+
+@[expose] public section
+
 
 /-!
 # S037: the reverse map from strictly increasing bins to finite gaps

@@ -1,4 +1,8 @@
-import InverseGreedy.ApproximateEGU
+module
+public import InverseGreedy.ApproximateEGU
+
+@[expose] public section
+
 
 /-!
 # S042: finite total-variation bound from pointwise mass lower bounds

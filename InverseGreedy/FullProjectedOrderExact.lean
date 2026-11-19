@@ -1,4 +1,8 @@
-import InverseGreedy.FirstRetainedExact
+module
+public import InverseGreedy.FirstRetainedExact
+
+@[expose] public section
+
 
 /-!
 # S017: full weighted deletion consistency for actual priority permutations

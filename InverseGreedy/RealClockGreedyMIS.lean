@@ -1,4 +1,8 @@
-import InverseGreedy.RealClockGreedyLaw
+module
+public import InverseGreedy.RealClockGreedyLaw
+
+@[expose] public section
+
 
 /-!
 # S041: the real-clock greedy output is always a maximal independent set

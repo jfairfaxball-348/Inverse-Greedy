@@ -1,4 +1,8 @@
-import InverseGreedy.ContinuousRaceSwap
+module
+public import InverseGreedy.ContinuousRaceSwap
+
+@[expose] public section
+
 
 /-!
 # S022: two selected coordinates of genuine finite exponential products

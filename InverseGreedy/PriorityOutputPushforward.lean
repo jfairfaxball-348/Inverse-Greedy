@@ -1,4 +1,8 @@
-import InverseGreedy.PriorityProjectionEvent
+module
+public import InverseGreedy.PriorityProjectionEvent
+
+@[expose] public section
+
 
 /-!
 # S018: exact discrete greedy-output pushforward

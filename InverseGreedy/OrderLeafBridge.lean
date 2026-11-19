@@ -1,4 +1,8 @@
-import InverseGreedy.OrderTreeNormalization
+module
+public import InverseGreedy.OrderTreeNormalization
+
+@[expose] public section
+
 
 /-!
 # S007: identity of a finite priority leaf with its algebraic order mass

@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockGapInverse
+module
+public import InverseGreedy.FiniteClockGapInverse
+
+@[expose] public section
+
 
 /-!
 # S038: certified complete clock orders and admissible gap coordinates

@@ -1,4 +1,8 @@
-import InverseGreedy.BinnedRaceGeometric
+module
+public import InverseGreedy.BinnedRaceGeometric
+
+@[expose] public section
+
 
 /-!
 # S029: real-clock winner / ceiling-bin measure sandwich

@@ -1,5 +1,9 @@
-import InverseGreedy.ClockBins
-import InverseGreedy.FiniteClockPairOrder
+module
+public import InverseGreedy.ClockBins
+public import InverseGreedy.FiniteClockPairOrder
+
+@[expose] public section
+
 
 /-!
 # S032: genuine joint ceiling-bin law and exact two-list chambers

@@ -1,4 +1,8 @@
-import InverseGreedy.PriorityHeadEvents
+module
+public import InverseGreedy.PriorityHeadEvents
+
+@[expose] public section
+
 
 /-!
 # S014: exact projected weighted order event and first-head equation

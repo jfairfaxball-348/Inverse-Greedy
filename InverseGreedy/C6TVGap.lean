@@ -1,4 +1,8 @@
-import InverseGreedy.C6Product
+module
+public import InverseGreedy.C6Product
+
+@[expose] public section
+
 
 /-!
 # S012: positive total-variation deficit from the C6 pair-product bound

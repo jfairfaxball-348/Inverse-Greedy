@@ -1,4 +1,8 @@
-import InverseGreedy.PriorityHeadConditioning
+module
+public import InverseGreedy.PriorityHeadConditioning
+
+@[expose] public section
+
 
 /-!
 # S013: first-choice recursion of the weighted priority event law

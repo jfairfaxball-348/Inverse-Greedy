@@ -1,5 +1,9 @@
-import InverseGreedy.ContinuousRaceLimit
-import InverseGreedy.FiniteClockChambers
+module
+public import InverseGreedy.ContinuousRaceLimit
+public import InverseGreedy.FiniteClockChambers
+
+@[expose] public section
+
 
 /-!
 # S031: genuine finite-clock pair-order marginals

@@ -1,4 +1,8 @@
-import InverseGreedy.OrderMassBridge
+module
+public import InverseGreedy.OrderMassBridge
+
+@[expose] public section
+
 
 /-!
 # S006: structural normalisation of the finite weighted-order tree

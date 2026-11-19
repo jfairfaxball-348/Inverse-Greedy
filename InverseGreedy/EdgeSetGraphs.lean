@@ -1,4 +1,8 @@
-import InverseGreedy.AtlasCertificates
+module
+public import InverseGreedy.AtlasCertificates
+
+@[expose] public section
+
 
 /-!
 # S041: Boolean edge-vector encoding of graphs and kernel-cheap certificates

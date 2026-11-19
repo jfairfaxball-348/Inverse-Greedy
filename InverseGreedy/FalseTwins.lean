@@ -1,4 +1,8 @@
-import InverseGreedy.CographEGU
+module
+public import InverseGreedy.CographEGU
+
+@[expose] public section
+
 
 /-!
 # S041: false-twin invariance (IG-P7) for genuine exponential clocks

@@ -1,4 +1,8 @@
-import InverseGreedy.ExpSurvival
+module
+public import InverseGreedy.ExpSurvival
+
+@[expose] public section
+
 
 /-!
 # S025: actual exponential mass of geometric bin cells

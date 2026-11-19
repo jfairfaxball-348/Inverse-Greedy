@@ -1,5 +1,9 @@
-import InverseGreedy.FiniteClockMeasuredGapSeries
-import InverseGreedy.BinnedRaceGeometric
+module
+public import InverseGreedy.FiniteClockMeasuredGapSeries
+public import InverseGreedy.BinnedRaceGeometric
+
+@[expose] public section
+
 
 /-!
 # S039: strictly contractive geometric ratios for actual clock bins
