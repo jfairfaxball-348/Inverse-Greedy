@@ -1,0 +1,43 @@
+name: S046 Lean modern-module migration trial
+on:
+  push:
+    branches: [s046-modern-lean-port]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  port-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply first-pass modern module conversion (in disposable CI checkout)
+        run: python experiments/s046_port_modules.py --apply
+      - name: Assert every Lean source has a module header
+        run: |
+          python - <<'PY'
+          import pathlib
+          bad = [str(p) for p in pathlib.Path('.').rglob('*.lean')
+                 if '.lake' not in p.parts and '.git' not in p.parts
+                 and not p.read_text(encoding='utf-8').startswith('module\n')]
+          assert not bad, bad
+          print('All migrated Lean files have module headers.')
+          PY
+      - uses: leanprover/lean-action@v1
+        with:
+          use-mathlib-cache: true
+          build: true
+      - name: Commit migration ONLY if full Lean build succeeded
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -u
+          git diff --cached --quiet && exit 0
+          git commit -m "S046: modern-module source migration after successful full Lean build"
+          git push origin HEAD:refs/heads/s046-modern-lean-port
