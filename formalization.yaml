@@ -70,7 +70,11 @@ status:
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
   main_results:
-    - "PalomarEGU.graphs_le_five_iff"
+    - declaration: "PalomarEGU.graphs_le_five_iff"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
 
 automation:
   methods:
