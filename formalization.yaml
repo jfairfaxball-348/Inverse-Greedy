@@ -64,8 +64,13 @@ status:
     six vertices are separate previous work. All-m star-corona approximate
     EGU and complete six-vertex orbit exhaustiveness are not formally proved.
     The Challenge has one intentional theorem hole, excluded from proof counts.
-    This metadata is staged pending successful full Comparator, kernel and
-    independent review checks; it is not proof of Palomar registration.
+    The Challenge/Solution comparison passed the official Comparator and
+    independent Lean, NanoDa and con-ron kernel checks on 2026-11-19 at source
+    commit a77a61228e0159a37b2ddc292b09ead86eacdda5. The automated Palomar
+    editorial review of that submission reported no blocking problems and a
+    correctable stale-status warning. This metadata-only update neither changes
+    the formal statement nor establishes a new Palomar verification or public
+    registration; the revised commit requires its own submission checks.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: ["propext", "Quot.sound", "Classical.choice"]
@@ -83,7 +88,8 @@ automation:
       framework: "ChatGPT and GitHub Actions"
       tool_setup: >-
         AI-assisted formalization, shell-based CI migration and targeted Lean
-        proof debugging, with the formal Lean kernel intended as final checker.
+        proof debugging, followed by successful official Comparator checks
+        with Lean, NanoDa and con-ron on the previously reviewed source commit.
       cost:
         wall_time: "Not tracked across research sessions"
         spend_usd: "Not tracked; subscription-based assistant"
@@ -104,18 +110,22 @@ fidelity:
     No intentional mathematical weakening: actual independent real Exp(rate)
     product measures, the deterministic tie-broken greedy output, all maximal
     independent sets, strict rate positivity, and full P5 isomorphism are
-    preserved. Whether the separately defined challenge interface is
-    definitionally matched to the existing imported development remains
-    contingent on successful Comparator verification.
+    preserved. The official Comparator accepted the correspondence between
+    Challenge and Solution at source commit
+    a77a61228e0159a37b2ddc292b09ead86eacdda5. This metadata correction
+    changes neither interface nor proof and is not itself a new verification.
 
 review:
-  status: "self-assessed; independent Palomar review pending"
+  status: "Automated Palomar editorial review completed for previous source commit; revised metadata pending resubmission"
   reviewers: []
   notes: >-
-    Historical Lean build and bounded exact checks do not constitute
-    Comparator certification or a mathematical novelty certificate.
-    Current staged files must pass lean, axiom inspection and both independent
-    kernels before owner-initiated submission.
+    Palomar's automated AI editorial review on 2026-11-19 of commit
+    a77a61228e0159a37b2ddc292b09ead86eacdda5 found no blocking problems,
+    but flagged stale verification-status prose, corrected here. No human
+    mathematical referee participated. Official mechanical verification,
+    including Comparator and independent kernels, passed for that earlier
+    commit. The revised metadata-only commit is not yet reviewed or registered;
+    successful verification does not establish research novelty or priority.
 
 alignment:
   namespace: "PalomarEGU"
@@ -126,7 +136,9 @@ alignment:
       status: "adapted"
       note: >-
         Full iff is stronger than the underlying disjunction and uses the
-        separately proved strict P5 obstruction. Still pending Comparator.
+        separately proved strict P5 obstruction. The official Comparator
+        accepted this correspondence at the previously verified source commit
+        a77a61228e0159a37b2ddc292b09ead86eacdda5.
     - source: "InverseGreedy.RealClockEGU and genuine exponential-clock law"
       lean: "PalomarEGU.RealClockEGU"
       module: "Challenge"
