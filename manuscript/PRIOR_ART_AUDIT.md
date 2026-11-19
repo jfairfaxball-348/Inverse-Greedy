@@ -1,0 +1,13 @@
+# S049 — Targeted prior-art and publication-interest audit (19 November 2026)
+
+This is a *targeted* check of original sources and accessible abstracts/introduction text, **not a comprehensive novelty guarantee**. It does not claim the mathematical result is the first or an independently refereed contribution.
+
+- **Pippenger, RSA on graphs (1989), doi:10.1137/0402034.** Sequential occupancy on graphs with vertices inspected in a random sequence; graph jamming/occupancy, not the exhibited inverse small-graph positive-rate iff. Direct abstract inspected.
+- **Krivelevich–Mészáros–Michaeli–Shikhelman (2024), doi:10.1002/rsa.21200.** Full paper introduction/theorem overview inspected. Random greedy independent-set density/local limits, primarily random uniform label ordering. The present inverse rate-design question targets the exact law on all maximal independent sets, a different observable.
+- **Penrose–Rosoman (2012), doi:10.1016/j.spa.2012.01.007.** Red/blue RSA lattice with distinct arrival rates 1 and lambda; confirms non-identical exponential rates in RSA are prior art, not novel here. Citation verified as SPA 122(4), 1866–1886.
+- **Fairfax-Ball (2026), arXiv:2610.02276.** Equal-rate random greedy tree uniformity; present paper changes the existence-of-positive-rates quantifier. The same-author relationship must be openly described, as drafted.
+- **Bennett–Bohman (2016), doi:10.1002/rsa.20667.** Random greedy independent set algorithm in hypergraphs, different model/question. Relevant general context, not proof of independence of the present theorem.
+
+**Potential scope overlap not resolved:** weighted random-priority distributions, exact uniform maximal independent-set samplers, small-order graph classification catalogues, semialgebraic feasibility of target laws, and forward citations to RSA with heterogeneous rates. No contrary theorem identified in the inspected sources, but lack of a hit is not proof of novelty.
+
+**Editorial assessment:** seven-figure n<=5 iff is mathematically coherent and teachable, with an unusually explicit strict-output-minor obstruction and complete formal check. Standalone journal interest remains uncertain because five vertices is a small cutoff. Before journal submission, undertake a sceptical referee-style assessment and decide whether rigorously proved infinite-family and structural closure results should join the narrative, without improperly expanding what the registered iff covers. A further constructive/full-proof appendix may be valuable if editors expect hand-checkable finite certificates independent of Lean.

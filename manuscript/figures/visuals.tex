@@ -1,0 +1,78 @@
+% Reproducible TikZ figure macros. Every figure is cited and tested in the ledger.
+\tikzset{
+ igvertex/.style={circle,draw=ink,thick,minimum size=8mm,inner sep=0pt,fill=white,font=\scriptsize},
+ igselected/.style={igvertex,fill=good!18,draw=good,very thick},
+ igblocked/.style={igvertex,fill=pale,draw=ink!45},
+ igedge/.style={line width=1.15pt,draw=ink!70},
+ igbox/.style={draw=ink!25,rounded corners=3pt,fill=pale!40,inner sep=6pt},
+ igarrow/.style={-{Latex[length=2mm]},thick,draw=ink!70}
+}
+\newcommand{\figscan}{%
+\begin{tikzpicture}[x=1cm,y=1cm,scale=.91,every node/.style={transform shape}]
+\node[anchor=west,font=\footnotesize] at (0,1.0) {Path $1-2-3-4$};
+\foreach \i in {1,...,4} {\node[igvertex] (g\i) at (1.2*\i,.15) {\i};}
+\foreach \i/\j in {1/2,2/3,3/4} \draw[igedge] (g\i)--(g\j);
+\node[anchor=west,font=\footnotesize] at (6.0,1.0) {Arrival timeline};
+\draw[igarrow] (6.4,.55)--(11.9,.55);
+\foreach \v/\x/\lab in {2/6.7/accept,4/8.2/accept,1/9.7/block,3/11.2/block} {
+  \node[igvertex,fill=white] at (\x,.55) {\v};
+  \node[font=\scriptsize,anchor=north] at (\x,.13) {\lab};}
+\draw[good,very thick] (6.7,.12)--(8.2,.12);
+\node[igselected] at (2.0,-1.1) {2};\node[igselected] at (4.0,-1.1) {4};
+\node[font=\small,anchor=west] at (5.0,-1.1) {Terminal set $\{2,4\}$};
+\end{tikzpicture}}
+\newcommand{\figpthree}{%
+\begin{tikzpicture}[scale=.92,every node/.style={transform shape}]
+\foreach \n/\x/\r in {1/0/1,2/2/2,3/4/1} {
+ \node[igvertex] (p\n) at (\x,0) {\n};
+ \node[font=\footnotesize,below=7mm] at (p\n) {$\lambda_{\n}=\r$};}
+\draw[igedge] (p1)--(p2)--(p3);
+\draw[igarrow] (5.0,0)--(6.0,0);
+\node[igbox,anchor=west,align=left,font=\footnotesize] at (6.2,.6) {$\pr(\{2\})=2/4=1/2$};
+\node[igbox,anchor=west,align=left,font=\footnotesize] at (6.2,-.55) {$\pr(\{1,3\})=(1+1)/4=1/2$};
+\end{tikzpicture}}
+\newcommand{\figpfivesets}{%
+\begin{tikzpicture}[x=.82cm,y=.78cm]
+\foreach \y/\vals/\lab in {0/{1,3,5}/{$\{1,3,5\}$},-1.2/{1,4}/{$\{1,4\}$},-2.4/{2,4}/{$\{2,4\}$},-3.6/{2,5}/{$\{2,5\}$}} {
+ \foreach \i in {1,...,5}{
+  \node[igvertex] (n\i) at (\i*1.15,\y) {\i};
+ }
+ \foreach \a/\b in {1/2,2/3,3/4,4/5}{\draw[igedge] (n\a)--(n\b);}
+ \foreach \v in \vals {\node[igselected] at (\v*1.15,\y) {\v};}
+ \node[font=\small,anchor=west] at (7.0,\y) {\lab};
+ \node[font=\footnotesize,anchor=west,color=ink!70] at (9.1,\y) {target $1/4$};
+ }
+\end{tikzpicture}}
+\newcommand{\figobstruction}{%
+\begin{tikzpicture}[font=\small,node distance=1cm]
+\node[igbox,align=center,minimum width=4.7cm,minimum height=1.45cm] (lhs) {$p_{14}\,p_{25}$\\ $\{1,4\}\,\times\,\{2,5\}$};
+\node[igbox,align=center,minimum width=4.7cm,minimum height=1.45cm,right=2.1cm of lhs] (rhs) {$p_{135}\,p_{24}$\\ $\{1,3,5\}\,\times\,\{2,4\}$};
+\draw[-{Latex[length=3mm]},line width=1.5pt,color=bad] (lhs)-- node[above,font=\bfseries\footnotesize,text=bad] {strictly smaller} (rhs);
+\node[draw=bad,rounded corners,align=center,below=7mm of $(lhs)!0.5!(rhs)$,inner sep=5pt,font=\footnotesize] {Exact uniformity would force both products to equal $1/16$.\\ Strict inequality makes that impossible for every $a,b,c,d,e>0$.};
+\end{tikzpicture}}
+\newcommand{\figwitnesses}{%
+\begin{tikzpicture}[x=1cm,y=1cm]
+\node[font=\small\bfseries] at (1.5,1.35) {(a) $P_3$};
+\foreach \x/\l/\r in {0/1/1,1.5/2/2,3/3/1}{\node[igvertex] (a\l) at (\x,.4) {\l};\node[below=3mm of a\l,font=\scriptsize] {$\r$};}
+\draw[igedge] (a1)--(a2)--(a3);
+\node[font=\scriptsize] at (1.5,-.75) {2 outputs, each $1/2$};
+\node[font=\small\bfseries] at (5.2,1.35) {(b) $K_{1,3}$};
+\node[igvertex] (bh) at (5.2,.45) {$3$};
+\foreach \x/\idx in {4.0/1,5.2/2,6.4/3}{\node[igvertex] (b\idx) at (\x,-.3) {$1$};\draw[igedge] (bh)--(b\idx);}
+\node[font=\scriptsize] at (5.2,-.9) {2 outputs, each $1/2$};
+\node[font=\small\bfseries] at (9.4,1.35) {(c) $P_4$};
+\foreach \x/\i/\r in {7.2/1/1,8.6/2/{\sqrt3-1},10/3/{\sqrt3-1},11.4/4/1}{\node[igvertex] (c\i) at (\x,.4) {\i};\node[below=3mm of c\i,font=\scriptsize] {$\r$};}
+\draw[igedge] (c1)--(c2)--(c3)--(c4);
+\node[font=\scriptsize] at (9.4,-.75) {3 outputs, each $1/3$};
+\end{tikzpicture}}
+\newcommand{\figarchitecture}{%
+\begin{tikzpicture}[node distance=6mm and 6mm,font=\footnotesize]
+\node[igbox,align=center,minimum width=5cm] (clock) {Independent real $\mathrm{Exp}(\lambda_v)$ clocks\\positive finite rates};
+\node[igbox,align=center,below=of clock,minimum width=5cm] (law) {Exact first-choice recurrence\\\texttt{realClockEGU\_iff\_firstChoiceEGU}};
+\node[igbox,align=center,below left=10mm and 12mm of law,minimum width=4.4cm] (pos) {Positive witnesses + isomorphism\\finite checked enumeration};
+\node[igbox,align=center,below right=10mm and 12mm of law,minimum width=4.4cm] (neg) {Strict $P_5$ probability minor\\all positive rates excluded};
+\node[draw=good,fill=good!9,rounded corners,thick,align=center,below=17mm of law,minimum width=5.3cm,yshift=-1.4cm] (out) {Registered theorem: $n\le5$\\ $\EGU(G)\iff G\not\cong P_5$};
+\draw[igarrow] (clock)--(law);
+\draw[igarrow] (law)--(pos);\draw[igarrow] (law)--(neg);
+\draw[igarrow] (pos)--(out);\draw[igarrow] (neg)--(out);
+\end{tikzpicture}}
