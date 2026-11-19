@@ -32,3 +32,16 @@ jobs:
         with:
           use-mathlib-cache: true
           build: true
+      # The PR's exact commit must pass the same independent proof checker
+      # as the staged branch, not just compile the local proof modules.
+      - name: Compare independent Challenge and proved Solution
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+        run: |
+          lake env lean Challenge.lean
+          lake env lean Solution.lean
+      - name: Install Comparator sandbox dependency
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq bubblewrap
+      - name: Independent-kernel comparator (NanoDa and con-ron)
+        if: github.event_name == 'pull_request' || github.ref == 'refs/heads/main'
+        run: bash scripts/verify-comparator.sh
