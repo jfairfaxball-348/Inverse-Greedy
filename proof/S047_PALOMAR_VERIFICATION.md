@@ -1,3 +1,9 @@
+## Additional official Palomar workflow gate identified and installed (19 Nov 2026)
+
+At the time of the S047 merge, `lake comparator` with all three independent kernels and dual-green CI were successful. A fresh reading of [Palomar's live llms.txt](https://submit.palomar-registry.org/llms.txt), however, revealed the **separate mandatory full official reusable mechanical preflight**. Palomar explicitly states that a local full `lake build`, own CI or standalone Comparator **is not equivalent**. The repository now includes `/.github/workflows/palomar-preflight.yml` pinned (both `uses` and `pipeline_commit`) to PalomarSubmission `14aa8d6b3c2f14a8540605e37144560b9a00e7e7`, requesting `mode: full`, `execution_profile: palomar-standard-v1`, `options` selecting the root `comparator.json`, and exactly 12-character `request_id: s047formal01`. It triggers on this workflow file's main-branch push and is also manually dispatchable. **Until its own complete mechanical-report artifact explicitly says `status: pass`, the submission is NOT marked ready for owner intake.** The workflow is advisory and does not perform editorial review, submission, owner authentication or registration. No public ID or paper.
+
+---
+
 # S047 — independent verification and Palomar registration gate (19 Nov 2026)
 
 ## S047 completion update — exact-head independent kernels VERIFIED; PR MERGED

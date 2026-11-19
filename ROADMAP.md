@@ -1,3 +1,12 @@
+## S047 newly identified Palomar-owned full mechanical preflight gate (2026-11-19)
+
+- [x] Read [live Palomar preflight protocol](https://submit.palomar-registry.org/llms.txt) and pin [PalomarSubmission workflow](https://github.com/PalomarRegistry/PalomarSubmission/blob/14aa8d6b3c2f14a8540605e37144560b9a00e7e7/.github/workflows/submission.yml) and pipeline_commit to `14aa8d6b3c2f14a8540605e37144560b9a00e7e7`.
+- [x] Install single-run [main workflow](.github/workflows/palomar-preflight.yml) with `mode: full`, `palomar-standard-v1`, immutable source SHA, `comparator.json`, and 12-character request ID `s047formal01`.
+- [ ] Read full official preflight mechanical-report artifact and require explicit `status: pass`; any fail/incomplete/resource issue stays blocked, fix/retry on checked immutable SHA.
+- [ ] Owner authentication, explicit authorisation and final registration consent at https://submit.palomar-registry.org/; verify public ID against exact main SHA. **NO PAPER UNTIL REGISTERED.**
+
+---
+
 ## S047 merged formal proof gate (2026-11-19) — owner registration next
 
 - [x] Full 95-file modern Lean import port, pinned Mathlib revision and Apache-2.0 licence.
