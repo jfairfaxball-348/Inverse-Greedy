@@ -122,3 +122,6 @@ theorem graphs_le_five_iff (n : ℕ) (hn : n ≤ 5)
     · exact (hOldNotIso h).elim
 
 end PalomarEGU
+
+-- Audit the actual declaration, not a guess about the proof's axiom closure.
+#print axioms PalomarEGU.graphs_le_five_iff
