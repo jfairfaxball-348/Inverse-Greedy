@@ -1,3 +1,18 @@
+## S047 merged formal proof gate (2026-11-19) — owner registration next
+
+- [x] Full 95-file modern Lean import port, pinned Mathlib revision and Apache-2.0 licence.
+- [x] Independent Mathlib-only full n≤5 Challenge and matching locally proved Solution, `#print axioms` only `propext`, `Classical.choice`, `Quot.sound`.
+- [x] Official `lake comparator`: **con-ron + NanoDa + Lean kernel all accept** at exact `5c4317ca5cffd8dab389c543df9c09afdd599f11`, with successful source/preflight/v0.4 metadata, 172 Python unit tests, exact and certified connected n≤6 census.
+- [x] Exact-head full [push 44491400149](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44491400149), [PR 44491410029](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44491410029), and [dedicated Comparator 44491399887](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44491399887) all green.
+- [x] [PR #46](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/46) marked ready and squash merged to `main` at `877f7461d5b8caf7c9b197f41a991c71ef2ed234`.
+- [ ] Verify post-merge `main` and any release-metadata-only successor commit at their exact SHA through full main CI.
+- [ ] **OWNER GATE:** authenticate at [Palomar](https://submit.palomar-registry.org/), submit immutable public `main` SHA with `comparator.json`, review editorial decision, give separate final registration consent; independently verify a public permanent ID/version and identical source SHA. Until then **NOT REGISTERED; NO PAPER**.
+- [ ] Research-interest and priority review is distinct from machine-checked correctness, no novelty certificate assumed.
+
+Full [S047 evidence](proof/S047_PALOMAR_VERIFICATION.md); [S048 registration handover](sessions/S048.md). Preserve 90/8/45 connected n≤6 and the still-open all-m star-corona AEGU / full 156/112 Lean orbit theorem.
+
+---
+
 ## S047 verification gate — 2026-11-19 (S048 installed)
 
 - [x] Preserve the migrated 95 imported Lean modules and owner-approved Apache-2.0 root licence; historical migration build compiled 9054 jobs.

@@ -1,5 +1,26 @@
 # S047 — independent verification and Palomar registration gate (19 Nov 2026)
 
+## S047 completion update — exact-head independent kernels VERIFIED; PR MERGED
+
+The S047 full proof package **passed** all required code-head gates at `5c4317ca5cffd8dab389c543df9c09afdd599f11`:
+
+| Gate | Exact evidence | Result |
+|---|---|---|
+| Full imported Lean + Python/exact/census push | [Research verification 44491400149](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44491400149) | **SUCCESS** (full Lean and Python jobs) |
+| Full imported Lean, Challenge/Solution, independent Comparator and Python/exact/census PR | [Research verification 44491410029](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44491410029) | **SUCCESS** (both jobs) |
+| Dedicated full modern module / independent official Comparator, schema and static source preflight push | [S046 migration trial 44491399887](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44491399887) | **SUCCESS** |
+| Axiom closure | Above PR and dedicated logs | `[propext, Classical.choice, Quot.sound]` |
+| Independent kernels | Above PR and dedicated logs | `con-ron kernel accepts the solution`; `nanoda kernel accepts the solution`; `Lean default kernel accepts the solution`; **`Your solution is okay!`** |
+| Full scientific suite and structural compliance | Above push/PR CI | 172 unit tests; exact experiment; connected n≤6 90/8/45 census; 97 modern-header source files; blocking static preflight; pinned official v0.4 JSON Schema PASS |
+
+The precise branch SHA is the source input for the verified *premerge* artifact. [PR #46](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/46) was marked ready, and **squash merged** with merge SHA `877f7461d5b8caf7c9b197f41a991c71ef2ed234`. Since a squash merge produces another public commit, separately check `main` post-merge CI; do not silently transfer the branch-head proof status onto an unverified postmerge SHA.
+
+**Palomar status: NOT SUBMITTED / NOT REGISTERED; no public permanent identifier or version, and NO PAPER.** Full independent proof checking does not certify novelty, research importance, journal peer review or registry acceptance. Owner authentication, permissions and final public-registration consent remain outside these CI checks. Once the latest main SHA is itself fully green, use that **exact immutable full SHA** for owner-controlled Palomar submission; verify the live public ID against it before changing status.
+
+---
+
+
+
 **Current verdict (snapshot): NOT SUBMITTED / NOT REGISTERED; NO PAPER.** This evidence is deliberately bounded: an intermediate passing CI job is not a final-source proof certificate, a Comparator run is not a public Palomar record, and a staged submission is not registration.
 
 ## Exact source and checks
