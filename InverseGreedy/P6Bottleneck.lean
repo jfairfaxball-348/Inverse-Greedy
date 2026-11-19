@@ -1,4 +1,8 @@
-import Mathlib
+module
+public import Mathlib
+
+@[expose] public section
+
 
 /-!
 # P6: algebraic bottleneck for two independent triple races

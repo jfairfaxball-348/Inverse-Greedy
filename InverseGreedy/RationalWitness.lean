@@ -1,4 +1,8 @@
-import InverseGreedy.RaceTerms
+module
+public import InverseGreedy.RaceTerms
+
+@[expose] public section
+
 
 /-!
 # S041: kernel-checkable rational EGU witnesses

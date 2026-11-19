@@ -1,0 +1,138 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+version: "v0.4"
+
+project:
+  name: "Inverse Greedy — five-vertex exponential-clock uniformity classification"
+  description: >-
+    Formal classification of positive-rate independent exponential-clock random
+    greedy maximal-independent-set uniformity for all finite simple graphs on
+    at most five vertices: exactly the five-vertex path is excluded, up to
+    graph isomorphism.
+  authors:
+    - "John Fairfax-Ball"
+  license: "Apache-2.0"
+  responsible_maintainers:
+    - "John Fairfax-Ball"
+
+classification:
+  arxiv: ["math.CO", "math.PR"]
+  msc2020: ["05C85", "60C05"]
+
+sources:
+  - title: "Inverse Greedy repository — five-vertex classification and real-clock law"
+    authors:
+      - "John Fairfax-Ball"
+    id: "https://github.com/jfairfaxball-348/Inverse-Greedy/tree/c073675d83b29ae3c330efd504427f58ac2be066"
+    type: "formalization"
+    location: "InverseGreedy/SmallGraphClassification.lean and InverseGreedy/RealClockGreedyLaw.lean"
+    relationship: "adapts"
+    note: >-
+      The public Challenge/Solution repackages the existing imported Lean
+      classification under independent mathematical definitions. This record
+      does not assert novelty or independent priority certification.
+    license: "Apache-2.0"
+    author_endorsement: "participated"
+  - title: "Random Sequential Adsorption on Graphs"
+    authors:
+      - "Nicholas Pippenger"
+    id: "https://doi.org/10.1137/0402034"
+    type: "article"
+    relationship: "background"
+    note: "Historical random sequential adsorption background, not claimed to state this five-vertex iff."
+    author_endorsement: "n/a"
+  - title: "Greedy maximal independent sets via local limits"
+    authors:
+      - "Michael Krivelevich"
+      - "Tamás Mészáros"
+      - "Peleg Michaeli"
+      - "Clara Shikhelman"
+    id: "https://doi.org/10.1002/rsa.21200"
+    type: "article"
+    relationship: "background"
+    note: "Random greedy MIS literature; distinction from inverse positive-rate design remains under external review."
+    author_endorsement: "n/a"
+
+related_formalizations: []
+
+status:
+  scope: >-
+    Statement and imported solution concern every symmetric irreflexive
+    neighbour map on Fin n for n<=5, including n=0, with a genuine independent
+    exponential-clock product measure and strictly positive real rates. The
+    path P5 is excluded only under full graph isomorphism. Does not classify
+    six-vertex graphs; 90 EGU/8 non-EGU/45 unresolved connected classes through
+    six vertices are separate previous work. All-m star-corona approximate
+    EGU and complete six-vertex orbit exhaustiveness are not formally proved.
+    The Challenge has one intentional theorem hole, excluded from proof counts.
+    This metadata is staged pending successful full Comparator, kernel and
+    independent review checks; it is not proof of Palomar registration.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Quot.sound", "Classical.choice"]
+  main_results:
+    - declaration: "PalomarEGU.graphs_le_five_iff"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "comparator.json"
+
+automation:
+  methods:
+    - method: "agent"
+      models: ["GPT-6"]
+      framework: "ChatGPT and GitHub Actions"
+      tool_setup: >-
+        AI-assisted formalization, shell-based CI migration and targeted Lean
+        proof debugging, with the formal Lean kernel intended as final checker.
+      cost:
+        wall_time: "Not tracked across research sessions"
+        spend_usd: "Not tracked; subscription-based assistant"
+        hardware: "GitHub Actions Linux runners; model API execution"
+      prompting_notes: >-
+        Owner requested a Palomar-first registration of an existing Lean-proved
+        theorem, faithful genuine-clock and strict positive-rate semantics,
+        independent Challenge declarations, and full kernel/Comparator checks.
+  spend_usd: "Not tracked"
+  notes: >-
+    Human-directed research project with AI-assisted code, proof discovery
+    and verification. The complete historical model-use inventory and actual
+    machine effort were not independently audited. No external mathematical
+    referee has reviewed this submitted wrapper as of this staging.
+
+fidelity:
+  divergences: >-
+    No intentional mathematical weakening: actual independent real Exp(rate)
+    product measures, the deterministic tie-broken greedy output, all maximal
+    independent sets, strict rate positivity, and full P5 isomorphism are
+    preserved. Whether the separately defined challenge interface is
+    definitionally matched to the existing imported development remains
+    contingent on successful Comparator verification.
+
+review:
+  status: "self-assessed; independent Palomar review pending"
+  reviewers: []
+  notes: >-
+    Historical Lean build and bounded exact checks do not constitute
+    Comparator certification or a mathematical novelty certificate.
+    Current staged files must pass lean, axiom inspection and both independent
+    kernels before owner-initiated submission.
+
+alignment:
+  namespace: "PalomarEGU"
+  statements:
+    - source: "InverseGreedy.graphs_le_five_classification plus P5 obstruction/isomorphism transfer"
+      lean: "PalomarEGU.graphs_le_five_iff"
+      module: "Solution"
+      status: "adapted"
+      note: >-
+        Full iff is stronger than the underlying disjunction and uses the
+        separately proved strict P5 obstruction. Still pending Comparator.
+    - source: "InverseGreedy.RealClockEGU and genuine exponential-clock law"
+      lean: "PalomarEGU.RealClockEGU"
+      module: "Challenge"
+      status: "adapted"
+      note: "Replicated independently, without importing local proof modules."
+
+acknowledgements: >-
+  Lean 4, Mathlib, GitHub Actions, OpenAI GPT-6, and the original random-greedy
+  graph and random sequential adsorption literature.

@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockBinSeries
+module
+public import InverseGreedy.FiniteClockBinSeries
+
+@[expose] public section
+
 
 /-!
 # S036: the gap-to-bin direction of the finite geometric chamber reindexing

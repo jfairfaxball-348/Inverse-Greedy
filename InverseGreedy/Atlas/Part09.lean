@@ -1,9 +1,13 @@
-import InverseGreedy.Atlas.Part08
-import InverseGreedy.RationalWitness
-import InverseGreedy.SmallGraphObstructions
-import InverseGreedy.CographEGU
-import InverseGreedy.FalseTwins
-import InverseGreedy.GeneralFamilies
+module
+public import InverseGreedy.Atlas.Part08
+public import InverseGreedy.RationalWitness
+public import InverseGreedy.SmallGraphObstructions
+public import InverseGreedy.CographEGU
+public import InverseGreedy.FalseTwins
+public import InverseGreedy.GeneralFamilies
+
+@[expose] public section
+
 
 /-!
 # S041: atlas certificates, part 9

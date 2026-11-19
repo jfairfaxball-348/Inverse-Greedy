@@ -1,5 +1,9 @@
-import InverseGreedy.FiniteClockJointBins
-import InverseGreedy.BinnedCollisionBound
+module
+public import InverseGreedy.FiniteClockJointBins
+public import InverseGreedy.BinnedCollisionBound
+
+@[expose] public section
+
 
 /-!
 # S033: the genuine finite-clock strict-bin / real-chamber sandwich

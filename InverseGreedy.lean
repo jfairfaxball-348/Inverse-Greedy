@@ -1,90 +1,94 @@
-import InverseGreedy.ExponentialRace
-import InverseGreedy.CubicAMGM
-import InverseGreedy.P6Bottleneck
-import InverseGreedy.C6Product
-import InverseGreedy.FiniteRace
-import InverseGreedy.P6Orders
-import InverseGreedy.OrderMassBridge
-import InverseGreedy.OrderTreeNormalization
-import InverseGreedy.OrderLeafBridge
-import InverseGreedy.FullPermutationSupport
+module
+public import InverseGreedy.ExponentialRace
+public import InverseGreedy.CubicAMGM
+public import InverseGreedy.P6Bottleneck
+public import InverseGreedy.C6Product
+public import InverseGreedy.FiniteRace
+public import InverseGreedy.P6Orders
+public import InverseGreedy.OrderMassBridge
+public import InverseGreedy.OrderTreeNormalization
+public import InverseGreedy.OrderLeafBridge
+public import InverseGreedy.FullPermutationSupport
 
-import InverseGreedy.CoronaP3Minor
-import InverseGreedy.FiniteLawFuel
-import InverseGreedy.FullPermutationDecomposition
-import InverseGreedy.FullPermutationNormalization
-import InverseGreedy.GreedyBlockedErasure
-import InverseGreedy.PriorityOutputLaw
-import InverseGreedy.C6TVGap
-import InverseGreedy.P5ApproximateBoundary
-import InverseGreedy.PriorityHeadConditioning
-import InverseGreedy.PriorityHeadEvents
+public import InverseGreedy.CoronaP3Minor
+public import InverseGreedy.FiniteLawFuel
+public import InverseGreedy.FullPermutationDecomposition
+public import InverseGreedy.FullPermutationNormalization
+public import InverseGreedy.GreedyBlockedErasure
+public import InverseGreedy.PriorityOutputLaw
+public import InverseGreedy.C6TVGap
+public import InverseGreedy.P5ApproximateBoundary
+public import InverseGreedy.PriorityHeadConditioning
+public import InverseGreedy.PriorityHeadEvents
 
-import InverseGreedy.ProjectedOrderLaw
+public import InverseGreedy.ProjectedOrderLaw
 
-import InverseGreedy.ProjectionSupport
+public import InverseGreedy.ProjectionSupport
 
-import InverseGreedy.FirstRetainedWinner
-import InverseGreedy.FirstRetainedExact
+public import InverseGreedy.FirstRetainedWinner
+public import InverseGreedy.FirstRetainedExact
 
-import InverseGreedy.FullProjectedOrderExact
+public import InverseGreedy.FullProjectedOrderExact
 
-import InverseGreedy.PriorityProjectionPushforward
+public import InverseGreedy.PriorityProjectionPushforward
 
-import InverseGreedy.PriorityProjectionEvent
+public import InverseGreedy.PriorityProjectionEvent
 
-import InverseGreedy.PriorityOutputPushforward
-import InverseGreedy.IndependentExpPair
-import InverseGreedy.ContinuousRacePartition
-import InverseGreedy.FiniteIndependentExp
-import InverseGreedy.ContinuousRaceSwap
-import InverseGreedy.FiniteClockNoTies
-import InverseGreedy.FiniteClockChambers
-import InverseGreedy.ExpSurvival
-import InverseGreedy.ExpBinCells
-import InverseGreedy.ClockBins
-import InverseGreedy.FiniteClockBinExceptions
+public import InverseGreedy.PriorityOutputPushforward
+public import InverseGreedy.IndependentExpPair
+public import InverseGreedy.ContinuousRacePartition
+public import InverseGreedy.FiniteIndependentExp
+public import InverseGreedy.ContinuousRaceSwap
+public import InverseGreedy.FiniteClockNoTies
+public import InverseGreedy.FiniteClockChambers
+public import InverseGreedy.ExpSurvival
+public import InverseGreedy.ExpBinCells
+public import InverseGreedy.ClockBins
+public import InverseGreedy.FiniteClockBinExceptions
 
-import InverseGreedy.BinnedRace
-import InverseGreedy.BinnedRaceSeries
-import InverseGreedy.BinnedRaceCollision
+public import InverseGreedy.BinnedRace
+public import InverseGreedy.BinnedRaceSeries
+public import InverseGreedy.BinnedRaceCollision
 
-import InverseGreedy.BinnedRaceGeometric
-import InverseGreedy.ContinuousRaceSandwich
-import InverseGreedy.BinnedCollisionBound
+public import InverseGreedy.BinnedRaceGeometric
+public import InverseGreedy.ContinuousRaceSandwich
+public import InverseGreedy.BinnedCollisionBound
 
-import InverseGreedy.ContinuousRaceLimit
-import InverseGreedy.FiniteClockPairOrder
+public import InverseGreedy.ContinuousRaceLimit
+public import InverseGreedy.FiniteClockPairOrder
 
-import InverseGreedy.FiniteClockJointBins
-import InverseGreedy.FiniteClockBinChambers
-import InverseGreedy.FiniteClockPairBinCollision
-import InverseGreedy.FiniteClockBinUnion
-import InverseGreedy.FiniteClockBinSeries
-import InverseGreedy.FiniteClockGapEncoding
-import InverseGreedy.FiniteClockGapInverse
-import InverseGreedy.FiniteClockCompleteOrder
-import InverseGreedy.FiniteClockMeasuredGapSeries
-import InverseGreedy.FiniteClockGapFactors
-import InverseGreedy.FiniteClockGapMonomial
-import InverseGreedy.FiniteClockGapClosedForm
-import InverseGreedy.FiniteClockOrderLaw
-import InverseGreedy.RealClockGreedyLaw
-import InverseGreedy.RealClockGreedyMIS
-import InverseGreedy.RaceTerms
-import InverseGreedy.SmallGraphObstructions
-import InverseGreedy.GraphOperationsLaw
-import InverseGreedy.GraphOperationsEGU
-import InverseGreedy.CographEGU
-import InverseGreedy.RationalWitness
-import InverseGreedy.FalseTwins
-import InverseGreedy.GeneralFamilies
-import InverseGreedy.AtlasCertificates
-import InverseGreedy.ApproximateEGU
-import InverseGreedy.ApproximateJoin
-import InverseGreedy.SmallGraphClassification
+public import InverseGreedy.FiniteClockJointBins
+public import InverseGreedy.FiniteClockBinChambers
+public import InverseGreedy.FiniteClockPairBinCollision
+public import InverseGreedy.FiniteClockBinUnion
+public import InverseGreedy.FiniteClockBinSeries
+public import InverseGreedy.FiniteClockGapEncoding
+public import InverseGreedy.FiniteClockGapInverse
+public import InverseGreedy.FiniteClockCompleteOrder
+public import InverseGreedy.FiniteClockMeasuredGapSeries
+public import InverseGreedy.FiniteClockGapFactors
+public import InverseGreedy.FiniteClockGapMonomial
+public import InverseGreedy.FiniteClockGapClosedForm
+public import InverseGreedy.FiniteClockOrderLaw
+public import InverseGreedy.RealClockGreedyLaw
+public import InverseGreedy.RealClockGreedyMIS
+public import InverseGreedy.RaceTerms
+public import InverseGreedy.SmallGraphObstructions
+public import InverseGreedy.GraphOperationsLaw
+public import InverseGreedy.GraphOperationsEGU
+public import InverseGreedy.CographEGU
+public import InverseGreedy.RationalWitness
+public import InverseGreedy.FalseTwins
+public import InverseGreedy.GeneralFamilies
+public import InverseGreedy.AtlasCertificates
+public import InverseGreedy.ApproximateEGU
+public import InverseGreedy.ApproximateJoin
+public import InverseGreedy.SmallGraphClassification
 
-import InverseGreedy.ApproximateLowerBound
+public import InverseGreedy.ApproximateLowerBound
 
-import InverseGreedy.SixVertexEdgeEncoding
-import InverseGreedy.SixVertexBurnsideChecks
+public import InverseGreedy.SixVertexEdgeEncoding
+public import InverseGreedy.SixVertexBurnsideChecks
+
+@[expose] public section
+

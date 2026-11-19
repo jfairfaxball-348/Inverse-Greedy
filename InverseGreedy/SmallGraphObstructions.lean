@@ -1,7 +1,11 @@
-import InverseGreedy.RaceTerms
-import InverseGreedy.C6Product
-import InverseGreedy.P6Bottleneck
-import InverseGreedy.CoronaP3Minor
+module
+public import InverseGreedy.RaceTerms
+public import InverseGreedy.C6Product
+public import InverseGreedy.P6Bottleneck
+public import InverseGreedy.CoronaP3Minor
+
+@[expose] public section
+
 
 /-!
 # S041: genuine real-clock obstructions for P5, K1∨P5, C6, P6, corona(P3)

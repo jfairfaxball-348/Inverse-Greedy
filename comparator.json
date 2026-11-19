@@ -1,0 +1,26 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "PalomarEGU.graphs_le_five_iff"
+  ],
+  "definition_names": [
+    "PalomarEGU.clockComparisonPattern",
+    "PalomarEGU.clockSortedOrder",
+    "PalomarEGU.greedyAccept",
+    "PalomarEGU.greedyOutput",
+    "PalomarEGU.realClockGreedyOutput",
+    "PalomarEGU.IsIndependentSet",
+    "PalomarEGU.IsMaximalIndependentSet",
+    "PalomarEGU.maximalIndependentSets",
+    "PalomarEGU.finiteIndependentExp",
+    "PalomarEGU.RealClockEGU",
+    "PalomarEGU.p5Nb"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}

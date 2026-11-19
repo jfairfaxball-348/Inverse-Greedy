@@ -1,4 +1,8 @@
-import InverseGreedy.EdgeSetGraphs
+module
+public import InverseGreedy.EdgeSetGraphs
+
+@[expose] public section
+
 
 /-!
 # S041: exhaustive classification of all graphs on at most five vertices (IG-P5)

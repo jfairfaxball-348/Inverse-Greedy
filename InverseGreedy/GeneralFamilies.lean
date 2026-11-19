@@ -1,5 +1,9 @@
-import InverseGreedy.CographEGU
-import InverseGreedy.SmallGraphObstructions
+module
+public import InverseGreedy.CographEGU
+public import InverseGreedy.SmallGraphObstructions
+
+@[expose] public section
+
 
 /-!
 # S041: infinite families — clique coronas (IG-P8) and star coronas (IG-N5)

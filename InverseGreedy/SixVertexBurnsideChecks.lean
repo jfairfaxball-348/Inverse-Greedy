@@ -1,4 +1,8 @@
-import InverseGreedy.SixVertexEdgeEncoding
+module
+public import InverseGreedy.SixVertexEdgeEncoding
+
+@[expose] public section
+
 
 /-!
 # S044: two formally certified six-vertex orbits and Burnside arithmetic
@@ -24,11 +28,11 @@ def missingEdgeVector6 (e : Fin 15) : Fin 15 → Bool :=
   fun j => !(singletonEdgeVector6 e j)
 
 /-- Swap the first endpoint of edge e to vertex zero. -/
-private def oneEdgeSwapFirst6 (e : Fin 15) : Equiv.Perm (Fin 6) :=
+def oneEdgeSwapFirst6 (e : Fin 15) : Equiv.Perm (Fin 6) :=
   Equiv.swap (pair6 e).1 0
 
 /-- Swap the image of the other endpoint to vertex one. -/
-private def oneEdgeSwapSecond6 (e : Fin 15) : Equiv.Perm (Fin 6) :=
+def oneEdgeSwapSecond6 (e : Fin 15) : Equiv.Perm (Fin 6) :=
   Equiv.swap (oneEdgeSwapFirst6 e (pair6 e).2) 1
 
 def oneEdgeToBase6 (e : Fin 15) : Fin 6 → Fin 6 :=

@@ -1,4 +1,8 @@
-import InverseGreedy.PriorityProjectionPushforward
+module
+public import InverseGreedy.PriorityProjectionPushforward
+
+@[expose] public section
+
 
 /-!
 # S018: exact output-event pushforward and deterministic residual support

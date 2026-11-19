@@ -1,4 +1,8 @@
-import InverseGreedy.ApproximateEGU
+module
+public import InverseGreedy.ApproximateEGU
+
+@[expose] public section
+
 
 /-!
 # S041: approximate EGU is closed under joins (IG-P10)

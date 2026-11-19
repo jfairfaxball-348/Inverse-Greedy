@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteRace
+module
+public import InverseGreedy.FiniteRace
+
+@[expose] public section
+
 
 /-!
 # S005: positive finite weighted-order laws

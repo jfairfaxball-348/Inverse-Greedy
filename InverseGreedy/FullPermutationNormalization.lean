@@ -1,4 +1,8 @@
-import InverseGreedy.FullPermutationDecomposition
+module
+public import InverseGreedy.FullPermutationDecomposition
+
+@[expose] public section
+
 
 /-!
 # S011: normalisation of the actual weighted priority-permutation list

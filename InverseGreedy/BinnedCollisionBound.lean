@@ -1,4 +1,8 @@
-import InverseGreedy.ContinuousRaceSandwich
+module
+public import InverseGreedy.ContinuousRaceSandwich
+
+@[expose] public section
+
 
 /-!
 # S029: quantitative true-exponential ceiling-bin collision bound

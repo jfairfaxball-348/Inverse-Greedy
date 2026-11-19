@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteRace
+module
+public import InverseGreedy.FiniteRace
+
+@[expose] public section
+
 
 /-!
 # P6 combinatorial priority-order certificates

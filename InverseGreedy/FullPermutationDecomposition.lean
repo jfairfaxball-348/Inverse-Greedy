@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteLawFuel
+module
+public import InverseGreedy.FiniteLawFuel
+
+@[expose] public section
+
 
 /-!
 # S011: exact head decomposition of the actual permutation list

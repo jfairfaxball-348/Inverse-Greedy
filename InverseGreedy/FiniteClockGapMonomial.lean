@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockGapFactors
+module
+public import InverseGreedy.FiniteClockGapFactors
+
+@[expose] public section
+
 
 /-!
 # S040: finite gap-monomial factorisation in ENNReal

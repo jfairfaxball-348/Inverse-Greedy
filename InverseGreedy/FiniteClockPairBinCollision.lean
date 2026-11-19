@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockBinChambers
+module
+public import InverseGreedy.FiniteClockBinChambers
+
+@[expose] public section
+
 
 /-!
 # S033: measured same-bin pair bound inside any finite exponential family

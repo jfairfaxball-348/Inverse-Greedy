@@ -1,6 +1,10 @@
-import Mathlib.Probability.Distributions.Exponential
-import Mathlib.Probability.Independence.Basic
-import Mathlib.MeasureTheory.Measure.Prod
+module
+public import Mathlib.Probability.Distributions.Exponential
+public import Mathlib.Probability.Independence.Basic
+public import Mathlib.MeasureTheory.Measure.Prod
+
+@[expose] public section
+
 
 /-!
 # S019: genuine independent exponential clocks (two-clock foundation)

@@ -1,4 +1,8 @@
-import InverseGreedy.BinnedRaceSeries
+module
+public import InverseGreedy.BinnedRaceSeries
+
+@[expose] public section
+
 
 /-!
 # S027: countable collision mass of genuine exponential ceiling bins

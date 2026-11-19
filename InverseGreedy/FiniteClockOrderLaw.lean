@@ -1,7 +1,11 @@
-import InverseGreedy.FiniteClockGapClosedForm
-import InverseGreedy.FiniteClockBinUnion
-import InverseGreedy.ContinuousRaceLimit
-import InverseGreedy.OrderMassBridge
+module
+public import InverseGreedy.FiniteClockGapClosedForm
+public import InverseGreedy.FiniteClockBinUnion
+public import InverseGreedy.ContinuousRaceLimit
+public import InverseGreedy.OrderMassBridge
+
+@[expose] public section
+
 
 /-!
 # S041: the genuine real-clock strict-order law for every complete order

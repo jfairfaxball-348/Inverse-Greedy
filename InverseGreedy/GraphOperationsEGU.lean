@@ -1,4 +1,8 @@
-import InverseGreedy.GraphOperationsLaw
+module
+public import InverseGreedy.GraphOperationsLaw
+
+@[expose] public section
+
 
 /-!
 # S041: EGU is closed under disjoint union and join, in both directions

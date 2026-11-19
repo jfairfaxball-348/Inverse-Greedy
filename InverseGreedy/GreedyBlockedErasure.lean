@@ -1,4 +1,8 @@
-import InverseGreedy.FullPermutationNormalization
+module
+public import InverseGreedy.FullPermutationNormalization
+
+@[expose] public section
+
 
 namespace InverseGreedy
 variable {α : Type*} [DecidableEq α]

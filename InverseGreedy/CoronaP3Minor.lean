@@ -1,4 +1,8 @@
-import InverseGreedy.FullPermutationSupport
+module
+public import InverseGreedy.FullPermutationSupport
+
+@[expose] public section
+
 
 /-!
 # S009: strict algebraic minor for the P3 pendant corona

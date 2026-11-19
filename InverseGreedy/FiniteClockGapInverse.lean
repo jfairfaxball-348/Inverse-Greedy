@@ -1,4 +1,8 @@
-import InverseGreedy.FiniteClockGapEncoding
+module
+public import InverseGreedy.FiniteClockGapEncoding
+
+@[expose] public section
+
 
 /-!
 # S037: the reverse map from strictly increasing bins to finite gaps
@@ -113,6 +117,9 @@ theorem gapBinValue_vector_injective {n : ℕ} :
       (gapDifferenceSucc_gapBinValue x).symm
     _ = gapDifferenceSucc (gapBinValue y) := by rw [h]
     _ = y := gapDifferenceSucc_gapBinValue y
+
+-- Module-system compatibility: this exposed Equiv packages proofs in public data.
+set_option backward.proofsInPublic true
 
 /-- Genuine equivalence between nonnegative finite gaps and strictly
 increasing zero-based bin vectors. Includes the empty index type. -/

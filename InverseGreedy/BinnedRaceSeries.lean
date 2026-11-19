@@ -1,4 +1,8 @@
-import InverseGreedy.BinnedRace
+module
+public import InverseGreedy.BinnedRace
+
+@[expose] public section
+
 
 /-!
 # S027: countable decomposition of the genuine strict-bin race

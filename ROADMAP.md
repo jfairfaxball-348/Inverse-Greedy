@@ -1,3 +1,22 @@
+## S047 verification gate — 2026-11-19 (S048 installed)
+
+- [x] Preserve the migrated 95 imported Lean modules and owner-approved Apache-2.0 root licence; historical migration build compiled 9054 jobs.
+- [x] Compile independently stated Mathlib-only Challenge and matched Solution; recorded actual `#print axioms` output contains only `propext`, `Classical.choice`, `Quot.sound`.
+- [x] Diagnose Comparator `unknown target Challenge` and register named Lake libraries.
+- [x] Add official-template source requirements check, pin upstream v0.4 formalization schema, correct invalid `status.main_results`, and run blocking validation. Intermediate push/PR Python jobs: 172 tests + exact experiment + census pass.
+- [ ] **Required**: complete official `lake comparator` verification with independent NanoDa and con-ron, inspect logs, diagnose any failure, and obtain dual-green full exact-head push/PR verification.
+- [ ] Verify exact final 40-character SHA, merge [PR #46](https://github.com/jfairfaxball-348/Inverse-Greedy/pull/46) if and only if clean, recheck merged `main`.
+- [ ] Owner-authenticated [Palomar submission](https://submit.palomar-registry.org/), owner permissions/consent and final registration confirmation, then independently verify public ID/version/source SHA. **No paper before actual public REGISTERED status.**
+- [ ] Independent priority/research-interest review; no novelty assertion from proof checking alone.
+
+Detailed [S047 evidence](proof/S047_PALOMAR_VERIFICATION.md), conditional [next session S048](sessions/S048.md). Connected n≤6 certified 90/8/45 unchanged; all-m star-corona AEGU and 156/112 full Lean orbit exhaustiveness remain unproved.
+
+---
+
+## S046 staged module-and-Comparator work (2026-11-19) — S047 installed
+
+**STRICT gate: register an independently verifiable public Palomar entry and ID BEFORE writing a paper.** The owner-selected root licence is now Apache-2.0. [S046 port evidence](proof/S046_PALOMAR_PORT.md) records reproducible modern module migration, the concrete CI failures and fixes, and staged standalone Mathlib Challenge, matching Solution, comparator.json and v0.4 metadata. **No actual Comparator pass, official review or Palomar ID established at this staging checkpoint.** [S047](sessions/S047.md) is installed to finish exact-head Lean/axioms/independent-kernel validation, dual-green PR/merge and owner-confirmed registration. [S046 workflow](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/workflows/s046-port.yml) must be read for exact latest result, not inferred successful. No changes to 90 EGU / 8 non-EGU / 45 unresolved connected n≤6; all-m star-corona AEGU and 156/112 Lean orbit exhaustiveness still open.
+
 ## S045 audit complete (2026-11-18) — registration blocked, S046 installed
 
 **Hard owner gate: public Palomar entry and ID before any paper.** Candidate selected: complete at-most-five-vertex `RealClockEGU` iff classification (P5 alone excluded). Supporting genuine Exp-clock bridge and cograph, union/join and false-twin laws already in imported Lean; none substitutes for Palomar module/Challenge/Comparator verification. S045 added `proof/S045_PALOMAR_AUDIT.md`, `experiments/palomar_preflight.py`, and test coverage. S045 verification: PR #45 final head `3595d041f97aa25ff2b6f8bc3255a745fcab08d6` passed imported Lean and full Python/exact/census in both push [44368658437](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44368658437) and PR [44368676610](https://github.com/jfairfaxball-348/Inverse-Greedy/actions/runs/44368676610); squash-merged to main `ea4eb45bc78e5ecd565a6362e918cc826ebb902a`. CI static preflight confirmed all 95 tracked Lean files lack modern `module` headers, plus missing root licence, Challenge, Solution, comparator.json and formalization.yaml. **Palomar NOT SUBMITTED/BLOCKED; official Comparator not run; no registration ID.** At audit: repository contains 95 Lean files, sampled old imports without mandatory modern module header, no root owner-approved licence and no Challenge/Solution/Comparator/metadata. **No Palomar submission, no public ID, no official Comparator pass.** Port and reverify in `sessions/S046.md`; preserve open all-m star-corona AEGU, n=6 Lean exhaustiveness, and 90/8/45 ledger. No manuscript.

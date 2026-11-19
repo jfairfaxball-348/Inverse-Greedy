@@ -1,4 +1,8 @@
-import InverseGreedy.GraphOperationsEGU
+module
+public import InverseGreedy.GraphOperationsEGU
+
+@[expose] public section
+
 
 /-!
 # S041: relabelling invariance, cographs and complete multipartite graphs

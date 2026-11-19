@@ -1,5 +1,9 @@
-import InverseGreedy.FiniteClockOrderLaw
-import InverseGreedy.PriorityOutputPushforward
+module
+public import InverseGreedy.FiniteClockOrderLaw
+public import InverseGreedy.PriorityOutputPushforward
+
+@[expose] public section
+
 
 /-!
 # S041: the genuine real-clock greedy output and its exact law

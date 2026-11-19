@@ -1,5 +1,9 @@
-import InverseGreedy.ContinuousRacePartition
-import InverseGreedy.FiniteIndependentExp
+module
+public import InverseGreedy.ContinuousRacePartition
+public import InverseGreedy.FiniteIndependentExp
+
+@[expose] public section
+
 
 /-!
 # S021: true continuous-rate swap and measurable finite race events

@@ -1,4 +1,8 @@
-import InverseGreedy.CubicAMGM
+module
+public import InverseGreedy.CubicAMGM
+
+@[expose] public section
+
 
 /-!
 # C6 sharp six-factor inequality (pure algebra; not the stochastic law)

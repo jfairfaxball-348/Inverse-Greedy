@@ -1,5 +1,9 @@
-import InverseGreedy.BinnedCollisionBound
-import Mathlib.Analysis.Calculus.Deriv.Slope
+module
+public import InverseGreedy.BinnedCollisionBound
+public import Mathlib.Analysis.Calculus.Deriv.Slope
+
+@[expose] public section
+
 
 /-!
 # S030: the small-width analytic exponential-race limit

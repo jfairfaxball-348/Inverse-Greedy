@@ -1,4 +1,8 @@
-import InverseGreedy.FullProjectedOrderExact
+module
+public import InverseGreedy.FullProjectedOrderExact
+
+@[expose] public section
+
 
 /-!
 # S018: weighted expectation under deletion of irrelevant priorities

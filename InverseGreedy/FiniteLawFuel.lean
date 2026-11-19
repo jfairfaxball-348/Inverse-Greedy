@@ -1,4 +1,8 @@
-import InverseGreedy.FullPermutationSupport
+module
+public import InverseGreedy.FullPermutationSupport
+
+@[expose] public section
+
 
 /-!
 # S010: Fuel invariance and deletion consistency in the finite greedy model

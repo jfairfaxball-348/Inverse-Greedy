@@ -1,4 +1,8 @@
-import InverseGreedy.PriorityOutputLaw
+module
+public import InverseGreedy.PriorityOutputLaw
+
+@[expose] public section
+
 
 /-!
 # S013: exact first-head conditioning for weighted finite priority orders

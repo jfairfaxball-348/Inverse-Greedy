@@ -1,4 +1,8 @@
-import InverseGreedy.IndependentExpPair
+module
+public import InverseGreedy.IndependentExpPair
+
+@[expose] public section
+
 
 /-!
 # S020 genuine continuous two-clock race

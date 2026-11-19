@@ -1,5 +1,9 @@
-import InverseGreedy.IndependentExpPair
-import Mathlib.MeasureTheory.Constructions.Pi
+module
+public import InverseGreedy.IndependentExpPair
+public import Mathlib.MeasureTheory.Constructions.Pi
+
+@[expose] public section
+
 
 /-!
 # S020: genuine finite independent exponential-clock probability space

@@ -1,6 +1,10 @@
-import InverseGreedy.ExpBinCells
-import Mathlib.MeasureTheory.Function.Floor
-import Mathlib.Algebra.Order.Floor.Semiring
+module
+public import InverseGreedy.ExpBinCells
+public import Mathlib.MeasureTheory.Function.Floor
+public import Mathlib.Algebra.Order.Floor.Semiring
+
+@[expose] public section
+
 
 /-!
 # S026: a measurable bin random variable for genuine exponential clocks

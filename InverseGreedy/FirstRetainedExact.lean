@@ -1,4 +1,8 @@
-import InverseGreedy.FirstRetainedWinner
+module
+public import InverseGreedy.FirstRetainedWinner
+
+@[expose] public section
+
 
 /-!
 # S016: close the actual first-retained-winner marginal by induction

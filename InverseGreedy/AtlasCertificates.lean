@@ -1,20 +1,24 @@
-import InverseGreedy.Atlas.Part00
-import InverseGreedy.Atlas.Part01
-import InverseGreedy.Atlas.Part02
-import InverseGreedy.Atlas.Part03
-import InverseGreedy.Atlas.Part04
-import InverseGreedy.Atlas.Part05
-import InverseGreedy.Atlas.Part06
-import InverseGreedy.Atlas.Part07
-import InverseGreedy.Atlas.Part08
-import InverseGreedy.Atlas.Part09
-import InverseGreedy.Atlas.Part10
-import InverseGreedy.Atlas.Part11
-import InverseGreedy.Atlas.Part12
-import InverseGreedy.Atlas.Part13
-import InverseGreedy.Atlas.Part14
-import InverseGreedy.Atlas.Part15
-import InverseGreedy.Atlas.Part16
+module
+public import InverseGreedy.Atlas.Part00
+public import InverseGreedy.Atlas.Part01
+public import InverseGreedy.Atlas.Part02
+public import InverseGreedy.Atlas.Part03
+public import InverseGreedy.Atlas.Part04
+public import InverseGreedy.Atlas.Part05
+public import InverseGreedy.Atlas.Part06
+public import InverseGreedy.Atlas.Part07
+public import InverseGreedy.Atlas.Part08
+public import InverseGreedy.Atlas.Part09
+public import InverseGreedy.Atlas.Part10
+public import InverseGreedy.Atlas.Part11
+public import InverseGreedy.Atlas.Part12
+public import InverseGreedy.Atlas.Part13
+public import InverseGreedy.Atlas.Part14
+public import InverseGreedy.Atlas.Part15
+public import InverseGreedy.Atlas.Part16
+
+@[expose] public section
+
 
 /-!
 # S041: summary of the Lean-certified connected n ≤ 6 atlas
