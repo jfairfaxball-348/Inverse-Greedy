@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "title": "Inverse Greedy — exponential-clock uniformity of maximal independent sets",
+  "slug": "inverse-greedy",
+  "status": "arXiv preprint",
+  "headline": "A Lean-verified classification of exact random-greedy uniformity for graphs on at most five vertices, with one exceptional path.",
+  "year": 2026,
+  "date": "2026-11-19",
+  "description": "This project asks whether strictly positive, finite rates for independent exponential vertex clocks can make a random greedy algorithm uniform over a graph's inclusion-maximal independent sets. Its complete Lean 4-verified classification for graphs on at most five vertices shows that every such graph is uniformisable except the five-vertex path $P_5$, up to whole-graph isomorphism; a strict probability minor obstructs $P_5$. The theorem has a Palomar registration and an arXiv preprint, but graphs of larger order remain unclassified and the connected six-vertex computational atlas contains unresolved cases.",
+  "summary": "The inverse problem permits unequal arrival rates, unlike the equal-rate random-priority model. Exact constructive witnesses, isomorphism reduction and a positive algebraic obstruction yield the five-vertex classification, with an independent-exponential-clock law formalised in Lean 4. A separate connected six-vertex atlas reports 90 EGU, 8 non-EGU and 45 unresolved graph classes; these partial computations are not a six-vertex theorem. The preprint has not undergone journal peer review, and the targeted prior-art audit is not an unconditional novelty certificate.",
+  "topics": [
+    "Graph theory",
+    "Probability",
+    "Random greedy algorithms",
+    "Maximal independent sets",
+    "Formal verification",
+    "Lean 4"
+  ],
+  "github_url": "https://github.com/jfairfaxball-348/Inverse-Greedy",
+  "palomar_id": "PALOMAR-2026-11-19-000021",
+  "palomar_url": "https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-19-000021&version=1",
+  "paper_url": "https://arxiv.org/pdf/2611.26675",
+  "arxiv_id": "2611.26675",
+  "arxiv_url": "https://arxiv.org/abs/2611.26675",
+  "formalisation_system": "Lean 4 / Mathlib",
+  "verification": "The full at-most-five-vertex iff is proved as `PalomarEGU.graphs_le_five_iff` using the actual independent exponential-clock law. Lean, NanoDa and con-ron kernel checks and Palomar Comparator checks passed for the submitted proof. Palomar v1 records the preserved source commit `f4079bc46017e0b393f3678a0ab710eab1490116` and status 'registered'; the Lean axioms reported are `propext`, `Classical.choice` and `Quot.sound`. This is formal proof verification, not a novelty or peer-review certificate.",
+  "attribution": "John Fairfax-Ball is the named author and research lead. The project's inverse rate-design classification, exact graph witnesses and formal proof were developed under human direction with substantial AI assistance, including OpenAI GPT-6 for mathematical exploration, code, Lean formalisation, checking, figures and manuscript preparation. Earlier random sequential adsorption and random greedy independent-set literature is separately credited.",
+  "original_source": "N. Pippenger, 'Random Sequential Adsorption on Graphs', SIAM J. Discrete Math. 2(3), 393–401 (1989), DOI 10.1137/0402034; M. Krivelevich, T. Mészáros, P. Michaeli and C. Shikhelman, 'Greedy maximal independent sets via local limits', Random Struct. Algorithms 64(4), 986–1015 (2024), DOI 10.1002/rsa.21200; M. D. Penrose and T. Rosoman, 'Percolation of even sites for random sequential adsorption', Stochastic Processes Appl. 122(4), 1866–1886 (2012), DOI 10.1016/j.spa.2012.01.007; J. Fairfax-Ball, 'Greedy Uniformity on Trees: Exact Obstruction and Near-Uniform Spiders' (2026), arXiv:2610.02276. These are background and related prior work, not claims that those sources proved this inverse classification.",
+  "featured": false,
+  "additional_links": [
+    {
+      "label": "Registered Lean theorem and proof",
+      "url": "https://github.com/jfairfaxball-348/Inverse-Greedy/blob/f4079bc46017e0b393f3678a0ab710eab1490116/Solution.lean"
+    },
+    {
+      "label": "Targeted prior-art audit",
+      "url": "https://github.com/jfairfaxball-348/Inverse-Greedy/blob/main/manuscript/PRIOR_ART_AUDIT.md"
+    },
+    {
+      "label": "Reproducible figure and exact-check ledger",
+      "url": "https://github.com/jfairfaxball-348/Inverse-Greedy/blob/main/manuscript/figures/README.md"
+    },
+    {
+      "label": "Earlier equal-rate tree preprint",
+      "url": "https://arxiv.org/abs/2610.02276"
+    }
+  ]
+}
